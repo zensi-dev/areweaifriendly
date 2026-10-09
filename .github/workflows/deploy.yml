@@ -16,7 +16,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Full history: the project list is ordered by when each file was added.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - run: bun run validate

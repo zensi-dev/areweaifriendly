@@ -6,7 +6,7 @@ import ProjectRow from '../components/ProjectRow.astro';
 import { CATEGORY_INFO, DIMENSION_INFO, STANCE_INFO } from '../lib/labels';
 import { formatDate, lastUpdated, projects, stanceCounts } from '../lib/projects';
 import { CATEGORIES, DIMENSIONS } from '../lib/schema';
-import { STANCES } from '../lib/stance';
+import { moodSample, STANCES } from '../lib/stance';
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '../site.config';
 import { AREA_COLUMNS, LIST_COLUMNS, VERDICT_WIDTH, WIDE } from '../lib/ui';
 
@@ -15,12 +15,14 @@ const total = projects.length;
 const shownStances = STANCES.filter((s) => counts[s] > 0);
 const categories = CATEGORIES.filter((c) => projects.some((p) => p.category === c));
 
-const byMood = STANCES.flatMap((s) => projects.filter((p) => p.stance === s));
-// Keep the mood grid compact as the list grows; full class names so Tailwind finds them.
+// Past 48 projects the grid shows a proportional sample of the newest, so it stays short on phones.
+const byMood = moodSample(projects, 48);
+const sampled = byMood.length < total;
+// Keep the mood grid compact as it grows; full class names so Tailwind finds them.
 const moodGrid =
-  total <= 10
+  byMood.length <= 10
     ? { cols: 'grid-cols-5', tile: 'md' as const }
-    : total <= 40
+    : byMood.length <= 40
       ? { cols: 'grid-cols-8', tile: 'md' as const }
       : { cols: 'grid-cols-8 sm:grid-cols-12', tile: 'sm' as const };
 const field =
@@ -59,7 +61,12 @@ const jsonLd = {
     </div>
 
     <div>
-      <ul class:list={['grid w-fit gap-1.5', moodGrid.cols]} aria-label="Every tracked project, by how friendly it is">
+      <ul
+        class:list={['grid w-fit gap-1.5', moodGrid.cols]}
+        aria-label={sampled
+          ? `${byMood.length} of ${total} tracked projects, in proportion, by how friendly they are`
+          : 'Every tracked project, by how friendly it is'}
+      >
         {
           byMood.map((p) => (
             <li>
@@ -75,6 +82,7 @@ const jsonLd = {
           ))
         }
       </ul>
+      {sampled && <p class="mt-2 text-caption text-muted" aria-hidden="true">{byMood.length} of {total} projects, in proportion</p>}
       <div class="mt-5 flex flex-wrap gap-2" role="group" aria-label="Filter by friendliness">
         {
           shownStances.map((s) => (

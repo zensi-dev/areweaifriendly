@@ -26,3 +26,24 @@ export function deriveStance(policy: Policy): Stance {
   const others = [policy.issues, policy.summaries].map(areaStance);
   return others.includes('unfriendly') ? 'mostly-friendly' : 'friendly';
 }
+
+/**
+ * Up to `max` items grouped by stance, keeping list order within each stance.
+ * Over the cap, each stance keeps its share (largest remainder) and at least one item.
+ */
+export function moodSample<T extends { stance: Stance }>(list: readonly T[], max: number): T[] {
+  const groups = STANCES.map((s) => list.filter((p) => p.stance === s));
+  if (list.length <= max) return groups.flat();
+  const exact = groups.map((g) => (g.length * max) / list.length);
+  const take = exact.map(Math.floor);
+  const spare = max - take.reduce((a, b) => a + b, 0);
+  const byRemainder = STANCES.map((_, i) => i).sort((a, b) => (exact[b]! % 1) - (exact[a]! % 1));
+  for (const i of byRemainder.slice(0, spare)) take[i]!++;
+  for (const [i, g] of groups.entries()) {
+    if (g.length && !take[i]) {
+      take[i] = 1;
+      take[take.indexOf(Math.max(...take))]!--;
+    }
+  }
+  return groups.flatMap((g, i) => g.slice(0, take[i]));
+}
