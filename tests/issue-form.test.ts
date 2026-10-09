@@ -32,11 +32,11 @@ Allowed with conditions
 
 ### Your reading: AI-found issues
 
-_No response_
+None
 
 ### Your reading: AI-written text
 
-_No response_
+None
 
 ### Anything else?
 
@@ -53,6 +53,9 @@ describe('parseSubmission', () => {
       sources: ['https://github.com/ghostty-org/ghostty/blob/main/AI_POLICY.md'],
       answers: { contributions: 'conditional' },
     });
+  });
+  test('ignores optional dropdowns left empty', () => {
+    expect(parseSubmission(body.replace('Allowed with conditions', 'None')).answers).toEqual({});
   });
   test('reports every problem at once', () => {
     const bad = body.replace('Application', 'Toaster').replace('https://ghostty.org', 'ghostty.org').replace('Allowed with conditions', 'Maybe');

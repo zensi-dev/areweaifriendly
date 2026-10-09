@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test';
-import { ANSWER_FIELDS, ANSWER_OPTIONS, FIELDS } from '../scripts/lib/issue-form';
+import { ANSWER_FIELDS, ANSWER_OPTIONS, FIELDS, NO_SELECTION } from '../scripts/lib/issue-form';
 import { CATEGORY_INFO } from '../src/lib/labels';
 import { CATEGORIES, DIMENSIONS, VERDICTS } from '../src/lib/schema';
 
@@ -13,4 +13,6 @@ test('issue form labels and options match the intake parser', async () => {
   for (const dim of DIMENSIONS) {
     expect(field(ANSWER_FIELDS[dim])!.attributes.options).toEqual(VERDICTS.map((v) => ANSWER_OPTIONS[v]));
   }
+  // GitHub reserves this for an empty dropdown, so the parser reads it as no answer.
+  expect(Object.values(ANSWER_OPTIONS)).not.toContain(NO_SELECTION);
 });

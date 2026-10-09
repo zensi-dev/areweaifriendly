@@ -18,6 +18,9 @@ export const ANSWER_FIELDS: Record<Dimension, string> = {
   summaries: 'Your reading: AI-written text',
 };
 
+/** What GitHub writes for an optional dropdown left empty. */
+export const NO_SELECTION = 'None';
+
 /** Dropdown options for ANSWER_FIELDS, in form order. */
 export const ANSWER_OPTIONS: Record<Verdict, string> = {
   allowed: 'Allowed',
@@ -46,7 +49,10 @@ export class SubmissionError extends Error {
   }
 }
 
-/** GitHub renders issue forms as "### Label\n\nvalue" sections; empty answers become "_No response_". */
+/**
+ * GitHub renders issue forms as "### Label\n\nvalue" sections; empty text fields become
+ * "_No response_", empty optional dropdowns become NO_SELECTION.
+ */
 export function parseSections(body: string): Map<string, string> {
   const sections = new Map<string, string>();
   const parts = body.replace(/\r\n?/g, '\n').split(/^###\s+/m).slice(1);
@@ -113,7 +119,7 @@ export function parseSubmission(body: string): Submission {
   const answers: Submission['answers'] = {};
   for (const dim of DIMENSIONS) {
     const value = get(ANSWER_FIELDS[dim]).trim();
-    if (!value) continue;
+    if (!value || value === NO_SELECTION) continue;
     const verdict = VERDICTS.find((v) => ANSWER_OPTIONS[v] === value);
     if (verdict) answers[dim] = verdict;
     else problems.push(`Unknown answer for "${ANSWER_FIELDS[dim]}": ${value}`);
