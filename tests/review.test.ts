@@ -45,6 +45,16 @@ describe('decide', () => {
       "https://example.org/ doesn't look like a policy or contributor guide: The home page.",
     ]);
   });
+  test('only flags doubtful pages the research agent found on its own', () => {
+    const c = structuredClone(classification);
+    c.sources.push({ url: 'https://example.org/blog', publisher: 'project', isPolicy: false, note: 'A blog post.' });
+    const r = decide({ ...submission, answers: {} }, c, { found: ['https://example.org/blog'], notes: 'Found a blog post.' });
+    expect(r.problems).toEqual([]);
+    expect(r.flags).toEqual(["https://example.org/blog doesn't look like a policy or contributor guide: A blog post."]);
+    const comment = renderComment(r, { editTriggersReview: true });
+    expect(comment).toContain('- https://example.org/blog: published by the project, **not a policy**, found by the review.');
+    expect(comment).toContain('**Research**\n\nFound a blog post.');
+  });
   test('flags doubtful output without rejecting it', () => {
     const c = structuredClone(classification);
     c.confidence = 'low';

@@ -6,9 +6,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for helping out! Link to the project's **own** policy pages, not news articles about them.
+        Thanks for helping out! If you know where the project's AI policy is, link to the project's **own** pages, not news articles about them.
 
-        A maintainer will look at this and start an automatic review. It reads the sources, posts what it found as a comment here and, if everything checks out, opens a pull request. If something needs fixing, you can edit this issue and the review runs again.
+        A maintainer will look at this and start an automatic review. It reads your links, looks for the project's policy pages itself, posts what it found as a comment here and, if everything checks out, opens a pull request. If something needs fixing, you can edit this issue or add a comment with links, and the review runs again.
   - type: input
     id: name
     attributes:
@@ -55,11 +55,9 @@ body:
     id: sources
     attributes:
       label: Policy sources
-      description: One URL per line, up to 5. An AI policy, CONTRIBUTING file, code of conduct or mailing-list decision.
+      description: Optional. One URL per line, up to 5. An AI policy, CONTRIBUTING file, code of conduct or mailing-list decision. Leave empty and the review searches for them.
       placeholder: |
         https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md
-    validations:
-      required: true
   - type: markdown
     attributes:
       value: |
@@ -86,3 +84,4 @@ body:
     id: notes
     attributes:
       label: Anything else?
+      description: Optional. Anything that helps find or read the policy, such as where it was announced.

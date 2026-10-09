@@ -1,11 +1,14 @@
 name: Intake
 
 # Reviews "Add a project" issues (label "submission"). Runs when a maintainer adds
-# "ready-for-review", or when the issue body is edited while it has "needs-changes".
+# "ready-for-review", when the issue body is edited while it has "needs-changes", or when
+# the submitter or a maintainer comments (the review reads those comments for links).
 # Untrusted issue text is only read by the script from the event file, never by the shell.
 on:
   issues:
     types: [labeled, edited]
+  issue_comment:
+    types: [created]
 
 permissions: {}
 
@@ -13,7 +16,7 @@ env:
   GH_TOKEN: ${{ github.token }}
   GH_REPO: ${{ github.repository }}
   ISSUE: ${{ github.event.issue.number }}
-  # Edits start a review on their own only while the issue has fewer review comments than this;
+  # Edits and comments start a review on their own only while the issue has fewer review comments than this;
   # after that a maintainer adds "ready-for-review" again. Keeps AI costs bounded.
   MAX_REVIEWS_ON_EDIT: 5
 
@@ -24,7 +27,11 @@ jobs:
       contains(github.event.issue.labels.*.name, 'submission') &&
       ((github.event.action == 'labeled' && github.event.label.name == 'ready-for-review') ||
        (github.event.action == 'edited' && github.event.changes.body &&
-        contains(github.event.issue.labels.*.name, 'needs-changes')))
+        contains(github.event.issue.labels.*.name, 'needs-changes')) ||
+       (github.event_name == 'issue_comment' && !github.event.issue.pull_request &&
+        github.event.comment.user.type != 'Bot' &&
+        (github.event.comment.user.login == github.event.issue.user.login ||
+         contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association))))
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -41,8 +48,8 @@ jobs:
           previous=$(gh api "repos/$GH_REPO/issues/$ISSUE/comments" --paginate \
             --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("<!-- awaf-review -->"))) | .id' | wc -l)
           echo "previous=$previous" >> "$GITHUB_OUTPUT"
-          if [ "$EVENT" = edited ] && [ "$previous" -ge "$MAX_REVIEWS_ON_EDIT" ]; then
-            echo "::notice::Edit ignored: $previous reviews already. Add ready-for-review to run again."
+          if [ "$EVENT" != labeled ] && [ "$previous" -ge "$MAX_REVIEWS_ON_EDIT" ]; then
+            echo "::notice::Edit or comment ignored: $previous reviews already. Add ready-for-review to run again."
             echo "run=false" >> "$GITHUB_OUTPUT"
           else
             echo "run=true" >> "$GITHUB_OUTPUT"

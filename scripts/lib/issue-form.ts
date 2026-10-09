@@ -9,6 +9,7 @@ export const FIELDS = {
   repo: 'Source repository',
   category: 'Category',
   sources: 'Policy sources',
+  notes: 'Anything else?',
 } as const;
 
 /** Optional dropdowns where the submitter gives their own reading of the policy. */
@@ -37,7 +38,10 @@ export type Submission = {
   homepage: string;
   repo?: string;
   category: Category;
+  /** Optional: the review also looks for policy pages itself. */
   sources: string[];
+  /** Free text from "Anything else?"; the research agent reads it for hints. */
+  notes?: string;
   /** The submitter's own verdicts; missing when they left the dropdown empty. */
   answers: Partial<Record<Dimension, Verdict>>;
 };
@@ -107,9 +111,6 @@ export function parseSubmission(body: string): Submission {
         .flatMap((l) => check(() => httpUrl(l, FIELDS.sources)) ?? []),
     ),
   ];
-  if (!sources.length && !problems.some((p) => p.includes(FIELDS.sources))) {
-    problems.push(`"${FIELDS.sources}" needs at least one URL`);
-  }
   if (sources.length > MAX_SOURCES) problems.push(`At most ${MAX_SOURCES} policy sources, please`);
 
   const homepage = check(() => httpUrl(get(FIELDS.homepage), FIELDS.homepage));
@@ -125,6 +126,53 @@ export function parseSubmission(body: string): Submission {
     else problems.push(`Unknown answer for "${ANSWER_FIELDS[dim]}": ${value}`);
   }
 
+  const notes = get(FIELDS.notes).trim();
+
   if (problems.length) throw new SubmissionError(problems);
-  return { name, description, homepage: homepage!, ...(repo ? { repo } : {}), category: category!, sources, answers };
+  return {
+    name,
+    description,
+    homepage: homepage!,
+    ...(repo ? { repo } : {}),
+    category: category!,
+    sources,
+    ...(notes ? { notes } : {}),
+    answers,
+  };
+}
+
+/** Marks the bot's review comments, so the workflow can count them and the review can skip them. */
+export const REVIEW_MARKER = '<!-- awaf-review -->';
+
+/** Comment authors whose comments count as maintainer notes. */
+const MAINTAINER_ASSOCIATIONS = ['OWNER', 'MEMBER', 'COLLABORATOR'];
+const MAX_HINT_CHARS = 4000;
+
+export type Hint = { author: string; role: 'submitter' | 'maintainer'; text: string };
+
+export type IssueComment = {
+  body?: string | null;
+  author_association?: string;
+  user?: { login?: string; type?: string } | null;
+};
+
+/**
+ * Notes for the research agent: the form's "Anything else?" field and comments by the
+ * submitter or a maintainer. Bot comments, including earlier reviews, are left out.
+ */
+export function issueHints(
+  submission: Pick<Submission, 'notes'>,
+  issueAuthor: string,
+  comments: IssueComment[],
+): Hint[] {
+  const hints: Hint[] = submission.notes ? [{ author: issueAuthor, role: 'submitter', text: submission.notes }] : [];
+  for (const c of comments) {
+    const login = c.user?.login ?? '';
+    const text = (c.body ?? '').trim();
+    if (!text || !login || c.user?.type === 'Bot' || text.startsWith(REVIEW_MARKER)) continue;
+    const maintainer = MAINTAINER_ASSOCIATIONS.includes(c.author_association ?? '');
+    if (!maintainer && login !== issueAuthor) continue;
+    hints.push({ author: login, role: maintainer ? 'maintainer' : 'submitter', text: text.slice(0, MAX_HINT_CHARS) });
+  }
+  return hints;
 }

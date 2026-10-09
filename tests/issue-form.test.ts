@@ -73,8 +73,13 @@ describe('parseSubmission', () => {
   test('rejects non-http sources', () => {
     expect(() => parseSubmission(body.replace('- https://github.com', '- file:///etc/passwd #'))).toThrow();
   });
-  test('requires a source', () => {
+  test('sources are optional', () => {
     const noSources = body.replace(/### Policy sources[\s\S]*?### Anything/, '### Policy sources\n\n_No response_\n\n### Anything');
-    expect(() => parseSubmission(noSources)).toThrow('at least one URL');
+    expect(parseSubmission(noSources).sources).toEqual([]);
+  });
+  test('keeps the notes field', () => {
+    const withNotes = body.replace(/### Anything else\?\n\n_No response_/, '### Anything else?\n\nSee https://example.org/ai');
+    expect(parseSubmission(withNotes).notes).toBe('See https://example.org/ai');
+    expect(parseSubmission(body).notes).toBeUndefined();
   });
 });

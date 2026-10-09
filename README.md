@@ -8,10 +8,11 @@ A fully static [Astro](https://astro.build) site, served as static assets on Clo
 
 ```
 GitHub issue ("Add a project")
-  └─ maintainer adds "ready-for-review" label
-       └─ intake workflow: fetch sources → AI review + classifier → quote check → comment on the issue
+  └─ maintainer adds "ready-for-review" label (or the submitter or a maintainer comments)
+       └─ intake workflow: fetch submitted sources → research agent finds policy pages
+                           → AI review + classifier → quote check → comment on the issue
             ├─ passes → snapshot + data file → pull request → human review + merge
-            └─ needs changes → "needs-changes" label → submitter edits the issue → review runs again
+            └─ needs changes → "needs-changes" label → submitter edits or comments → review runs again
                                                                                         └─ deploy workflow → Cloudflare
 weekly check workflow: re-fetch sources → unchanged text? skip : re-classify → pull request
 ```
@@ -20,8 +21,13 @@ weekly check workflow: re-fetch sources → unchanged text? skip : re-classify �
 - **`snapshots/<slug>/*.txt`** holds the plain text of every source, so policy changes show up as git diffs. The `hash` in each source is the sha256 of its snapshot.
 - **Stances are computed, never stored or picked by the model** ([`src/lib/stance.ts`](src/lib/stance.ts)). One scale, used per area and overall: Friendly, Mostly friendly, Unfriendly, plus No policy. Per area: banned or minor help only → Unfriendly; disclosure or other extra rules → Mostly friendly; allowed or only baseline rules (accountability, human review, licence) → Friendly; not addressed → No policy. Overall follows code, capped at Mostly friendly when issues or text are Unfriendly.
 - **The model only fills in the schema.** It reads each source document in full, every quote it returns must appear word for word in the snapshot ([`scripts/lib/quotes.ts`](scripts/lib/quotes.ts)), and anything doubtful is listed in the PR for the reviewer.
-- **Submission review** ([`scripts/lib/review.ts`](scripts/lib/review.ts)). The model also says, per source, who published it and whether it is a policy. Problems the submitter can fix (form errors, unreadable links, already tracked, third-party or non-policy sources) get a "Changes needed" comment and the `needs-changes` label. Doubts about the AI output (low confidence, unclear publisher, dropped quotes, disagreement with the submitter's own reading) still open the PR, labelled `needs-review`. The model never sees the submitter's reading, so it can't anchor on it.
-- **Re-runs.** The workflow removes `ready-for-review` when it starts, so a maintainer can add it again at any time. While an issue has `needs-changes`, editing its body starts a new review on its own, up to `MAX_REVIEWS_ON_EDIT` (5) review comments per issue; after that a maintainer re-adds the label. A re-run updates the existing pull request and closes outdated ones.
+- **Research agent** ([`scripts/lib/research.ts`](scripts/lib/research.ts)). Before classification, a tool-calling loop looks for the project's AI rules. It reads the submitted pages, the issue's "Anything else?" field and comments by the submitter or maintainers (`OWNER`, `MEMBER`, `COLLABORATOR`), follows links, lists GitHub repository folders and searches the web through Firecrawl's keyless search API. It only picks pages, at most 5 on top of the submitted ones, each with a reason; it never rates. Pages may be on any domain, but must be official: published by the project, its core team or foundation. Checks on top of the agent's own judgment:
+  - Social media, link aggregators, Q&A sites and encyclopedias are never accepted (`NEVER_SOURCES`).
+  - The script tracks how each page connects to the project: on its own site or repository (homepage domain and subdomains, repository owner, hosts of submitted pages), linked from one of those pages (or on a site they link to), or linked by a person in the issue. A page with no such link gets one request to confirm it, and if picked anyway is flagged for the maintainer.
+  - The classifier judges every page's publisher. A page the agent found by itself that it calls third-party or not a policy is dropped and the project is classified again without it, so nothing on the site comes from it.
+  - When nothing mentions AI the agent picks the main contributing guide, so the project is listed as "No policy". Tool calls, steps and fetched text are capped. Submitting sources is optional; if the agent finds nothing either, the submitter is asked for links.
+- **Submission review** ([`scripts/lib/review.ts`](scripts/lib/review.ts)). The model also says, per source, who published it and whether it is a policy. Problems the submitter can fix (form errors, unreadable links, already tracked, third-party or non-policy sources they gave, no policy pages found at all) get a "Changes needed" comment and the `needs-changes` label. Doubts about the AI output (low confidence, unclear publisher, a doubtful page the research agent found by itself, dropped quotes, disagreement with the submitter's own reading) still open the PR, labelled `needs-review`. The model never sees the submitter's reading, so it can't anchor on it.
+- **Re-runs.** The workflow removes `ready-for-review` when it starts, so a maintainer can add it again at any time. While an issue has `needs-changes`, editing its body starts a new review on its own; a comment by the submitter or a maintainer does so at any time. Both stop after `MAX_REVIEWS_ON_EDIT` (5) review comments per issue; after that a maintainer re-adds the label. A re-run updates the existing pull request and closes outdated ones.
 
 ## Styling
 
@@ -59,6 +65,7 @@ Any OpenAI-compatible chat completions endpoint works. Copy `.env.example` to `.
 | `AI_MAX_INPUT_CHARS` | safety cap on text sent per project (default 300000); truncation is flagged for review |
 
 ```sh
+bun scripts/intake.ts --issue 3               # review a GitHub issue with its comments (repo: --repo or $GH_REPO)
 bun scripts/intake.ts --body-file issue.md   # review an issue-form body; writes review-comment.md (and pr-body.md if it passes)
 bun scripts/check.ts                          # check all sources (only calls the model if text changed)
 bun scripts/check.ts --force curl             # re-classify one project

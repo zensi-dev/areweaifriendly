@@ -1,9 +1,12 @@
 /**
- * Reviews an "Add a project" issue. If it passes, writes the data file and
+ * Reviews an "Add a project" issue. A research agent looks for the project's policy
+ * pages, starting from the submitted links and the notes and comments on the issue;
+ * the classifier then rates them. If the review passes, writes the data file and
  * snapshots; either way, writes a review comment for the issue.
  *
- *   In Actions:  reads the issue from $GITHUB_EVENT_PATH
- *   Locally:     bun scripts/intake.ts --body-file issue.md
+ *   In Actions:  reads the issue from $GITHUB_EVENT_PATH and its comments from the GitHub API
+ *   Locally:     bun scripts/intake.ts --issue 3 [--repo owner/name]   (default repo: $GH_REPO)
+ *                bun scripts/intake.ts --body-file issue.md              (no comments)
  *
  * Writes the comment to $COMMENT_FILE (default: review-comment.md) and, when the
  * review passes, the pull request body to $PR_BODY_FILE (default: pr-body.md).
@@ -16,24 +19,55 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { parseArgs } from 'node:util';
 import { slugify, SLUG_RE } from '../src/lib/schema';
 import { classify, configFromEnv } from './lib/classify';
-import { fetchSource, type FetchedSource } from './lib/fetch';
-import { parseSubmission, SubmissionError, type Submission } from './lib/issue-form';
+import { fetchPage } from './lib/fetch';
+import { FIELDS, issueHints, parseSubmission, SubmissionError, type IssueComment, type Submission } from './lib/issue-form';
 import { setOutputs, toSources } from './lib/pipeline';
+import { research, type Page } from './lib/research';
 import { decide, md, renderComment, renderPrBody, type Review } from './lib/review';
 import { projectExists, today, writeProject, writeSnapshot } from './lib/store';
 
-const { values } = parseArgs({ options: { 'body-file': { type: 'string' } } });
+const { values } = parseArgs({
+  options: { 'body-file': { type: 'string' }, issue: { type: 'string' }, repo: { type: 'string' } },
+});
+const repo = values.repo ?? process.env.GH_REPO;
 
+async function github<T>(path: string): Promise<T> {
+  const token = process.env.GH_TOKEN;
+  const res = await fetch(`https://api.github.com/repos/${repo}/${path}`, {
+    headers: { accept: 'application/vnd.github+json', ...(token ? { authorization: `Bearer ${token}` } : {}) },
+    signal: AbortSignal.timeout(30_000),
+  });
+  if (!res.ok) throw new Error(`GitHub API returned HTTP ${res.status} for ${path}`);
+  return res.json() as Promise<T>;
+}
+
+type Issue = { number: number; body?: string | null; user?: { login?: string } | null };
+let issue: Issue | undefined;
 let body: string;
-let issueNumber: number | undefined;
 if (values['body-file']) {
   body = await readFile(values['body-file'], 'utf8');
+} else if (values.issue) {
+  if (!repo) throw new Error('Pass --repo owner/name or set GH_REPO');
+  issue = await github<Issue>(`issues/${Number(values.issue)}`);
+  body = issue.body ?? '';
 } else if (process.env.GITHUB_EVENT_PATH) {
-  const event = JSON.parse(await readFile(process.env.GITHUB_EVENT_PATH, 'utf8'));
-  body = event.issue?.body ?? '';
-  issueNumber = event.issue?.number;
+  issue = JSON.parse(await readFile(process.env.GITHUB_EVENT_PATH, 'utf8')).issue;
+  body = issue?.body ?? '';
 } else {
-  throw new Error('Pass --body-file or run inside a GitHub issue event');
+  throw new Error('Pass --body-file or --issue, or run inside a GitHub issue event');
+}
+const issueNumber = issue?.number;
+
+/** Comments in posting order; an issue with more than 500 is not a submission worth reading. */
+async function loadComments(): Promise<IssueComment[]> {
+  if (!issueNumber || !repo) return [];
+  const all: IssueComment[] = [];
+  for (let page = 1; page <= 5; page++) {
+    const batch = await github<IssueComment[]>(`issues/${issueNumber}/comments?per_page=100&page=${page}`);
+    all.push(...batch);
+    if (batch.length < 100) break;
+  }
+  return all;
 }
 
 const previousReviews = Number(process.env.PREVIOUS_REVIEWS) || 0;
@@ -53,7 +87,7 @@ async function finish(review: Review, slug?: string, prBody?: string): Promise<v
 }
 
 /** Problems found before the model is called; the submitter has to fix these. */
-async function precheck(): Promise<{ problems: string[]; submission?: Submission; slug?: string; fetched?: FetchedSource[] }> {
+async function precheck(): Promise<{ problems: string[]; submission?: Submission; slug?: string; fetched?: Page[] }> {
   let submission: Submission;
   try {
     submission = parseSubmission(body);
@@ -66,7 +100,7 @@ async function precheck(): Promise<{ problems: string[]; submission?: Submission
   if (await projectExists(slug)) {
     return { problems: [`${md(submission.name)} is already tracked. Please open a "Suggest a correction" issue instead.`] };
   }
-  const results = await Promise.allSettled(submission.sources.map((url) => fetchSource(url)));
+  const results = await Promise.allSettled(submission.sources.map((url) => fetchPage(url)));
   const problems = results.flatMap((r, i) =>
     r.status === 'rejected' ? [`Could not read ${submission.sources[i]}: ${md((r.reason as Error).message)}`] : [],
   );
@@ -78,13 +112,47 @@ const pre = await precheck();
 if (pre.problems.length) {
   await finish({ submission: pre.submission, problems: pre.problems, flags: [] });
 } else {
-  const { submission, slug, fetched } = pre as Required<typeof pre>;
+  const { submission, slug, fetched: submitted } = pre as Required<typeof pre>;
   const config = configFromEnv();
-  const result = await classify(config, submission, fetched);
-  const review = decide(submission, result);
+  const hints = issueHints(submission, issue?.user?.login ?? '', await loadComments());
+  const researched = await research(config, { project: submission, submitted, hints, date: today() });
+  console.log(`Research:\n${researched.steps.map((s) => `  ${s}`).join('\n')}`);
+  const flags = researched.warnings.map(md);
+  // Pages the agent picked without a person pointing at them; the classifier's publisher check decides if they stay.
+  const byAgent = researched.found.filter((p) => !researched.provided.has(p.source.url));
+  for (const p of byAgent.filter((p) => !p.linked)) {
+    flags.push(`${p.source.url} was found by search and is not linked from the project's own pages; check that it is official. The review's reason: ${md(p.why)}`);
+  }
+  let fetched = [...submitted.map((p) => p.source), ...researched.found.map((p) => p.source)];
+  let result = fetched.length ? await classify(config, submission, fetched) : undefined;
+  const invalid = (result?.sources ?? []).filter(
+    (s) => byAgent.some((p) => p.source.url === s.url) && (s.publisher === 'third-party' || !s.isPolicy),
+  );
+  if (invalid.length) {
+    // Rate again without them, so nothing on the site comes from a page that is not the project's own policy.
+    for (const s of invalid) flags.push(`Left out ${s.url}, which the review found: ${s.publisher === 'third-party' ? 'not published by the project' : 'not a policy'}. ${md(s.note)}`);
+    fetched = fetched.filter((f) => !invalid.some((s) => s.url === f.url));
+    result = fetched.length ? await classify(config, submission, fetched) : undefined;
+  }
+  const findings = {
+    found: byAgent.map((p) => p.source.url).filter((url) => fetched.some((f) => f.url === url)),
+    notes: researched.notes,
+  };
+  const review: Review = result
+    ? decide(submission, result, findings)
+    : {
+        submission,
+        problems: [
+          `The review could not find a published AI or contribution policy for ${md(submission.name)}. Please add links to the project's own policy pages under "${FIELDS.sources}" or in a comment.`,
+        ],
+        flags: [],
+        research: findings,
+      };
+  review.flags.unshift(...flags);
   if (review.problems.length) {
     await finish(review);
   } else {
+    result = review.classification!;
     const date = today();
     for (const f of fetched) await writeSnapshot(slug, f.url, f.text);
     await writeProject(slug, {

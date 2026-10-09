@@ -82,7 +82,10 @@ const p = 'mt-4';
 
     <h2 class={h2}>Where the data comes from</h2>
     <ol class="list-decimal space-y-2 pl-5">
-      <li>Someone points us at a project’s policy: a <code>CONTRIBUTING</code> file, a code of conduct, a docs page.</li>
+      <li>
+        Someone suggests a project, ideally with links to its policy: a <code>CONTRIBUTING</code> file, a code of
+        conduct, a docs page. An AI agent also searches for the project’s AI rules, and only uses official pages: the project’s own site, docs, repository or announcements, never news, blogs by others or social media.
+      </li>
       <li>We save a plain-text snapshot of each source in the repository, so every change is visible in git.</li>
       <li>
         An AI model reads the full text and fills in the ratings. Each rating must come with a quote, and a script
@@ -97,8 +100,8 @@ const p = 'mt-4';
 
     <h2 class={h2} id="add">Add or fix a project</h2>
     <p>
-      <a href={`${REPO_URL}/issues/new?template=add-project.yml`}>Open an “Add a project” issue</a> with links to
-      the project’s policy. Spotted a mistake? Use the “Suggest a correction” link on any project page.
+      <a href={`${REPO_URL}/issues/new?template=add-project.yml`}>Open an “Add a project” issue</a>, with links to
+      the project’s policy if you know them. Spotted a mistake? Use the “Suggest a correction” link on any project page.
     </p>
 
     <h2 class={h2}>For AI agents</h2>
