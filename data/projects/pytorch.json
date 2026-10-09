@@ -1,0 +1,76 @@
+{
+  "name": "PyTorch",
+  "description": "Tensors and dynamic neural networks in Python with strong GPU acceleration.",
+  "category": "framework",
+  "homepage": "https://pytorch.org/",
+  "repo": "https://github.com/pytorch/pytorch",
+  "summary": "AI tools are supported for issues, pull requests, reviews and comments. A human must understand and take responsibility for the work, and AI-generated text must be clearly labelled and paired with human commentary. Fully autonomous agents are not accepted.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We support the use of AI tools to help prepare issues, pull requests, reviews, or comments.",
+      "sourceUrl": "https://github.com/pytorch/pytorch/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "All contributions should involve a human who understands and can take responsibility for the work produced with AI assistance.",
+      "sourceUrl": "https://github.com/pytorch/pytorch/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "We do not accept contributions created by fully autonomous agents",
+      "sourceUrl": "https://github.com/pytorch/pytorch/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "AI-generated content in comments, issues, or PRs must be clearly disclosed and contained",
+      "sourceUrl": "https://github.com/pytorch/pytorch/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI-generated content must be accompanied by human commentary explaining its relevance.",
+      "sourceUrl": "https://github.com/pytorch/pytorch/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Please do not respond to comments+questions by pasting raw or lightly reviewed AI-generated text.",
+      "sourceUrl": "https://github.com/pytorch/pytorch/blob/main/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/pytorch/pytorch/blob/main/AI_POLICY.md",
+      "title": "PyTorch AI Policy",
+      "hash": "a07649d2cb144ead3e4eec5a6d15bd67dd3699f2bd6bae0bb9a62773923b1ce0",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

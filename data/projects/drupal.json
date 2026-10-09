@@ -1,0 +1,77 @@
+{
+  "name": "Drupal",
+  "description": "An open source content management framework.",
+  "category": "application",
+  "homepage": "https://www.drupal.org/",
+  "repo": "https://git.drupalcode.org/project/drupal",
+  "summary": "AI tools may be used if contributors fully verify the code, can explain every decision, ensure GPL compatibility and disclose significant AI-generated code or text. AI output should not be pasted verbatim into issues and comments; contributors should use their own words.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "If you use an AI tool to generate a significant portion of the code or text you are submitting, you must disclose it.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You are fully responsible for the integrity of your submission.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You are solely responsible for ensuring that any AI-generated code you submit does not violate third-party copyrights and is fully compatible with the Drupal project's GPL license.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Using AI-generated issue summaries and comments can place an undue burden on maintainers.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not just copy-paste the output verbatim.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Use your own words and be concise.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal",
+      "title": "Policy on the use of AI when contributing to Drupal",
+      "hash": "034451a933fa0488f00161a5172425a78e97e891f10492cfb2e306cf8bc20dbb",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

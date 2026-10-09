@@ -1,0 +1,41 @@
+{
+  "name": "Tusky",
+  "description": "An Android client for Mastodon.",
+  "category": "application",
+  "homepage": "https://tusky.app/",
+  "repo": "https://codeberg.org/tusky/Tusky",
+  "summary": "Tusky does not want any contributions, code or otherwise, created with generative AI tools.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Tusky does not want any contributions, code or otherwise, created with so-called generative AI tools.",
+      "sourceUrl": "https://codeberg.org/tusky/Tusky/src/branch/develop/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://codeberg.org/tusky/Tusky/src/branch/develop/CONTRIBUTING.md",
+      "title": "Contributing to Tusky",
+      "hash": "e04bdec2bc7dadb62b34ba946a525cff83991e61d52a921e13f3db1529681bdb",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

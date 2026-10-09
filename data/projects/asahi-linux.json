@@ -1,0 +1,51 @@
+{
+  "name": "Asahi Linux",
+  "description": "A project porting Linux to Apple Silicon Macs.",
+  "category": "distribution",
+  "homepage": "https://asahilinux.org/",
+  "repo": "https://github.com/AsahiLinux",
+  "summary": "Generative AI tooling is broadly forbidden for material contributions, citing ethical concerns and the clean-room rules of reverse engineering. An LLM-drafted GitHub issue may simply be closed, and concealing extensive LLM use leads to an immediate ban.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Due to these legal and ethical issues, we broadly forbid the use of generative AI tooling for material contributions to Asahi Linux.",
+      "sourceUrl": "https://asahilinux.org/llm-policy/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "A GitHub issue drafted by an LLM may simply be closed with reference to this policy.",
+      "sourceUrl": "https://asahilinux.org/llm-policy/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Due to these legal and ethical issues, we broadly forbid the use of generative AI tooling for material contributions to Asahi Linux.",
+      "sourceUrl": "https://asahilinux.org/llm-policy/"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://asahilinux.org/llm-policy/",
+      "title": "Asahi Linux Generative AI (LLM) Policy",
+      "hash": "f002c0c6e99f484aacba279ca30c691e1ae88738bc2e827ea2b6c316a7a742c7",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

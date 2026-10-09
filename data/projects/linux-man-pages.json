@@ -1,0 +1,51 @@
+{
+  "name": "Linux man-pages",
+  "description": "Manual pages documenting the Linux kernel and C library interfaces.",
+  "category": "application",
+  "homepage": "https://www.kernel.org/doc/man-pages/",
+  "repo": "https://git.kernel.org/pub/scm/docs/man-pages/man-pages.git",
+  "summary": "Any content created or derived with the help of AI tools is forbidden, including output of AI linters, static analyzers and summarizers. Only accessibility tools such as screen readers and text-to-speech are allowed.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "It is expressly forbidden to contribute to this project any content that has been created or derived with the assistance of AI tools.",
+      "sourceUrl": "https://git.kernel.org/pub/scm/docs/man-pages/man-pages.git/plain/CONTRIBUTING.d/ai"
+    },
+    {
+      "dimension": "issues",
+      "quote": "For example, AI linters, AI static analyzers, and AI tools that summarize input are forbidden.",
+      "sourceUrl": "https://git.kernel.org/pub/scm/docs/man-pages/man-pages.git/plain/CONTRIBUTING.d/ai"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "It is expressly forbidden to contribute to this project any content that has been created or derived with the assistance of AI tools.",
+      "sourceUrl": "https://git.kernel.org/pub/scm/docs/man-pages/man-pages.git/plain/CONTRIBUTING.d/ai"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://git.kernel.org/pub/scm/docs/man-pages/man-pages.git/plain/CONTRIBUTING.d/ai",
+      "title": "man-pages AI policy",
+      "hash": "c8b866a69ee3504cf39bed3e7edd71b4ccb9b9153bdd2a68671d26f736e8f9bb",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

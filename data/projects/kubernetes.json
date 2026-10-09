@@ -1,0 +1,60 @@
+{
+  "name": "Kubernetes",
+  "description": "A system for automating deployment, scaling and management of containerized applications.",
+  "category": "tool",
+  "homepage": "https://kubernetes.io/",
+  "repo": "https://github.com/kubernetes/kubernetes",
+  "summary": "AI tools may help write a PR if the author understands every change, verifies it first and discloses AI use in the PR description. Large AI-generated PRs, AI-generated commit messages and AI co-author trailers are not allowed, and review comments must be answered without AI.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Using AI tools to help write your PR is acceptable, but as the author, you are responsible for understanding every change. If you used AI tools in preparing your PR, you must disclose this in the description of your PR.",
+      "sourceUrl": "https://www.kubernetes.dev/docs/guide/pull-requests/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Large AI generated PRs and AI generated commit messages are not allowed.",
+      "sourceUrl": "https://www.kubernetes.dev/docs/guide/pull-requests/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not leave the first review of AI generated changes to the reviewers.",
+      "sourceUrl": "https://www.kubernetes.dev/docs/guide/pull-requests/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "When responding to review comments, you must do so without relying on AI tools.",
+      "sourceUrl": "https://www.kubernetes.dev/docs/guide/pull-requests/"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.kubernetes.dev/docs/guide/pull-requests/",
+      "title": "Kubernetes Pull Request Process",
+      "hash": "4d86d250ab34a8c3e222f87104c8351d977b0cd649c15bdf95f63ef1e9c7f7b8",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

@@ -1,0 +1,60 @@
+{
+  "name": "GCC",
+  "description": "The GNU Compiler Collection.",
+  "category": "language",
+  "homepage": "https://gcc.gnu.org/",
+  "repo": "https://gcc.gnu.org/git.html",
+  "summary": "Legally significant contributions that include or derive from LLM-generated content are declined, except for test cases; small LLM-generated changes may be accepted if clearly marked with Assisted-by. AI may be used for research, bug finding, review and debugging if its output stays out of the contribution.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "For the time being, the GNU Compiler Collection (GCC) policy is to decline any legally significant contributions which include LLM-generated content or are derived from LLM-generated content.",
+      "sourceUrl": "https://gcc.gnu.org/ai-policy.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The commit message for any contribution of LLM-generated content must include an “Assisted-by:” tag.",
+      "sourceUrl": "https://gcc.gnu.org/ai-policy.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "This policy does not apply to a contributor's use of AI for the purposes of research, analysis, bug discovery and reporting (output should not be sent verbatim without due consideration), patch review (supporting human review, not replacing it) and debugging, so long as the output is not included in the contributions to the project.",
+      "sourceUrl": "https://gcc.gnu.org/ai-policy.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "This policy does not apply to a contributor's other uses of AI including the use of these tools to enable them to work with their own computing devices e.g. screen readers, text-to-speech, direct translations, spelling or grammar assistance, where the contributor verifies the output of the tool.",
+      "sourceUrl": "https://gcc.gnu.org/ai-policy.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://gcc.gnu.org/ai-policy.html",
+      "title": "GCC AI Policy",
+      "hash": "94db0f43ae369a2e4c52a4573cfd6e6854216ccd23755f174634be7d9e75062b",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "GIMP",
+  "description": "The GNU Image Manipulation Program.",
+  "category": "application",
+  "homepage": "https://www.gimp.org/",
+  "repo": "https://gitlab.gnome.org/GNOME/gimp",
+  "summary": "Contributors without a developer role must declare in every merge request that it contains no AI-generated content: no code, text or images, only human-created work.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "I declare this MR have no AI-generated content (neither code nor text, images…), only human created works",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/gimp/-/blob/master/.gitlab/merge_request_templates/default.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "I declare this MR have no AI-generated content (neither code nor text, images…), only human created works",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/gimp/-/blob/master/.gitlab/merge_request_templates/default.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://gitlab.gnome.org/GNOME/gimp/-/blob/master/.gitlab/merge_request_templates/default.md",
+      "title": "GIMP merge request template",
+      "hash": "b7fa8ef426a5042e96547af543dc897c73b0d2fec4e44634d2350cb9558aafa7",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "GDAL",
+  "description": "A translator library for raster and vector geospatial data formats.",
+  "category": "library",
+  "homepage": "https://gdal.org/",
+  "repo": "https://github.com/OSGeo/gdal",
+  "summary": "LLMs may only be used as improved autocompletion or for mechanical refactoring; humans must be the primary authors. Vibe-coded contributions and agent submissions are banned, and any LLM use in code, tickets or commit messages must be labelled.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "minor-assist-only",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "LLMs may only be used as an improved auto-completion mechanism, or for repeated tasks (mechanical refactoring) that could potentially be completed with a deterministic algorithm.",
+      "sourceUrl": "https://gdal.org/en/stable/community/ai_tool_policy.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Submission of vibe-coded contributions is banned.",
+      "sourceUrl": "https://gdal.org/en/stable/community/ai_tool_policy.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Human-coordinated or uncoordinated (OpenClaw, etc) use of agents for submission of contributions to the GDAL repository is banned.",
+      "sourceUrl": "https://gdal.org/en/stable/community/ai_tool_policy.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Any LLM usage must be indicated by ticket label, comment, or commit message indication and account for what was written by whom/what.",
+      "sourceUrl": "https://gdal.org/en/stable/community/ai_tool_policy.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "All contributions including code, ticket comments, and commit messages should be fully understood by the author(s) submitting them to the project.",
+      "sourceUrl": "https://gdal.org/en/stable/community/ai_tool_policy.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://gdal.org/en/stable/community/ai_tool_policy.html",
+      "title": "GDAL LLM tool policy",
+      "hash": "b256148e3bda7e4a7e60cb5aa993f59d42b0325a9889f42aef4080e58d0e7264",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

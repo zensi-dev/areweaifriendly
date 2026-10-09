@@ -1,0 +1,46 @@
+{
+  "name": "Krita",
+  "description": "A free and open source digital painting application.",
+  "category": "application",
+  "homepage": "https://krita.org/",
+  "repo": "https://invent.kde.org/graphics/krita",
+  "summary": "Krita has a moratorium on AI tools in development because its community has not reached consensus; until a decision is made, using AI when working on Krita is not allowed. The moratorium was set to run until October 2026.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Until we make a decision, the use of AI when working on Krita is not allowed.",
+      "sourceUrl": "https://invent.kde.org/graphics/krita/-/raw/master/README.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "we have decided to put a moratorium on the use of these tools until October 2026.",
+      "sourceUrl": "https://invent.kde.org/graphics/krita/-/raw/master/README.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://invent.kde.org/graphics/krita/-/raw/master/README.md",
+      "title": "Krita README: AI Moratorium",
+      "hash": "0fecc672cc1817e9c6881792fdf2255e97b0bdcd610b34371442b1a3d9056db2",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

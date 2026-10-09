@@ -1,0 +1,68 @@
+{
+  "name": "Requests",
+  "description": "A simple HTTP library for Python.",
+  "category": "library",
+  "homepage": "https://requests.readthedocs.io/",
+  "repo": "https://github.com/psf/requests",
+  "summary": "LLM tools may be used, but a human must hold the copyright, understand the code and take full technical and legal responsibility. LLMs may not be co-authors, unsupervised agents are banned, LLM-generated review comments are not wanted, and summaries must be fully fact-checked.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "license-compliance",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "If you used LLM tools during development, you may still submit – but you must remove any LLM co-author tags and take full ownership of every line.",
+      "sourceUrl": "https://github.com/psf/requests/blob/main/.github/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Every contribution has to be backed by a human who unequivocally owns the copyright for all changes.",
+      "sourceUrl": "https://github.com/psf/requests/blob/main/.github/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Absolutely no unsupervised agentic tools like OpenClaw.",
+      "sourceUrl": "https://github.com/psf/requests/blob/main/.github/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not post LLM-generated review comments – we can prompt LLMs ourselves should we desire their wisdom.",
+      "sourceUrl": "https://github.com/psf/requests/blob/main/.github/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not post summaries unless you've fact-checked them and take responsibility for 100% of their content.",
+      "sourceUrl": "https://github.com/psf/requests/blob/main/.github/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/psf/requests/blob/main/.github/AI_POLICY.md",
+      "title": "Requests Generative AI / LLM Policy",
+      "hash": "2b0d72954552cb354fc137c40ba8dd255672d9295303fb1af6ec90bb1d98faad",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

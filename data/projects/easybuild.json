@@ -1,0 +1,65 @@
+{
+  "name": "EasyBuild",
+  "description": "A software build and installation framework for HPC systems.",
+  "category": "tool",
+  "homepage": "https://easybuild.io/",
+  "repo": "https://github.com/easybuilders/easybuild",
+  "summary": "Contributors must declare any AI use, naming the tool, model and extent, and keep a human in the loop. This covers pull requests, issues, documentation, chat messages, mailing list posts and talks.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Declare when they have used AI in a contribution;",
+      "sourceUrl": "https://docs.easybuild.io/policies/ai/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Keep a \"human in the loop\" when using AI.",
+      "sourceUrl": "https://docs.easybuild.io/policies/ai/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "GitHub issues;",
+      "sourceUrl": "https://docs.easybuild.io/policies/ai/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Messages in EasyBuild Slack;",
+      "sourceUrl": "https://docs.easybuild.io/policies/ai/"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://docs.easybuild.io/policies/ai/",
+      "title": "EasyBuild AI Policy",
+      "hash": "e4ef2212ba5d6e3043c7d77a1c13e7ecbe3cc3edcaf94f65047d2a58b268c778",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

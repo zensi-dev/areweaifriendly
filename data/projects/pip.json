@@ -1,0 +1,68 @@
+{
+  "name": "pip",
+  "description": "The package installer for Python.",
+  "category": "tool",
+  "homepage": "https://pip.pypa.io/",
+  "repo": "https://github.com/pypa/pip",
+  "summary": "LLM tools may be used, but a human must own the copyright, understand the code and take full responsibility for every line. LLMs may not be listed as co-authors and unsupervised agents are banned. LLM-generated comments must be accurate and stood behind.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "license-compliance",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "If you used LLM tools during development, you may still submit – but you must remove any LLM co-author tags and take full ownership of every line.",
+      "sourceUrl": "https://github.com/pypa/pip/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Every contribution has to be backed by a human who unequivocally owns the copyright for all changes.",
+      "sourceUrl": "https://github.com/pypa/pip/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Absolutely no unsupervised agentic tools like OpenClaw.",
+      "sourceUrl": "https://github.com/pypa/pip/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "LLM-generated comments must be concise and accurate, and you must be prepared to stand by them.",
+      "sourceUrl": "https://github.com/pypa/pip/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "When using these tools, it's your responsibility to ensure that the output is correct, and useful.",
+      "sourceUrl": "https://github.com/pypa/pip/blob/main/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/pypa/pip/blob/main/AI_POLICY.md",
+      "title": "pip Generative AI / LLM Policy",
+      "hash": "4ccabb72cc98049cfc089026e44ea063c9976fd5114f811345fb7e11398bb76b",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

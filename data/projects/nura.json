@@ -1,0 +1,56 @@
+{
+  "name": "Nura (postmarketOS)",
+  "description": "A Linux distribution for phones and other mobile devices, formerly called postmarketOS.",
+  "category": "distribution",
+  "homepage": "https://nura.eco/",
+  "repo": "https://gitlab.postmarketos.org/postmarketOS/pmaports",
+  "summary": "Generative AI tools are forbidden: contributions fully or partly created with them are not allowed, nor is recommending them to other community members. The project cites ethical concerns and the extra burden such contributions put on maintainers.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We forbid the use of generative AI tools in Nura.",
+      "sourceUrl": "https://docs.postmarketos.org/policies-and-processes/development/ai-policy.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Submitting contributions fully or in part created by generative AI tools to Nura.",
+      "sourceUrl": "https://docs.postmarketos.org/policies-and-processes/development/ai-policy.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Submitting contributions fully or in part created by generative AI tools to Nura.",
+      "sourceUrl": "https://docs.postmarketos.org/policies-and-processes/development/ai-policy.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Submitting contributions fully or in part created by generative AI tools to Nura.",
+      "sourceUrl": "https://docs.postmarketos.org/policies-and-processes/development/ai-policy.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://docs.postmarketos.org/policies-and-processes/development/ai-policy.html",
+      "title": "Nura AI Policy",
+      "hash": "66498b0260fdf0a0084c5f499626344172185ccb0342eb7738dce774a898d4c1",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

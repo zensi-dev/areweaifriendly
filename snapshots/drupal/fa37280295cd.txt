@@ -1,0 +1,151 @@
+Advertising sustains the DA. Ads are hidden for members. Join today
+
+### On this page
+
+- Why this policy exists
+
+- The core principle: you are responsible for what you submit
+
+- Copyright and licensing
+
+- Examples of contributions that do not meet this standard
+
+- Disclosure
+
+- Enforcement
+
+- This policy and the Drupal.org Terms of Service
+
+- Frequently asked questions
+
+- For Google Summer of Code contributors
+
+## Issue procedures and etiquette
+
+- Following issues and getting notifications
+
+- Getting an issue addressed sooner
+
+- Granting credit to issue contributors
+
+- Issue etiquette
+
+- Issue scope guidelines for Drupal core issues
+
+- Maintaining and responding to issues for a project
+
+- Policy on the use of AI when contributing to Drupal
+
+- Reporting a security issue
+
+- Reporting a usability issue
+
+- Reporting spam
+
+- Searching for issues
+
+- Templates for comments
+
+# Policy on the use of AI when contributing to Drupal
+
+ Last updated on
+ 5 October 2026
+
+## Why this policy exists
+
+AI tools make it easy to produce a lot of code and text very quickly. This creates pressure on the people who review and maintain Drupal. This policy is not about which specific tools you use. It is about making sure every contribution is something a real person stands behind.
+
+Using AI-generated issue summaries and comments can place an undue burden on maintainers. You are responsible for the words and code you post to an issue. AI tools often produce overly verbose output, making straightforward issues difficult to understand.
+
+- Do not just copy-paste the output verbatim.
+
+- Use your own words and be concise.
+
+- When the full output is helpful, you can provide it as an attachment.
+
+Most importantly, no matter whether you are using AI or not, you must be a good listener and collaborator with the project maintainer, original issue reporter, and other contributors on the issue. A "drive-by" contribution where you don't follow up on feedback, or ignore previous discussion on the issue, will likely result in an account ban.
+
+## The core principle: you are responsible for what you submit
+
+Understanding an issue and collaboratively finding the right solution is a critical part of contributing. Writing the code is simply the execution of that solution, and it will only be successful when built on that solid foundation. AI tools do not change this. If a reviewer asks you to explain a decision or a piece of logic, you must be able to answer. Saying "the AI wrote it" is grounds for immediately closing the contribution.
+
+You are fully responsible for the integrity of your submission. AI tools can hallucinate nonexistent software packages (risking supply chain attacks), introduce subtle security vulnerabilities, or introduce unhelpful refactors and new code that puts an undue burden on others to review. You must thoroughly verify all dependencies, logic, and security implications of AI-generated code before submitting.
+
+## Copyright and licensing
+
+AI models can occasionally output verbatim code or text from other copyrighted projects. You are solely responsible for ensuring that any AI-generated code you submit does not violate third-party copyrights and is fully compatible with the Drupal project's GPL license. Ignorance of the code's origin is not an excuse for licensing violations, all contributions must be compatible with the GPL, including all relevant copyright regulations and restrictions in your jurisdiction.
+
+## Examples of contributions that do not meet this standard
+
+These are patterns that create unnecessary work for maintainers and reviewers:
+
+- Dumping code into an issue without reading the thread or acknowledging previous attempts to solve the problem.
+
+- Posting a merge request (MR) where automated checks fail, and leaving it for others to fix.
+
+- Adding AI-generated code to someone else's existing MR without their knowledge and without disclosure.
+
+- Using an AI to dump a large patch and then abandoning the issue when human feedback is requested.
+
+- Submitting code that ignores the conclusions of prior architectural discussions.
+
+- Proposing a full rewrite of a module based on an AI review, without first engaging the existing maintainers.
+
+- Using AI to generate issue summaries, comments, or reviews that lack independently verified technical insights (for example, using an AI tool to summarize a thread simply to gain contribution credits).
+
+- Posting issue comments, MR descriptions, or forum posts that are not-reviewed AI output.
+
+## Disclosure
+
+Transparency builds trust. If you use an AI tool to generate a significant portion of the code or text you are submitting, you must disclose it. You must disclose this use regardless of how thoroughly you reviewed the output.
+
+What is significant? Generating entire functions, classes, architectural scaffolding, or extensive documentation blocks requires disclosure. Minor uses, such as standard single-line autocomplete suggestions or basic syntax corrections, do not require disclosure.
+
+When disclosing, please use existing issue or merge request templates if they include a designated AI disclosure section. If no template is available, simply append a clear, human-written statement to the end of your issue summary, comment, or MR description.
+
+AI-Generated: Yes (Used GitHub Copilot to help generate the boilerplate for this feature).
+
+AI was used in the drafting of this policy, to help review for clarity, clean up language, and check grammar.
+
+## Enforcement
+
+Contributors who repeatedly violate this policy by submitting unexplained, untested, or disruptive AI-generated code or issue comments will face consequences.
+
+Our goal on Drupal.org is to educate first whenever possible. However, in some cases, violations may require a temporary ban so we can provide the necessary guidance and ensure it has been read and understood before restoring the account.
+
+In other situations, when contributors show good intent and respond constructively to maintainers and the community, a temporary ban may not be necessary. In these cases, we will focus on education to help them align with community standards.
+
+Finally, when there is clear disregard for these policies or disrespect toward maintainers or other contributors, a permanent ban may be issued.
+
+We recognize that Drupal Association staff and Drupal.org site moderators have limited capacity to keep up with the volume of these contributions. We appreciate the community’s patience as we continue to scale our education and moderation efforts.
+
+## This policy and the Drupal.org Terms of Service
+
+This is a contribution policy. It defines expectations for contributor behavior and can be updated through the normal community governance process.
+
+The Terms of Service (TOS), by contrast, is a legal framework that governs all use of Drupal.org and can only be changed by the Drupal Association.
+
+The intent is to establish this policy first as part of our community norms and issue queue etiquette, and then reinforce it through updates to the Drupal.org Terms of Service.
+
+One area the TOS will need to address more explicitly is the use of automated agents acting on behalf of contributors. As AI tools become more capable, clearer rules in this area will be necessary.
+
+## Frequently asked questions
+
+### For Google Summer of Code contributors
+
+GSOC is meant to be a learning experience. We would strongly recommend not using AI so that you learn the foundations you need. This will serve you better later even if you do use AI, because you will understand how to prompt and interpret it.
+ We want to ensure that your contributions follow the best practices we have established as a community, so that you are building good relationships with the maintainers of the projects you are contributing to.
+
+If GSoC contributors choose to use AI for learning or drafting assistance, they must still follow this policy on disclosure, verification, and personal responsibility for all submitted work.
+
+## Help improve this page
+
+ Page status: No known problems
+
+You can:
+
+- Log in, click Edit, and edit this page
+
+- Log in, click Discuss, update the Page status value, and suggest an improvement
+
+- Log in and create a Documentation issue with your suggestion

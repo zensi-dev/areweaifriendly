@@ -1,0 +1,1159 @@
+Skip Quicknav
+
+- Blog
+
+- Micronews
+
+- Planet
+
+- Wiki
+
+Debian Voting Information / 2026 / General Resolution: LLM usage in Debian
+
+- Home
+
+- Home Vote Page
+
+- How To
+
+- Submit a Proposal
+
+- Amend a Proposal
+
+- Follow a Proposal
+
+- Decided
+
+- General Resolution: LLM usage in Debian
+
+- Debian Project Leader Elections 2026
+
+- Debian Project Leader Elections 2025
+
+- Debian Project Leader Elections 2024
+
+- General Resolution: Statement about the EU Legislation "Cyber Resilience Act and Product Liability Directive"
+
+- Debian Project Leader Elections 2023
+
+- General Resolution: non-free firmware
+
+- Debian Project Leader Elections 2022
+
+- General Resolution: Voting secrecy
+
+- General Resolution: Change the resolution process
+
+- General Resolution: Statement regarding Richard Stallman's readmission to the FSF board
+
+- Debian Project Leader Elections 2021
+
+- Debian Project Leader Elections 2020
+
+- General Resolution: Init systems and systemd
+
+- Debian Project Leader Elections 2019
+
+- Debian Project Leader Elections 2018
+
+- Debian Project Leader Elections 2017
+
+- General Resolution: Declassifying debian-private
+
+- General Resolution: Replace "Chairman" with "Chair" throughout the Debian Constitution
+
+- General Resolution: Declassifying debian-private
+
+- Debian Project Leader Elections 2016
+
+- General Resolution: Update Standard Resolution Procedure
+
+- Debian Project Leader Elections 2015
+
+- General Resolution: Limiting the term of the technical committee members
+
+- General Resolution: init system coupling
+
+- General Resolution: code of conduct
+
+- Debian Project Leader Elections 2014
+
+- Debian Project Leader Elections 2013
+
+- General Resolution: Diversity statement
+
+- Debian Project Leader Elections 2012
+
+- Debian Project Leader Elections 2011
+
+- General Resolution: Debian project members
+
+- Debian Project Leader Elections 2010
+
+- Debian Project Leader Elections 2009
+
+- General Resolution: Lenny and resolving DFSG violations
+
+- General Resolution: Project membership procedures
+
+- Debian Project Leader Elections 2008
+
+- Constitutional amendment: reduce the length of DPL election process
+
+- General Resolution: Endorse the concept of Debian Maintainers
+
+- General Resolution: Altering package upload rules
+
+- Debian Project Leader Elections 2007
+
+- General Resolution: Handling source-less firmware in the Linux kernel
+
+- General Resolution: Re-affirm support to the Debian Project Leader
+
+- General Resolution: Recall the project leader
+
+- General Resolution: Position statement clarifying DFSG #2
+
+- Constitutional Amendment General Resolution: Handling assets for the project
+
+- Debian Project Leader Elections 2006
+
+- General Resolution: Why the GNU Free Documentation License is not suitable for Debian main
+
+- General Resolution: Declassification of debian-private list archives
+
+- Debian Project Leader Elections 2005
+
+- General Resolution: Sarge Release Schedule in view of GR 2004-003
+
+- General Resolution: Editorial amendments to the social contract
+
+- General Resolution: Status of the non-free section
+
+- Debian Project Leader Elections 2004
+
+- Constitutional Amendment: Disambiguation of Section 4.1.5
+
+- Constitutional Amendment: Condorcet/Clone Proof SSD Voting Method
+
+- Debian Project Leader Elections 2003
+
+- Debian Project Leader Elections 2002
+
+- Leader Elections 2001
+
+- Leader Elections 2000
+
+- Swap Logos
+
+- New Logo
+
+- Logo License
+
+- Leader Elections 1999
+
+- Constitution
+
+- Withdrawn
+
+- General Resolution: Interpretation of DFSG on Artificial Intelligence (AI) Models
+
+- General Resolution: tag2upload
+
+- General Resolution: Update Standard Resolution Procedure
+
+- General Resolution: Sponsorship requirements for General Resolutions
+
+- General Resolution: Force AMD64 architecture into Sarge
+
+- IRC as a Debian communication channel
+
+- Other
+
+- Superseded: Constitutional amendment: Smith/Condorcet vote tallying
+
+- Superseded: Constitutional amendment: alternate disambiguation of 4.1.5
+
+- Superseded: Constitutional amendment: disambiguation of 4.1.5
+
+- Superseded: Non-free Archive Removal
+
+# General Resolution: LLM usage in Debian
+
+- Time Line
+
+- Proposal A Proposer
+
+- Proposal A Seconds
+
+- Proposal A
+
+- Proposal B Proposer
+
+- Proposal B Seconds
+
+- Proposal B
+
+- Proposal C Proposer
+
+- Proposal C Seconds
+
+- Proposal C
+
+- Proposal D Proposer
+
+- Proposal D Seconds
+
+- Proposal D
+
+- Proposal E Proposer
+
+- Proposal E Seconds
+
+- Proposal E
+
+- Proposal F Proposer
+
+- Proposal F Seconds
+
+- Proposal F
+
+- Proposal G Proposer
+
+- Proposal G Seconds
+
+- Proposal G
+
+- Proposal H Proposer
+
+- Proposal H Seconds
+
+- Proposal H
+
+- Quorum
+
+- Data and Statistics
+
+- Majority Requirement
+
+- Outcome
+
+### Time Line
+
+Discussion Period:
+
+2026-07-23
+
+2026-08-13
+
+Voting period:
+
+Saturday 2026-08-15 00:00:00 UTC
+
+Friday 2026-08-28 23:59:59 UTC
+
+ The discussion period has been extended [mail]
+
+### Proposal A Proposer
+
+Matthias Geiger [werdahias@debian.org] [text of proposal]
+
+### Proposal A Seconds
+
+- Johannes Schauer Marin Rodrigues [josch@debian.org] [mail]
+
+- Antoine Le Gonidec [vv221@debian.org] [mail]
+
+- Simon Richter [sjr@debian.org] [mail]
+
+- David Bremner [bremner@debian.org] [mail]
+
+- Pierre-Elliott Bécue [peb@debian.org] [mail]
+
+- Ian Jackson [iwj@debian.org] [mail]
+
+- Amin Bandali [bandali@debian.org] [mail]
+
+- Thorsten Glaser [tg@debian.org] [mail]
+
+### Proposal A
+
+### Choice 1: No LLM contributions to Debian via Social Contract
+
+#### Preamble
+
+ This proposal aims to expressly forbid any contributions to Debian written with the use or assistance of large language models (LLMs) or other generative AI tools.
+
+The scope of this GR is (non-exhaustive):
+
+- Debian source packages
+
+- Official Debian project software, such as lintian
+
+- Debian web resources
+
+- Documentation and translations added by Debian contributors
+
+- Official communication from Debian
+
+It does not include:
+
+- Upstream projects using LLMs for development
+
+- AI-related software
+
+- Upstream patches/security fixes etc.
+
+#### Rationale
+
+Debian has a well-earned reputation for stability. This stability is crucial to Debian's position in the free software ecosystem. It is our belief that widespread LLM usage comes from the "move fast, and break things" attitude that, while common in many parts of this industry, is contrary to what makes Debian Debian, and is inappropriate for Debian contributors.
+
+In practical terms, LLM usage raises the following concerns:
+
+##### 1. Copyright
+
+ LLM output has very unclear legal status: it may be possible to copyright on its own merits, or not; it may be affected by all of the licenses and copyrights in the training data, or not. Debian Policy and the DFSG require absolute clarity for licensing and copyright[1][2]. Software and other contributions written conventionally by humans with unclear copyright or license status are not allowed in Debian; LLM output should not have a special exception to this.
+
+##### 2. Quality
+
+ LLM output has many well-known problems with accuracy.[3][4][5] A LLM can never "know" if its output is correct since it merely produces syntactically likely combinations of the training data. In some environments this is good enough. In Debian, it is not. For instance, in packaging, each Debian source package is unique. Since packaging syntax and best practices have changed over time, a LLM-produced package will have a mixture of contents spanning the age of the archive, with watch files that do not work, overrides out of context, imaginary copyright, and will generally be unfit for upload. A seasoned Debian contributor with packaging expertise may find some limited usefulness here, but a new contributor cannot, and would not know how to fix it. These same quality and accuracy concerns apply clearly to all of the areas listed in the scope of this proposal above. If Debian were a closed organization comprising only domain experts who never leave, this might not be an issue; however,
+
+##### 3. Community
+
+ Debian is a project that is more than just code: it is a community built on shared interests in free software and solving technical problems. Debian intentionally grows this community through many means, and new contributors are always encouraged to join. Allowing LLM contributions breaks this. New contributors submitting LLM output for review places an unnecessary strain on the reviewer, which can lead to burnout. Furthermore, LLM-dependent new contributors do not actually learn and understand the details of Debian packaging or processes, so they cannot come to replace a former burned out DD.
+
+##### 4. Ethics
+
+ LLM companies directly hurt the free software community as whole by scraping the whole web for training data without any regard for license, copyright, or even established conventions such as robots.txt.[6] This has had a major negative impact on Debian's public web resources, effectively a large scale and perpetual Denial of Service attack on sites that many users rely on. As a consequence parts of our infrastructure were not reachable at all, and JS-based checks had to be enabled. Many other projects were similarly affected. Furthermore, LLM training consumes a staggering amount of resources[7], and the user verification systems that we have been forced to implement as protection waste resources as well. This is blatant disregard for the internet as a public resource, wastes system administrator time, and although individual LLM sessions do not directly use massive resources or DoS the public web, the fact that they can be used at all is a direct result of these unethical behaviours by the LLM companies.
+
+ Debian has a Social Contract. [8] Our priorities are our users and free software. Debian is Stable. [9] Users and organizations choose Debian because it is reliable and secure.
+
+ Debian is not here to generate as much code as possible requiring manual review by a shrinking number of human volunteers, or to package every piece of software, or to rush new features, but these are what LLMs are used for.
+
+ In conclusion, allowing LLM contributions is contrary to the social contract and the common cause of creating a free operating system with a focus on quality and stability.
+
+#### Proposal
+
+ In the interest of not eroding Debian's reputation or further damaging the community, LLM-assisted contributions should be prohibited from inclusion in Debian.
+
+Though our position is that LLM contributions are contrary to documents already ratified by Debian, in order to remove all doubt, we propose the following addition to the Social Contract:
+
+6. Works Created through the use of Large Language Models (LLMs)
+
+We will not
+allow direct contributions to Debian written with the use or assistance of large
+language models (LLMs) or other generative AI tools. Direct contributions are
+defined as packaging, native Debian software like lintian, documentation and
+translations written by Debian contributors, and official Debian web resources,
+etc. Other categories such as upstream projects written with LLM assistance may
+be included at a later date. This ensures that Debian remains a stable, trusted,
+and reliable operating system, and protects the interests of the Debian
+volunteers who make it possible.
+
+#### Possible Issues
+
+ Other projects exploring similar decisions have elicited a common reply: "How will you enforce a ban on LLM contributions?" While enforcement could be a challenge, this is a statement of intent by the Debian community, and we trust this community to adhere to it in good faith.
+
+#### Citations
+
+ [1] https://www.debian.org/doc/debian-policy/ch-archive.html#copyright-considerations
+ [2] https://www.debian.org/social_contract#guidelines
+ [3] https://web.archive.org/web/20240614004123/https://news.northeastern.edu/2023/11/10/ai-chatbot-hallucinations/
+ [4] https://web.archive.org/web/20250328154700/https://transformer-circuits.pub/2025/attribution-graphs/biology.html#dives-cot
+ [5] https://www.marketwatch.com/story/openais-sam-altman-tells-salesforces-marc-benioff-that-ai-hallucinations-are-more-feature-than-bug-1c035c52
+ [6] https://lwn.net/Articles/1008897/
+ [7] https://tech-insider.org/ai-data-center-power-crisis-2026/
+ [8] https://www.debian.org/social_contract
+ [9] https://www.debian.org/doc/manuals/debian-reference/pr01.en.html#_what_is_debian
+
+#### Disclaimers
+
+- Citations are for background information only and do not reflect an endorsement of specific websites.
+
+- Some ideas and wording were derived from the sources below.
+
+#### Sources
+
+ GNOME discussion: https://discourse.gnome.org/t/loupe-no-longer-allows-generative-ai-contributions/27327
+ (CC0) Gentoo AI policy: https://wiki.gentoo.org/wiki/Project:Council/AI_policy
+ Codeberg AI policy: https://codeberg.org/Codeberg/org/pulls/1253#issuecomment-19820434
+
+ This document was written by Matthias Geiger and Jesse Rhodes with input from Sledge and josch, organically and without language model assistance.
+
+### Proposal B Proposer
+
+Lucas Nussbaum [lucas@debian.org] [text of proposal] [text of amendment] [text of amendment]
+
+### Proposal B Seconds
+
+- Andrey Rahmatullin [wrar@debian.org] [mail]
+
+- Christian Kastner [ckk@debian.org] [mail]
+
+- Anton Gladky [gladk@debian.org] [mail]
+
+- Stefano Zacchiroli [zack@debian.org] [mail]
+
+- Simon Quigley [tsimonq2@debian.org] [mail]
+
+- Soren Stoutner [soren@debian.org] [mail]
+
+- Julian Andres Klode [jak@debian.org] [mail]
+
+- Andreas Tille [tille@debian.org] [mail]
+
+- Philipp Kern pkern@debian.org] [mail]
+
+### Proposal B
+
+### Choice 2: Allow AI-Assisted Contributions with conditions
+
+Using its power under Constitution section 4.1 (5), the project issues the following statement describing its current position on AI-assisted contributions. This statement describes the position of the project at the time it is adopted. That position may evolve as time passes without the need to resort to future general resolutions. The GR process remains available if the project needs a decision and cannot come to a consensus.
+
+The Debian project recognizes that AI-assisted contributions raise many concerns, e.g. about the technical quality and maintainability of such contributions, and their legal status. AI itself also raises additional concerns, about its impact on society at large, on the IT industry and on Free Software; about its environmental impact; and the aggressive or non-compliant practices of AI scrapers.
+
+Nevertheless, many Debian contributors find AI tools helpful when contributing to Debian, and ultimately for improving Debian.
+
+Given both the benefits and risks of AI assistance, and the controversial discussions within the community, the Debian project finds it necessary to clarify its position on AI-assisted contributions and establish clear guidelines.
+
+The Debian project allows AI-assisted contributions (partially or fully generated by an LLM), provided the following conditions are met:
+
+- Tooling Legal Compatibility: Contributors should ensure that the terms and conditions of the generative AI tool do not impose contractual restrictions that conflict with the distribution, modification, or use of the output in the context of Debian.
+
+- Licensing and Attribution: If any pre-existing copyrighted materials (including pre-existing code licensed as free software) authored or owned by third parties are included in the AI tool’s output, prior to contributing such output to the project, the contributor should verify they have the right to submit it under the relevant open source license.
+
+- Accountability: Contributors assume full responsibility for their contributions, including vouching for the technical merit, security, license compliance, and utility of their submissions. The contributor remains solely accountable for the entirety of these contributions. Contributors should fully understand the proposed changes and be prepared to justify them.
+
+- Disclosure: When a significant portion of a contribution is generated or substantially assisted by a tool, contributors should disclose the use of the tool, making it clearly visible to the intended audience. This covers all forms of contribution, including code, mailing list posts, and bug discussions. The form of the disclosure is left to the contributor; one convenient option for commits is a Git trailer such as Generated-By: or Assisted-By:.
+
+- Prior Discussion of Bulk or Automated Changes: Similarly to the mass-bug filing process (Developers Reference section 7.1.1), contributors should discuss their intention before submitting bulk or autonomously generated contributions. Any such automated process should be overseen by a human who remains accountable for its behavior and output.
+
+- Confidentiality and Privacy: Contributors must not use generative AI tools that transmit data to untrusted providers with non-public or sensitive project information (such as embargoed security reports or private communication), as this may lead to the unintended disclosure of confidential data.
+
+### Proposal C Proposer
+
+Ian Jackson [iwj@debian.org] [text of proposal] [text of amendment]
+
+### Proposal C Seconds
+
+- Matthias Geiger [werdahias@debian.org] [mail]
+
+- Andrea Pappacoda [tachi@debian.org] [mail]
+
+- Simon Richter [sjr@debian.org] [mail]
+
+- Antoine Le Gonidec [vv221@debian.org] [mail]
+
+- Amin Bandali [bandali@debian.org] [mail]
+
+- Bill Blough [bblough@debian.org] [mail]
+
+- Enrico Zini [enrico@debian.org] [mail]
+
+- Sean Whitton [spwhitton@debian.org] [mail]
+
+- Tiago Bortoletto Vaz [tiago@debian.org] [mail]
+
+### Proposal C
+
+### Choice 3: Reject LLMs as far as practical, update Code of Conduct
+
+#### Summary: Reject LLMs (generative "AI") as far as practical
+
+##### BACKGROUND
+
+LLMs have many serious problems, including: undermining the mechanisms of free software community building; environmental damage; exploitation of authors; disruption to open web hosting by aggressive scraping; generation and promulgation of bullshit, polluting the information commons; hazards to users' mental health; economic bubbles and distortion of the computer hardware market; fraud; ownership by horrible people and companies; and so on. Ethical and safe use of this technology is almost impossible.
+
+Ideally, LLM output should not form any part of software that we rely on, nor should LLM output ever take the place of human-written prose.
+
+Unfortunately some of the wider software world, including many of our upstreams, take a different view. Therefore a complete ban on LLM output as part of Debian is currently impractical.
+
+##### REQUESTS
+
+1. We request that all contributors to Debian avoid the use of LLMs in their Debian work.
+
+2. We request that all decisionmakers within Debian discourage LLM use as much as practical. Practicality is a judgement call and we recognise that it will involve uncomfortable compromises.
+
+3. We request that everyone, even outside Debian, should refrain from using this technology. In particular, the Free Software and Open Source communities should reject LLMs. We recognise that not everyone will heed this call.
+
+##### REQUIREMENTS (SUPPLEMENT TO THE CODES OF CONDUCT)
+
+4. Within Debian, messages to humans (including for example bug reports, mailing list messages, discussions on Salsa, and blog posts on Planet Debian) must be drafted solely by humans without LLM assistance.
+
+5. Moderators and disciplinary teams may make narrow and tailored exceptions to rule 4, and decide on interpretation.
+
+6. Any use of LLMs for Debian work must be disclosed.
+
+7. Individual projects and maintainers may ban LLM contributions completely. Such bans (including by upstream projects) must be respected.
+
+8. Violations of these requirements should be treated as violations of the relevant Code of Conduct and should result in swift and proportionate disciplinary action.
+
+### Proposal D Proposer
+
+ Pierre-Elliott Bécue [peb@debian.org] [text of proposal] [text of minor change]
+
+### Proposal D Seconds
+
+- Russ Allbery [rra@debian.org] [mail]
+
+- Johannes Schauer Marin Rodrigues [josch@debian.org] [mail]
+
+- Jonathan Carter [jcc@debian.org] [mail]
+
+- Gunnar Wolf [gwolf@debian.org] [mail]
+
+- Tiago Bortoletto Vaz [tiago@debian.org] [mail]
+
+- Jeremy Sowden [azazel@debian.org] [mail]
+
+- Holger Levsen [holger@debian.org] [mail]
+
+### Proposal D
+
+### Choice 4: Accept AI contributions for Debian specific work
+
+ Debian as a project does not endorse or recommend the use of generative AI assistants for software development, as it raises multiple concerns about ethics, legality, copyright, etc.
+
+Nevertheless, Debian acknowledges that these practices are already in use and here to stay. Rather than banning their use, which seems counter-productive and unenforceable, the project chooses to place responsibility on contributors and therefore defines the following guidelines.
+
+These apply exclusively to code and work done specifically for the Debian project (Debian websites, applications, resources, packages, etc.). They do not apply to any upstream work. In what follows, "work" refers to the contributions done specifically for the Debian project.
+
+- All code and work assisted by a generative AI agent or tool must comply with the DFSG.
+
+- The submitter is solely responsible for the submitted work and:
+
+- they sufficiently evaluated and properly understand the work they intend to submit, and are able to explain and defend it;
+
+- they put any potential Signed-off-by tag and OpenPGP signatures on the contributions they send to the Debian infrastructure (package, commit, mail, …) themselves;
+
+- any content uploaded that would end up in production on Debian infrastructure (main git branch, package upload) has been submitted by them explicitely.
+
+- Work assisted by a generative AI agent or tool should be marked as such in the adapted place (commit message, changelog, …). Some lightweight generative tools, such as tab-completion in Copilot, may be used without the contributor realising they rely on generative AI models; we therefore trust submitters to assess when this rule applies. When in doubt, add such marking;
+
+- No cloud-based AI shall be used when the data transmitted could either be sensitive to the project (personal data, information under embargo, …) or not public (debian-private discussions, …).
+
+### Proposal E Proposer
+
+Marc Haber [zugschlus@debian.org] [text of proposal]
+
+### Proposal E Seconds
+
+- Soren Stoutner [soren@debian.org] [mail]
+
+- Christian Kastner [ckk@debian.org] [mail]
+
+- Timo Röhling [roehling@debian.org] [mail]
+
+- Clint Adams [clint@debian.org] [mail]
+
+- Matthias Urlichs [smurf@debian.org] [mail]
+
+- Tobias Frost [tobi@debian.org] [mail]
+
+- Anuradha Weeraman [anuradha@debian.org] [mail]
+
+- Lucas Nussbaum [lucas@debian.org] [mail]
+
+- Bdale Garbee [bdale@debian.org] [mail]
+
+- Helge Deller [deller@debian.org] [mail]
+
+- Hanno Wagner [wagner@debian.org] [mail]
+
+### Proposal E
+
+### Choice 5: Responsible Use of Generative AI
+
+Using its power under Constitution section 4.1 (5), the project issues the following statement describing its current position on AI-assisted contributions. This statement describes the position of the project at the time it is adopted. That position may evolve as time passes without the need to resort to future general resolutions. The GR process remains available if the project needs a decision and cannot come to a consensus.
+
+Debian neither endorses nor prohibits the use of generative AI tools in the development, maintenance, or documentation of software, packaging, documentation, and other media published within the Debian Project. We recognize that such tools can substantially improve the productivity of contributors when used responsibly, allowing volunteers to spend more of their limited time on work that requires technical expertise, judgment, review, and collaboration.
+
+The Debian Project nevertheless expects that all contributions submitted to Debian, regardless of how and with which tools they were produced, satisfy the same standards of quality, correctness, maintainability, and legal compliance. The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit. Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian. Blindly accepting or uploading AI-generated material without appropriate human review is inconsistent with Debian's established development practices. We enourage our contributors to disclose whether a contribution was made with AI assitance, but do not require them to do so.
+
+Debian acknowledges that the legal status of material produced by generative AI systems remains the subject of ongoing discussion in many jurisdictions, including questions relating to copyright, authorship, licensing, and potential reproduction of training material. The Project does not seek to resolve these unsettled legal questions through this General Resolution, nor does it adopt a position on whether AI-generated output is, in whole or in part, copyrightable or derived from copyrighted works.
+
+Instead, Debian continues to rely on the judgment and responsibility of its individual contributors. Project members are expected to exercise appropriate care when using generative AI tools, to consider the provenance and licensing implications of material they contribute, and to avoid introducing content whose legal status they cannot reasonably justify. Existing Debian policies governing licensing, copyright, software freedom, and the acceptance of contributions continue to apply irrespective of the tools used to produce those contributions.
+
+Contributors are expected to exercise appropriate care when designing and implementing workflows that incorporate generative AI tools. In particular, they should ensure that confidential information, private communications, security-sensitive information (such as embargoed information about security bugs that is not yet public), cryptographic keys, credentials, and other non-public material relating to the Debian Project, its infrastructure, or its community are not disclosed to third-party AI services unless such disclosure has been explicitly authorized and is consistent with Debian's security and privacy requirements.
+
+The use of generative AI does not alter Debian's established expectations regarding large-scale or automated project actions. Contributors intending to perform actions with broad project impact, such as mass bug filing or patch submission, large-scale code modifications, or other automated changes or requests affecting many packages or contributors, should seek prior discussion and consensus through the appropriate project channels before proceeding. Any such automated process should be overseen by a human who remains accountable for its behavior and output.
+
+This resolution therefore affirms that generative AI is neither exempt from nor subject to special rules beyond the standards already expected of Debian contributors. The responsibility for every contribution rests with the contributor who submits it, who remains accountable for its technical quality, legal acceptability, and suitability for inclusion in Debian.
+
+### Proposal F Proposer
+
+Tobias Frost [tobi@debian.org] [text of proposal]
+
+### Proposal F Seconds
+
+- Timo Röhling [roehling@debian.org] [mail]
+
+- Russ Allbery [rra@debian.org] [mail]
+
+- Étienne Mollier [emollier@debian.org] [mail]
+
+- Lucas Nussbaum [lucas@debian.org] [mail]
+
+- Gunnar Wolf [gwolf@debian.org] [mail]
+
+- Jonathan Carter [jcc@debian.org] [mail]
+
+### Proposal F
+
+### Choice 6: A cautious approach to generative AI
+
+Using its power under Constitution section 4.1(5), the Project issues the following statement describing its current position regarding the use of generative AI within Debian.
+
+Debian recognizes that generative AI raises significant ethical, legal, technical, and social concerns. These include questions relating to copyright and licensing, privacy, the provenance and quality of generated material, the health of Free Software communities, and the long-term consequences of widespread reliance on AI-generated content.
+
+Accordingly, Debian encourages contributors to avoid the use of generative AI where practical and to prefer human authorship, collaboration, and technical understanding over AI-generated output.
+
+At the same time, Debian has long relied on the judgment and responsibility of its contributors rather than prescribing individual workflows. Contributors remain responsible for everything they submit, irrespective of the tools used in preparing a contribution. Existing Debian standards regarding quality, correctness, licensing, and legal compliance continue to apply.
+
+Contributors using external generative AI services should exercise particular care not to disclose confidential information, embargoed security information, credentials, cryptographic keys, private communications, personal data, or other non-public Debian information.
+
+Nothing in this resolution should be understood as requiring contributors to use generative AI, nor as preventing contributors or maintainers from choosing not to use or accept AI-assisted contributions. Debian's existing collaborative processes remain the appropriate means for resolving such differences while allowing the project to continue making progress.
+
+While disclosure is not required, contributors are encouraged to voluntarily disclose the use of generative AI where appropriate, allowing others who prefer not to interact with AI-assisted content to make informed choices.
+
+Such disclosure should be regarded as a courtesy to fellow contributors rather than an indication that AI-assisted contributions are subject to different technical or procedural standards.
+
+The Debian project has always recognized the commitment and professionalism of its members. All contributions are under the responsibility of the Debian Contributor making it, no matter the technology they have behind. We trust all Debian Developers, Maintainers and Contributors will continue to uphold the high quality values that have distinguished our project from its onset.
+
+### Proposal G Proposer
+
+Gard Spreemann [gspr@debian.org] [text of proposal]
+
+### Proposal G Seconds
+
+- Holger Levsen [holger@debian.org] [mail]
+
+- Enrico Zini [enrico@debian.org] [mail]
+
+- Russ Allbery [rra@debian.org] [mail]
+
+- Tiago Bortoletto Vaz [tiago@debian.org] [mail]
+
+- Serafeim Zanikolas [sez@debian.org] [mail]
+
+- Antoine Le Gonidec [vv221@debian.org] [mail]
+
+- Johannes Schauer Marin Rodrigues [josch@debian.org] [mail]
+
+- Steve McIntyre [93sam@debian.org] [mail]
+
+- Sean Whitton [spwhitton@debian.org] [mail]
+
+### Proposal G
+
+### Choice 7: Debian is created by humans
+
+##### Preamble
+
+This proposal aims to ensure that contributions directly to Debian are created by humans, while at the same time avoiding restrictions on the tools those humans may choose to use when contributing.
+
+The proposal deals with direct contributions to Debian, including, but not limited to:
+
+- Debian packaging
+
+- Submissions (messages, bug reports, patches, etc.) to the BTS, Salsa, mailing lists and other Debian platforms
+
+- Debian project software
+
+- Debian infrastructure
+
+- Debian web resources
+
+- Documentation and translation added as part of contributing to Debian
+
+- Official communication from Debian
+
+The proposal does not cover indirect contributions, i.e. those originating from upstream works.
+
+Generative AI is characterized by producing output of a nature that would ordinarily be produced and consumed by humans. The proposal seeks to restrict this output itself from entering Debian (except possibly indirectly, from upstream). It does not seek to restrict Debian contributors from consuming such output as part of contributing to Debian.
+
+##### Rationale
+
+Debian has a well-earned reputation for stability. This stability is crucial to its position in the free software ecosystem. It is our belief that a significant part of this stability comes from Debian contributors having mutual understanding, trust and respect for each others' work and precious time. Generative AI tends to come with practical, legal, ethical or ecological concerns that warrant care or extra work that often ends up being borne by people other than those wielding the AI. We believe that this asymmetry between contributors leveraging generative AI to produce material, and those humans who bear that extra care and work, will erode the project's mutual understanding, trust and respect.
+
+While Debian has a long-standing tradition of strict rules for what goes into the distribution, it does not typically dictate what tools people use when contributing to the project. With this principle in mind, the proposal does not affect the use of generative AI as an assisitive tool to explore, research, analyze, critique, etc., when contributing. The responsibilities that come with using the output of an AI in such a role is then not transferred onto the wider project in the same problematic way as when the output itself is the contribution.
+
+##### Proposal
+
+In order to safeguard the project's mutual understanding, trust and respect, we disallow the output of generative AI as direct contributions to Debian.
+
+Those who use such tools assistively in their work are reminded to ensure that the resulting contribution is in line with the DFSG and the Social Contract in general.
+
+In summary, humans create Debian.
+
+##### Acknowledgements
+
+This proposal is inspired by GCC's AI Policy [1] and rust-lang's LLM Usage Policy [2]. Its wording is influenced by another ballot option [3].
+
+[1] https://gcc.gnu.org/ai-policy.html
+ [2] https://forge.rust-lang.org/policies/llm-usage.html
+ [3] https://www.debian.org/vote/2026/vote_002#texta
+
+### Proposal H Proposer
+
+Holger Levsen [holger@debian.org] [text of proposal] [text of corrections]
+
+### Proposal H Seconds
+
+- Simon Richter [sjr@debian.org] [mail]
+
+- Matthew Vernon [matthew@debian.org] [mail]
+
+- Steve McIntyre [93sam@debian.org] [mail]
+
+- Enrico Zini [enrico@debian.org] [mail]
+
+- Antoine Le Gonidec [vv221@debian.org] [mail]
+
+- Jonathan Carter [jcc@debian.org] [mail]
+
+- Matthias Geiger [werdahias@debian.org] [mail]
+
+- Sruthi Chandran [srud@debian.org] [mail]
+
+- Santiago Ruano Rincón [santiago@debian.org] [mail]
+
+- Mattia Rizzolo [mattia@debian.org] [mail]
+
+- Vagrant Cascadian [vagrant@debian.org] [mail]
+
+- Bas Wijnen [wijnen@debian.org] [mail]
+
+- Michael Prokop [mika@debian.org] [mail]
+
+- Guilhem Moulin [guilhem@debian.org] [mail]
+
+- Ian Jackson [iwj@debian.org] [mail]
+
+- Andreas Tille [tille@debian.org] [mail]
+
+- Didier Raboud [odyx@debian.org] [mail]
+
+### Proposal H
+
+### Choice 8: Avoid the use of LLM: climate destruction is a deal breaker
+
+#### LLM usage accelerates the destruction of our ecosystem (planet earth) and that is a deal-breaker
+
+Using its power under Constitution section 4.1(5), the Project issues the following statement describing its current position regarding the use of LLM (Large Language Models) within Debian.
+
+We don't have a concern with the LLM _technology_ as such: it's just maths and enough training material, which outputs a very large set of numbers that we can use to infer new material from existing material. But we cannot talk about the LLM technology without talking about who is pushing for its usage, who is doing the training and how, what effect those have on our limited resources, and what are the economical and political motives of these.
+
+Foremost we don't understand how anyone can agree that global LLM usage accelerates the destruction of our ecosystem, planet earth, and not feel like that is a deal-breaker.
+
+Too often the only response we've seen to this point was that other activities are also bad (some even worse) for the climate. How is this even an argument? The planet is burning, we should try to stop that as much and as fast as we can! If others aren't stopping, isn't that even more reason to compensate for their irresponsible actions?
+
+And while we're on that point: All of our users live on this planet, so protecting this planet is a matter of life and death for all of us. In other words, caring about something as big as climate change during our Debian work is self evident.
+
+Debian recognizes that LLM *also* raise significant ethical, legal, technical, and social concerns. These include questions relating to copyright and licensing, privacy, the provenance and quality of generated material, the health of Free Software communities, and the long-term consequences of widespread reliance on LLM-generated content.
+
+That said, we would like to emphasize that we condemn LLM (resource) usage but not LLM users. Fight the game, but not the players.
+
+We also acknowledge that LLM usage can be hard if not impossible to detect and that Debian as a distribution cannot really impose LLM policies on other projects we package and distribute. Therefore this text is just a position statement. This said however, we appreciate the disclosure of LLM usage.
+
+Accordingly, Debian encourages contributors to avoid the use of LLM where practical and to prefer human authorship, collaboration, and technical understanding over LLM-generated output.
+
+At the same time, Debian has long relied on the judgment and responsibility of its contributors rather than prescribing individual workflows. Contributors remain responsible for everything they submit, irrespective of the tools used in preparing a contribution. Existing Debian standards regarding quality, correctness, licensing, and legal compliance continue to apply.
+
+The Debian project has always recognized the commitment and professionalism of its members. All contributions are under the responsibility of the Debian Contributor making it, no matter the technology they have behind. We trust all Debian Developers, Maintainers and Contributors will continue to uphold the high quality values that have distinguished our project from its onset.
+
+Please keep being excellent to each other and the only planet we have.
+
+### Quorum
+
+ With the current list of voting developers, we have:
+
+ Current Developer Count = 1045
+ Q ( sqrt(#devel) / 2 ) = 16.1632298752446
+ K min(5, Q ) = 5
+ Quorum (3 x Q ) = 48.4896896257338
+
+### Quorum
+
+- Option 1 "Ban LLM contributions from Debian via Social Contract" reached quorum: 144 >= 48.4896896257338
+
+- Option 2 "Allow AI-Assisted Contributions with conditions" reached quorum: 267 >= 48.4896896257338
+
+- Option 3 "Reject LLMs as far as practical, update Code of Conduct" reached quorum: 176 >= 48.4896896257338
+
+- Option 4 "Accept AI contributions for Debian specific work" reached quorum: 259 >= 48.4896896257338
+
+- Option 5 "Responsible Use of Generative AI" reached quorum: 281 >= 48.4896896257338
+
+- Option 6 "A cautious approach to generative AI" reached quorum: 276 >= 48.4896896257338
+
+- Option 7 "Debian is created by humans" reached quorum: 213 >= 48.4896896257338
+
+- Option 8 "Avoid the use of LLM: climate destruction is a deal breaker" reached quorum: 225 >= 48.4896896257338
+
+### Data and Statistics
+
+ For this GR, like always, statistics will be gathered about ballots received and acknowledgements sent periodically during the voting period. Additionally, the list of voters will be recorded. Also, the tally sheet will also be made available to be viewed.
+
+### Majority Requirement
+
+ Proposal A needs a 3:1 majority, the other proposals need a simple majority.
+
+### Majority
+
+- Dropping option 1 because of majority. 0.560 (144/257) < 3
+
+- Option 2 passes majority. 1.921 (267/139) > 1
+
+- Dropping option 3 because of majority. 0.765 (176/230) < 1
+
+- Option 4 passes majority. 1.774 (259/146) > 1
+
+- Option 5 passes majority. 2.230 (281/126) > 1
+
+- Option 6 passes majority. 2.075 (276/133) > 1
+
+- Option 7 passes majority. 1.109 (213/192) > 1
+
+- Option 8 passes majority. 1.278 (225/176) > 1
+
+### Outcome
+
+ In the graph above, any pink colored nodes imply that the option did not pass majority, the Blue is the winner. The Octagon is used for the options that did not beat the default.
+
+- Option 1 "Ban LLM contributions from Debian via Social Contract"
+
+- Option 2 "Allow AI-Assisted Contributions with conditions"
+
+- Option 3 "Reject LLMs as far as practical, update Code of Conduct"
+
+- Option 4 "Accept AI contributions for Debian specific work"
+
+- Option 5 "Responsible Use of Generative AI"
+
+- Option 6 "A cautious approach to generative AI"
+
+- Option 7 "Debian is created by humans"
+
+- Option 8 "Avoid the use of LLM: climate destruction is a deal breaker"
+
+- Option 9 "None of the above"
+
+ In the following table, tally[row x][col y] represents the votes that option x received over option y. A more detailed explanation of the beat matrix may help in understanding the table. For understanding the Condorcet method, the Wikipedia entry is fairly informative.
+
+ The Beat Matrix
+
+Option
+
+ 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+
+ 8
+
+ 9
+
+Option 1
+
+ 111
+
+ 88
+
+ 118
+
+ 115
+
+ 108
+
+ 95
+
+ 92
+
+ 144
+
+Option 2
+
+ 273
+
+ 257
+
+ 181
+
+ 148
+
+ 178
+
+ 238
+
+ 229
+
+ 267
+
+Option 3
+
+ 213
+
+ 125
+
+ 133
+
+ 127
+
+ 118
+
+ 132
+
+ 124
+
+ 176
+
+Option 4
+
+ 274
+
+ 136
+
+ 259
+
+ 115
+
+ 164
+
+ 238
+
+ 228
+
+ 259
+
+Option 5
+
+ 287
+
+ 203
+
+ 272
+
+ 232
+
+ 210
+
+ 251
+
+ 244
+
+ 281
+
+Option 6
+
+ 277
+
+ 173
+
+ 260
+
+ 189
+
+ 130
+
+ 236
+
+ 225
+
+ 276
+
+Option 7
+
+ 230
+
+ 149
+
+ 193
+
+ 150
+
+ 139
+
+ 133
+
+ 148
+
+ 213
+
+Option 8
+
+ 232
+
+ 162
+
+ 203
+
+ 164
+
+ 154
+
+ 155
+
+ 179
+
+ 225
+
+Option 9
+
+ 257
+
+ 139
+
+ 230
+
+ 146
+
+ 126
+
+ 133
+
+ 192
+
+ 176
+
+ Looking at row 2, column 1, Allow AI-Assisted Contributions with conditions
+ received 273 votes over Ban LLM contributions from Debian via Social Contract
+
+ Looking at row 1, column 2, Ban LLM contributions from Debian via Social Contract
+ received 111 votes over Allow AI-Assisted Contributions with conditions.
+
+### Pair-wise defeats
+
+- Option 2 defeats option 4 by ( 181 - 136) = 45 votes.
+
+- Option 5 defeats Option 2 by ( 203 - 148) = 55 votes.
+
+- Option 2 defeats option 6 by ( 178 - 173) = 5 votes.
+
+- Option 2 defeats option 7 by ( 238 - 149) = 89 votes.
+
+- Option 2 defeats option 8 by ( 229 - 162) = 67 votes.
+
+- Option 2 defeats option 9 by ( 267 - 139) = 128 votes.
+
+- Option 5 defeats Option 4 by ( 232 - 115) = 117 votes.
+
+- Option 6 defeats Option 4 by ( 189 - 164) = 25 votes.
+
+- Option 4 defeats option 7 by ( 238 - 150) = 88 votes.
+
+- Option 4 defeats option 8 by ( 228 - 164) = 64 votes.
+
+- Option 4 defeats option 9 by ( 259 - 146) = 113 votes.
+
+- Option 5 defeats option 6 by ( 210 - 130) = 80 votes.
+
+- Option 5 defeats option 7 by ( 251 - 139) = 112 votes.
+
+- Option 5 defeats option 8 by ( 244 - 154) = 90 votes.
+
+- Option 5 defeats option 9 by ( 281 - 126) = 155 votes.
+
+- Option 6 defeats option 7 by ( 236 - 133) = 103 votes.
+
+- Option 6 defeats option 8 by ( 225 - 155) = 70 votes.
+
+- Option 6 defeats option 9 by ( 276 - 133) = 143 votes.
+
+- Option 8 defeats Option 7 by ( 179 - 148) = 31 votes.
+
+- Option 7 defeats option 9 by ( 213 - 192) = 21 votes.
+
+- Option 8 defeats option 9 by ( 225 - 176) = 49 votes.
+
+### The Schwartz Set contains
+
+- Option 5 "Responsible Use of Generative AI"
+
+### The winners
+
+- Option 5 "Responsible Use of Generative AI"
+
+ Debian uses the Condorcet method for voting. Simplistically, plain Condorcets method can be stated like so :
+ Consider all possible two-way races between candidates. The Condorcet winner, if there is one, is the one candidate who can beat each other candidate in a two-way race with that candidate. The problem is that in complex elections, there may well be a circular relationship in which A beats B, B beats C, and C beats A. Most of the variations on Condorcet use various means of resolving the tie. See Cloneproof Schwartz Sequential Dropping for details. Debian's variation is spelled out in the constitution, specifically, A.5.
+
+ Debian Project Secretary
+
+Back to the Debian Project homepage.
+
+ This page is also available in the following languages:
+ Select your language français
+ How to set the default document language
+
+Home
+
+- About
+
+- Social Contract
+
+- Code of Conduct
+
+- Free Software
+
+- Legal Info
+
+- Help Debian
+
+- Getting Debian
+
+- Network install
+
+- CD/USB ISO images
+
+- Pure Blends
+
+- Debian Packages
+
+- Developers' Corner
+
+- News
+
+- Project News
+
+- Events
+
+- Documentation
+
+- Release Info
+
+- Debian Wiki
+
+- Support
+
+- Debian International
+
+- Security Information
+
+- Bug reports
+
+- Mailing Lists
+
+- Site map
+
+- Search
+
+- The Debian Blog
+
+- Debian Micronews
+
+- Debian Planet
+
+See our contact page to get in touch. Web site source code is available.
+
+ Last Modified: Sun, Aug 30 08:52:41 UTC 2026 Last Built: Wed, Sep 23 15:49:02 UTC 2026
+ Copyright © 2026 SPI and others; See license terms
+ Debian is a registered trademark of Software in the Public Interest, Inc.

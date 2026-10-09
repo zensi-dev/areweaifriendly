@@ -1,0 +1,62 @@
+{
+  "name": "CloudNativePG",
+  "description": "A Kubernetes operator for PostgreSQL.",
+  "category": "tool",
+  "homepage": "https://cloudnative-pg.io/",
+  "repo": "https://github.com/cloudnative-pg/cloudnative-pg",
+  "summary": "AI-generated code, docs or comments are accepted if the contributor fully understands and can explain every line, guarantees licensing and provenance, and discloses significant AI use with an Assisted-by trailer. Unvetted boilerplate, AI-hallucinated fixes, unsolicited AI refactors and vague AI-written PR descriptions are prohibited.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You must fully understand every line of code you submit.",
+      "sourceUrl": "https://github.com/cloudnative-pg/governance/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If you cannot guarantee the provenance and legal safety of the AI-generated code, do not submit it.",
+      "sourceUrl": "https://github.com/cloudnative-pg/governance/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If AI was used to generate a significant portion of your contribution (beyond simple autocomplete), we ask that you disclose it in the PR description and through an `Assisted-by:` commit message trailer",
+      "sourceUrl": "https://github.com/cloudnative-pg/governance/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Using AI to write PR descriptions that are vague, overly flowery, or fail to accurately describe the technical changes.",
+      "sourceUrl": "https://github.com/cloudnative-pg/governance/blob/main/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/cloudnative-pg/governance/blob/main/AI_POLICY.md",
+      "title": "CloudNativePG AI Contribution Policy",
+      "hash": "c3d002ad1b39eb53d04a6a0a1e323d2d4541ecfa85a4bd76cd253cc37dbb6700",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

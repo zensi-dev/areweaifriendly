@@ -1,0 +1,51 @@
+{
+  "name": "OpenJDK",
+  "description": "The open source reference implementation of the Java platform.",
+  "category": "language",
+  "homepage": "https://openjdk.org/",
+  "repo": "https://github.com/openjdk/jdk",
+  "summary": "An interim policy bans content generated in part or in full by LLMs or similar systems, covering code, text, images, pull requests, e-mail, wiki pages and issues. Contributors may still use AI privately to understand, debug and review code, as long as none of its output is contributed.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Contributions in the OpenJDK Community must not include content generated, in part or in full, by large language models, diffusion models, or similar deep-learning systems.",
+      "sourceUrl": "https://openjdk.org/legal/ai"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Content, in this context, includes but is not limited to source code, text, and images in OpenJDK Git repositories, GitHub pull requests, e-mail messages, wiki pages, and JBS issues.",
+      "sourceUrl": "https://openjdk.org/legal/ai"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Content, in this context, includes but is not limited to source code, text, and images in OpenJDK Git repositories, GitHub pull requests, e-mail messages, wiki pages, and JBS issues.",
+      "sourceUrl": "https://openjdk.org/legal/ai"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://openjdk.org/legal/ai",
+      "title": "OpenJDK Interim Policy on Generative AI",
+      "hash": "3803242c06c0b07643da52d65f5ad20d64143808fee5c910c61b2d1d0354c7c2",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

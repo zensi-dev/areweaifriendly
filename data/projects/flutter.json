@@ -1,0 +1,75 @@
+{
+  "name": "Flutter",
+  "description": "Google's UI toolkit for building apps from a single codebase.",
+  "category": "framework",
+  "homepage": "https://flutter.dev/",
+  "repo": "https://github.com/flutter/flutter",
+  "summary": "AI-assisted PRs are accepted if the contributor reviews all generated code, understands and can discuss it, and submits it as their original work under the CLA. AI-generated issue text and PR descriptions must be verified and edited, and unsupervised agents may not post in the issue tracker.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed",
+        "no-autonomous-agents"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You must review all AI-generated code before opening a (non-draft) PR, and before requesting re-review of any updates to the PR.",
+      "sourceUrl": "https://github.com/flutter/flutter/blob/master/CONTRIBUTING.ai.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You must understand and be able to discuss the code in the PR.",
+      "sourceUrl": "https://github.com/flutter/flutter/blob/master/CONTRIBUTING.ai.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "This does not prohibit the use of coding assistance tools, but what is submitted needs to be the contributor's original creation.",
+      "sourceUrl": "https://github.com/flutter/flutter/blob/master/CONTRIBUTING.ai.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Do not run an unsupervised agent that posts triage comments to the issue database.",
+      "sourceUrl": "https://github.com/flutter/flutter/blob/master/CONTRIBUTING.ai.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "AI tools may be helpful for specific tasks, such as creating reduced test cases or identifying potential duplicate issues, but you must verify their output.",
+      "sourceUrl": "https://github.com/flutter/flutter/blob/master/CONTRIBUTING.ai.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You must verify the accuracy of any AI-generated text you include in the PR description or review discussion comments.",
+      "sourceUrl": "https://github.com/flutter/flutter/blob/master/CONTRIBUTING.ai.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/flutter/flutter/blob/master/CONTRIBUTING.ai.md",
+      "title": "Flutter AI contribution policies",
+      "hash": "b602be218de965c318b19d48a9f37f72fc4a5ae28175c192421a257b73ac5f0f",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

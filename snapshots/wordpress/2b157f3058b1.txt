@@ -1,0 +1,367 @@
+# AI Guidelines
+
+## In this article
+
+- Core principles
+
+- 1.1 You are responsible for your contributions
+
+- 1.2 Transparency: disclose when AI was used
+
+- 1.3 License compatibility and tool choice
+
+- 1.4 Non-code contributions and assets
+
+- 1.5 Quality over volume (“no AI slop”)
+
+- Using AI tools for code
+
+- 2.1 Acceptable use
+
+- 2.2 What to avoid
+
+- 2.3 Minimal checks before submitting AI-assisted code
+
+- Using AI tools for tests and QA
+
+- Using AI tools for documentation and communication
+
+- Using AI tools for issues and support
+
+- Reviewer and maintainer expectations
+
+- Frequently asked questions
+
+- Can I use GitHub Copilot, Claude Code, Codex, ChatGPT, or similar tools?
+
+- Can AI be the sole reviewer for my code?
+
+- What if I am not sure whether my AI tool is GPL-compatible?
+
+- Do I have to disclose AI assistance for every small change?
+
+- Evolution of this guide
+
+↑ Back to top
+
+AI tools are now part of how many people write code, tests, and documentation. This guide explains how to use them responsibly when contributing to the WordPress project, so that your contributions are:
+
+- Compatible with the GPLGPL GPL is an acronym for GNU Public License. It is the standard license WordPress uses for Open Source licensing https://wordpress.org/about/license/. The GPL is a ‘copyleft’ license https://www.gnu.org/licenses/copyleft.en.html. This means that derivative work can only be distributed under the same license terms. This is in distinction to permissive free software licenses, of which the BSD license and the MIT License are widely used examples..
+
+- Maintainable and understandable.
+
+- Respectful of the time and attention of maintainers.
+
+## Core principles
+
+### 1.1 You are responsible for your contributions
+
+AI tools can assist, but they are not contributors.
+
+If you submit a patch, you are responsible for:
+
+- Understanding every line of code and documentation you submit.
+
+- Ensuring it is correct, safe, and appropriate for the WordPress project.
+
+- Ensuring it can be licensed under GPLv2 or later.
+
+Treat AI output like code from an unknown external contributor: you must review and validate it before sharing it. Once submitted, code contributed by you, regardless of whether it was typed or AI-generated, is considered your code and therefore your responsibility.
+
+### 1.2 Transparency: disclose when AI was used
+
+AI assistance is great, but hiding it is not useful.
+
+When AI meaningfully contributes to your work (beyond trivial reformatting), clearly mention that in your:
+
+- Pull request description, and/or
+
+- TracTrac Trac is the place where contributors create issues for bugs or feature requests much like GitHub.https://core.trac.wordpress.org/. ticket comment
+
+Example for a PR description:
+
+AI assistance: YesTool(s): GitHub Copilot, ChatGPTUsed for: Initial code skeleton and test suggestions; final implementation and tests were reviewed and edited by me.
+
+Disclosure is not a negative signal. Instead, it helps reviewers understand how to evaluate the change.
+
+### 1.3 License compatibility and tool choice
+
+WordPress CoreCore Core is the set of software required to run WordPress. The Core Development Team builds WordPress. is licensed under GPLv2 or later.
+
+When using AI tools:
+
+- Do not use tools whose terms forbid using their output in GPL-licensed projects or impose additional restrictions on redistribution.
+
+- Do not rely on tools to “launder” incompatible licenses. If an AI output reproduces non-free or incompatible code, it cannot be included.
+
+- Never remove or overwrite existing license headers or attribution when editing files.
+
+If you are unsure whether a tool’s terms are compatible with the GPL, ask in an appropriate Make WordPress SlackSlack Slack is a Collaborative Group Chat Platform https://slack.com/. The WordPress community has its own Slack Channel at https://make.wordpress.org/chat/ channel (for example, #core-ai or #core) before relying on it for substantial contributions.
+
+### 1.4 Non-code contributions and assets
+
+Licensing requirements apply to all contributions to the WordPress project, not only source code.
+
+This includes, but is not limited to:
+
+- Images and other media (e.g., assets included in themes or plugins)
+
+- Documentation content (e.g., on developer.wordpress.org or wordpress.org/documentation)
+
+- Educational materials (e.g., lessons, slides, screenshots, or media on learn.wordpress.org)
+
+All such contributions must be compatible with GPLv2 or later and must not impose additional restrictions on redistribution or reuse.
+
+For images and other media assets, licenses equivalent to the public domain are acceptable. For example, CC0-licensed images are compatible with the GPL and may be used. Licenses that introduce attribution, share-alike, non-commercial, or no-derivatives requirements may be incompatible or operationally problematic and should be avoided.
+
+When in doubt, ask in an appropriate Make WordPress Slack channel before submitting the contribution.
+
+### 1.5 Quality over volume (“no AI slop”)
+
+AI tools make it easy to generate a lot of content quickly. That is not the goal.
+
+Avoid:
+
+- Generic, context-free PR descriptions or issues that do not reflect real testing or experience.
+
+- Large, unreviewed code dumps with minimal explanation or tests.
+
+- Hallucinated references (for example, APIs, hooksHooks In WordPress theme and development, hooks are functions that can be applied to an action or a Filter in WordPress. Actions are functions performed when a certain event occurs in WordPress. Filters allow you to modify certain functions. Arguments used to hook both filters and actions look the same., functions, tickets, or links that do not actually exist).
+
+- Over-architected code where a simple solution would suffice.
+
+Instead:
+
+- Use AI to draft, then review yourself.
+
+- Submit PRs (or patches) that are small, concise and with atomic and well defined commit messages to make reviewing easier.
+
+- Run and document real tests.
+
+- Link to real Trac tickets, GitHubGitHub GitHub is a website that offers online implementation of git repositories that can easily be shared, copied and modified by other developers. Public repositories are free to host, private repositories require a paid subscription. GitHub introduced the concept of the ‘pull request’ where code changes done in branches by contributors can be reviewed and discussed before being merged by the repository owner. https://github.com/ issues, or documentation that you have verified.
+
+Maintainers may close or reject contributions that appear to be “AI slop” with little added human insight.
+
+## Using AI tools for code
+
+### 2.1 Acceptable use
+
+You may use AI tools to:
+
+- Scaffold or propose code (for example, initial implementation of a function, ReactReact React is a JavaScript library that makes it easy to reason about, construct, and maintain stateless and stateful user interfaces. https://reactjs.org component, or test).
+
+- Suggest refactorings or alternative approaches.
+
+- Generate boilerplate code (for example, test setups, data providers) that you validate.
+
+- Draft inline documentation and comments that you then edit.
+
+Required:
+
+- You must understand what the code does and why.
+
+- You must run appropriate tests (unit, integration, end-to-end, as applicable).
+
+- You must be able to explain the approach during review.
+
+If a reviewer asks, “What did the AI generate and what did you write?” or “Why is this the right approach?”, you should be able to answer clearly.
+
+### 2.2 What to avoid
+
+Avoid using AI to:
+
+- Produce changes you do not fully understand.
+
+- Introduce dependencies, patterns, or APIs that do not match WordPress’ standards or capabilities.
+
+- Generate direct copies of proprietary or unknown code (for example, “write the same logic as library X”).
+
+If a tool seems to output code that looks suspiciously like a well-known library or non-GPL-compatible project, do not submit it.
+
+### 2.3 Minimal checks before submitting AI-assisted code
+
+Before submitting a PR or attaching a patch:
+
+- Read every line and remove anything you cannot explain.
+
+- Align with WordPress standards: coding standards, security patterns, and performance expectations.
+
+- Add or update tests to reflect the behavior. Do not rely solely on AI-generated test names and cases; verify them.
+
+- Run the test suites that are relevant to your change and note the commands you used in the PR description.
+
+Example PR snippet:
+
+Testing:
+
+– npm run test-unit-js
+
+– npm run test-e2e (GutenbergGutenberg The Gutenberg project is the new Editor Interface for WordPress. The editor improves the process and experience of creating new content, making writing rich content much simpler. It uses ‘blocks’ to add richness rather than shortcodes, custom HTML etc. https://wordpress.org/gutenberg/)
+
+– Verified the new setting appears in the Site Editor and persists across reloads.
+
+## Using AI tools for tests and QA
+
+AI can be useful for:
+
+- Proposing edge cases and additional test inputs.
+
+- Translating manual test steps into automated test code.
+
+- Drafting detailed manual test instructions for release or regression testing.
+
+Use it to:
+
+- Expand coverage, not to justify untested code.
+
+- Help you think of scenarios you might otherwise miss.
+
+Requirements:
+
+- Confirm that test cases are realistic for WordPress environments.
+
+- Remove or adjust tests that depend on imagined APIs or features.
+
+- Ensure tests are deterministic and do not rely on unstable external services.
+
+## Using AI tools for documentation and communication
+
+AI is particularly suited to drafting:
+
+- Documentation sections.
+
+- Dev notes and explanatory comments.
+
+- Issue and PR descriptions.
+
+Good usage patterns:
+
+- Ask AI to summarize a change, then correct and extend that summary.
+
+- Use AI to propose alternative phrasings for complex topics.
+
+- Use AI to help with translation, and then have a human fluent in the language review.
+
+- Ask AI to rewrite an initial draft you have written.
+
+- Use AI as an assistant for note-taking and knowledge retrieval.
+
+Avoid:
+
+- Hallucinated references to APIs, hooks, or projects that do not exist.
+
+- Fabricated links or citations.
+
+- Content that does not reflect what you actually implemented.
+
+- Overly verbose documentation; this too is quality over volume.
+
+Before you publish AI-assisted documentation:
+
+- Click each link and check that it is correct.
+
+- Confirm function names, hook names, and option names.
+
+- Have another contributor review high-impact documentation where possible.
+
+Note: Documentation, diagrams, screenshots, and other media included in documentation are contributions to the WordPress project and must meet the same GPL compatibility requirements as code. Ensure that any AI-assisted or externally sourced assets are licensed in a way that allows unrestricted redistribution under GPLv2 or later.
+
+Lessons, course materials, slides, screenshots, and media published on learn.wordpress.org are subject to the same licensing expectations. Contributors are responsible for ensuring that all included content and assets are GPL-compatible and do not introduce additional licensing restrictions.
+
+## Using AI tools for issues and support
+
+For bug reports or feature requests:
+
+- You may draft descriptions with AI.
+
+- You must still:
+
+- Reproduce the issue on real WordPress installs.
+
+- Include real logs, screenshots, or code snippets.
+
+- Provide concrete reproduction steps.
+
+Example good issue:
+
+- Environment details (WordPress version, PHPPHP PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used open source general-purpose scripting language that is especially suited for web development and can be embedded into HTML. https://www.php.net/manual/en/index.php version, pluginPlugin A plugin is a piece of software containing a group of functions that can be added to a WordPress website. They can extend functionality or add new features to your WordPress websites. WordPress plugins are written in the PHP programming language and integrate seamlessly with WordPress. These can be free in the WordPress.org Plugin Directory https://wordpress.org/plugins/ or can be cost-based plugin from a third-party./theme versions).
+
+- Clear, numbered steps to reproduce.
+
+- Expected vs actual behavior.
+
+- Any relevant stack traces.
+
+Avoid issues that read like generic templates without specific, verified details.
+
+## Reviewer and maintainer expectations
+
+Maintainers are encouraged to:
+
+- Ask for clarification when a contribution appears heavily AI-generated.
+
+- Request additional tests or explanations before merging.
+
+- Reject or close contributions, while linking to the relevant section of these guidelines, that:
+
+- Have unclear provenance.
+
+- Do not meet quality or testing expectations.
+
+- Appear to contain license-incompatible material.
+
+As a contributor, this means:
+
+- Be prepared to iterate on AI-assisted changes based on reviewer feedback.
+
+- Be ready to explain and, if necessary, simplify your implementation.
+
+- Expect that undisclosed AI usage – if discovered – may delay or blockBlock Block is the abstract term used to describe units of markup that, composed together, form the content or layout of a webpage using the WordPress editor. The idea combines concepts of what in the past may have achieved with shortcodes, custom HTML, and embed discovery into a single consistent API and user experience. a merge or commit.
+
+## Frequently asked questions
+
+### Can I use GitHub Copilot, Claude Code, Codex, ChatGPT, or similar tools?
+
+Yes, provided:
+
+- The tool’s terms allow GPL-compatible licensing of the output.
+
+- You disclose meaningful AI assistance.
+
+- You review, understand, and test all contributions.
+
+### Can AI be the sole reviewer for my code?
+
+No.
+
+AI tools may assist review (for example, by suggesting refactors or pointing out potential issues), but human review is required for acceptance into the WordPress project.
+
+### What if I am not sure whether my AI tool is GPL-compatible?
+
+Pause and ask in the appropriate WordPress channels (for example, #core-ai for any AI projects). When in doubt, do not submit AI-generated code until you have an answer.
+
+### Do I have to disclose AI assistance for every small change?
+
+If you leveraged AI in a meaningful way, please disclose it. For trivial assistance (for example, AI suggests a variable name or reorders imports), disclosure is optional.
+
+## Evolution of this guide
+
+This is a v0 guide for the WordPress project. It will change as:
+
+- Legal guidance around AI-generated content becomes clearer.
+
+- WordPress’ own practices and tooling for detecting and handling AI-assisted content mature.
+
+Feedback, proposals, and concrete experience from maintainers and contributors are welcome.
+
+First published
+
+27 January 2026
+
+Last updated
+
+27 January 2026
+
+Previous About Previous: About
+
+Next Approach Next: Approach

@@ -1,0 +1,80 @@
+{
+  "name": "Godot Engine",
+  "description": "A free and open source 2D and 3D game engine.",
+  "category": "framework",
+  "homepage": "https://godotengine.org/",
+  "repo": "https://github.com/godotengine/godot",
+  "summary": "The Godot Foundation announced that all code must be human-authored: AI may help only with menial things like code completion, regex or find and replace, and any AI use must be disclosed. Autonomous agents and vibe coding lead to a ban, and AI-generated text is not allowed in issues, PRs or proposals, though machine translation of human writing is fine.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "minor-assist-only",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We require all code to be human authored. AI assistance should be limited to menial things (like code completion, regex, or find and replace).",
+      "sourceUrl": "https://godotengine.org/article/contribution-policy-2026/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If you do use AI in some capacity to author code, you must disclose it in the PR discussion.",
+      "sourceUrl": "https://godotengine.org/article/contribution-policy-2026/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "No autonomous AI agent use or vibe coding",
+      "sourceUrl": "https://godotengine.org/article/contribution-policy-2026/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Ensuring all contributions are made by humans who can take responsibility for their code and be able and willing to fix it when needed.",
+      "sourceUrl": "https://godotengine.org/article/contribution-policy-2026/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "When our maintainers volunteer their time to review your issue, PR, or proposal, they do not want to talk to a machine.",
+      "sourceUrl": "https://godotengine.org/article/contribution-policy-2026/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "No AI-generated text in human-to-human communication",
+      "sourceUrl": "https://godotengine.org/article/contribution-policy-2026/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Machine translations are still acceptable as long as the original content was written by a human.",
+      "sourceUrl": "https://godotengine.org/article/contribution-policy-2026/"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://godotengine.org/article/contribution-policy-2026/",
+      "title": "Godot: Changes to our Contribution Policies",
+      "hash": "2a62d24b4b0cec73fbd69a7d1fb7eeac65335f2a66b82780a343d6e29839749f",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

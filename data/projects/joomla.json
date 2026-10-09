@@ -1,0 +1,76 @@
+{
+  "name": "Joomla!",
+  "description": "An open source content management system.",
+  "category": "application",
+  "homepage": "https://www.joomla.org/",
+  "repo": "https://github.com/joomla/joomla-cms",
+  "summary": "AI may be used, but contributors must fully understand, review and test all AI-generated code, ensure GPL compatibility, and label AI-assisted PRs with [AI]. Vibe-coded submissions are not allowed, and AI-generated explanations and comments must be reviewed; raw AI answers are discouraged.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "However, AI-generated code must never be submitted without full human understanding, review, and validation by the contributor.",
+      "sourceUrl": "https://developer.joomla.org/generative-ai-policy.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Any pull request that contains AI-assisted or AI-generated content (code, tests, documentation, or substantial comments) must be clearly marked by adding [AI] at the beginning of the PR title and/or using the [AI Generated] label.",
+      "sourceUrl": "https://developer.joomla.org/generative-ai-policy.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "All contributions must be compatible with the GNU GPL version 2 or later.",
+      "sourceUrl": "https://developer.joomla.org/generative-ai-policy.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The contributor is always accountable for the final submission.",
+      "sourceUrl": "https://developer.joomla.org/generative-ai-policy.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Posting raw AI-generated answers (including in issues or discussions) is discouraged because it:",
+      "sourceUrl": "https://developer.joomla.org/generative-ai-policy.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI-generated explanations, testing instructions, comments or documentation must also be reviewed.",
+      "sourceUrl": "https://developer.joomla.org/generative-ai-policy.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://developer.joomla.org/generative-ai-policy.html",
+      "title": "Joomla! Generative AI policy",
+      "hash": "ebaec0a37b2b1f98d4e0ec0a12332bf9060724ca3cffe630a4563879f3296547",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Neovim",
+  "description": "A hyperextensible Vim-based text editor.",
+  "category": "application",
+  "homepage": "https://neovim.io/",
+  "repo": "https://github.com/neovim/neovim",
+  "summary": "Using AI for contributions is acceptable as long as the contributor reviews the output before requesting review and trims verbosity from code, docs, comments, PR descriptions and commit messages.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Using AI for contributions is acceptable, given the following:",
+      "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "YOU review the output before sending a non-Draft PR.",
+      "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "REMOVE verbosity and blathering from documentation, comments, PR description, commit message, etc.",
+      "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md",
+      "title": "Contributing to Neovim",
+      "hash": "1574bea1fc4c0ad3a2b5fb463ee5d8c6a3eacafc8f797aa3599156752b09df8d",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

@@ -1,0 +1,68 @@
+{
+  "name": "typescript-eslint",
+  "description": "Tooling that enables ESLint and Prettier to support TypeScript.",
+  "category": "tool",
+  "homepage": "https://typescript-eslint.io/",
+  "repo": "https://github.com/typescript-eslint/typescript-eslint",
+  "summary": "AI-assisted contributions are not banned, but AI-generated code must be reviewed closely and only used for work the contributor could handle without AI. AI-generated issues, comments and PR descriptions should be avoided in favour of the contributor's own words.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "While we cannot and will not attempt to ban contributions which make use of AI, we ask that you use AI responsibly:",
+      "sourceUrl": "https://typescript-eslint.io/contributing/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Always review AI-generated code closely before submitting a PR.",
+      "sourceUrl": "https://typescript-eslint.io/contributing/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Only use AI to assist in contributions that you would understand well enough to work on and respond to feedback on without making use of AI.",
+      "sourceUrl": "https://typescript-eslint.io/contributing/ai-policy/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Avoid AI-generated content in written, non-code contributions (issues/comments/PR descriptions, etc.).",
+      "sourceUrl": "https://typescript-eslint.io/contributing/ai-policy/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Instead, we ask that you summarize the PR succinctly in your own words, relying on your own understanding of the code.",
+      "sourceUrl": "https://typescript-eslint.io/contributing/ai-policy/"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://typescript-eslint.io/contributing/ai-policy/",
+      "title": "typescript-eslint AI Contribution Policy",
+      "hash": "4cc2b99b22e65bf716888e4f6ab7c5777da06453e48ece8008b61215314a1bea",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

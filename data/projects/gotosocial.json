@@ -1,0 +1,41 @@
+{
+  "name": "GoToSocial",
+  "description": "A lightweight ActivityPub social network server.",
+  "category": "application",
+  "homepage": "https://gotosocial.org/",
+  "repo": "https://codeberg.org/superseriousbusiness/gotosocial",
+  "summary": "Changes created with the aid of AI tooling, code or otherwise, are not accepted, on ethical grounds.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We will not accept changes (code or otherwise) created with the aid of \"AI\" tooling.",
+      "sourceUrl": "https://codeberg.org/superseriousbusiness/gotosocial/src/branch/main/CODE_OF_CONDUCT.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://codeberg.org/superseriousbusiness/gotosocial/src/branch/main/CODE_OF_CONDUCT.md",
+      "title": "GoToSocial Code of Conduct",
+      "hash": "730ec4d7dff5a005c3417ed82a0701dfcb21976dec53ab122b147cf6138a273c",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

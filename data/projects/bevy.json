@@ -1,0 +1,71 @@
+{
+  "name": "Bevy",
+  "description": "A data-driven game engine built in Rust.",
+  "category": "framework",
+  "homepage": "https://bevy.org/",
+  "repo": "https://github.com/bevyengine/bevy",
+  "summary": "Careful, human-driven AI use is tolerated for code if it is disclosed and the contributor understands every line. AI may not write documentation, issues, PR descriptions or release notes, AI-generated media is banned, and AI output may not be pasted into conversations except to help with translation or accessibility.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable"
+      ]
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We are wary of the use of AI in the development of Bevy, and are particularly troubled by its impact on artists, but tolerate careful human-driven AI use in some code-related areas consistent with the above values.",
+      "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Any use of AI to contribute to Bevy must be disclosed, with context about how it was used.",
+      "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You must personally understand every line of code or documentation that you put forward for review",
+      "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "AI must not be used to write public-facing prose, including documentation, issues, PR descriptions, or release notes.",
+      "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not paste AI-generated output directly into conversations with humans, no matter where they take place.",
+      "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI may be used to assist for translation and accessibility purposes, but please include the original untranslated text as well.",
+      "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://bevy.org/learn/contribute/policies/ai/",
+      "title": "Bevy AI Policy",
+      "hash": "b56d845ae05eb7d512fa98041c5dddf958f8fe49c307004542b56fb713a9e7d1",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

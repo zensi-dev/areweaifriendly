@@ -1,0 +1,69 @@
+{
+  "name": "Jellyfin",
+  "description": "A free software media system.",
+  "category": "application",
+  "homepage": "https://jellyfin.org/",
+  "repo": "https://github.com/jellyfin/jellyfin",
+  "summary": "LLMs may assist with code, but pure vibe coding is rejected: contributors must review, test and explain their changes and handle review themselves. LLM output is prohibited in issues, feature requests, PR bodies, comments and forum posts, except clearly noted LLM translations.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "And again, you are free to use LLMs to assist you, but not as the sole source of code changes.",
+      "sourceUrl": "https://jellyfin.org/docs/general/contributing/llm-policies/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You must review the output and be able to explain in the PR body - without LLM output as noted above - what is being changed and why.",
+      "sourceUrl": "https://jellyfin.org/docs/general/contributing/llm-policies/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The changes must be tested.",
+      "sourceUrl": "https://jellyfin.org/docs/general/contributing/llm-policies/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "LLM output is expressly prohibited for any direct communication, including the following:",
+      "sourceUrl": "https://jellyfin.org/docs/general/contributing/llm-policies/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "An exception will be made for LLM-assisted translations if you are having trouble accurately conveying your intent in English. Please explicitly note this",
+      "sourceUrl": "https://jellyfin.org/docs/general/contributing/llm-policies/"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://jellyfin.org/docs/general/contributing/llm-policies/",
+      "title": "Jellyfin LLM/\"AI\" Policies",
+      "hash": "56c9cc10d43642f80f18f46af19606739021dff2fbdbea625d4a5b9083b895e7",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

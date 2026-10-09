@@ -1,0 +1,51 @@
+{
+  "name": "GNU Binutils",
+  "description": "The GNU binary tools, including the linker and assembler.",
+  "category": "tool",
+  "homepage": "https://sourceware.org/binutils/",
+  "repo": "https://sourceware.org/git/?p=binutils-gdb.git",
+  "summary": "LLM-generated patches are not accepted because their copyright status is unclear. LLMs may help without generating code, and legally insignificant changes such as spelling fixes are fine. Every submission must involve a human; fully automated submissions are refused.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "The GNU Binutils project is currently NOT accepting LLM generated patches.",
+      "sourceUrl": "https://sourceware.org/binutils/wiki/LLM_Generated_Content"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Using LLMs to assist in writing code is fine providing that the LLM does not actually generate code.",
+      "sourceUrl": "https://sourceware.org/binutils/wiki/LLM_Generated_Content"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Fully automated patch submission, whether by a bot, a script, or some other means is not acceptable.",
+      "sourceUrl": "https://sourceware.org/binutils/wiki/LLM_Generated_Content"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://sourceware.org/binutils/wiki/LLM_Generated_Content",
+      "title": "The GNU Binutils position on LLM generated content",
+      "hash": "78c706d9f600f380ae9b00ebbd67f0cb5cd84b5c0d0fbc79f8dcedc8e8993fbb",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

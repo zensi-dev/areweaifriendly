@@ -1,0 +1,48 @@
+{
+  "name": "OpenStreetMap website",
+  "description": "The Ruby on Rails application that powers openstreetmap.org.",
+  "category": "application",
+  "homepage": "https://www.openstreetmap.org/",
+  "repo": "https://github.com/openstreetmap/openstreetmap-website",
+  "summary": "AI tools may be used to help create pull requests if a human has reviewed, tested and fully understands all the changes. Issues tagged for new contributors should not be solved with AI.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "If you choose to use AI tools to help create pull requests, you should follow these additional guidelines:",
+      "sourceUrl": "https://github.com/openstreetmap/openstreetmap-website/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Make sure that a human has reviewed, tested, and fully understands all the code changes being submitted.",
+      "sourceUrl": "https://github.com/openstreetmap/openstreetmap-website/blob/master/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/openstreetmap/openstreetmap-website/blob/master/CONTRIBUTING.md",
+      "title": "Contributing to openstreetmap-website",
+      "hash": "c71613be8e4e5e18cb99f77497827e2f4b9a5e3d9d7d873cd2c8c965f3639f3e",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

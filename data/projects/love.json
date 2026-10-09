@@ -1,0 +1,46 @@
+{
+  "name": "LÖVE",
+  "description": "A framework for making 2D games in Lua.",
+  "category": "framework",
+  "homepage": "https://love2d.org/",
+  "repo": "https://github.com/love2d/love",
+  "summary": "Pull requests, bug reports and other contributions made with LLM or generative AI technology are not accepted.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Pull requests, bug reports, and other contributions made with LLM / generative AI technology will not be accepted.",
+      "sourceUrl": "https://github.com/love2d/love/blob/main/readme.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Pull requests, bug reports, and other contributions made with LLM / generative AI technology will not be accepted.",
+      "sourceUrl": "https://github.com/love2d/love/blob/main/readme.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/love2d/love/blob/main/readme.md",
+      "title": "LÖVE readme",
+      "hash": "88415ca3d42f7008c730b05625ac248f1b8066893a0968496f99f2360af13005",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

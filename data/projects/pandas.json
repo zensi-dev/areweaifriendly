@@ -1,0 +1,80 @@
+{
+  "name": "pandas",
+  "description": "Data analysis and manipulation library for Python.",
+  "category": "library",
+  "homepage": "https://pandas.pydata.org/",
+  "repo": "https://github.com/pandas-dev/pandas",
+  "summary": "AI coding assistants may help write code, tests and docs if their use is disclosed with the specific tool and the output is fully reviewed. In issues, pull requests and review comments AI may not speak for contributors, apart from translation and grammar editing.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You must disclose that you used an automated tool in the contribution, and be specific about which one.",
+      "sourceUrl": "https://pandas.pydata.org/docs/dev/development/contributing.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You must fully review and modify the result of the automated tool.",
+      "sourceUrl": "https://pandas.pydata.org/docs/dev/development/contributing.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Using these tools to help write the code, tests, and documentation in a contribution is fine.",
+      "sourceUrl": "https://pandas.pydata.org/docs/dev/development/contributing.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "This policy applies to any contribution made to pandas, including submitted issues or pull requests.",
+      "sourceUrl": "https://pandas.pydata.org/docs/dev/development/contributing.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Discussion is different: in issues, pull requests, and review comments, do not use AI to speak for you.",
+      "sourceUrl": "https://pandas.pydata.org/docs/dev/development/contributing.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Translation and grammar editing are an explicit exception to the rule above.",
+      "sourceUrl": "https://pandas.pydata.org/docs/dev/development/contributing.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Disclosure still applies, so say that you used a tool.",
+      "sourceUrl": "https://pandas.pydata.org/docs/dev/development/contributing.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://pandas.pydata.org/docs/dev/development/contributing.html",
+      "title": "Contributing to pandas",
+      "hash": "1b06b34d2aa801bb38f0031ad668894eb46904592cb2d0329c601aeda015d43f",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

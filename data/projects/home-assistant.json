@@ -1,0 +1,80 @@
+{
+  "name": "Home Assistant",
+  "description": "Open source home automation that puts local control and privacy first.",
+  "category": "application",
+  "homepage": "https://www.home-assistant.io/",
+  "repo": "https://github.com/home-assistant/core",
+  "summary": "Under the Open Home Foundation policy, AI may be used for code and docs if the contributor reviews, understands and can explain every change. Autonomous agents are not allowed. AI may help with writing, but answers to maintainers must be the contributor's own, and quoted AI output must be marked.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "no-autonomous-agents"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We support using AI (i.e., LLMs) as tools when contributing to Open Home Foundation projects. However, you are responsible for any contributions you submit, and we are responsible for any contributions we merge and release.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "All contributions must be reviewed and understood by the contributor before submission.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "We do not allow autonomous agents to be used for contributing to our projects.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "issues",
+      "quote": "We will close any pull requests or issues that we believe were created autonomously, and may mark automated comments as spam.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not use AI to generate answers to questions from maintainers.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Using AI to improve grammar or clarity is fine, but the substance of your responses must be your own.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If you wish to include context from an interaction with AI in your comments, it must be in a quote block (e.g., using >) and disclosed as such.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://developers.home-assistant.io/docs/ai_policy",
+      "title": "Open Home Foundation AI Policy",
+      "hash": "27790280938a2c11ee1a153b469ac6e126d272aac9a69b0085f4db39dfcd2c09",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

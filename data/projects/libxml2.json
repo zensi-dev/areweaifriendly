@@ -1,0 +1,51 @@
+{
+  "name": "libxml2",
+  "description": "The XML parser and toolkit used by GNOME and many other projects.",
+  "category": "library",
+  "homepage": "https://gitlab.gnome.org/GNOME/libxml2",
+  "repo": "https://gitlab.gnome.org/GNOME/libxml2",
+  "summary": "A strict no-LLM policy: no LLMs for issues, patches or pull requests, or for bug tracker comments, including translation.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "No LLMs for patches / pull requests.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/libxml2/-/blob/master/README.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "No LLMs for issues.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/libxml2/-/blob/master/README.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "No LLMs for comments on the bug tracker, including translation.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/libxml2/-/blob/master/README.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://gitlab.gnome.org/GNOME/libxml2/-/blob/master/README.md",
+      "title": "libxml2 README",
+      "hash": "ce8dcc7f7039fe5eb294e3ca999c6442f5b2f4e3b4d59a00e2aa099ea81e2545",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

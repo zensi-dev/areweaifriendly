@@ -1,0 +1,73 @@
+{
+  "name": "Zulip",
+  "description": "An organized team chat app.",
+  "category": "application",
+  "homepage": "https://zulip.com/",
+  "repo": "https://github.com/zulip/zulip",
+  "summary": "Any tools including AI may be used to understand the code and write it, but contributors must understand, test and be able to explain every change. AI-generated messages are not allowed in the development community, apart from help with spelling, grammar or translation, and LLMs should not be pointed at the code to find problems.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You can use any tools that help you understand the Zulip codebase and write good code, including AI tools.",
+      "sourceUrl": "https://github.com/zulip/zulip/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not submit an AI-generated PR you haven't personally understood and tested",
+      "sourceUrl": "https://github.com/zulip/zulip/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Don't point an LLM at the code and ask it to find problems or things to work on.",
+      "sourceUrl": "https://github.com/zulip/zulip/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not post AI-generated messages",
+      "sourceUrl": "https://github.com/zulip/zulip/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "we want to read your own genuine expression of your thoughts.",
+      "sourceUrl": "https://github.com/zulip/zulip/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "It's fine to use whatever tools you like for help with spelling, grammar, or translation.",
+      "sourceUrl": "https://github.com/zulip/zulip/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/zulip/zulip/blob/main/CONTRIBUTING.md",
+      "title": "Zulip contributing guide",
+      "hash": "8144edd42bc5f424fbd8bed18ce3066ae6941b3825dcb16cdd2e8f0fe6819fbe",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

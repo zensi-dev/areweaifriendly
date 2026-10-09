@@ -1,0 +1,66 @@
+{
+  "name": "Wagtail",
+  "description": "A Django content management system.",
+  "category": "application",
+  "homepage": "https://wagtail.org/",
+  "repo": "https://github.com/wagtail/wagtail",
+  "summary": "AI assistance is permitted but purely AI-generated contributions are not; contributors must understand the solution and fill in the AI usage part of the PR description. PR descriptions and replies to review must be written by the contributor, with AI help for English allowed.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "AI assistance when working on Wagtail is permitted. Purely AI-generated contributions are not - if we wanted those, we would prompt an AI agent ourselves.",
+      "sourceUrl": "https://docs.wagtail.org/en/latest/contributing/general_guidelines.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If you use generative AI for your contribution, please fill in the “AI usage” portion of the PR description.",
+      "sourceUrl": "https://docs.wagtail.org/en/latest/contributing/general_guidelines.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Entire work (code changes, documentation update, pull request descriptions) are LLM-generated without there being a clear understanding of the solution implementation from the contributor.",
+      "sourceUrl": "https://docs.wagtail.org/en/latest/contributing/general_guidelines.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "For this reason, we ask you to write the pull request description yourself, and not offload that task to an AI agent.",
+      "sourceUrl": "https://docs.wagtail.org/en/latest/contributing/general_guidelines.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Assistance with written English for code comments, documentation and pull request descriptions",
+      "sourceUrl": "https://docs.wagtail.org/en/latest/contributing/general_guidelines.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://docs.wagtail.org/en/latest/contributing/general_guidelines.html",
+      "title": "Wagtail general coding guidelines",
+      "hash": "e2df5b6360dfee7dd1bba91ba700567120c4eab89ad7400580ee523ce1d5a4a1",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

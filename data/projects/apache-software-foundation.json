@@ -1,0 +1,53 @@
+{
+  "name": "Apache Software Foundation",
+  "description": "Non-profit foundation behind Apache HTTP Server, Kafka, Spark and over 300 other projects.",
+  "category": "foundation",
+  "homepage": "https://www.apache.org/",
+  "repo": "https://github.com/apache",
+  "summary": "Code or documentation generated wholly or partly with AI can be contributed if the tool's terms allow open source licensing and any third-party material in the output is permitted and compatible. Naming the tool in the commit message, for example with Generated-by, is recommended. Individual projects may add their own rules.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Given the above, code generated in whole or in part using AI can be contributed if the contributor ensures that:",
+      "sourceUrl": "https://www.apache.org/legal/generative-tooling.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Any third party materials that are included in the output are being used with permission (e.g., under a compatible open-source license) of the third party copyright holders and in compliance with the applicable license terms.",
+      "sourceUrl": "https://www.apache.org/legal/generative-tooling.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "When providing contributions authored using generative AI tooling, a recommended practice is for contributors to indicate the tooling used to create the contribution.",
+      "sourceUrl": "https://www.apache.org/legal/generative-tooling.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.apache.org/legal/generative-tooling.html",
+      "title": "ASF Generative Tooling Guidance",
+      "hash": "acdb9116b5a9380e507dbc474abb088244db6c311b4faf0dd4e0ecfabc1f2972",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

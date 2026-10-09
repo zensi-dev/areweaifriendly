@@ -1,0 +1,73 @@
+{
+  "name": "Mesa",
+  "description": "Open source implementations of OpenGL, Vulkan and other graphics APIs.",
+  "category": "library",
+  "homepage": "https://mesa3d.org/",
+  "repo": "https://gitlab.freedesktop.org/mesa/mesa",
+  "summary": "AI-assisted code is allowed if the submitter understands it, takes responsibility including MIT licence compatibility, and discloses AI involvement with Assisted-by or Generated-by. Autonomous tools may not submit or interact with issues or MRs, and AI should not write comments, commit messages or GitLab comments.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "license-compliance",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "no-autonomous-agents"
+      ]
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "That responsibility includes making sure that the code change can be submitted under the MIT license that Mesa uses.",
+      "sourceUrl": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Disclosure is always required when \"AI\" was involved in the creative process of coming up with the code, except in the following cases:",
+      "sourceUrl": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "It is not allowed to use autonomously acting tools to submit any contributions, that is every contributions needs explicit oversight and your review.",
+      "sourceUrl": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst"
+    },
+    {
+      "dimension": "issues",
+      "quote": "This includes interactions with GitLab issues or MRs in any autonomous way through such tools.",
+      "sourceUrl": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "\"AI\" shouldn't be used to generate code comments, commit messages, and Gitlab comments.",
+      "sourceUrl": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Consequentially, contributors can use \"AI\" for research etc., but all text should be their own words.",
+      "sourceUrl": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst",
+      "title": "Mesa: Submitting Patches",
+      "hash": "f0fe46cbdc291b88220e812717463ed31100c50ad44d1dd4c03d2d7113e85c67",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

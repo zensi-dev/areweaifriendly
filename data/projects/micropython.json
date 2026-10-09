@@ -1,0 +1,61 @@
+{
+  "name": "MicroPython",
+  "description": "A lean implementation of Python 3 for microcontrollers.",
+  "category": "language",
+  "homepage": "https://micropython.org/",
+  "repo": "https://github.com/micropython/micropython",
+  "summary": "Generative AI coding tools are welcome if contributors read and validate the code and talk to reviewers themselves. Copy-pasting to and from a chatbot during review is unacceptable except for translation, and AI agents may not submit pull requests on their own.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You're welcome to use \"generative AI\" coding tools when contributing to MicroPython, however:",
+      "sourceUrl": "https://github.com/micropython/micropython/wiki/ContributorGuidelines"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You (the human contributor) should always be reading and validating new code before submitting it to us for review.",
+      "sourceUrl": "https://github.com/micropython/micropython/wiki/ContributorGuidelines"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Please do not allow \"AI Agents\" to submit Pull Requests to MicroPython by themselves.",
+      "sourceUrl": "https://github.com/micropython/micropython/wiki/ContributorGuidelines"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Copy-pasting to and from a chatbot is unacceptable, unless you're only using it for translation to and from English.",
+      "sourceUrl": "https://github.com/micropython/micropython/wiki/ContributorGuidelines"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/micropython/micropython/wiki/ContributorGuidelines",
+      "title": "MicroPython Contributor Guidelines",
+      "hash": "087ae3635d87264ef5478b5b50ee3ecfb4e6fc5a538fb91abdfccc215697c014",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

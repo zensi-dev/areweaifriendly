@@ -1,0 +1,76 @@
+{
+  "name": "gVisor",
+  "description": "An application kernel that provides a strong isolation boundary for containers.",
+  "category": "tool",
+  "homepage": "https://gvisor.dev/",
+  "repo": "https://github.com/google/gvisor",
+  "summary": "Contributors are expected to embrace AI tools, with mandatory human oversight: all AI-generated content must be reviewed, the contributor remains the sole responsible author, and substantial AI content must be labelled, for example with Assisted-by. This applies to code, issues, security reports and comments.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We expect our contributors to embrace AI tools.",
+      "sourceUrl": "https://gvisor.dev/contributing"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
+      "sourceUrl": "https://gvisor.dev/contributing"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Transparently label all contributions containing substantial AI-generated content.",
+      "sourceUrl": "https://gvisor.dev/contributing"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The contributor remains the sole author and is fully responsible for the contribution’s accuracy, quality, and maintainability.",
+      "sourceUrl": "https://gvisor.dev/contributing"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Issues or security vulnerabilities",
+      "sourceUrl": "https://gvisor.dev/contributing"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Comments and feedback on pull requests or issues",
+      "sourceUrl": "https://gvisor.dev/contributing"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://gvisor.dev/contributing",
+      "title": "Contributing to gVisor",
+      "hash": "f3f9147b0e7100148592b02626906d3742e0efbec86cf925a1473ab52873e4ad",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

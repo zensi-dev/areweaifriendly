@@ -1,0 +1,68 @@
+{
+  "name": "Astropy",
+  "description": "A community Python library for astronomy and astrophysics.",
+  "category": "library",
+  "homepage": "https://www.astropy.org/",
+  "repo": "https://github.com/astropy/astropy",
+  "summary": "Contributions made with generative AI are welcome. Contributors are responsible for and must be able to explain all changes, must describe substantive AI use, and must answer reviewers themselves rather than relaying AI replies. Autonomous agents are not accepted.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "license-compliance",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Astropy maintainers welcome contributions, including those developed with the assistance of generative AI tools.",
+      "sourceUrl": "https://github.com/astropy/astropy-project/blob/main/policies/ai-policy.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If generative AI tools were used for substantive portions of the contribution, contributors must describe their use in the change description.",
+      "sourceUrl": "https://github.com/astropy/astropy-project/blob/main/policies/ai-policy.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributors are responsible for ensuring all submitted code complies with Astropy's licensing, regardless of whether generative AI tools were used.",
+      "sourceUrl": "https://github.com/astropy/astropy-project/blob/main/policies/ai-policy.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Autonomous workflows (\"agents\") are not human contributors.",
+      "sourceUrl": "https://github.com/astropy/astropy-project/blob/main/policies/ai-policy.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Copying and pasting replies to / from a generative AI tool does not count as engaging with the reviewer; contributors are expected to understand the changes they are proposing, not act as message courier for a third party.",
+      "sourceUrl": "https://github.com/astropy/astropy-project/blob/main/policies/ai-policy.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/astropy/astropy-project/blob/main/policies/ai-policy.md",
+      "title": "Astropy: Usage of Generative AI",
+      "hash": "803ae536221830c2fd0eea5a97eaba094c59d5d5b0b860ce3098d1a08629a837",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

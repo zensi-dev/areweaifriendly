@@ -1,0 +1,68 @@
+{
+  "name": "SearXNG",
+  "description": "A free, privacy-respecting metasearch engine.",
+  "category": "application",
+  "homepage": "https://docs.searxng.org/",
+  "repo": "https://github.com/searxng/searxng",
+  "summary": "All AI use must be disclosed with the tool and extent, the contributor must fully understand the code, and AI may never be the main author of a PR. Issues and PR descriptions must be fully human-written, with AI translation of self-written text allowed.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "All AI usage in any form must be disclosed.",
+      "sourceUrl": "https://github.com/searxng/searxng/blob/master/AI_POLICY.rst"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The human-in-the-loop must fully understand all code.",
+      "sourceUrl": "https://github.com/searxng/searxng/blob/master/AI_POLICY.rst"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "AI should never be the main author of the PR.",
+      "sourceUrl": "https://github.com/searxng/searxng/blob/master/AI_POLICY.rst"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Issues and PR descriptions must be fully human-written.",
+      "sourceUrl": "https://github.com/searxng/searxng/blob/master/AI_POLICY.rst"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If you're a not a native English speaker, using AI for translating self-written issue texts to English is okay, but please keep the wording as close as possible to the original wording.",
+      "sourceUrl": "https://github.com/searxng/searxng/blob/master/AI_POLICY.rst"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/searxng/searxng/blob/master/AI_POLICY.rst",
+      "title": "SearXNG AI Policy",
+      "hash": "9f727a5a246cfc4512994aceb8e9c0e38115bab36a897144a722bf0a6718865f",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Endless Sky",
+  "description": "A free space exploration, trading and combat game.",
+  "category": "application",
+  "homepage": "https://endless-sky.github.io/",
+  "repo": "https://github.com/endless-sky/endless-sky",
+  "summary": "AI-generated or AI-assisted content is forbidden in Endless Sky development, for ethical, philosophical and legal (GPLv3) reasons.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "AI-generated/assisted content is forbidden in Endless Sky development.",
+      "sourceUrl": "https://github.com/endless-sky/endless-sky/blob/master/docs/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/endless-sky/endless-sky/blob/master/docs/CONTRIBUTING.md",
+      "title": "Contributing to Endless Sky",
+      "hash": "3e4579f9b3fa6c4bca19e3618ad80f53299478b900651c6acbc299d00c93630c",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

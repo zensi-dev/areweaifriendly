@@ -1,0 +1,82 @@
+{
+  "name": "Rust",
+  "description": "A systems programming language focused on safety, speed and concurrency.",
+  "category": "language",
+  "homepage": "https://www.rust-lang.org/",
+  "repo": "https://github.com/rust-lang/rust",
+  "summary": "In rust-lang/rust, cargo, clippy and other adopting repositories, LLMs may be used privately to answer questions, analyse, review and suggest, but not to create. LLM-written comments, issue bodies, PR descriptions and docs are banned; trivial changes, machine translation and verified LLM-found bugs need disclosure, and LLM-created code is only allowed in a pre-arranged, disclosed experiment.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "minor-assist-only"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed",
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "It’s fine to use LLMs to answer questions, analyze, distill, refine, check, suggest, review. But not to create.",
+      "sourceUrl": "https://forge.rust-lang.org/policies/llm-usage.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Pre-arranged, non-critical, high-quality, well-tested, and well-reviewed code changes that are originally created by an LLM are allowed, with disclosure.",
+      "sourceUrl": "https://forge.rust-lang.org/policies/llm-usage.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Your contributions are your responsibility; you cannot place any blame on an LLM.",
+      "sourceUrl": "https://forge.rust-lang.org/policies/llm-usage.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Using an LLM to discover bugs, as long as you personally verify the bug.",
+      "sourceUrl": "https://forge.rust-lang.org/policies/llm-usage.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "This also applies to issue bodies and PR descriptions.",
+      "sourceUrl": "https://forge.rust-lang.org/policies/llm-usage.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Comments that are originally created by an LLM posted from a personal user account.",
+      "sourceUrl": "https://forge.rust-lang.org/policies/llm-usage.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "All uses under “⚠️ Allowed with caveats” must disclose that an LLM was used.",
+      "sourceUrl": "https://forge.rust-lang.org/policies/llm-usage.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://forge.rust-lang.org/policies/llm-usage.html",
+      "title": "Rust LLM Usage Policy",
+      "hash": "77c66421d45d2b5ad27a31e92777c356c5d322c1ad2a7a4be62c78a01cdd76f3",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

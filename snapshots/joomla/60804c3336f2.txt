@@ -1,0 +1,121 @@
+# Generative AI policy
+
+## 1. Purpose
+
+ The "Generative AI policy" outlines the expected use of Artificial Intelligence (AI) tools, such as code-generation, code-suggestion or conversational tools, when making contributions to the Joomla! project.
+
+ The policy ensures that contributions are in compliance with Joomla!s GNU General Public License (GPL), protects maintainers time, especially to avoid shifting the contributors work load into maintainers through unreviewed AI output ("vibe coding").
+
+## 2. General Principles
+
+### 2.1 AI is allowed, but not a substitute for contributor responsibility
+
+ Contributors may use AI tools to assist with research, code suggestions, documentation, or problem analysis. However, AI-generated code must never be submitted without full human understanding, review, and validation by the contributor.
+
+### 2.2 Contributors remain fully responsible for their submissions
+
+ The contributor is always accountable for the final submission. Especially the correctness, security, licensing, maintainability of submitted code.
+
+### 2.3 Respect for Maintainers & Volunteers
+
+ Submitting unreviewed AI output is considered disrespectful to maintainers and community members, because it shifts the workload from the contributor to the reviewer.
+
+ Joomla! maintains a volunteer-driven ecosystem where the project must protect maintainers' time.
+
+ If you save time using AI but create extra work for maintainers & volunteers, the net effect harms the project.
+
+## 3. Licensing and Compliance Requirements
+
+### 3.1 GNU/GPL Compatibility
+
+ All contributions must be compatible with the GNU GPL version 2 or later.
+
+ This applies equally to AI-assisted output. Contributors must ensure:
+
+- The AI’s training data and licensing terms permit GPL-compatible use.
+
+- The generated code does not reproduce identifiable copyrighted code from proprietary sources.
+
+- Any included snippets are permissible under Joomla’s licensing rules.
+
+### 3.2 No Proprietary Code Leakage
+
+ If an AI tool generates code that appears identical or suspiciously similar to non-GPL, proprietary, or copyrighted material, the contributor must:
+
+- remove it, or
+
+- replace it with an original implementation, or
+
+- provide clear provenance demonstrating compatibility with the GPL.
+
+## 4. Quality & Review Requirements
+
+### 4.1 AI Contributions Must Be Labeled.
+
+ Any pull request that contains AI-assisted or AI-generated content (code, tests, documentation, or substantial comments) must be clearly marked by adding [AI] at the beginning of the PR title and/or using the [AI Generated] label.
+
+ PRs that are not labeled accordingly may be requested to be updated before review or may be closed.
+
+### 4.2 Mandatory Self-Review Before Submitting
+
+ Every AI-assisted pull request must undergo a full human review like any contribution.
+
+ This includes:
+
+- Test the submission including potential side effects.
+
+- Reviewing variable names, architecture and comments.
+
+- Eliminating unnecessary or irrelevant code and comments produced by the AI.
+
+- Ensuring the code solves the original problem in the simplest reasonable way.
+
+ Submitting AI-generated code without personal validation is prohibited.
+
+### 4.3 No “Vibe Coding” Submissions
+
+ “Vibe coding” or “prompt-dump coding”, where large blocks of AI-generated code are submitted without meaningful contributor oversight, is not allowed.
+
+ Characteristics of disallowed submissions include:
+
+- Large, unreviewed AI code blobs.
+
+- Obvious mechanical mistakes that a human would fix in 1–2 minutes.
+
+- Code that clearly has never been executed (as it does not behave the expected way).
+
+- PRs that fundamentally shift debugging and cleanup to maintainers.
+
+ Maintainers may close such PRs with a request for proper review and, in case of recurrence, may block the person from further contributions.
+
+### 4.4 Standards of Communication
+
+ AI-generated explanations, testing instructions, comments or documentation must also be reviewed.
+
+ Posting raw AI-generated answers (including in issues or discussions) is discouraged because it:
+
+- Often contains inaccuracies/hallucinations.
+
+- Lacks context.
+
+- Signals low investment from the contributor.
+
+- Wastes time for others reading and correcting it.
+
+ Respect for community members requires thoughtful, human-reviewed communication.
+
+## 5. Summary
+
+- You may use AI.
+
+- You must review and understand all AI-generated code yourself.
+
+- You must ensure GPL compatibility.
+
+- Never dump a raw AI blob into a pull request.
+
+- Do not shift the workload to maintainers.
+
+- Be respectful in how you use AI in issues, comments, and PRs.
+
+- Maintain high engineering standards, regardless of AI usage.

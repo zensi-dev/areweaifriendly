@@ -1,0 +1,77 @@
+{
+  "name": "Polars",
+  "description": "A fast DataFrame library for Rust and Python.",
+  "category": "library",
+  "homepage": "https://pola.rs/",
+  "repo": "https://github.com/pola-rs/polars",
+  "summary": "All AI use must be disclosed with the tools used, AI-generated code must be fully tested by a human and is only accepted for accepted issues, and AI may not be used on good first issues. Agents may not interact with the repository at all, and AI-assisted issues and discussions must be reviewed and edited by a human.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed",
+        "no-autonomous-agents"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Agents are strictly forbidden from interacting with our repository.",
+      "sourceUrl": "https://github.com/pola-rs/polars/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "All AI usage in any form must be disclosed.",
+      "sourceUrl": "https://github.com/pola-rs/polars/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "AI-generated code must have been fully verified with human use.",
+      "sourceUrl": "https://github.com/pola-rs/polars/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Pull requests with AI-generated code can only be for accepted issues.",
+      "sourceUrl": "https://github.com/pola-rs/polars/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Issues and discussions can use AI assistance but must have a full human-in-the-loop.",
+      "sourceUrl": "https://github.com/pola-rs/polars/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "This means that any content generated with AI must have been reviewed and edited by a human before submission.",
+      "sourceUrl": "https://github.com/pola-rs/polars/blob/main/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/pola-rs/polars/blob/main/AI_POLICY.md",
+      "title": "Polars AI Usage Policy",
+      "hash": "2d0ebb0ce250e13ae495a55d690c205c377ec094d03e8e7bfe1665fba542d7d2",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

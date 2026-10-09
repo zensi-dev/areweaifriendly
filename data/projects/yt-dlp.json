@@ -1,0 +1,51 @@
+{
+  "name": "yt-dlp",
+  "description": "A feature-rich command-line audio and video downloader.",
+  "category": "tool",
+  "homepage": "https://github.com/yt-dlp/yt-dlp",
+  "repo": "https://github.com/yt-dlp/yt-dlp",
+  "summary": "LLMs, agents and other AI tools are strictly forbidden for any kind of contribution: issues, bug reports, pull requests, PR descriptions, comments and translation. Violators may be blocked without warning.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "This project strictly forbids the usage of LLMs, agents, or any other AI tools for any kind of contribution.",
+      "sourceUrl": "https://github.com/yt-dlp/yt-dlp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "No AI / no LLMs for issues or bug reports.",
+      "sourceUrl": "https://github.com/yt-dlp/yt-dlp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "No AI / no LLMs for issue tracker comments or code review comments.",
+      "sourceUrl": "https://github.com/yt-dlp/yt-dlp/blob/master/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/yt-dlp/yt-dlp/blob/master/CONTRIBUTING.md",
+      "title": "Contributing to yt-dlp",
+      "hash": "e47cb19cc2ec086da5a4fbcf43855ba2b17ce388e3bffca9d6b413a9ddd8d759",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

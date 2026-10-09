@@ -1,0 +1,29 @@
+# AI Policy¶
+
+Important
+
+We forbid the use of generative AI tools in Nura.
+
+The following is not allowed in Nura:
+
+- Submitting contributions fully or in part created by generative AI tools to Nura.
+
+- Recommending generative AI tools to other community members for solving problems in the Nura space.
+
+If somebody keeps on violating these rules, we may escalate the situation according to the Code of Conduct Enforcement Guidelines with warnings and temporary/permanent bans.
+
+## Reasoning¶
+
+AI tools have several ethical issues. They require an unreasonable amount of energy[1] and water[2] to build and operate, their models are built in part with heavily exploited workers in unacceptable working conditions[3], usually without consent from or compensation for creators of the source material[4] and oftentimes causing DDoS attacks against FOSS infrastructure in the process[5] (which in turn force the deployment of challenge-based protections and increase cost and complexity of self-hosting for everybody[6]). Furthermore, they are being used to undermine labor and justify layoffs[7]. These are harms that we do not want to perpetuate, even if only indirectly.
+
+Additionally, authors making use of generative AI tools oftentimes increase the maintainer burden and cause further problems by not ensuring the following:
+
+- Understanding completely how the code in their contribution works.
+
+- Describing the change accurately in the commit message.
+
+- Testing the contribution and ensuring it works as described.
+
+- Making sure their patches are unlikely to introduce bugs, especially security bugs.
+
+- Not violating copyright (such as software licenses, creative commons or any other).

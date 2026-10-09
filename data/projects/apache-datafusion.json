@@ -1,0 +1,62 @@
+{
+  "name": "Apache DataFusion",
+  "description": "An extensible query engine written in Rust that uses Apache Arrow.",
+  "category": "library",
+  "homepage": "https://datafusion.apache.org/",
+  "repo": "https://github.com/apache/datafusion",
+  "summary": "AI-assisted PRs are welcome from anyone, but not unreviewed \"AI dumps\". Authors must read the whole PR, understand the core ideas, flag parts they do not fully understand and follow the ASF licensing guidance. Replies to reviewers must be in the contributor's own words, though AI may help understand or translate.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We welcome AI-assisted PRs from anyone. We do not welcome unreviewed “AI dumps” (defined below).",
+      "sourceUrl": "https://datafusion.apache.org/contributor-guide/ai-policy.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The PR author should have personally read the entire PR they submit and understand the core ideas end-to-end.",
+      "sourceUrl": "https://datafusion.apache.org/contributor-guide/ai-policy.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Among other things, the author must ensure the PR does not include undisclosed third-party code or copyrighted material.",
+      "sourceUrl": "https://datafusion.apache.org/contributor-guide/ai-policy.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "We expect your responses to be in your own words, though it is fine to use AI to help prepare your response (for example to understand the comment, or help translate your response to English).",
+      "sourceUrl": "https://datafusion.apache.org/contributor-guide/ai-policy.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://datafusion.apache.org/contributor-guide/ai-policy.html",
+      "title": "Apache DataFusion AI Policy",
+      "hash": "0902016a9476e4572d7d9b71d92460ec480bd973363946008fa79ee4feec89af",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

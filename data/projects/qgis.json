@@ -1,0 +1,46 @@
+{
+  "name": "QGIS",
+  "description": "A free and open source geographic information system.",
+  "category": "application",
+  "homepage": "https://qgis.org/",
+  "repo": "https://github.com/qgis/QGIS",
+  "summary": "No LLM-, AI- or agent-assisted code contributions are allowed in the main QGIS repository. Contributions later found to have used AI face code reversion and sanctions on contributor rights.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "No LLM, AI or agent assisted code contributions are allowed in the https://github.com/qgis/qgis repository.",
+      "sourceUrl": "https://github.com/qgis/QGIS-Enhancement-Proposals/blob/master/qep-408-ai-tool-policy.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If we subsequently discover that you have used an AI, LLM, or any agent-based workflow for your contribution, you will be subject to code reversion and contributor rights sanctioning.",
+      "sourceUrl": "https://github.com/qgis/QGIS-Enhancement-Proposals/blob/master/qep-408-ai-tool-policy.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/qgis/QGIS-Enhancement-Proposals/blob/master/qep-408-ai-tool-policy.md",
+      "title": "QGIS Enhancement 408: AI tool use policy",
+      "hash": "3a9398c18938d4429ea13526ab814ace2190293a9ca8dc5b1f91557867235d4c",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

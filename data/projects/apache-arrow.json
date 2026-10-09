@@ -1,0 +1,67 @@
+{
+  "name": "Apache Arrow",
+  "description": "A cross-language development platform for in-memory columnar data.",
+  "category": "library",
+  "homepage": "https://arrow.apache.org/",
+  "repo": "https://github.com/apache/arrow",
+  "summary": "AI tools may be used to generate PRs, but authors should review and own every change, be upfront about what was AI-generated, and disclose any copyrighted material. PRs that look fully AI-generated with little author engagement may be closed, and AI agents should never ping maintainers.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We are not opposed to the use of AI tools in generating PRs, but recommend the following:",
+      "sourceUrl": "https://arrow.apache.org/docs/dev/developers/overview.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Only submit a PR if you are able to debug and own the changes yourself - review all generated code to understand every detail",
+      "sourceUrl": "https://arrow.apache.org/docs/dev/developers/overview.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Be upfront about AI usage and summarise what was AI-generated",
+      "sourceUrl": "https://arrow.apache.org/docs/dev/developers/overview.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "AI agents should never tag or ping maintainers",
+      "sourceUrl": "https://arrow.apache.org/docs/dev/developers/overview.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "PR authors are also responsible for disclosing any copyrighted materials in submitted contributions.",
+      "sourceUrl": "https://arrow.apache.org/docs/dev/developers/overview.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://arrow.apache.org/docs/dev/developers/overview.html",
+      "title": "Apache Arrow Contributing Overview",
+      "hash": "21a1592e78e05aeaed77df486db4168809b33e818c0cf3d13e67e8c0cecdbdbe",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

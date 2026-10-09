@@ -1,0 +1,71 @@
+{
+  "name": "Gitea",
+  "description": "A painless self-hosted Git service.",
+  "category": "application",
+  "homepage": "https://about.gitea.com/",
+  "repo": "https://github.com/go-gitea/gitea",
+  "summary": "AI-assisted contributions are welcome if AI use is clearly disclosed and contributors review and test the code and can explain and defend it themselves. AI may help draft issues and PRs, but questions from maintainers must be answered without AI.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Contributions made with the assistance of AI tools are welcome, but contributors must use them responsibly and disclose that use clearly.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Review AI-generated code closely before marking a pull request ready for review.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Only use AI to assist in contributions that you understand well enough to explain, defend, and revise yourself during review.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "AI may be used to help draft issues and pull requests, but contributors remain responsible for the accuracy, completeness, and intent of what they submit.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not use AI to reply to questions about your issue or pull request. The questions are for you, not an AI model.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md",
+      "title": "Gitea Contribution Guidelines",
+      "hash": "03c272a04e8c8e3a576b67438d5f47b689a28b4f6e97d2f793439aa3c345f3b2",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

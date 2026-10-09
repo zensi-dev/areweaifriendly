@@ -1,0 +1,51 @@
+{
+  "name": "Cataclysm: Dark Days Ahead",
+  "description": "A turn-based survival roguelike game.",
+  "category": "application",
+  "homepage": "https://cataclysmdda.org/",
+  "repo": "https://github.com/CleverRaven/Cataclysm-DDA",
+  "summary": "All content sourced from LLMs is not allowed, including code, configuration, issue and PR text, research and testing results, because it has no authorship and questionable provenance.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "All contents sourced from LLMs such as ChatGPT (including but not limited to code, configuration, issue and PR text, research, and testing results) are not allowed",
+      "sourceUrl": "https://github.com/CleverRaven/Cataclysm-DDA/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "All contents sourced from LLMs such as ChatGPT (including but not limited to code, configuration, issue and PR text, research, and testing results) are not allowed",
+      "sourceUrl": "https://github.com/CleverRaven/Cataclysm-DDA/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "All contents sourced from LLMs such as ChatGPT (including but not limited to code, configuration, issue and PR text, research, and testing results) are not allowed",
+      "sourceUrl": "https://github.com/CleverRaven/Cataclysm-DDA/blob/master/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/CleverRaven/Cataclysm-DDA/blob/master/CONTRIBUTING.md",
+      "title": "Contributing to Cataclysm: Dark Days Ahead",
+      "hash": "379afdb80ba66f93c0fcdcc5583fd53544c59177f68a272429176393237263f9",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

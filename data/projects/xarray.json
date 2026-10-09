@@ -1,0 +1,68 @@
+{
+  "name": "Xarray",
+  "description": "N-dimensional labeled arrays and datasets in Python.",
+  "category": "library",
+  "homepage": "https://xarray.dev/",
+  "repo": "https://github.com/pydata/xarray",
+  "summary": "AI-generated code is accepted if the submitter has read, tested and fully understands every change; large AI-assisted changes should be discussed in an issue first. PR descriptions, issue comments and review replies must be in the contributor's own words, with AI allowed only to polish language.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "this policy applies regardless of whether the code was written by hand, with AI assistance, or generated entirely by an AI tool.",
+      "sourceUrl": "https://github.com/pydata/xarray/blob/main/doc/contribute/ai-policy.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You must have personally reviewed and understood all changes before submitting.",
+      "sourceUrl": "https://github.com/pydata/xarray/blob/main/doc/contribute/ai-policy.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "PR descriptions, issue comments, and review responses must be your own words.",
+      "sourceUrl": "https://github.com/pydata/xarray/blob/main/doc/contribute/ai-policy.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not paste AI-generated text as comments or review responses.",
+      "sourceUrl": "https://github.com/pydata/xarray/blob/main/doc/contribute/ai-policy.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Using AI to improve the language of your writing (grammar, phrasing, spelling, etc.) is acceptable.",
+      "sourceUrl": "https://github.com/pydata/xarray/blob/main/doc/contribute/ai-policy.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/pydata/xarray/blob/main/doc/contribute/ai-policy.md",
+      "title": "Xarray AI Usage Policy",
+      "hash": "84b696f372315d1208010d29029aae7fb81600197f6d02f5537e33d90a490acb",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

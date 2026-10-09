@@ -1,0 +1,75 @@
+{
+  "name": "scikit-image",
+  "description": "Image processing in Python.",
+  "category": "library",
+  "homepage": "https://scikit-image.org/",
+  "repo": "https://github.com/scikit-image/scikit-image",
+  "summary": "AI may not be used to create novel code such as algorithms or tests, or to write PR descriptions and comments. It is allowed for exploring the codebase, iterating on hand-written code, trivial fixes and mechanical changes, with AI use declared and AI commits tagged Assisted-by.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "license-compliance",
+        "minor-assist-only"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Creating novel code (algorithmic additions, writing tests, etc.).",
+      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "For exploring the codebase, for iterating on hand-written code, and for fixing trivial bugs.",
+      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Always declare tool usage: say specifically what part of the task you used AI for in the PR description.",
+      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You must take responsibility for copyright of the AI-generated code;",
+      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Writing pull request descriptions, or commenting on issues or PRs.",
+      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Write PR descriptions and comments by hand.",
+      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://scikit-image.org/docs/dev/development/contribute.html",
+      "title": "How to contribute to scikit-image",
+      "hash": "3ac93ce3e6dc1883d368968a05578732d23d87a858fcc2ba990ba9976a5d7de0",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

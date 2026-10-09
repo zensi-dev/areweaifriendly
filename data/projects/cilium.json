@@ -1,0 +1,75 @@
+{
+  "name": "Cilium",
+  "description": "eBPF-based networking, security and observability for Kubernetes.",
+  "category": "tool",
+  "homepage": "https://cilium.io/",
+  "repo": "https://github.com/cilium/cilium",
+  "summary": "Generative AI may help explain code, autocomplete, refactor, brainstorm and draft tests, as long as contributors review everything, take full responsibility, respect licensing and report non-trivial AI use. Messages substantially written by AI are not acceptable in community spaces, though translation help is understood.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Whether or not Generative AI tools were involved, you are fully accountable for the correctness, security, and clarity of your contributions.",
+      "sourceUrl": "https://github.com/cilium/community/blob/main/AI-POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Human review is required for all code, including code generated or assisted by Generative AI tools.",
+      "sourceUrl": "https://github.com/cilium/community/blob/main/AI-POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Report the use of Generative AI tools for non-trivial preparation of submissions",
+      "sourceUrl": "https://github.com/cilium/community/blob/main/AI-POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Ensure the output adheres to project guidelines and licensing requirements; and",
+      "sourceUrl": "https://github.com/cilium/community/blob/main/AI-POLICY.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Communicate in any Cilium community space with content that is substantially written using Generative AI tools.",
+      "sourceUrl": "https://github.com/cilium/community/blob/main/AI-POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "For example, it is not acceptable to send such text on Slack or GitHub, whether initiating or responding to discussion with other community members.",
+      "sourceUrl": "https://github.com/cilium/community/blob/main/AI-POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/cilium/community/blob/main/AI-POLICY.md",
+      "title": "Cilium Generative AI Policy",
+      "hash": "13164a325232b3242015ab8b1fe3f9d5d43e149d864c4709a4cc6484848bae26",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

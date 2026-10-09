@@ -1,0 +1,54 @@
+{
+  "name": "Twisted",
+  "description": "An event-driven networking engine written in Python.",
+  "category": "framework",
+  "homepage": "https://twisted.org/",
+  "repo": "https://github.com/twisted/twisted",
+  "summary": "Generative AI output is not allowed in code, documentation, issues, PR descriptions or discussions, and contributors self-certify that they used none. Findings learned from an LLM, such as security issues, are accepted if fully reviewed and written up by hand.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed",
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Twisted does not allow the inclusion of the outputs of generative AI tools, such as ChatGPT, Claude, Perplexity, Grok, or other similar products.",
+      "sourceUrl": "https://docs.twisted.org/en/latest/development/ai-policy.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "we specifically do not forbid contributions that are derived from information obtained from LLM outputs, as long as you have fully reviewed those outputs on your own, and written your own description of the issue and proof-of-concept by hand.",
+      "sourceUrl": "https://docs.twisted.org/en/latest/development/ai-policy.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "do not use such systems to generate text to include in any discussion forum (including, but not limited to: issue & pull request descriptions & comments, email lists, and real-time discussions such as our IRC channel).",
+      "sourceUrl": "https://docs.twisted.org/en/latest/development/ai-policy.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://docs.twisted.org/en/latest/development/ai-policy.html",
+      "title": "Twisted AI Policy",
+      "hash": "ee676f7cb49d5d9167d059d34f82ee933167551f4e11b1caaa8a3ff8d2a5d972",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

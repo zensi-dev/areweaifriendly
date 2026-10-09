@@ -1,0 +1,55 @@
+{
+  "name": "Rocky Linux Documentation",
+  "description": "The documentation project of Rocky Linux, an enterprise Linux distribution.",
+  "category": "distribution",
+  "homepage": "https://docs.rockylinux.org/",
+  "repo": "https://github.com/rocky-linux/documentation",
+  "summary": "AI assistance is allowed in the documentation project, based on Fedora's policy. Contributors are accountable for quality and licence compliance and must disclose AI use when a significant part comes from a tool unchanged, for example with Assisted-by or document metadata.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You MAY use AI assistance for contributing to the Rocky Linux Documentation Project, as long as you follow the principles described below.",
+      "sourceUrl": "https://docs.rockylinux.org/guides/contribute/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You MUST disclose your use of AI tools when a significant part of your contribution comes directly from a tool without any changes.",
+      "sourceUrl": "https://docs.rockylinux.org/guides/contribute/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributing to Rocky Linux means vouching for the quality, license compliance, and utility of your submission.",
+      "sourceUrl": "https://docs.rockylinux.org/guides/contribute/ai-contribution-policy/"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://docs.rockylinux.org/guides/contribute/ai-contribution-policy/",
+      "title": "Rocky Linux Documentation AI-assisted contribution policy",
+      "hash": "7fb09d955dc49c876398fe488a1a710f2d65a8fa9efc790b9e8be2b9f50e5d8b",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

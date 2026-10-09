@@ -1,0 +1,65 @@
+{
+  "name": "Homebrew",
+  "description": "The package manager for macOS and Linux.",
+  "category": "tool",
+  "homepage": "https://brew.sh/",
+  "repo": "https://github.com/Homebrew/brew",
+  "summary": "Issues and pull requests made with AI are allowed if the tool or model is disclosed up front and all generated content is reviewed first. AI may not be credited in commits, contributors must answer maintainers themselves without AI, and non-maintainers may have only one AI-assisted PR open at a time.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md",
+      "title": "Contributing to Homebrew",
+      "hash": "bcc8b373852c28555e7c8b97582c9cf1b87e730621ffb0139f8b203a746ffa4b",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

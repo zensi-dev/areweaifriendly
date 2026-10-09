@@ -1,0 +1,47 @@
+{
+  "name": "Linux Foundation",
+  "description": "Non-profit foundation hosting the Linux kernel, Kubernetes (via CNCF), Node.js (via OpenJS) and hundreds of other projects.",
+  "category": "foundation",
+  "homepage": "https://www.linuxfoundation.org/",
+  "summary": "Code or other content generated wholly or partly with AI tools can be contributed to Linux Foundation projects. Contributors must check that the tool's terms do not conflict with the project's licence and that any third-party material in the output is properly licensed and attributed. Individual projects may set stricter rules.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Code or other content generated in whole or in part using AI tools can be contributed to Linux Foundation projects.",
+      "sourceUrl": "https://www.linuxfoundation.org/legal/generative-ai"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributors should ensure that the terms and conditions of the generative AI tool do not place any contractual restrictions on how the tool’s output can be used that are inconsistent with the project’s open source software license, the project’s intellectual property policies, or the Open Source Definition.",
+      "sourceUrl": "https://www.linuxfoundation.org/legal/generative-ai"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.linuxfoundation.org/legal/generative-ai",
+      "title": "Linux Foundation: Guidance Regarding Use of Generative AI Tools for Open Source Software Development",
+      "hash": "4ae98e4065514056490e7139c597d5d7778d627ac373e65bdda29729533039dc",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

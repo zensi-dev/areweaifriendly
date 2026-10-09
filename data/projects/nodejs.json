@@ -1,0 +1,76 @@
+{
+  "name": "Node.js",
+  "description": "A JavaScript runtime built on V8.",
+  "category": "language",
+  "homepage": "https://nodejs.org/",
+  "repo": "https://github.com/nodejs/node",
+  "summary": "AI tools are not prohibited, but contributors should disclose AI-generated contributions and how they verified them, take full responsibility and meet the DCO and licensing rules. Automated PRs need prior approval, AI may not fix good first issues, review responses must not be automated, and messages generated entirely by AI should not be pasted.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "The Node.js project does not prohibit the use of AI tools in contributions, but when the contribution is generated with AI, the contributor should disclose the use of such tools, and what the contributor does to personally verify the generated output.",
+      "sourceUrl": "https://github.com/nodejs/node/blob/main/doc/contributing/ai-guidelines.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The changes submitted to the Node.js code base must still satisfy the project's",
+      "sourceUrl": "https://github.com/nodejs/node/blob/main/doc/contributing/ai-guidelines.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Pull requests must not be opened by automated tooling, unless specifically approved in advance by the project.",
+      "sourceUrl": "https://github.com/nodejs/node/blob/main/doc/contributing/ai-guidelines.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributors must take full responsibility for their actions in the Node.js project.",
+      "sourceUrl": "https://github.com/nodejs/node/blob/main/doc/contributing/ai-guidelines.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Do not paste messages generated entirely by AI in pull requests, issues, or the project's communication channels.",
+      "sourceUrl": "https://github.com/nodejs/node/blob/main/doc/contributing/ai-guidelines.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "When making a claim based on AI output in discussions, contributors should personally verify the claim.",
+      "sourceUrl": "https://github.com/nodejs/node/blob/main/doc/contributing/ai-guidelines.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/nodejs/node/blob/main/doc/contributing/ai-guidelines.md",
+      "title": "Node.js AI use policy and guidelines",
+      "hash": "cc7867d69fe007b4aad2aaf5693e853055d36af0e99d72f11d8a431a591e1de3",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

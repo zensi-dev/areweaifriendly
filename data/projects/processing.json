@@ -1,0 +1,68 @@
+{
+  "name": "Processing",
+  "description": "A flexible software sketchbook and language for learning to code in the visual arts.",
+  "category": "language",
+  "homepage": "https://processing.org/",
+  "repo": "https://github.com/processing/processing4",
+  "summary": "Fully AI-generated pull requests are not accepted. AI may be used only assistively, like a reference or tutor, not to write code; contributors must understand, test and take responsibility for every line and note which AI tools they used.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "minor-assist-only"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "This project does not accept fully AI-generated pull requests. AI tools may be used assistively only.",
+      "sourceUrl": "https://github.com/processing/processing4/blob/main/AI_USAGE_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If you do end up using AI tools, we ask that you only do so assistively (like a reference or tutor) and not generatively (having the tool write code for you).",
+      "sourceUrl": "https://github.com/processing/processing4/blob/main/AI_USAGE_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Disclose usage: Note which AI tools you used in your PR description",
+      "sourceUrl": "https://github.com/processing/processing4/blob/main/AI_USAGE_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Take responsibility: You are accountable for bugs, issues, or problems with your contribution",
+      "sourceUrl": "https://github.com/processing/processing4/blob/main/AI_USAGE_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Generate documentation or comments without your review",
+      "sourceUrl": "https://github.com/processing/processing4/blob/main/AI_USAGE_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/processing/processing4/blob/main/AI_USAGE_POLICY.md",
+      "title": "Processing AI Usage Policy",
+      "hash": "f9efff802fe82ae3356968a744d3f4d0f08875ab92911cf09a19b02fb8808572",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Firefox",
+  "description": "Mozilla's open source web browser.",
+  "category": "application",
+  "homepage": "https://www.firefox.com/",
+  "repo": "https://github.com/mozilla-firefox/firefox",
+  "summary": "Contributors may use AI tools when writing Firefox code, but AI-assisted patches must meet the usual standards. Contributors must understand, explain and fully self-review every change and remain accountable for it.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "AI-assisted contributions must meet the same standards of correctness, security, and maintainability as any other patch.",
+      "sourceUrl": "https://firefox-source-docs.mozilla.org/contributing/ai-coding.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "To fully understand the patch you must fully review the code yourself, before requesting peer review.",
+      "sourceUrl": "https://firefox-source-docs.mozilla.org/contributing/ai-coding.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "At the end of the day you are accountable for all changes you submit, regardless of the tools you use.",
+      "sourceUrl": "https://firefox-source-docs.mozilla.org/contributing/ai-coding.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://firefox-source-docs.mozilla.org/contributing/ai-coding.html",
+      "title": "Firefox AI Coding Policy",
+      "hash": "6c693d07539f52a918fcc3a229d93e00b20b417e4a1a55d74da7a6aead7767cf",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

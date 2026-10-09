@@ -1,0 +1,63 @@
+{
+  "name": "napari",
+  "description": "A fast, interactive multi-dimensional image viewer for Python.",
+  "category": "application",
+  "homepage": "https://napari.org/",
+  "repo": "https://github.com/napari/napari",
+  "summary": "Any tools, including AI, may be used, but contributors are responsible for their changes and must understand, read and test them. AI agents may not submit PRs. LLM-written messages are acceptable if the author has read and stands behind them, with quoted LLM answers marked as quotes.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You may use whatever tools you like, but you are ultimately responsible for the changes you submit.",
+      "sourceUrl": "https://napari.org/dev/developers/contributing/ai.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not allow AI agents to submit PRs for you, and do not submit an AI-generated PR you haven’t personally understood and tested, as this wastes maintainers’ time.",
+      "sourceUrl": "https://napari.org/dev/developers/contributing/ai.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If you use an LLM to write a message for you, it remains your responsibility to read through the whole thing and make sure that it makes sense to you and represents your ideas concisely.",
+      "sourceUrl": "https://napari.org/dev/developers/contributing/ai.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Don’t ask an LLM to generate a PR description on your behalf based on your code changes, as it will simply regurgitate the information that’s already there.",
+      "sourceUrl": "https://napari.org/dev/developers/contributing/ai.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://napari.org/dev/developers/contributing/ai.html",
+      "title": "napari AI use policy and guidelines",
+      "hash": "8de260b4d91b284ea28c8ede3b91a4f07704ade988071743f1f263ffd4fa4f83",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

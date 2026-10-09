@@ -1,0 +1,68 @@
+{
+  "name": "conda",
+  "description": "A cross-platform, language-agnostic package and environment manager.",
+  "category": "tool",
+  "homepage": "https://docs.conda.io/",
+  "repo": "https://github.com/conda/conda",
+  "summary": "Generative AI tools are welcome. Contributors are responsible for reviewing and understanding AI output, must respect the licence and CLA, and may not use agents to submit or review autonomously. In review, contributors should engage directly rather than paste AI responses.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You’re welcome to use generative AI tools when contributing to conda.",
+      "sourceUrl": "https://docs.conda.io/projects/conda/en/latest/dev-guide/contributing.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You are responsible for all of your contributions. Review and understand any AI-generated content before including it in a Pull Request.",
+      "sourceUrl": "https://docs.conda.io/projects/conda/en/latest/dev-guide/contributing.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You have read and understood the conda license and conda contributor license agreement, especially in terms of submitting your contribution as an original work of authorship.",
+      "sourceUrl": "https://docs.conda.io/projects/conda/en/latest/dev-guide/contributing.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not use AI agents or similar automated systems to submit your contributions or review Pull Requests autonomously.",
+      "sourceUrl": "https://docs.conda.io/projects/conda/en/latest/dev-guide/contributing.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Be prepared to engage during contribution review. Reviewers expect to discuss the changes with you directly. Do not copy and paste AI responses.",
+      "sourceUrl": "https://docs.conda.io/projects/conda/en/latest/dev-guide/contributing.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://docs.conda.io/projects/conda/en/latest/dev-guide/contributing.html",
+      "title": "Contributing to conda",
+      "hash": "9e9b412abf8701cb41736a95f91881d1d2387e4a131d442724447e3392f31140",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

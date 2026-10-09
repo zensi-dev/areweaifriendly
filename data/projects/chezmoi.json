@@ -1,0 +1,51 @@
+{
+  "name": "chezmoi",
+  "description": "Manages dotfiles across multiple machines, securely.",
+  "category": "tool",
+  "homepage": "https://www.chezmoi.io/",
+  "repo": "https://github.com/twpayne/chezmoi",
+  "summary": "Using an LLM to make any kind of contribution leads to an immediate ban without recourse.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "If you use an LLM (Large Language Model, like ChatGPT, Claude, Gemini, GitHub Copilot, or Llama) to make any kind of contribution then you will immediately be banned without recourse.",
+      "sourceUrl": "https://www.chezmoi.io/developer-guide/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "If you use an LLM (Large Language Model, like ChatGPT, Claude, Gemini, GitHub Copilot, or Llama) to make any kind of contribution then you will immediately be banned without recourse.",
+      "sourceUrl": "https://www.chezmoi.io/developer-guide/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If you use an LLM (Large Language Model, like ChatGPT, Claude, Gemini, GitHub Copilot, or Llama) to make any kind of contribution then you will immediately be banned without recourse.",
+      "sourceUrl": "https://www.chezmoi.io/developer-guide/"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.chezmoi.io/developer-guide/",
+      "title": "chezmoi developer guide",
+      "hash": "3842ff7807d28b9ae2037ddcc30a81f89026f34cb1210c666164b8216a8c0cdb",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

@@ -1,0 +1,83 @@
+{
+  "name": "LLVM",
+  "description": "A collection of modular compiler and toolchain technologies, including Clang.",
+  "category": "language",
+  "homepage": "https://llvm.org/",
+  "repo": "https://github.com/llvm/llvm-project",
+  "summary": "Contributors may use any tools, but a human must read and review all LLM-generated code or text, stay fully accountable, and label substantial tool-generated content, for example with Assisted-by. Agents acting without human approval are banned, and AI tools may not be used on good first issues.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Contributors must read and review all LLM-generated code or text before they ask other project members to review it. The contributor is always the author and is fully accountable for their contributions.",
+      "sourceUrl": "https://llvm.org/docs/AIToolPolicy.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributors are expected to be transparent and label contributions that contain substantial amounts of tool-generated content.",
+      "sourceUrl": "https://llvm.org/docs/AIToolPolicy.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "An important implication of this policy is that it bans agents that take action in our digital spaces without human approval, such as the GitHub @claude agent.",
+      "sourceUrl": "https://llvm.org/docs/AIToolPolicy.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Using AI tools to regenerate copyrighted material does not remove the copyright, and contributors are responsible for ensuring that such material does not appear in their contributions.",
+      "sourceUrl": "https://llvm.org/docs/AIToolPolicy.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Issues or security vulnerabilities",
+      "sourceUrl": "https://llvm.org/docs/AIToolPolicy.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "it is strongly recommended that contributors write PR descriptions themselves (if needed, using tools for translation or copy-editing).",
+      "sourceUrl": "https://llvm.org/docs/AIToolPolicy.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Comments and feedback on pull requests",
+      "sourceUrl": "https://llvm.org/docs/AIToolPolicy.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://llvm.org/docs/AIToolPolicy.html",
+      "title": "LLVM AI Tool Use Policy",
+      "hash": "ef614f6b7c1c5c36f4651f9f8fc5d70b72c35e93ad4a2330f08d6e13b9629847",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}
