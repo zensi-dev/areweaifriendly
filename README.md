@@ -70,9 +70,9 @@ Hand-written entries use `"classifiedBy": "manual"`; classified ones use `"ai"`.
 ## Setup checklist
 
 **Cloudflare**
-1. Create an API token with the *Edit Cloudflare Workers* template.
+1. Create an account API token (*Manage Account → Account API Tokens*) with Account: *Workers Scripts* Edit and *Account Settings* Read for the account, and Zone: *Workers Routes* Edit, *Zone* Read and *DNS* Edit for the site's zone.
 2. Add GitHub secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
-3. Once the domain is on Cloudflare, uncomment `routes` in `wrangler.jsonc`.
+3. Add the domain as a zone in the same account. `routes` in `wrangler.jsonc` attaches it to the Worker as a custom domain on deploy.
 4. Keep AI crawlers allowed: in the zone's *Security → Bots* settings, leave "Block AI bots" and the managed `robots.txt` off. Being readable by agents is the point of `llms.txt`.
 
 **GitHub**

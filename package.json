@@ -11,7 +11,7 @@
     "intake": "bun scripts/intake.ts",
     "check-sources": "bun scripts/check.ts",
     "test": "bun test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "astro sync && tsc --noEmit"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
