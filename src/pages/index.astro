@@ -1,0 +1,220 @@
+---
+import Icon from '../components/Icon.astro';
+import MoodTile from '../components/MoodTile.astro';
+import Layout from '../layouts/Layout.astro';
+import ProjectRow from '../components/ProjectRow.astro';
+import { CATEGORY_INFO, DIMENSION_INFO, STANCE_INFO } from '../lib/labels';
+import { formatDate, lastUpdated, projects, stanceCounts } from '../lib/projects';
+import { CATEGORIES, DIMENSIONS } from '../lib/schema';
+import { STANCES } from '../lib/stance';
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '../site.config';
+import { AREA_COLUMNS, LIST_COLUMNS, VERDICT_WIDTH, WIDE } from '../lib/ui';
+
+const counts = stanceCounts();
+const total = projects.length;
+const shownStances = STANCES.filter((s) => counts[s] > 0);
+const categories = CATEGORIES.filter((c) => projects.some((p) => p.category === c));
+
+const byMood = STANCES.flatMap((s) => projects.filter((p) => p.stance === s));
+// Keep the mood grid compact as the list grows; full class names so Tailwind finds them.
+const moodGrid =
+  total <= 10
+    ? { cols: 'grid-cols-5', tile: 'md' as const }
+    : total <= 40
+      ? { cols: 'grid-cols-8', tile: 'md' as const }
+      : { cols: 'grid-cols-8 sm:grid-cols-12', tile: 'sm' as const };
+const field =
+  'h-11 w-full rounded-md border border-line-strong bg-surface text-[0.9375rem] placeholder:text-faint focus:border-accent focus:ring-2 focus:ring-accent/25 focus:outline-none';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', name: SITE_NAME, url: `${SITE_URL}/`, description: SITE_DESCRIPTION },
+    {
+      '@type': 'Dataset',
+      name: 'Open source AI contribution policies',
+      description: SITE_DESCRIPTION,
+      url: `${SITE_URL}/`,
+      isAccessibleForFree: true,
+      dateModified: lastUpdated(),
+      distribution: [{ '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: `${SITE_URL}/projects.json` }],
+    },
+  ],
+};
+---
+
+<Layout
+  title={SITE_NAME}
+  description={SITE_DESCRIPTION}
+  markdown="/llms.txt"
+  jsonLd={jsonLd}
+>
+  <section class:list={[WIDE, 'grid items-center gap-x-12 gap-y-8 pt-12 pb-10 md:grid-cols-[minmax(0,1fr)_auto] md:pt-20']}>
+    <div>
+      <h1 class="casual text-5xl leading-[1.05] font-extrabold tracking-tight sm:text-6xl">Are we AI friendly?</h1>
+      <p class="mt-5 max-w-[52ch] text-lg text-muted">
+        How open source projects react to AI-assisted pull requests, bug reports and comments, based on their own
+        published policies.
+      </p>
+    </div>
+
+    <div>
+      <ul class:list={['grid w-fit gap-1.5', moodGrid.cols]} aria-label="Every tracked project, by how friendly it is">
+        {
+          byMood.map((p) => (
+            <li>
+              <a
+                href={`#${p.slug}`}
+                class="block rounded-[10px] no-underline"
+                title={`${p.name}: ${STANCE_INFO[p.stance].label}`}
+                aria-label={`${p.name}: ${STANCE_INFO[p.stance].label}`}
+              >
+                <MoodTile stance={p.stance} size={moodGrid.tile} decorative />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="mt-5 flex flex-wrap gap-2" role="group" aria-label="Filter by friendliness">
+        {
+          shownStances.map((s) => (
+            <button
+              type="button"
+              class="inline-flex cursor-pointer items-center gap-2 rounded-md border border-line-strong bg-surface py-1 pr-2.5 pl-1 text-sm hover:border-ink aria-pressed:border-ink aria-pressed:ring-1 aria-pressed:ring-ink"
+              data-chip={s}
+              aria-pressed="false"
+              title={STANCE_INFO[s].meaning}
+            >
+              <MoodTile stance={s} size="xs" decorative />
+              <span class="font-medium">{STANCE_INFO[s].label}</span>
+              <span class="text-muted tabular-nums">{counts[s]}</span>
+            </button>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class={WIDE} aria-labelledby="list-title">
+    <h2 id="list-title" class="sr-only">Projects</h2>
+    <div class="flex flex-col gap-2.5 bg-paper py-3 sm:sticky sm:top-0 sm:z-10 sm:flex-row">
+      <label class="relative grow">
+        <span class="sr-only">Search projects</span>
+        <Icon name="search" size={16} class="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-faint" />
+        <input id="q" type="search" placeholder="Search projects" autocomplete="off" spellcheck="false" class:list={[field, 'pr-10 pl-9']} />
+        <kbd
+          class="absolute top-1/2 right-2.5 hidden -translate-y-1/2 rounded border border-line-strong px-1.5 text-xs text-muted sm:block"
+          aria-hidden="true">/</kbd
+        >
+      </label>
+      <label class="shrink-0 sm:basis-56">
+        <span class="sr-only">Category</span>
+        <select id="category" class:list={[field, 'cursor-pointer px-3']}>
+          <option value="">All categories</option>
+          {categories.map((c) => <option value={c}>{CATEGORY_INFO[c]}</option>)}
+        </select>
+      </label>
+    </div>
+
+    <div class="mt-3">
+      <div
+        class:list={['hidden items-center gap-x-3 rounded-lg bg-surface px-3 py-2 text-caption font-medium text-muted md:grid', LIST_COLUMNS]}
+        aria-hidden="true"
+      >
+        <span class="col-start-2">Project</span>
+        <span class={AREA_COLUMNS}>
+          {
+            DIMENSIONS.map((d) => (
+              <span class="inline-flex cursor-help items-center gap-1.5" title={DIMENSION_INFO[d].meaning}>
+                <Icon name={DIMENSION_INFO[d].icon} size={13} class="hidden text-faint lg:block" />
+                {DIMENSION_INFO[d].short}
+              </span>
+            ))
+          }
+        </span>
+        <span class:list={[VERDICT_WIDTH, 'justify-self-end']}>Friendly?</span>
+      </div>
+      <ul id="projects">
+        {projects.map((p) => <ProjectRow project={p} />)}
+      </ul>
+      <p id="empty" class="px-3 py-12 text-center text-muted" hidden>
+        No project matches. Know one that belongs here? <a href="/about/#add">Add it</a>.
+      </p>
+    </div>
+
+    <p class="mt-4 text-caption text-muted" aria-live="polite">
+      Showing <span id="shown">{total}</span> of {total} projects. Updated {formatDate(lastUpdated())}.
+    </p>
+  </section>
+</Layout>
+
+<script>
+  const q = document.querySelector<HTMLInputElement>('#q')!;
+  const category = document.querySelector<HTMLSelectElement>('#category')!;
+  const chips = [...document.querySelectorAll<HTMLButtonElement>('[data-chip]')];
+  const rows = [...document.querySelectorAll<HTMLLIElement>('#projects > li')];
+  const shown = document.querySelector('#shown')!;
+  const empty = document.querySelector<HTMLElement>('#empty')!;
+  const stances = new Set<string>();
+
+  function apply() {
+    const terms = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    let count = 0;
+    for (const row of rows) {
+      const visible =
+        terms.every((t) => row.dataset.search!.includes(t)) &&
+        (!category.value || row.dataset.category === category.value) &&
+        (!stances.size || stances.has(row.dataset.stance!));
+      row.hidden = !visible;
+      if (visible) count++;
+    }
+    shown.textContent = String(count);
+    empty.hidden = count > 0;
+    for (const chip of chips) chip.setAttribute('aria-pressed', String(stances.has(chip.dataset.chip!)));
+
+    const params = new URLSearchParams();
+    if (q.value.trim()) params.set('q', q.value.trim());
+    if (category.value) params.set('category', category.value);
+    if (stances.size) params.set('stance', [...stances].join(','));
+    const query = params.toString();
+    history.replaceState(null, '', `${location.pathname}${query ? `?${query}` : ''}${location.hash}`);
+  }
+
+  const params = new URLSearchParams(location.search);
+  q.value = params.get('q') ?? '';
+  category.value = params.get('category') ?? '';
+  for (const s of params.get('stance')?.split(',') ?? []) if (chips.some((c) => c.dataset.chip === s)) stances.add(s);
+
+  q.addEventListener('input', apply);
+  category.addEventListener('change', apply);
+  for (const chip of chips) {
+    chip.addEventListener('click', () => {
+      const s = chip.dataset.chip!;
+      if (!stances.delete(s)) stances.add(s);
+      apply();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement?.tagName !== 'INPUT' && !e.metaKey && !e.ctrlKey) {
+      e.preventDefault();
+      q.focus();
+    } else if (e.key === 'Escape' && document.activeElement === q && q.value) {
+      q.value = '';
+      apply();
+    }
+  });
+
+  function openFromHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const row = id ? document.getElementById(id) : null;
+    const details = row?.querySelector('details');
+    if (row && details) {
+      details.open = true;
+      row.scrollIntoView({ block: 'start' });
+    }
+  }
+  window.addEventListener('hashchange', openFromHash);
+
+  if (location.search) apply();
+  openFromHash();
+</script>

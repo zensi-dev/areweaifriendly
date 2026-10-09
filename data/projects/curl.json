@@ -1,0 +1,72 @@
+{
+  "name": "curl",
+  "description": "Command-line tool and library for transferring data with URLs.",
+  "category": "tool",
+  "homepage": "https://curl.se/",
+  "repo": "https://github.com/curl/curl",
+  "summary": "Code written with AI help is accepted if it meets the normal standards. AI-found bug and security reports must say so and be verified by a human, and pasted AI-generated reports and explanations are discouraged.",
+  "policy": {
+    "contributions": {
+      "verdict": "allowed",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We can accept code written with the help of AI into the project, but the code must still follow coding standards, be written clearly, be documented, feature test cases and adhere to all the normal requirements we have.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "If you asked an AI tool to find problems in curl, you must make sure to reveal this fact in your report.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "You must also double-check the findings carefully before reporting them to us to validate that the issues are indeed existing and working exactly as the AI says.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not lazily paste massive, AI-generated explanations;",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If you actually find a problem with an AI and you have verified it yourself to be true: write the report yourself and explain the problem as you have learned it.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md",
+      "title": "Contributing to the curl project",
+      "hash": "4edae1885ef2ce75dd65ef435668806c81597bf36fb9830aada358b29cdf25c1",
+      "fetchedAt": "2026-10-09"
+    },
+    {
+      "url": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md",
+      "title": "curl vulnerability disclosure policy",
+      "hash": "e7e594521f4969794ff86ff9576822c147c626af501c6de0afa8d7f4434be0ca",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

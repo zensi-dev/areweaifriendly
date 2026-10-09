@@ -1,0 +1,44 @@
+---
+import { FACE_EYES, FACE_FEATURES } from '../lib/faces';
+import { STANCE_INFO } from '../lib/labels';
+import type { Stance } from '../lib/stance';
+import { stanceTone } from '../lib/tones';
+
+interface Props {
+  stance: Stance;
+  size?: 'xs' | 'sm' | 'md' | 'lg';
+  class?: string;
+  /** Hide from assistive tech when visible text next to the tile already names the mood. */
+  decorative?: boolean;
+}
+
+const SIZES = {
+  xs: { tile: 'size-5 rounded-[5px]', face: 15, stroke: 2.2 },
+  sm: { tile: 'size-8 rounded-[7px]', face: 23, stroke: 2 },
+  md: { tile: 'size-11 rounded-[10px]', face: 32, stroke: 1.8 },
+  lg: { tile: 'size-18 rounded-[16px]', face: 52, stroke: 1.6 },
+} as const;
+
+const { stance, size = 'md', class: className, decorative = false } = Astro.props;
+const s = SIZES[size];
+---
+
+<span
+  class:list={[stanceTone[stance], s.tile, 'inline-grid shrink-0 place-items-center bg-(--tone) text-face', className]}
+  role={decorative ? undefined : 'img'}
+  aria-label={decorative ? undefined : STANCE_INFO[stance].label}
+  aria-hidden={decorative ? 'true' : undefined}
+>
+  <svg
+    width={s.face}
+    height={s.face}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width={s.stroke}
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+    set:html={FACE_EYES + FACE_FEATURES[stance]}
+  />
+</span>

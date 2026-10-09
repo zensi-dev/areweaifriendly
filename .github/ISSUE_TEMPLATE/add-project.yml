@@ -1,0 +1,88 @@
+name: Add a project
+description: Suggest an open source project to track.
+title: 'Add: '
+labels: [submission]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping out! Link to the project's **own** policy pages, not news articles about them.
+
+        A maintainer will look at this and start an automatic review. It reads the sources, posts what it found as a comment here and, if everything checks out, opens a pull request. If something needs fixing, you can edit this issue and the review runs again.
+  - type: input
+    id: name
+    attributes:
+      label: Project name
+      placeholder: curl
+    validations:
+      required: true
+  - type: input
+    id: description
+    attributes:
+      label: What is it?
+      description: One short line.
+      placeholder: Command-line tool and library for transferring data with URLs.
+    validations:
+      required: true
+  - type: input
+    id: homepage
+    attributes:
+      label: Homepage
+      placeholder: https://curl.se/
+    validations:
+      required: true
+  - type: input
+    id: repo
+    attributes:
+      label: Source repository
+      placeholder: https://github.com/curl/curl
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Operating system
+        - Linux distribution
+        - Programming language
+        - Library
+        - Framework
+        - Developer tool
+        - Application
+        - Foundation
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Policy sources
+      description: One URL per line, up to 5. An AI policy, CONTRIBUTING file, code of conduct or mailing-list decision.
+      placeholder: |
+        https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        **Optional:** what do you think the policy says? The review compares its reading with yours. Leave a field empty if you're not sure.
+  - type: dropdown
+    id: answer-contributions
+    attributes:
+      label: 'Your reading: AI-assisted code'
+      description: Patches, pull requests and other changes written with AI tools.
+      options: [Allowed, Allowed with conditions, Banned, Not addressed]
+  - type: dropdown
+    id: answer-issues
+    attributes:
+      label: 'Your reading: AI-found issues'
+      description: Bug reports, security reports and issues found or written with AI tools.
+      options: [Allowed, Allowed with conditions, Banned, Not addressed]
+  - type: dropdown
+    id: answer-summaries
+    attributes:
+      label: 'Your reading: AI-written text'
+      description: Pull request descriptions, issue comments and summaries written by AI.
+      options: [Allowed, Allowed with conditions, Banned, Not addressed]
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?

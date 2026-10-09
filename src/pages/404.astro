@@ -1,0 +1,14 @@
+---
+import MoodTile from '../components/MoodTile.astro';
+import Layout from '../layouts/Layout.astro';
+import { READING } from '../lib/ui';
+import { SITE_NAME } from '../site.config';
+---
+
+<Layout title={`Page not found | ${SITE_NAME}`} description="This page does not exist.">
+  <section class:list={[READING, 'pt-16 sm:pt-28']}>
+    <MoodTile stance="unknown" size="lg" decorative />
+    <h1 class="casual mt-6 text-4xl font-extrabold tracking-tight">Nothing here, human or otherwise.</h1>
+    <p class="mt-2 text-muted">This page doesn’t exist (error 404). <a href="/">See all projects</a>.</p>
+  </section>
+</Layout>

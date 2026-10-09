@@ -1,0 +1,90 @@
+---
+import '../styles/global.css';
+import MoodTile from '../components/MoodTile.astro';
+import { WIDE } from '../lib/ui';
+import { REPO_URL, SITE_NAME } from '../site.config';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Markdown version of this page, for AI agents. */
+  markdown?: string;
+  jsonLd?: object;
+}
+
+const { title, description, markdown, jsonLd } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const path = Astro.url.pathname;
+const isHome = path === '/';
+const isAbout = path.startsWith('/about');
+const navLink = 'rounded-md px-2.5 py-1.5 text-muted no-underline hover:text-ink aria-[current=page]:text-ink aria-[current=page]:underline aria-[current=page]:decoration-2';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {markdown && <link rel="alternate" type="text/markdown" href={markdown} />}
+    <link rel="alternate" type="application/json" href="/projects.json" title="All projects (JSON)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#22272e" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <a
+      href="#main"
+      class="sr-only no-underline focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-10 focus:rounded-md focus:bg-ink focus:px-3 focus:py-2 focus:text-paper"
+    >
+      Skip to content
+    </a>
+    <header class="border-b border-line">
+      <div class:list={[WIDE, 'flex min-h-16 items-center justify-between gap-4']}>
+        <a href="/" class="inline-flex items-center gap-2.5 no-underline" aria-label={`${SITE_NAME} home`}>
+          <MoodTile stance="friendly" size="sm" decorative />
+          <span class="casual hidden text-[1.0625rem] font-bold whitespace-nowrap xs:inline">Are we AI friendly?</span>
+        </a>
+        <nav class="flex items-center gap-1 text-[0.9375rem]" aria-label="Main">
+          <a href="/" class:list={[navLink, 'max-sm:hidden']} aria-current={isHome ? 'page' : undefined}>Projects</a>
+          <a href="/about/" class={navLink} aria-current={isAbout ? 'page' : undefined}>About</a>
+          <a
+            href={`${REPO_URL}/issues/new?template=add-project.yml`}
+            class="ml-1.5 rounded-md bg-ink px-3 py-1.5 font-semibold text-paper no-underline hover:bg-accent"
+          >
+            Add a project
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="mt-24 border-t border-line text-sm text-muted">
+      <div class:list={[WIDE, 'flex flex-wrap justify-between gap-x-8 gap-y-3 pt-8 pb-12']}>
+        <p class="max-w-[56ch]">
+          Ratings come from each project’s own published policy. Policies change, so check the source before you
+          contribute.
+        </p>
+        <ul class="flex flex-wrap gap-x-5 gap-y-1">
+          <li><a href={REPO_URL}>GitHub</a></li>
+          <li><a href="/about/">How ratings work</a></li>
+          <li><a href="/llms.txt">llms.txt</a></li>
+          <li><a href="/projects.json">JSON data</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

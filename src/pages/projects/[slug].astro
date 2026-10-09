@@ -1,0 +1,170 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import PolicyTable from '../../components/PolicyTable.astro';
+import MoodTile from '../../components/MoodTile.astro';
+import { CATEGORY_INFO, DIMENSION_INFO, STANCE_INFO } from '../../lib/labels';
+import { formatDate, projects, type SiteProject } from '../../lib/projects';
+import { DIMENSIONS } from '../../lib/schema';
+import { stanceTone } from '../../lib/tones';
+import { READING } from '../../lib/ui';
+import { REPO_URL, SITE_NAME, SITE_URL } from '../../site.config';
+
+
+export function getStaticPaths() {
+  return projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+
+interface Props {
+  project: SiteProject;
+}
+
+const { project: p } = Astro.props;
+const stance = STANCE_INFO[p.stance];
+const url = `${SITE_URL}/projects/${p.slug}/`;
+const sourceTitle = (u: string) => p.sources.find((s) => s.url === u)?.title ?? u;
+const quotes = DIMENSIONS.map((dim) => ({ dim, items: p.evidence.filter((e) => e.dimension === dim) })).filter(
+  (g) => g.items.length,
+);
+const section = 'mt-12';
+const heading = 'casual mb-3 text-xl font-bold';
+const correction = new URL(`${REPO_URL}/issues/new`);
+correction.searchParams.set('template', 'correction.yml');
+correction.searchParams.set('title', `Correction: ${p.name}`);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: `${p.name} AI policy`,
+      url,
+      description: p.summary,
+      dateModified: p.classifiedAt,
+      about: {
+        '@type': 'SoftwareSourceCode',
+        name: p.name,
+        description: p.description,
+        url: p.homepage,
+        ...(p.repo ? { codeRepository: p.repo } : {}),
+      },
+      citation: p.sources.map((s) => ({ '@type': 'CreativeWork', name: s.title, url: s.url })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Projects', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: p.name, item: url },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title={`${p.name} AI policy: ${stance.plain} | ${SITE_NAME}`}
+  description={`Is ${p.name} AI friendly? ${stance.plain}. ${p.summary}`}
+  markdown={`/projects/${p.slug}.md`}
+  jsonLd={jsonLd}
+>
+  <article class:list={[READING, 'pt-8']}>
+    <nav class="flex flex-wrap gap-2 text-sm text-muted" aria-label="Breadcrumb">
+      <a href="/" class="no-underline hover:underline">Projects</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/?category=${p.category}`} class="no-underline hover:underline">{CATEGORY_INFO[p.category]}</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page" class="text-ink">{p.name}</span>
+    </nav>
+
+    <header class="mt-10 flex flex-col gap-5 sm:flex-row sm:items-start">
+      <MoodTile stance={p.stance} size="lg" decorative />
+      <div>
+        <h1 class="casual text-4xl leading-tight font-extrabold tracking-tight sm:text-5xl">{p.name}</h1>
+        <p class="mt-1 text-[1.0625rem] text-muted">{p.description}</p>
+        <p class="mt-4 text-lg"><strong class="font-bold">{stance.label}.</strong> {stance.tagline}</p>
+        <p class="mt-3 flex gap-5 text-sm">
+          <a href={p.homepage} rel="noopener" class="inline-flex items-center gap-1.5">
+            Homepage <Icon name="external" size={13} class="text-faint" />
+          </a>
+          {
+            p.repo && (
+              <a href={p.repo} rel="noopener" class="inline-flex items-center gap-1.5">
+                Repository <Icon name="external" size={13} class="text-faint" />
+              </a>
+            )
+          }
+        </p>
+      </div>
+    </header>
+
+    <p class:list={[stanceTone[p.stance], 'mt-10 max-w-[64ch] border-l-4 border-(--tone) pl-4 text-lg leading-relaxed']}>{p.summary}</p>
+
+    <section class={section} aria-labelledby="glance">
+      <h2 id="glance" class={heading}>Policy by area</h2>
+      <PolicyTable policy={p.policy} explain class="border-y border-line" />
+    </section>
+
+    {
+      quotes.length > 0 && (
+        <section class={section} aria-labelledby="words">
+          <h2 id="words" class={heading}>In their own words</h2>
+          {quotes.map((g) => (
+            <div class="mt-4.5">
+              <h3 class="mb-2.5 flex items-center gap-2 font-semibold">
+                <Icon name={DIMENSION_INFO[g.dim].icon} size={14} class="text-faint" />
+                {DIMENSION_INFO[g.dim].label}
+              </h3>
+              {g.items.map((e) => (
+                <figure class="mb-3 ml-0.5 flex gap-2.5">
+                  <Icon name="quote" size={14} class="mt-1 text-faint" />
+                  <div>
+                    <blockquote cite={e.sourceUrl}>
+                      <p>{e.quote}</p>
+                    </blockquote>
+                    <figcaption class="mt-0.5 text-caption">
+                      <a href={e.sourceUrl} rel="noopener" class="text-muted">
+                        {sourceTitle(e.sourceUrl)}
+                      </a>
+                    </figcaption>
+                  </div>
+                </figure>
+              ))}
+            </div>
+          ))}
+        </section>
+      )
+    }
+
+    <section class={section} aria-labelledby="sources">
+      <h2 id="sources" class={heading}>Sources</h2>
+      <ul class="divide-y divide-line border-y border-line">
+        {
+          p.sources.map((s) => (
+            <li class="grid gap-px py-2.5">
+              <a href={s.url} rel="noopener" class="font-semibold no-underline hover:underline">
+                {s.title}
+                <Icon name="external" size={13} class="ml-1 inline align-[-1px] text-faint" />
+              </a>
+              <span class="text-caption break-all text-muted">{s.url.replace(/^https?:\/\//, '')}</span>
+              <span class="text-caption text-muted">Snapshot {formatDate(s.fetchedAt)}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <aside class="mt-12 space-y-1.5 text-sm text-muted">
+      <p>
+        Classified {p.classifiedBy === 'manual' ? 'by hand' : 'by AI'} on {
+          formatDate(p.classifiedAt)
+        } with {p.confidence} confidence. Policy last changed {formatDate(p.lastChanged)}.
+      </p>
+      <p>
+        Something wrong or out of date? <a href={correction.href}>Suggest a correction</a>.
+      </p>
+      <p>
+        AI agents can read this page <a href={`/projects/${p.slug}.md`}>as Markdown</a>.
+      </p>
+    </aside>
+  </article>
+</Layout>

@@ -1,0 +1,54 @@
+{
+  "name": "Fedora",
+  "description": "Community Linux distribution sponsored by Red Hat.",
+  "category": "distribution",
+  "homepage": "https://fedoraproject.org/",
+  "summary": "AI-assisted contributions are allowed. Contributors are fully accountable for them and must disclose AI use when a significant part comes from a tool unchanged.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You MUST disclose the use of AI tools when the significant part of the contribution is taken from a tool without changes.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/",
+      "title": "AI-Assisted Contributions Policy :: Fedora Docs",
+      "hash": "ff9339ee5e6d5723235fbe002a258fde2a4d89ca9ee39e59c19bfb5e24843c8b",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Gentoo",
+  "description": "Source-based Linux distribution.",
+  "category": "distribution",
+  "homepage": "https://www.gentoo.org/",
+  "summary": "Contributing any content created with the help of AI language tools is forbidden, citing copyright, quality and ethical concerns.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+      "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+    },
+    {
+      "dimension": "issues",
+      "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+      "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+      "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy",
+      "title": "Project:Council/AI policy - Gentoo wiki",
+      "hash": "17ed2f4e8bb682d5b2dc3c3999fb127d24b1c965dc31e403b37b84973f2abfe7",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

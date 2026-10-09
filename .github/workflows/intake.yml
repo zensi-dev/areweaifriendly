@@ -1,0 +1,148 @@
+name: Intake
+
+# Reviews "Add a project" issues (label "submission"). Runs when a maintainer adds
+# "ready-for-review", or when the issue body is edited while it has "needs-changes".
+# Untrusted issue text is only read by the script from the event file, never by the shell.
+on:
+  issues:
+    types: [labeled, edited]
+
+permissions: {}
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  GH_REPO: ${{ github.repository }}
+  ISSUE: ${{ github.event.issue.number }}
+  # Edits start a review on their own only while the issue has fewer review comments than this;
+  # after that a maintainer adds "ready-for-review" again. Keeps AI costs bounded.
+  MAX_REVIEWS_ON_EDIT: 5
+
+jobs:
+  gate:
+    if: >-
+      github.event.issue.state == 'open' &&
+      contains(github.event.issue.labels.*.name, 'submission') &&
+      ((github.event.action == 'labeled' && github.event.label.name == 'ready-for-review') ||
+       (github.event.action == 'edited' && github.event.changes.body &&
+        contains(github.event.issue.labels.*.name, 'needs-changes')))
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    outputs:
+      run: ${{ steps.gate.outputs.run }}
+      previous: ${{ steps.gate.outputs.previous }}
+    steps:
+      - id: gate
+        env:
+          EVENT: ${{ github.event.action }}
+        run: |
+          # Labels only fire when added, so take the trigger off for the next round.
+          if [ "$EVENT" = labeled ]; then gh issue edit "$ISSUE" --remove-label ready-for-review; fi
+          previous=$(gh api "repos/$GH_REPO/issues/$ISSUE/comments" --paginate \
+            --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("<!-- awaf-review -->"))) | .id' | wc -l)
+          echo "previous=$previous" >> "$GITHUB_OUTPUT"
+          if [ "$EVENT" = edited ] && [ "$previous" -ge "$MAX_REVIEWS_ON_EDIT" ]; then
+            echo "::notice::Edit ignored: $previous reviews already. Add ready-for-review to run again."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  review:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    # One review per issue at a time; a newer pending review replaces an older one.
+    concurrency:
+      group: intake-${{ github.event.issue.number }}
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+
+      - id: review
+        run: bun scripts/intake.ts
+        env:
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_MODEL: ${{ secrets.AI_MODEL }}
+          AI_RESPONSE_FORMAT: ${{ secrets.AI_RESPONSE_FORMAT }}
+          AI_MAX_INPUT_CHARS: ${{ vars.AI_MAX_INPUT_CHARS }}
+          PREVIOUS_REVIEWS: ${{ needs.gate.outputs.previous }}
+          COMMENT_FILE: ${{ runner.temp }}/comment.md
+          PR_BODY_FILE: ${{ runner.temp }}/pr-body.md
+
+      - name: Create labels
+        run: |
+          gh label create needs-changes --color fbca04 --description "Submission needs edits before it can be added" 2>/dev/null || true
+          gh label create needs-review --color d93f0b --description "Maintainer should check the AI review closely" 2>/dev/null || true
+
+      # Pull requests opened with GITHUB_TOKEN don't trigger the Validate workflow, so check here.
+      - name: Validate data
+        if: steps.review.outputs.decision == 'accept'
+        run: |
+          bun run validate
+          bun run build
+
+      - id: pr
+        name: Open or update pull request
+        if: steps.review.outputs.decision == 'accept'
+        env:
+          SLUG: ${{ steps.review.outputs.slug }}
+          NEEDS_REVIEW: ${{ steps.review.outputs.needs_review }}
+        run: |
+          branch="submission/$ISSUE-$SLUG"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add data snapshots
+          git commit -m "Add $SLUG (#$ISSUE)"
+          git push --force origin "$branch"
+          pr=$(gh pr list --head "$branch" --state open --json url --jq '.[0].url // empty')
+          if [ -n "$pr" ]; then
+            gh pr edit "$pr" --body-file "$RUNNER_TEMP/pr-body.md"
+          else
+            pr=$(gh pr create --head "$branch" --title "Add $SLUG" --label submission --body-file "$RUNNER_TEMP/pr-body.md")
+          fi
+          if [ "$NEEDS_REVIEW" = true ]; then
+            gh pr edit "$pr" --add-label needs-review
+          else
+            gh pr edit "$pr" --remove-label needs-review || true
+          fi
+          printf '\nPull request: %s\n' "$pr" >> "$RUNNER_TEMP/comment.md"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+
+      # An earlier review may have opened a PR under another name, or the submission no longer passes.
+      - name: Close outdated pull requests
+        if: steps.review.outputs.decision != ''
+        env:
+          BRANCH: ${{ steps.pr.outputs.branch }}
+        run: |
+          gh pr list --state open --limit 200 --json number,headRefName \
+            --jq ".[] | select((.headRefName | startswith(\"submission/$ISSUE-\")) and .headRefName != \"$BRANCH\") | .number" |
+          while read -r number; do
+            gh pr close "$number" --delete-branch --comment "Replaced by the latest review of #$ISSUE."
+          done
+
+      - name: Comment and label
+        if: steps.review.outputs.decision != ''
+        env:
+          DECISION: ${{ steps.review.outputs.decision }}
+        run: |
+          gh issue comment "$ISSUE" --body-file "$RUNNER_TEMP/comment.md"
+          if [ "$DECISION" = accept ]; then
+            gh issue edit "$ISSUE" --remove-label needs-changes || true
+          else
+            gh issue edit "$ISSUE" --add-label needs-changes
+          fi
+
+      - name: Report failure
+        if: failure()
+        run: |
+          printf '%s\n### Review failed\n\nSomething went wrong on our side, see %s\n\nA maintainer can add `ready-for-review` again to retry.\n' \
+            '<!-- awaf-review -->' "$GITHUB_SERVER_URL/$GH_REPO/actions/runs/$GITHUB_RUN_ID" > "$RUNNER_TEMP/failure.md"
+          gh issue comment "$ISSUE" --body-file "$RUNNER_TEMP/failure.md"

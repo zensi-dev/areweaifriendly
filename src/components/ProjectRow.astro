@@ -1,0 +1,90 @@
+---
+import Icon from './Icon.astro';
+import MoodTile from './MoodTile.astro';
+import PolicyTable from './PolicyTable.astro';
+import VerdictMark from './VerdictMark.astro';
+import { CATEGORY_INFO, STANCE_INFO } from '../lib/labels';
+import { formatDate, type SiteProject } from '../lib/projects';
+import { DIMENSIONS } from '../lib/schema';
+import { stanceTone } from '../lib/tones';
+import { AREA_COLUMNS, LIST_COLUMNS, VERDICT_WIDTH } from '../lib/ui';
+
+interface Props {
+  project: SiteProject;
+}
+
+const { project: p } = Astro.props;
+const mood = STANCE_INFO[p.stance];
+const quote = p.evidence.find((e) => e.dimension === 'contributions') ?? p.evidence[0];
+const quoteSource = quote && p.sources.find((s) => s.url === quote.sourceUrl);
+const search = [p.name, p.description, CATEGORY_INFO[p.category], p.slug].join(' ').toLowerCase();
+---
+
+<li
+  id={p.slug}
+  class="scroll-mt-24 border-b border-line has-open:bg-surface"
+  data-stance={p.stance}
+  data-category={p.category}
+  data-search={search}
+>
+  <details class="group">
+    <summary
+      class:list={[
+        'grid cursor-pointer list-none grid-cols-[1.25rem_minmax(0,1fr)_auto] items-center gap-x-3 gap-y-2 px-3 py-4',
+        'not-group-open:hover:bg-surface [&::-webkit-details-marker]:hidden',
+        LIST_COLUMNS,
+      ]}
+    >
+      <Icon name="chevron-right" size={16} class="text-faint transition-transform group-open:rotate-90" />
+      <span class="flex min-w-0 flex-col">
+        <span class="text-[1.0625rem] font-semibold">{p.name}</span>
+        <span class="text-sm text-muted md:truncate">{p.description}</span>
+      </span>
+      <span class:list={[AREA_COLUMNS, 'hidden md:grid']}>
+        {DIMENSIONS.map((dim) => <VerdictMark dimension={dim} policy={p.policy[dim]} />)}
+      </span>
+      <span class="col-start-2 row-start-2 flex gap-4 md:hidden">
+        {DIMENSIONS.map((dim) => <VerdictMark dimension={dim} policy={p.policy[dim]} showIcon size="xs" />)}
+      </span>
+      <span
+        class:list={[
+          stanceTone[p.stance],
+          VERDICT_WIDTH,
+          'flex items-center justify-self-end rounded-[10px] bg-(--tone) text-face sm:pr-4',
+        ]}
+      >
+        <MoodTile stance={p.stance} decorative />
+        <span class="casual text-[0.9375rem] font-bold max-sm:sr-only">{mood.label}</span>
+      </span>
+    </summary>
+
+    <div class="grid gap-5 pr-3 pb-6 pl-11 text-sm">
+      <p class="max-w-[68ch] text-[0.9375rem] text-muted">{p.summary}</p>
+      <PolicyTable policy={p.policy} class="border-y border-line" />
+      {
+        quote && (
+          <figure class="flex max-w-[72ch] gap-2.5">
+            <Icon name="quote" size={14} class="mt-1 text-faint" />
+            <div>
+              <blockquote cite={quote.sourceUrl}>
+                <p>{quote.quote}</p>
+              </blockquote>
+              <figcaption class="mt-1 text-caption text-muted">
+                From <a href={quote.sourceUrl} rel="noopener">{quoteSource?.title ?? 'the policy'}</a>
+              </figcaption>
+            </div>
+          </figure>
+        )
+      }
+      <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+        <a
+          href={`/projects/${p.slug}/`}
+          class="rounded-md border border-line-strong bg-paper px-3 py-1.5 font-semibold no-underline hover:border-ink"
+        >
+          Read the full policy<span class="sr-only"> of {p.name}</span>
+        </a>
+        <span class="text-caption text-muted">Checked {formatDate(p.classifiedAt)}</span>
+      </div>
+    </div>
+  </details>
+</li>

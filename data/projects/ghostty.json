@@ -1,0 +1,65 @@
+{
+  "name": "Ghostty",
+  "description": "Fast, native, feature-rich terminal emulator.",
+  "category": "application",
+  "homepage": "https://ghostty.org/",
+  "repo": "https://github.com/ghostty-org/ghostty",
+  "summary": "AI help is welcome for code, issues and discussions, but every use must be disclosed and a human must fully understand and edit the result. AI-generated media is not allowed.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "All AI usage in any form must be disclosed.",
+      "sourceUrl": "https://github.com/ghostty-org/ghostty/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The human-in-the-loop must fully understand all code.",
+      "sourceUrl": "https://github.com/ghostty-org/ghostty/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Issues and discussions can use AI assistance but must have a full human-in-the-loop.",
+      "sourceUrl": "https://github.com/ghostty-org/ghostty/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "This means that any content generated with AI must have been reviewed and edited by a human before submission.",
+      "sourceUrl": "https://github.com/ghostty-org/ghostty/blob/main/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/ghostty-org/ghostty/blob/main/AI_POLICY.md",
+      "title": "AI Usage Policy",
+      "hash": "09b910723df019969f4c4d007162ab70992374cb55d4f94d74f4b1a5351c4430",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

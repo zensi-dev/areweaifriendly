@@ -1,0 +1,30 @@
+{
+  "name": "areweaifriendly",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "wrangler dev",
+    "deploy": "astro build && wrangler deploy",
+    "validate": "bun scripts/validate.ts",
+    "intake": "bun scripts/intake.ts",
+    "check-sources": "bun scripts/check.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/recursive": "5.3.0",
+    "@tailwindcss/vite": "4.3.3",
+    "astro": "^7.3.8",
+    "linkedom": "^0.18.13",
+    "tailwindcss": "4.3.3",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.2",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.149.0"
+  }
+}

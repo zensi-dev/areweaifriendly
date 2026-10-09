@@ -1,0 +1,64 @@
+{
+  "name": "CPython",
+  "description": "The reference implementation of the Python language.",
+  "category": "language",
+  "homepage": "https://www.python.org/",
+  "repo": "https://github.com/python/cpython",
+  "summary": "AI tools are fine for code, issues and comments as long as the author reviews the output and takes responsibility. Disclosing AI use is appreciated but not required.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "The person submitting an issue or PR is responsible for its content, regardless of whether AI tools were used in its creation.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Disclosure of the use of AI tools in the PR description is appreciated, while not required.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR or filing it as an issue.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://devguide.python.org/getting-started/ai-tools/",
+      "title": "Guidelines for using AI tools",
+      "hash": "1b7822acd54e115824188d8bb8d540ba84f9fa0620d4e6fe1491a53c00b43143",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

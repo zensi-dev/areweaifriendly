@@ -1,0 +1,63 @@
+---
+import Icon from './Icon.astro';
+import MoodTile from './MoodTile.astro';
+import { CONDITION_INFO, DIMENSION_INFO, STANCE_INFO } from '../lib/labels';
+import { DIMENSIONS, type Policy } from '../lib/schema';
+import { areaStance } from '../lib/stance';
+
+interface Props {
+  policy: Policy;
+  /** Show what each area covers and spell out conditions; used on the full project page. */
+  explain?: boolean;
+  class?: string;
+}
+
+const { policy, explain = false, class: className } = Astro.props;
+---
+
+<dl class:list={['divide-y divide-line text-sm', className]}>
+  {
+    DIMENSIONS.map((dim) => {
+      const d = policy[dim];
+      const stance = areaStance(d);
+      return (
+        <div
+          class:list={[
+            'grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-4 gap-y-1.5',
+            explain ? 'py-4 md:grid-cols-[minmax(0,1fr)_11rem]' : 'py-3 md:grid-cols-[11rem_10rem_minmax(0,1fr)]',
+          ]}
+        >
+          <dt class="min-w-0">
+            <span class="inline-flex items-center gap-2 text-muted">
+              <Icon name={DIMENSION_INFO[dim].icon} size={15} class="text-faint" />
+              {DIMENSION_INFO[dim].label}
+            </span>
+            {explain && <span class="mt-0.5 ml-[23px] block text-caption text-muted">{DIMENSION_INFO[dim].meaning}</span>}
+          </dt>
+          <dd class:list={['inline-flex items-center gap-2 justify-self-end font-semibold whitespace-nowrap', !explain && 'md:justify-self-start']}>
+            <MoodTile stance={stance} size="xs" decorative />
+            {STANCE_INFO[stance].label}
+          </dd>
+          {d.conditions.length > 0 && (
+            <dd class:list={['col-span-full', explain ? 'pl-[23px]' : 'md:col-span-1']}>
+              <ul class:list={['flex', explain ? 'flex-col gap-1.5' : 'flex-wrap gap-1.5']} aria-label="Conditions">
+                {d.conditions.map((c) => (
+                  <li
+                    class:list={[
+                      'inline-flex items-center gap-1.5',
+                      explain ? 'text-sm' : 'rounded-md border border-line bg-paper px-2 py-0.5 text-caption text-muted',
+                    ]}
+                    title={CONDITION_INFO[c].label}
+                  >
+                    <Icon name={CONDITION_INFO[c].icon} size={13} class="text-faint" />
+                    <span>{explain ? CONDITION_INFO[c].label : CONDITION_INFO[c].short}</span>
+                  </li>
+                ))}
+              </ul>
+            </dd>
+          )}
+        </div>
+      );
+    })
+  }
+</dl>

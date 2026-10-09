@@ -1,0 +1,58 @@
+name: Weekly policy check
+
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: policy-check
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+
+      - id: check
+        run: bun scripts/check.ts
+        env:
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_MODEL: ${{ secrets.AI_MODEL }}
+          AI_RESPONSE_FORMAT: ${{ secrets.AI_RESPONSE_FORMAT }}
+          CHECK_REPORT: ${{ runner.temp }}/report.md
+
+      - run: cat "$RUNNER_TEMP/report.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open pull request
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          branch="policy-check/$(date -u +%F)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add data snapshots
+          git commit -m "Policy check $(date -u +%F)"
+          git push --force origin "$branch"
+          gh pr create --head "$branch" --title "Policy check $(date -u +%F)" --body-file "$RUNNER_TEMP/report.md"
+
+      - name: Report problems
+        if: steps.check.outputs.problems == 'true'
+        run: |
+          title="Policy sources need attention"
+          number=$(gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number // empty')
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body-file "$RUNNER_TEMP/report.md"
+          else
+            gh issue create --title "$title" --body-file "$RUNNER_TEMP/report.md"
+          fi

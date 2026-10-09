@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import MoodTile from '../components/MoodTile.astro';
+import { CONDITION_INFO, DIMENSION_INFO, STANCE_INFO } from '../lib/labels';
+import { CONDITIONS, DIMENSIONS } from '../lib/schema';
+import { STANCES } from '../lib/stance';
+import { READING } from '../lib/ui';
+import { REPO_URL, SITE_NAME } from '../site.config';
+
+const h2 = 'casual mt-14 mb-3 text-2xl font-bold';
+const p = 'mt-4';
+---
+
+<Layout
+  title={`How the ratings work | ${SITE_NAME}`}
+  description="How Are We AI Friendly? rates open source AI policies: the stances, what each area covers, and how sources are checked."
+>
+  <article class:list={[READING, 'pt-12 sm:pt-20']}>
+    <h1 class="casual text-4xl leading-tight font-extrabold tracking-tight sm:text-5xl">How the ratings work</h1>
+    <p class="mt-4 text-lg text-muted">
+      More and more open source projects publish rules about AI: some welcome it, some ask you to say when you
+      used it, some ban it outright. This site gathers those rules in one place so you can check before you open
+      that pull request.
+    </p>
+
+    <h2 class={h2}>How friendly is friendly?</h2>
+    <p>
+      Each project gets one rating for how friendly it is towards AI-assisted contributions. The rating comes from
+      the project’s rules for code, with bans on AI-written issues or text pulling it down.
+    </p>
+    <dl class="my-4 divide-y divide-line border-y border-line">
+      {
+        STANCES.map((s) => (
+          <div class="flex gap-4 py-4">
+            <MoodTile stance={s} decorative />
+            <div>
+              <dt>
+                <strong class="font-bold">{STANCE_INFO[s].label}</strong>
+                <span class="text-muted"> ({STANCE_INFO[s].plain})</span>
+              </dt>
+              <dd class="mt-0.5">{STANCE_INFO[s].tagline} <span class="text-muted">{STANCE_INFO[s].meaning}</span></dd>
+            </div>
+          </div>
+        ))
+      }
+    </dl>
+
+    <h2 class={h2}>What we look at</h2>
+    <dl class="my-4 divide-y divide-line border-y border-line">
+      {
+        DIMENSIONS.map((d) => (
+          <div class="py-3.5">
+            <dt class="flex items-center gap-2 font-semibold">
+              <Icon name={DIMENSION_INFO[d].icon} size={15} class="text-faint" />
+              {DIMENSION_INFO[d].label}
+            </dt>
+            <dd class="mt-1.5 pl-[23px] text-muted">{DIMENSION_INFO[d].meaning}</dd>
+          </div>
+        ))
+      }
+    </dl>
+    <p class={p}>
+      Each area gets its own face on the same scale. Some come with conditions:
+    </p>
+    <ul class="my-4 grid gap-2">
+      {
+        CONDITIONS.map((c) => (
+          <li class="flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5 text-muted sm:flex-nowrap">
+            <Icon name={CONDITION_INFO[c].icon} size={14} class="self-center text-faint" />
+            <strong class="font-semibold text-ink sm:min-w-34">{CONDITION_INFO[c].short}</strong>
+            {CONDITION_INFO[c].label}
+          </li>
+        ))
+      }
+    </ul>
+    <p class={p}>
+      Conditions that every good contribution meets anyway, like taking responsibility for your work, keep an area
+      <em>Friendly</em>. Extra hoops, like mandatory disclosure, make it <em>Mostly friendly</em>. Allowing only
+      minor help makes it <em>Unfriendly</em>.
+    </p>
+
+    <h2 class={h2}>Where the data comes from</h2>
+    <ol class="list-decimal space-y-2 pl-5">
+      <li>Someone points us at a project’s policy: a <code>CONTRIBUTING</code> file, a code of conduct, a docs page.</li>
+      <li>We save a plain-text snapshot of each source in the repository, so every change is visible in git.</li>
+      <li>
+        An AI model reads the full text and fills in the ratings. Each rating must come with a quote, and a script
+        checks that every quote appears word for word in the snapshot.
+      </li>
+      <li>A human reviews every change before it goes live.</li>
+      <li>Every week the sources are fetched again. If the text changed, the project is re-checked and reviewed.</li>
+    </ol>
+    <p class={p}>
+      Yes, we use AI to track AI policies. We think that’s fine, as long as a human signs off on every change.
+    </p>
+
+    <h2 class={h2} id="add">Add or fix a project</h2>
+    <p>
+      <a href={`${REPO_URL}/issues/new?template=add-project.yml`}>Open an “Add a project” issue</a> with links to
+      the project’s policy. Spotted a mistake? Use the “Suggest a correction” link on any project page.
+    </p>
+
+    <h2 class={h2}>For AI agents</h2>
+    <p>
+      Machine-readable versions of everything live at <a href="/llms.txt"><code>/llms.txt</code></a>,{' '}
+      <a href="/llms-full.txt"><code>/llms-full.txt</code></a> and <a href="/projects.json"><code>/projects.json</code></a>.
+      Every project page also has a Markdown twin at <code>/projects/&lt;slug&gt;.md</code>.
+    </p>
+
+    <h2 class={h2}>Related work</h2>
+    <ul class="list-disc space-y-1 pl-5">
+      <li>
+        <a href="https://github.com/melissawm/open-source-ai-contribution-policies">open-source-ai-contribution-policies</a>,
+        a community list of AI policies.
+      </li>
+      <li>
+        <a href="https://redmonk.com/kholterhoff/2026/02/26/generative-ai-policy-landscape-in-open-source/">The Generative AI Policy Landscape in Open Source</a>{' '}
+        by Kate Holterhoff at RedMonk.
+      </li>
+    </ul>
+
+    <p class="mt-14 border-t border-line pt-5 text-sm text-muted">
+      This is a summary, not legal advice. Projects change their rules and individual maintainers may be stricter
+      than the written policy, so read the source before you contribute.
+    </p>
+  </article>
+</Layout>

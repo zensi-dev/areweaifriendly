@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build output and generated types
+dist/
+.astro/
+*.tsbuildinfo
+
+# Wrangler local state and secrets
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs and test coverage
+*.log
+coverage/
+
+# Editor and OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

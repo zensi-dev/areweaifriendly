@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/recursive/casl.css';
+
+/*
+ * Palette: neutral white and grey with a blue accent, plus one colour per mood. Tailwind's default
+ * palette is cleared so only these exist. `static` keeps every variable in the
+ * output because the tone utilities read them through var().
+ */
+@theme static {
+  --color-*: initial;
+
+  --color-paper: #ffffff;
+  --color-surface: #f6f8fa;
+  --color-ink: #1f2328;
+  --color-muted: #59636e;
+  --color-faint: #8c959f;
+  --color-line: #e4e8ec;
+  --color-line-strong: #d1d9e0;
+  --color-accent: #0969da;
+
+  /* Mood tiles keep the same colours in dark mode; the face is always drawn in --color-face. */
+  --color-face: #1f2328;
+  --color-mood-friendly: #f4c543;
+  --color-mood-mostly-friendly: #8cc5c9;
+  --color-mood-unfriendly: #e46a64;
+  --color-mood-unknown: #cdd0d9;
+}
+
+@theme {
+  --font-sans: 'Recursive Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.5;
+
+  --breakpoint-xs: 25rem;
+}
+
+@layer theme {
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-paper: #22272e;
+      --color-surface: #2d333b;
+      --color-ink: #e6edf3;
+      --color-muted: #9ea7b3;
+      --color-faint: #768390;
+      --color-line: #373e47;
+      --color-line-strong: #444c56;
+      --color-accent: #539bf5;
+    }
+  }
+}
+
+/* Recursive's casual axis: rounder, friendlier letterforms for display type. */
+@utility casual {
+  font-variation-settings: 'CASL' 1;
+}
+
+/* One mood colour per stance, exposed as --tone for any property. */
+@utility tone-friendly {
+  --tone: var(--color-mood-friendly);
+}
+@utility tone-mostly-friendly {
+  --tone: var(--color-mood-mostly-friendly);
+}
+@utility tone-unfriendly {
+  --tone: var(--color-mood-unfriendly);
+}
+@utility tone-unknown {
+  --tone: var(--color-mood-unknown);
+}
+
+@layer base {
+  html {
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply text-balance;
+  }
+
+  p {
+    @apply text-pretty;
+  }
+
+  a {
+    @apply underline decoration-current/35 underline-offset-[0.18em] hover:decoration-current;
+  }
+
+  :focus-visible {
+    @apply rounded-sm outline-2 outline-offset-2 outline-accent;
+  }
+
+  code {
+    @apply font-mono text-[0.9em];
+  }
+}

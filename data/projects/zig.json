@@ -1,0 +1,51 @@
+{
+  "name": "Zig",
+  "description": "General-purpose programming language and toolchain.",
+  "category": "language",
+  "homepage": "https://ziglang.org/",
+  "repo": "https://codeberg.org/ziglang/zig",
+  "summary": "A strict no-LLM policy: no generated code or prose, no AI editing or translation, and no using LLMs to find bugs.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "No LLM-generated content, whether it be code or prose.",
+      "sourceUrl": "https://ziglang.org/code-of-conduct/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "No LLMs for finding bugs.",
+      "sourceUrl": "https://ziglang.org/code-of-conduct/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "No LLMs for editing, including fixing spelling or grammatical errors.",
+      "sourceUrl": "https://ziglang.org/code-of-conduct/"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://ziglang.org/code-of-conduct/",
+      "title": "Code of Conduct ⚡ Zig Programming Language",
+      "hash": "83721cc88462ec98fa9636dee1ed1d0ad04f2d780027da5e9349f2ad6b4f82ec",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}

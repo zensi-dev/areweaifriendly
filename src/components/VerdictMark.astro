@@ -1,0 +1,24 @@
+---
+import Icon from './Icon.astro';
+import MoodTile from './MoodTile.astro';
+import { DIMENSION_INFO, STANCE_INFO } from '../lib/labels';
+import type { Dimension, DimensionPolicy } from '../lib/schema';
+import { areaStance } from '../lib/stance';
+
+interface Props {
+  dimension: Dimension;
+  policy: DimensionPolicy;
+  /** Show the area icon next to the face; the list does this below md, where there are no column headers. */
+  showIcon?: boolean;
+  size?: 'xs' | 'sm';
+}
+
+const { dimension, policy, showIcon = false, size = 'sm' } = Astro.props;
+const text = `${DIMENSION_INFO[dimension].label}: ${STANCE_INFO[areaStance(policy)].label}`;
+---
+
+<span class="inline-flex items-center gap-1.5" title={text}>
+  {showIcon && <Icon name={DIMENSION_INFO[dimension].icon} size={13} class="text-faint" />}
+  <MoodTile stance={areaStance(policy)} size={size} decorative />
+  <span class="sr-only">{text}</span>
+</span>
