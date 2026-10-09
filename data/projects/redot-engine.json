@@ -1,0 +1,35 @@
+{
+  "name": "redot-engine",
+  "description": "Redot Engine – Multi-platform 2D and 3D game engine",
+  "category": "tool",
+  "homepage": "https://www.redotengine.org/",
+  "repo": "https://github.com/Redot-Engine/redot-engine/",
+  "summary": "Redot Engine's contributor guidelines mention an AI Policy for pull requests but do not state its rules, and give no AI-specific guidance for issues or summaries.",
+  "policy": {
+    "contributions": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [],
+  "sources": [
+    {
+      "url": "https://github.com/Redot-Engine/redot-engine/blob/master/CONTRIBUTING.md",
+      "title": "Contributors guidelines",
+      "hash": "96e98fa65e56b045f2d08ec34324dd9fb7762e09b08c6a92f2e3527984880767",
+      "fetchedAt": "2026-10-09"
+    }
+  ],
+  "confidence": "low",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-09",
+  "lastChanged": "2026-10-09"
+}
