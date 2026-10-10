@@ -1,0 +1,79 @@
+{
+  "name": "redot-engine",
+  "description": "Redot Engine – Multi-platform 2D and 3D game engine",
+  "category": "application",
+  "homepage": "https://www.redotengine.org/",
+  "repo": "https://github.com/Redot-Engine/redot-engine",
+  "summary": "Redot Engine explicitly allows contributors to use LLMs and agentic coding assistants, as long as the human understands and takes responsibility for the work, tests pull requests manually before review, discloses AI involvement in art assets, and keeps licensing clear. Purely AI-generated artwork is not permitted, and unreviewed, low-effort or spammy AI output may be rejected.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Contributors are permitted to use LLMs / Agentic Coding Assistants in their workflows.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributors are expected to understand the code they submit, and are fully responsible for it.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributors are expected to manually test their PRs without the use of AI before submission to verify they actually work prior to code review.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributors must not submit content that violates copyright, license terms, or third-party usage restrictions.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If AI is used anywhere in the process for creation of art assets, it must be disclosed upon submission along with a detailed explanation of how it was used.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Contributors are expected to ensure that any comments or supporting documentation is correct and accurate.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md",
+      "title": "AI Policy",
+      "hash": "461865fd202386e0d21de4a5fb14229df8e9e209f51aa816486970e59fa9de38",
+      "fetchedAt": "2026-10-10"
+    },
+    {
+      "url": "https://github.com/Redot-Engine/redot-engine/blob/master/CONTRIBUTING.md",
+      "title": "Contributors guidelines",
+      "hash": "96e98fa65e56b045f2d08ec34324dd9fb7762e09b08c6a92f2e3527984880767",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}
