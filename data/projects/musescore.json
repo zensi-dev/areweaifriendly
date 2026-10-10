@@ -1,0 +1,81 @@
+{
+  "name": "MuseScore Studio",
+  "description": "Music notation and composition software.",
+  "category": "application",
+  "homepage": "https://musescore.org/",
+  "repo": "https://github.com/musescore/MuseScore",
+  "summary": "AI-assisted code, docs, issues and other contributions are allowed. You must review and understand everything, disclose substantial AI output (Assisted-by trailer for commits) and check licensing. Writing PR descriptions yourself is strongly recommended, and maintainer feedback must not be pasted into AI.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You may use LLMs and AI coding tools to help write code, tests, documentation, translations, and other contributions to MuseScore Studio.",
+      "sourceUrl": "https://github.com/musescore/MuseScore/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributors must read, review, and understand all LLM-generated code and text, including code comments, before requesting review.",
+      "sourceUrl": "https://github.com/musescore/MuseScore/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Disclose AI assistance when an AI tool produced a substantial portion of the submitted content.",
+      "sourceUrl": "https://github.com/musescore/MuseScore/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If generated output appears to reproduce code, text, artwork, or other material from an identifiable source, you must verify that you have the right to use it",
+      "sourceUrl": "https://github.com/musescore/MuseScore/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "For issues or other contributions that do not involve commits, disclose the assistance in the relevant issue, template field, or accompanying description.",
+      "sourceUrl": "https://github.com/musescore/MuseScore/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "it is strongly recommended that contributors write PR descriptions themselves (if needed, using tools for translation or copy-editing).",
+      "sourceUrl": "https://github.com/musescore/MuseScore/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not mechanically paste maintainer feedback into an AI tool and submit its response.",
+      "sourceUrl": "https://github.com/musescore/MuseScore/blob/main/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/musescore/MuseScore/blob/main/AI_POLICY.md",
+      "title": "AI / LLM Usage Policy for Contributors",
+      "hash": "6122a292551328bfb9ccbf3593c2f44a8dcf5d472af26f0b4aab1f16282a857d",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

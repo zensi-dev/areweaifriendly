@@ -1,0 +1,71 @@
+{
+  "name": "Nixpkgs",
+  "description": "The Nix packages collection and NixOS.",
+  "category": "distribution",
+  "homepage": "https://nixos.org/",
+  "repo": "https://github.com/NixOS/nixpkgs",
+  "summary": "AI and other automation are allowed for code, issues and messages if a responsible person reviews the output and discloses non-trivial use; LLM-assisted commits need an Assisted-by trailer. Vibe coding without review is not permitted.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "must have a responsible person in the loop who is accountable for that contribution and reviews it before submission, and must transparently disclose any non‐trivial use of automation to produce it, including but not limited to LLM‐based AI tools.",
+      "sourceUrl": "https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "In the case of LLM‐based AI tooling used for commits, this must be in the form of an `Assisted-by:` Git commit trailer",
+      "sourceUrl": "https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "vibe coding without review is not permitted.",
+      "sourceUrl": "https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Contributions include code and documentation in commits, commit messages, pull request summaries and reviews, issue and vulnerability reports, GitHub comments, Matrix messages, and Discourse posts.",
+      "sourceUrl": "https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Comments and reviews must separately satisfy the same requirements of understanding, review, and disclosure.",
+      "sourceUrl": "https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md",
+      "title": "Contributing to Nixpkgs",
+      "hash": "5ec757d46c1d16f8bce8a7a362e57107ef51188909e2fd9a76afc1995d6beb10",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

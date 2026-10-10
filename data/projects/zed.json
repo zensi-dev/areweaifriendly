@@ -1,0 +1,65 @@
+{
+  "name": "Zed",
+  "description": "High-performance, multiplayer code editor.",
+  "category": "application",
+  "homepage": "https://zed.dev/",
+  "repo": "https://github.com/zed-industries/zed",
+  "summary": "LLMs are welcome for coding with a human in the loop who understands the work; autonomous agents are not accepted. Messages to maintainers should not be written wholly by an LLM, and quoted LLM output must be disclosed.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We welcome the use of LLMs for coding, but we hold a high bar for all contributions, and we expect a human in the loop who genuinely understands the work an LLM produces on their behalf.",
+      "sourceUrl": "https://github.com/zed-industries/zed/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "For that reason, we don't accept contributions from autonomous agents.",
+      "sourceUrl": "https://github.com/zed-industries/zed/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "If you think it's helpful/necessary to share context from a chat with an LLM, please put the relevant part of it in a quote block (e.g., using `>`), disclose it as AI-generated",
+      "sourceUrl": "https://github.com/zed-industries/zed/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Don't rely on LLMs to write the whole thing for you when communicating with the maintainers (meaning replies to comments, PR descriptions, and alike).",
+      "sourceUrl": "https://github.com/zed-industries/zed/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/zed-industries/zed/blob/main/CONTRIBUTING.md",
+      "title": "Contributing to Zed",
+      "hash": "cf101ef7877ef208a6f91a324d48b8f725222ab682608a7644d0caf6953c81e1",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

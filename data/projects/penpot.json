@@ -1,0 +1,62 @@
+{
+  "name": "Penpot",
+  "description": "Open source design and prototyping platform.",
+  "category": "application",
+  "homepage": "https://penpot.app/",
+  "repo": "https://github.com/penpot/penpot",
+  "summary": "Responsible AI use is supported for issues, PRs and other submissions, as long as a human carefully reviews and verifies AI-assisted content before submitting it.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We support the responsible use of AI tools in the development process.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Submit AI-generated code without human review.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md",
+      "title": "Contributing Guide",
+      "hash": "9bd599caed25e83254f20da08e7c158173d3ed8089ab1f934a9e29898ce063bf",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

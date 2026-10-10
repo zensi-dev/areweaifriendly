@@ -1,0 +1,53 @@
+{
+  "name": "Typst",
+  "description": "Markup-based typesetting system.",
+  "category": "tool",
+  "homepage": "https://typst.app/",
+  "repo": "https://github.com/typst/typst",
+  "summary": "Changes implemented by an AI model are not accepted, and PR descriptions must not be written with AI. Translation tools are fine.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Do not vibecode the change! Contributions that were implemented by an AI model will not be accepted.",
+      "sourceUrl": "https://github.com/typst/typst/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not use AI to write the description.",
+      "sourceUrl": "https://github.com/typst/typst/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If you have trouble expressing your thoughts in English, you can of course use translation tools.",
+      "sourceUrl": "https://github.com/typst/typst/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/typst/typst/blob/main/CONTRIBUTING.md",
+      "title": "Contributing to Typst",
+      "hash": "02b0deba1c1d921647e58732ba2f274cf0169a1faa2b83a50b69ac71be7fe44b",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

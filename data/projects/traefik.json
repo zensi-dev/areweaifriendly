@@ -1,0 +1,63 @@
+{
+  "name": "Traefik",
+  "description": "Cloud-native HTTP reverse proxy and load balancer.",
+  "category": "application",
+  "homepage": "https://traefik.io/traefik/",
+  "repo": "https://github.com/traefik/traefik",
+  "summary": "AI-assisted contributions are welcome; substantial AI help needs an Assisted-by trailer. Agents must not post comments or replies, and drafted messages must be rewritten in your own voice. AI-found security reports need disclosure and a working proof of concept.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Traefik welcomes AI-assisted contributions, provided a few simple rules are followed:",
+      "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Declare substantial AI assistance with an `Assisted-by:` trailer at the bottom of the commit message whenever an agent produced a meaningful portion of the diff",
+      "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "disclose your use of AI tooling. Unvalidated AI-generated reports are closed immediately.",
+      "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not let an agent post comments, review replies, or triage messages on your behalf. If an agent drafted a message for you, rewrite it in your own voice before sending",
+      "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/traefik/traefik/blob/master/AGENTS.md",
+      "title": "Traefik — Contributor Guide for AI Agents",
+      "hash": "fbb88ea949e5cfe568f643b0acbccd5d479cf2dc671a1d3ac57d3efb6dd0c14b",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

@@ -1,0 +1,74 @@
+{
+  "name": "rust-analyzer",
+  "description": "Language server for Rust.",
+  "category": "tool",
+  "homepage": "https://rust-analyzer.github.io/",
+  "repo": "https://github.com/rust-lang/rust-analyzer",
+  "summary": "AI tools are allowed with a human in the loop who understands the work; autonomous agents may not open PRs or issues, and AI may not write code for E-easy issues with instructions. Issues, PR bodies and comments must be in your own words; quoted AI context must be disclosed. Disclosure of AI use is requested.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We allow using AI (i.e., LLMs) as tools for contributing to rust-analyzer.",
+      "sourceUrl": "https://github.com/rust-lang/rust-analyzer/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "We do not allow autonomous agents to be used to open pull requests or issues to our projects.",
+      "sourceUrl": "https://github.com/rust-lang/rust-analyzer/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "AI should not be used to author code for E-easy+E-has-instructions issues.",
+      "sourceUrl": "https://github.com/rust-lang/rust-analyzer/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "If you are opening an issue, we expect you to describe the problem in your own words.",
+      "sourceUrl": "https://github.com/rust-lang/rust-analyzer/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI should not be used to generate comments when communicating with maintainers.",
+      "sourceUrl": "https://github.com/rust-lang/rust-analyzer/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If you wish to include context from an interaction with AI in your comments, it must be in a quote block (e.g., using `>`) and disclosed as such.",
+      "sourceUrl": "https://github.com/rust-lang/rust-analyzer/blob/master/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/rust-lang/rust-analyzer/blob/master/AI_POLICY.md",
+      "title": "AI_POLICY.md",
+      "hash": "8444c1fafa71ba339ec98dd1d7b39ecaeda3bae8d7dbc21211b65d92778bfb14",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

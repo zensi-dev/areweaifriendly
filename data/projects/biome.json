@@ -1,0 +1,53 @@
+{
+  "name": "Biome",
+  "description": "Formatter and linter for web languages.",
+  "category": "tool",
+  "homepage": "https://biomejs.dev/",
+  "repo": "https://github.com/biomejs/biome",
+  "summary": "Any AI assistance must be disclosed in the PR along with its extent. Don't use AI to write PR descriptions or other communication with the project.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "If you are using any kind of AI assistance to contribute to Biome, it must be disclosed in the pull request.",
+      "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If you relied on AI assistance to make a pull request, you must disclose it in the pull request, together with the extent of the usage.",
+      "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Please do not use AI to write pull request descriptions or contributor communication for this project.",
+      "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md",
+      "title": "🚀 Contributing",
+      "hash": "9d69c608026f619f4263caa98c276630f005f6eea6f596c599902ce324f9c417",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

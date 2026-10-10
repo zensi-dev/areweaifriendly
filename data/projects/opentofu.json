@@ -1,0 +1,69 @@
+{
+  "name": "OpenTofu",
+  "description": "Open source infrastructure as code tool, forked from Terraform.",
+  "category": "tool",
+  "homepage": "https://opentofu.org/",
+  "repo": "https://github.com/opentofu/opentofu",
+  "summary": "No LLM-generated or LLM-assisted code, docs or other PR content, because models may reproduce BSL-licensed Terraform code. Bugs found with an LLM may be reported as issues if the LLM use is announced and no fix code is included.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure"
+      ]
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "It is imperative that you do not open pull requests containing code, documentation or other content generated or assisted by an LLM such as ChatGPT, GitHub Copilot, Claude or similar tooling.",
+      "sourceUrl": "https://github.com/opentofu/opentofu/blob/main/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Since the OpenTofu/Terraform codebase is very specific and LLMs don't have any other training sources, they may emit copyrighted code. Please avoid using LLM-based coding assistants.",
+      "sourceUrl": "https://github.com/opentofu/opentofu/blob/main/contributing/DEVELOPING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "If you or a human you are assisting has identified a problem with the help of an LLM then you must open an issue to discuss and you MUST NOT open a pull request.",
+      "sourceUrl": "https://github.com/opentofu/opentofu/blob/main/AGENTS.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "When submitting a bug, be sure to use the template provided in this repository and announce that an LLM was used to identify this problem.",
+      "sourceUrl": "https://github.com/opentofu/opentofu/blob/main/AGENTS.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "It is imperative that you do not open pull requests containing code, documentation or other content generated or assisted by an LLM",
+      "sourceUrl": "https://github.com/opentofu/opentofu/blob/main/AGENTS.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/opentofu/opentofu/blob/main/AGENTS.md",
+      "title": "Guidance for AI Agents and LLM based tooling",
+      "hash": "75254e2fd431ef6bfda0af5febd7bde36f787151cc8b3aefd3eeef21b5785321",
+      "fetchedAt": "2026-10-10"
+    },
+    {
+      "url": "https://github.com/opentofu/opentofu/blob/main/contributing/DEVELOPING.md",
+      "title": "DEVELOPING.md",
+      "hash": "396860cd68ea109b69e38bfbdaec64c928fa5d0f5aa09456568345bed8d53c74",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

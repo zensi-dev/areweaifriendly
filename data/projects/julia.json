@@ -1,0 +1,66 @@
+{
+  "name": "Julia",
+  "description": "High-performance dynamic language for technical computing.",
+  "category": "language",
+  "homepage": "https://julialang.org/",
+  "repo": "https://github.com/JuliaLang/julia",
+  "summary": "Substantive AI contributions must be disclosed with details and reviewed before opening; open the PR yourself rather than letting a tool do it. The same applies to issues, discussions, comments and AI-assisted reviews.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "If your pull request contains substantive contributions from a generative AI tool, please disclose so with details, and review all changes before opening.",
+      "sourceUrl": "https://github.com/JuliaLang/julia/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Open the pull request yourself once you have reviewed it, rather than having a tool open it on your behalf.",
+      "sourceUrl": "https://github.com/JuliaLang/julia/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "This also applies to other content, such as issues, discussions, and comments.",
+      "sourceUrl": "https://github.com/JuliaLang/julia/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI-assisted review is allowed so long as it is disclosed, but all humans remain responsible for the content they generate.",
+      "sourceUrl": "https://github.com/JuliaLang/julia/blob/master/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/JuliaLang/julia/blob/master/CONTRIBUTING.md",
+      "title": "Notes for Julia Contributors",
+      "hash": "4d68aa2b3af95fc03ac56011c4965673c13d854fe7f1d91441b41ac6671dea58",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

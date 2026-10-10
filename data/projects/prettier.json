@@ -1,0 +1,54 @@
+{
+  "name": "Prettier",
+  "description": "Opinionated code formatter.",
+  "category": "tool",
+  "homepage": "https://prettier.io/",
+  "repo": "https://github.com/prettier/prettier",
+  "summary": "Only submit code you fully understand, have tested and can explain. Low-quality AI content is closed immediately.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Only submit code you fully understand and have tested.",
+      "sourceUrl": "https://github.com/prettier/prettier/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Be prepared to explain your changes.",
+      "sourceUrl": "https://github.com/prettier/prettier/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Low-quality AI content will be closed immediately.",
+      "sourceUrl": "https://github.com/prettier/prettier/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/prettier/prettier/blob/main/CONTRIBUTING.md",
+      "title": "Contributing to Prettier",
+      "hash": "c60faa1a822812ddd7e973b2cf4f500cd8de7c68c0e58ce3897b619dea865a83",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

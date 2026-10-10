@@ -1,0 +1,53 @@
+{
+  "name": "Textual",
+  "description": "Python framework for terminal and web user interfaces.",
+  "category": "framework",
+  "homepage": "https://textual.textualize.io/",
+  "repo": "https://github.com/Textualize/textual",
+  "summary": "AI-generated PRs are accepted if they say they are AI-generated, name the agent, fill in the PR template and link to a solution a maintainer approved.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "This project accepts AI generated Pull Requests, as long as the following guidelines are met.",
+      "sourceUrl": "https://github.com/Textualize/textual/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The Pull Request must identify itself as AI generated, including the name of the agent used.",
+      "sourceUrl": "https://github.com/Textualize/textual/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The Pull Request must link to a issue or discussion where a solution has been approved by a maintainer",
+      "sourceUrl": "https://github.com/Textualize/textual/blob/main/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/Textualize/textual/blob/main/AI_POLICY.md",
+      "title": "AI_POLICY.md",
+      "hash": "e7ab52eb093e0bc2ffe1a71758128b5231c5894fc38e04ae3deb34a881e36a10",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

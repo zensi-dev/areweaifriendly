@@ -1,0 +1,68 @@
+{
+  "name": "Nuxt",
+  "description": "Full-stack web framework built on Vue.",
+  "category": "framework",
+  "homepage": "https://nuxt.com/",
+  "repo": "https://github.com/nuxt/nuxt",
+  "summary": "AI may generate code you fully understand and can explain. Comments, issues and PR descriptions must be in your own voice.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Feel free to use AI tools to generate code or explore ideas",
+      "sourceUrl": "https://nuxt.com/docs/4.x/community/contribution"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Only submit contributions you fully understand and can explain",
+      "sourceUrl": "https://nuxt.com/docs/4.x/community/contribution"
+    },
+    {
+      "dimension": "issues",
+      "quote": "All comments, issues, and pull request descriptions should be written in your own voice",
+      "sourceUrl": "https://nuxt.com/docs/4.x/community/contribution"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Avoid copy-pasting AI-generated summaries that don't reflect your own understanding",
+      "sourceUrl": "https://nuxt.com/docs/4.x/community/contribution"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/nuxt/nuxt/blob/main/CONTRIBUTING.md",
+      "title": "Contributing to Nuxt",
+      "hash": "e27f6f40567aba66513cc464a8bd187e4ed2a44d6b7b4b01492083f304622167",
+      "fetchedAt": "2026-10-10"
+    },
+    {
+      "url": "https://nuxt.com/docs/4.x/community/contribution",
+      "title": "Contribution",
+      "hash": "9269bf5c0a49d457d715678d2ad2c8a24194e7b3d95998daefeacc401f64a884",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

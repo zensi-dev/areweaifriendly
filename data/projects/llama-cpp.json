@@ -1,0 +1,72 @@
+{
+  "name": "llama.cpp",
+  "description": "LLM inference in C/C++.",
+  "category": "library",
+  "homepage": "https://github.com/ggml-org/llama.cpp",
+  "repo": "https://github.com/ggml-org/llama.cpp",
+  "summary": "AI-generated code is allowed if you disclose it, review it thoroughly and can explain every line. Using AI to write bug reports, feature requests, PR descriptions or replies is strictly prohibited, and automated submissions can get you banned.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "AI-generated code is allowed. You are 100% responsible for every line, however it was produced.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Undisclosed AI usage may result in your account being permanently banned from contributing to the project.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Automated commits or PR submissions (may result in contributor ban)",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "It is strictly prohibited to use AI to write your posts for you (bug reports, feature requests, pull request descriptions, Github discussions, responding to humans, ...).",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI-written PR descriptions, commit messages, or reviewer responses",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md",
+      "title": "Contributors",
+      "hash": "1f0415a07a2e9ca8af3f6679919ab508b7ca36c4aec91aac35aece10384637d3",
+      "fetchedAt": "2026-10-10"
+    },
+    {
+      "url": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md",
+      "title": "Instructions for llama.cpp",
+      "hash": "08cb4ee6c7fa71d529a6ee37b4d7bab7055144ae376336e6421356cc3e83c7c4",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

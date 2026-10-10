@@ -1,0 +1,72 @@
+{
+  "name": "OpenSSL",
+  "description": "Toolkit for TLS and general-purpose cryptography.",
+  "category": "library",
+  "homepage": "https://openssl-library.org/",
+  "repo": "https://github.com/openssl/openssl",
+  "summary": "AI tools are allowed. Non-trivial AI-generated parts need an Assisted-by trailer naming the tool and model, plus a CLA version with the AI clauses. You must review, understand and test everything and avoid reproducing copyrighted code.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "declare it in your commit message using an Assisted-by trailer, and",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "have signed a Contributor License Agreement (CLA) that includes the AI clauses.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Review all AI-generated code before submitting it. Do not submit output you have not read, understood and tested.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not submit AI-generated code if you have reason to believe it reproduces third-party copyrighted material.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "if a non-trivial portion of a contribution was created using an AI tool, you must declare which agent and model were used.",
+      "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md",
+      "title": "CONTRIBUTING.md",
+      "hash": "9d88b60f5fcc392b9b589918aaf5fe8539dd9ef74aa9cece3721bf7f569b7ce6",
+      "fetchedAt": "2026-10-10"
+    },
+    {
+      "url": "https://openssl-library.org/policies/general/ai-policy/",
+      "title": "OpenSSL AI Code and Documentation Contribution Policy | OpenSSL Library",
+      "hash": "3f01810b68a64e0e39ac4d5ffc6e62d27fbbc4f9cbfdfdfd49b4cbacffe703f1",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

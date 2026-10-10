@@ -1,0 +1,51 @@
+{
+  "name": "fish shell",
+  "description": "A smart and user-friendly command line shell.",
+  "category": "tool",
+  "homepage": "https://fishshell.com/",
+  "repo": "https://github.com/fish-shell/fish-shell",
+  "summary": "No contributions made or edited with generative AI tools: code, issues, comments and artwork are all covered.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We do not accept contributions created with generative artificial intelligence tools.",
+      "sourceUrl": "https://github.com/fish-shell/fish-shell/blob/master/CONTRIBUTING.rst"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Do not submit pull requests, GitHub issues or comments, artwork, where the output has been created by or edited with one of these tools.",
+      "sourceUrl": "https://github.com/fish-shell/fish-shell/blob/master/CONTRIBUTING.rst"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "This includes products such as GitHub Copilot, Zed AI, Cursor.dev's AI features, other coding assistants, and ChatGPT.",
+      "sourceUrl": "https://github.com/fish-shell/fish-shell/blob/master/CONTRIBUTING.rst"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/fish-shell/fish-shell/blob/master/CONTRIBUTING.rst",
+      "title": "CONTRIBUTING.rst",
+      "hash": "adb32610ad6a398ed010a9ad72e3e2ec10e19a264edac5ccf76e37f653024849",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

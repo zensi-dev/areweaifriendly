@@ -1,0 +1,76 @@
+{
+  "name": "ESLint",
+  "description": "Pluggable linter for JavaScript.",
+  "category": "tool",
+  "homepage": "https://eslint.org/",
+  "repo": "https://github.com/eslint/eslint",
+  "summary": "AI-assisted issues and PRs are welcome if disclosed, reviewed, tested and edited for readability. AI-generated PRs are only considered for accepted issues, and replies to maintainers must come from a human.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "If you use AI to generate an issue or a pull request, you must clearly disclose this in your submission.",
+      "sourceUrl": "https://eslint.org/docs/latest/contribute/ai-policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "While AI can assist in generating code or text, the ultimate responsibility for the contribution remains with the human submitter.",
+      "sourceUrl": "https://eslint.org/docs/latest/contribute/ai-policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "AI-generated PRs will only be considered for issues that have been officially marked as accepted by the ESLint team.",
+      "sourceUrl": "https://eslint.org/docs/latest/contribute/ai-policy"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Issues and pull requests that do not disclose the use of AI may be closed without review.",
+      "sourceUrl": "https://eslint.org/docs/latest/contribute/ai-policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Please do not feed maintainer comments back into an AI to generate responses.",
+      "sourceUrl": "https://eslint.org/docs/latest/contribute/ai-policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI-generated content must be edited to make it easy for maintainers to review.",
+      "sourceUrl": "https://eslint.org/docs/latest/contribute/ai-policy"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://eslint.org/docs/latest/contribute/ai-policy",
+      "title": "AI Usage Policy - ESLint - Pluggable JavaScript Linter",
+      "hash": "cd0f8021203bfa3179f83a2202143dcf71a1a3dc03f96ba2eff241237a2126ef",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

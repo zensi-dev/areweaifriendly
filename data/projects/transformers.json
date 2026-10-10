@@ -1,0 +1,63 @@
+{
+  "name": "Hugging Face Transformers",
+  "description": "Model-definition framework for state-of-the-art machine learning models.",
+  "category": "library",
+  "homepage": "https://huggingface.co/docs/transformers",
+  "repo": "https://github.com/huggingface/transformers",
+  "summary": "AI-assisted PRs are welcome if disclosed, coordinated on an issue and fully reviewed and tested by a human; no pure-agent PRs. For now first-time contributors are asked not to use code agents for issues or PRs, and autonomous agents not to open any.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "no-autonomous-agents"
+      ]
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Do not submit \"pure agent\" PRs. The human submitter is responsible for reviewing all changed lines, validating behavior end-to-end, and running relevant tests.",
+      "sourceUrl": "https://github.com/huggingface/transformers/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If AI tools were used, disclose this in the PR description and include: coordination link, differentiation from existing PRs (if applicable), and test commands/results.",
+      "sourceUrl": "https://github.com/huggingface/transformers/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "we ask that first-time contributors do not use code agents to create issues or PRs at this time.",
+      "sourceUrl": "https://github.com/huggingface/transformers/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "We'd also ask autonomous agents not to open any PRs or issues for the moment.",
+      "sourceUrl": "https://github.com/huggingface/transformers/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/huggingface/transformers/blob/main/CONTRIBUTING.md",
+      "title": "Contribute to 🤗 Transformers",
+      "hash": "c12add985b3c983607479d568601ce4703f863be2e825b6bc86a041f62ad8f6c",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

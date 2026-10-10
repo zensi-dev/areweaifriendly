@@ -1,0 +1,122 @@
+<!--
+ SPDX-License-Identifier: Apache-2.0
+ SPDX-FileCopyrightText: 2024 The Gleam contributors
+-->
+
+# Contributing to Gleam
+
+Thanks for contributing to Gleam!
+
+Before continuing please read our [code of conduct][code-of-conduct] which all
+contributors are expected to adhere to.
+
+[code-of-conduct]: https://github.com/gleam-lang/gleam/blob/main/CODE_OF_CONDUCT.md
+
+## Contributing bug reports
+
+If you have found a bug in Gleam please check to see if there is an open
+ticket for this problem on [our GitHub issue tracker][issues]. If you cannot
+find an existing ticket for the bug please open a new one.
+
+[issues]: https://github.com/gleam-lang/gleam/issues
+
+A bug may be a technical problem such as a compiler crash or an incorrect
+return value from a library function, or a user experience issue such as
+unclear or absent documentation. If you are unsure if your problem is a bug
+please open a ticket and we will work it out together.
+
+## Contributing code changes
+
+Before working on code it is suggested that you read the
+[docs/compiler/README.md](docs/compiler/README.md) file.
+It outlines fundamental components and design of this project.
+
+Code changes to Gleam are welcomed via the process below.
+
+1. Find or open a GitHub issue relevant to the change you wish to make and
+ comment saying that you wish to work on this issue. If the change
+ introduces new functionality or behaviour this would be a good time to
+ discuss the details of the change to ensure we are in agreement as to how
+ the new functionality should work.
+2. Update the [CHANGELOG.md](CHANGELOG.md) file with your changes.
+3. Open a GitHub pull request with your changes and ensure the tests and build
+ pass on CI.
+4. A Gleam team member will review the changes and may provide feedback to
+ work on. Depending on the change there may be multiple rounds of feedback.
+5. Once the changes have been approved the code will be rebased into the
+ `main` branch.
+
+We do not accept contributions from AI agents.
+
+## Communication with contributions
+
+Open source software development is a social exercise as much as a technical
+one. Bug reports, pull request descriptions, and comments must be written by a
+human, not by AI. We want your knowledge and opinions in your tone of voice; we
+do not want generated text or AI summaries.
+
+You may use software to help you with your English spelling and grammar. If
+your message is translated into English from another language please disclose
+that in your message, so that we understand.
+
+## Local development
+
+To run the compiler tests. This will require a recent stable version of Rust,
+Erlang, Elixir, NodeJS, Deno, and Bun to be installed.
+
+```sh
+cargo test
+
+# Or if you have watchexec installed you can run them automatically
+# when files change
+make test-watch
+```
+
+To run the language integration tests. This will require a recent stable
+version of Rust, Erlang, and NodeJS to be installed.
+
+```sh
+make language-test
+```
+
+If you don't have Rust or Cargo installed you can run the above command in a
+docker sandbox. Run the command below from this directory.
+
+```sh
+docker run -v $(pwd):/opt/app -it -w /opt/app rust:latest bash
+```
+
+## Rust development
+
+Here are some tips and guidelines for writing Rust code in the Gleam compiler:
+
+The `GLEAM_LOG` environment variable can be used to cause the compiler to
+print more information for debugging and introspection. i.e.
+`GLEAM_LOG=trace`.
+
+### Clippy linter
+
+Your PR may fail on CI due to clippy errors. Clippy can be run locally like so:
+
+```sh
+cargo clean -p gleam
+cargo clippy
+```
+
+If you have lint errors on CI but not locally upgrade your Rust version to the
+latest stable.
+
+```sh
+rustup upgrade stable
+```
+
+## Operating system specific code
+
+This project is used on FreeBSD, Linux, MacOS, OpenBSD, Windows, and presumably
+other operating systems, so there is some amount of code that needs to be
+different depending on which is it running on. So far this is hidden inside
+dependencies, with the exception of some code for working with file paths in
+tests and for setting file permissions, which is different on Windows. If you
+are working in this area then you may get a CI failure relating to this for
+your first attempt. If you need help resolving any issues do not hesitate to
+ask.

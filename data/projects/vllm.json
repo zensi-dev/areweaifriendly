@@ -1,0 +1,56 @@
+{
+  "name": "vLLM",
+  "description": "High-throughput inference and serving engine for LLMs.",
+  "category": "library",
+  "homepage": "https://vllm.ai/",
+  "repo": "https://github.com/vllm-project/vllm",
+  "summary": "AI-assisted PRs are allowed, but pure code-agent PRs are not: a human must review every changed line, run the tests and defend the change. AI-assisted PR descriptions must say AI was used and include test results.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Pure code-agent PRs are not allowed. A human submitter must understand and defend the change end-to-end.",
+      "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The submitting human must review every changed line and run relevant tests.",
+      "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Clear statement that AI assistance was used.",
+      "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md",
+      "title": "Agent Instructions for vLLM",
+      "hash": "093608aa9a1a3452695739e1a90dd201c3fc3657773d97e7e33b9bef05e5be56",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

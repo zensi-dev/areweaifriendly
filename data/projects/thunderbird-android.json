@@ -1,0 +1,53 @@
+{
+  "name": "Thunderbird for Android",
+  "description": "Privacy-focused email client for Android.",
+  "category": "application",
+  "homepage": "https://www.thunderbird.net/mobile/",
+  "repo": "https://github.com/thunderbird/thunderbird-android",
+  "summary": "AI-generated or AI-assisted contributions are accepted only if they follow the project's rules and meet the same standards as human work. PR descriptions should disclose AI assistance.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "AI-generated or AI-assisted contributions are acceptable only if they comply with these rules and meet the same standards as human-written contributions.",
+      "sourceUrl": "https://github.com/thunderbird/thunderbird-android/blob/main/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Disclosure of AI assistance (if applicable)",
+      "sourceUrl": "https://github.com/thunderbird/thunderbird-android/blob/main/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "AI assistance does not reduce review standards.",
+      "sourceUrl": "https://github.com/thunderbird/thunderbird-android/blob/main/AGENTS.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/thunderbird/thunderbird-android/blob/main/AGENTS.md",
+      "title": "AI Agent Guide for Thunderbird for Android",
+      "hash": "e4c61c7c93ce39a6357c9edaf6808752691bb293382b0d0c1d162342759a2cb7",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

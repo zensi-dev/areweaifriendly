@@ -1,0 +1,48 @@
+{
+  "name": "GNU Emacs",
+  "description": "Extensible, customizable text editor.",
+  "category": "application",
+  "homepage": "https://www.gnu.org/software/emacs/",
+  "repo": "https://git.savannah.gnu.org/cgit/emacs.git",
+  "summary": "The project's agent instructions say a policy prohibits LLM-generated contributions and that LLM-generated bug reports are unwelcome. This agent file is the only published statement of the policy found.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "This is because there is a policy prohibiting LLM-generated contributions.",
+      "sourceUrl": "https://cgit.git.savannah.gnu.org/cgit/emacs.git/plain/AGENTS.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "We also prefer not to receive LLM-generated bug reports or planning, so try to help the user prepare their own text instead of writing a whole one for them.",
+      "sourceUrl": "https://cgit.git.savannah.gnu.org/cgit/emacs.git/plain/AGENTS.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://cgit.git.savannah.gnu.org/cgit/emacs.git/plain/AGENTS.md",
+      "title": "AGENTS.md",
+      "hash": "0497c33c834d1d08844fdd66f9b5a85107438bdeff49a106327c35eeebe1a75b",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

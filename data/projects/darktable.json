@@ -1,0 +1,48 @@
+{
+  "name": "darktable",
+  "description": "Photography workflow application and raw developer.",
+  "category": "application",
+  "homepage": "https://www.darktable.org/",
+  "repo": "https://github.com/darktable-org/darktable",
+  "summary": "The repository's agent guide asks for AI assistance to be disclosed in the pull request description. No other AI rules are published.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Disclose AI assistance in the pull request description instead of inventing a trailer convention.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Disclose that the change was written with AI assistance",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md",
+      "title": "AGENTS.md – darktable",
+      "hash": "c1ca56834afa383d8431d26d341e1121439fad54edfd1c5c2e15754c0142281a",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Moby",
+  "description": "Open source container engine behind Docker.",
+  "category": "tool",
+  "homepage": "https://mobyproject.org/",
+  "repo": "https://github.com/moby/moby",
+  "summary": "AI is welcome if you disclose the tool and how much it did, and a human reads, edits and owns everything before posting, including issues, PR descriptions and replies. No AI attribution trailers in commits.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Say what you used: Copilot, Claude Code, Cursor, ChatGPT, whatever, and roughly how much of the work it did, in the issue or PR description.",
+      "sourceUrl": "https://github.com/moby/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Whoever opens the PR signs off on it and owns it, no matter what wrote the first draft.",
+      "sourceUrl": "https://github.com/moby/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Anything AI helped produce (an issue, a PR description, a review reply, a code change) gets read and edited by a human before it goes out.",
+      "sourceUrl": "https://github.com/moby/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Using AI to draft a reply is fine, including to bridge a language gap. Posting raw, unreviewed output isn't.",
+      "sourceUrl": "https://github.com/moby/.github/blob/main/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/moby/.github/blob/main/AI_POLICY.md",
+      "title": "AI Usage Policy",
+      "hash": "554d72c05c66e3c56de33592773bd0ac05a5bd29a9792cf12d7cfd62416dd617",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

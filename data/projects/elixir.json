@@ -1,0 +1,81 @@
+{
+  "name": "Elixir",
+  "description": "Dynamic, functional language for scalable applications.",
+  "category": "language",
+  "homepage": "https://elixir-lang.org/",
+  "repo": "https://github.com/elixir-lang/elixir",
+  "summary": "AI is allowed for contributions and discussions. Humans must review AI code, check licensing, take responsibility and disclose AI use with an Assisted-by tag. AI may help you express yourself, but not respond on your behalf.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "While we allow the use of AI on contributions and discussions, please be mindful when doing so.",
+      "sourceUrl": "https://github.com/elixir-lang/elixir/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Reviewing all AI-generated code",
+      "sourceUrl": "https://github.com/elixir-lang/elixir/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Ensuring compliance with licensing requirements",
+      "sourceUrl": "https://github.com/elixir-lang/elixir/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributions should include an Assisted-by tag",
+      "sourceUrl": "https://github.com/elixir-lang/elixir/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "a human must still validate it before opening issues or pull requests.",
+      "sourceUrl": "https://github.com/elixir-lang/elixir/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "When it comes to discussions, using AI to help express yourself is welcome, but avoid directly copy and pasting AI generated content.",
+      "sourceUrl": "https://github.com/elixir-lang/elixir/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Disclosing use of AI for comments and code contributions",
+      "sourceUrl": "https://github.com/elixir-lang/elixir/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/elixir-lang/elixir/blob/main/CONTRIBUTING.md",
+      "title": "Contributing to Elixir",
+      "hash": "7196fc8e422b4efaf2f14fed2484652d232999781961d3a75708f6f4597571f1",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

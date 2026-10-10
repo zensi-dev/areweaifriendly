@@ -1,0 +1,55 @@
+{
+  "name": "niri",
+  "description": "Scrollable-tiling Wayland compositor.",
+  "category": "application",
+  "homepage": "https://github.com/niri-wm/niri",
+  "repo": "https://github.com/niri-wm/niri",
+  "summary": "LLMs may not be used to create anything: code, issues, comments and reviews must be human-written. LLM translation of human-written text is allowed if the original is included.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You're not allowed to use LLMs to create.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "All pull request code, issue descriptions, comments, public reviews, etc. must be human-written.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You may use LLMs for translating your human-written text; in this case you must also provide the original text to reduce the chance of miscommunication.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md",
+      "title": "Contributing to niri",
+      "hash": "775ba27483b5bf3089a989b7b5a93882a39a8a01b17a062f47811d2336fd0312",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Tauri",
+  "description": "Framework for small, fast desktop and mobile apps with a web frontend.",
+  "category": "framework",
+  "homepage": "https://tauri.app/",
+  "repo": "https://github.com/tauri-apps/tauri",
+  "summary": "Review and test all LLM-generated content; you are responsible for it. Don't use AI to respond to review comments, except for translation.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Review and test all LLM-generated content before submitting, you're the one responsible for it, not the AI.",
+      "sourceUrl": "https://github.com/tauri-apps/tauri/blob/dev/.github/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Don't use AI to respond to review comments (except for translations).",
+      "sourceUrl": "https://github.com/tauri-apps/tauri/blob/dev/.github/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/tauri-apps/tauri/blob/dev/.github/CONTRIBUTING.md",
+      "title": "Tauri Contributing Guide",
+      "hash": "c7e6342fd1e01be4e0549ddd81f8adf08c28d35d7307c46a0df42b29a817970b",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

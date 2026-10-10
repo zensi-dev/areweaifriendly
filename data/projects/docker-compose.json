@@ -1,0 +1,77 @@
+{
+  "name": "Docker Compose",
+  "description": "Tool for defining and running multi-container applications.",
+  "category": "tool",
+  "homepage": "https://docs.docker.com/compose/",
+  "repo": "https://github.com/docker/compose",
+  "summary": "Follows the shared Moby/Docker AI policy and tightens it: AI-assisted PRs must disclose the tool, target a maintainer-approved issue, be fully tested and understood. Issues, descriptions and replies must be reviewed and edited by a human.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Disclose the AI tool used (GitHub Copilot, Claude Code, ChatGPT, Cursor, etc.)",
+      "sourceUrl": "https://github.com/docker/compose/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Link to an approved issue - only submit PRs for issues labeled `status/approved`;",
+      "sourceUrl": "https://github.com/docker/compose/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Understand your code - you must be able to explain every line",
+      "sourceUrl": "https://github.com/docker/compose/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Anything AI helped produce (an issue, a PR description, a review reply, a code change) gets read and edited by a human before it goes out.",
+      "sourceUrl": "https://github.com/docker/compose/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Using AI to draft a reply is fine, including to bridge a language gap. Posting raw, unreviewed output isn't.",
+      "sourceUrl": "https://github.com/docker/compose/blob/main/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/docker/compose/blob/main/CONTRIBUTING.md",
+      "title": "Contributing to Docker",
+      "hash": "6fe7e9e875811689822a06519eeb30b27ee50b3c2153c45d7c7f133b2f32ec32",
+      "fetchedAt": "2026-10-10"
+    },
+    {
+      "url": "https://github.com/docker/compose/blob/main/AI_POLICY.md",
+      "title": "AI Usage Policy",
+      "hash": "554d72c05c66e3c56de33592773bd0ac05a5bd29a9792cf12d7cfd62416dd617",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

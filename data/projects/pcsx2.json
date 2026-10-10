@@ -1,0 +1,70 @@
+{
+  "name": "PCSX2",
+  "description": "PlayStation 2 emulator.",
+  "category": "application",
+  "homepage": "https://pcsx2.net/",
+  "repo": "https://github.com/PCSX2/pcsx2",
+  "summary": "LLM use must be declared. New contributors may not use LLMs for any contribution content; long-time contributors may use them for completion, boilerplate or partial code, never full generation. PR descriptions, issues and comments must not be AI-generated.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "minor-assist-only"
+      ]
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Contributors must declare whether they used LLMs.",
+      "sourceUrl": "https://github.com/PCSX2/pcsx2/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "New contributors must not use LLMs to generate any content that appears in their contribution.",
+      "sourceUrl": "https://github.com/PCSX2/pcsx2/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributors must not use LLMs for full code generation.",
+      "sourceUrl": "https://github.com/PCSX2/pcsx2/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "The following AI-generated material must not be published to GitHub:",
+      "sourceUrl": "https://github.com/PCSX2/pcsx2/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Issue descriptions or issue comments.",
+      "sourceUrl": "https://github.com/PCSX2/pcsx2/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Pull request descriptions or commit messages.",
+      "sourceUrl": "https://github.com/PCSX2/pcsx2/blob/master/AGENTS.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/PCSX2/pcsx2/blob/master/AGENTS.md",
+      "title": "Agent Guidelines for PCSX2",
+      "hash": "22ba6c6025dfc162f989cfe36cc8034e9c1f805706385cdc2f989736b0fb5ca6",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

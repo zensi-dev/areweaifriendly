@@ -1,0 +1,57 @@
+{
+  "name": "Vite",
+  "description": "Frontend build tool and dev server.",
+  "category": "tool",
+  "homepage": "https://vite.dev/",
+  "repo": "https://github.com/vitejs/vite",
+  "summary": "AI tools are welcome if you fully understand and can explain what you submit. Comments, issues and PR descriptions must be in your own words.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Never let an LLM think for you - only submit contributions you fully understand and can explain.",
+      "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Never let an LLM speak for you - all comments, issues, and PR descriptions should be written in your own words, reflecting your own understanding.",
+      "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If we find that these principles were not followed, we may close the issue or pull request directly.",
+      "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md",
+      "title": "Vite Contributing Guide",
+      "hash": "dbc7ec7325fa949253af6ae376c857a04526085285fb03c42127415865ae6454",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

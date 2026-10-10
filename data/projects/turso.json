@@ -1,0 +1,61 @@
+{
+  "name": "Turso",
+  "description": "In-process SQL database compatible with SQLite, written in Rust.",
+  "category": "library",
+  "homepage": "https://turso.tech/",
+  "repo": "https://github.com/tursodatabase/turso",
+  "summary": "AI coding agents are welcome if you understand, self-review and own the code you submit. Describe changes in your own words or heavily edit AI summaries; in unfamiliar areas, file a bug report instead of an AI-generated fix.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You're welcome to develop Turso with AI coding agents such as Claude Code, Codex, or OpenCode.",
+      "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "We expect you to understand the code you submit.",
+      "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Always self-review your code before submitting",
+      "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Describe the change in your own words, or heavily edit any AI-generated summary so it reads naturally and accurately.",
+      "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md",
+      "title": "Contributing to Turso",
+      "hash": "722732e140069d968a72e5065dc11a503bee433eab890a8cc73088841ab3408f",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

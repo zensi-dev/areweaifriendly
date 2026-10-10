@@ -1,0 +1,72 @@
+{
+  "name": "Caddy",
+  "description": "Web server with automatic HTTPS.",
+  "category": "application",
+  "homepage": "https://caddyserver.com/",
+  "repo": "https://github.com/caddyserver/caddy",
+  "summary": "LLMs are allowed, but not to automate interactions with people; bot-created issues and PRs may be rejected. Anyone posting or contributing must disclose LLM assistance, and code must be licensed, fully understood and tested.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "license-compliance",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "no-autonomous-agents"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "no-autonomous-agents"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "The use of LLMs is allowed, just not in a capacity that automates interactions with humans in our community.",
+      "sourceUrl": "https://github.com/caddyserver/caddy/blob/master/.github/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Fully comprehended by you (be able to explain every line of code)",
+      "sourceUrl": "https://github.com/caddyserver/caddy/blob/master/.github/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Licensed for you to freely share",
+      "sourceUrl": "https://github.com/caddyserver/caddy/blob/master/.github/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "We reserve the right to reject issues and PRs that are created by bots.",
+      "sourceUrl": "https://github.com/caddyserver/caddy/blob/master/.github/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "All accounts posting, contributing code, or commenting in our repositories MUST disclose the use of assistance such as LLMs (\"AI\") as a courtesy and an integrity signal or risk being banned.",
+      "sourceUrl": "https://github.com/caddyserver/caddy/blob/master/.github/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/caddyserver/caddy/blob/master/.github/CONTRIBUTING.md",
+      "title": "CONTRIBUTING.md",
+      "hash": "15458885b488d1709fe350e183c7ea6ba50576b0bdab30746a74676bddf2501a",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

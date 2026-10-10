@@ -1,0 +1,55 @@
+{
+  "name": "Dolphin",
+  "description": "GameCube and Wii emulator.",
+  "category": "application",
+  "homepage": "https://dolphin-emu.org/",
+  "repo": "https://github.com/dolphin-emu/dolphin",
+  "summary": "Contributions come from humans, not AI agents. Non-trivial AI-generated parts must be disclosed, and LLMs may not be used for anything about the emulated console's behaviour, since models may contain leaked Nintendo information.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We accept contributions from humans, not from AI agents. We expect you to understand and take responsibility for code submitted in your name.",
+      "sourceUrl": "https://github.com/dolphin-emu/dolphin/blob/master/Contributing.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If a non-trivial part of your contribution is generated using AI, you need to disclose which parts are generated.",
+      "sourceUrl": "https://github.com/dolphin-emu/dolphin/blob/master/Contributing.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Therefore, you're not allowed to use LLMs to make changes related to the behavior of the emulated console or to use LLMs to obtain information related to the console.",
+      "sourceUrl": "https://github.com/dolphin-emu/dolphin/blob/master/Contributing.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/dolphin-emu/dolphin/blob/master/Contributing.md",
+      "title": "Contributing to Dolphin",
+      "hash": "6025a1334e9630fee4d600b907a76f2fd8bf9f9fe90b2322d713e5cb5aacabf3",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

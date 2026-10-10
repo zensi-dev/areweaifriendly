@@ -1,0 +1,69 @@
+{
+  "name": "ripgrep",
+  "description": "Line-oriented recursive search tool.",
+  "category": "tool",
+  "homepage": "https://github.com/BurntSushi/ripgrep",
+  "repo": "https://github.com/BurntSushi/ripgrep",
+  "summary": "AI is welcome as a coding tool with a human in the loop who understands the work; autonomous agents are not allowed. Comments, issues and PR bodies must be in your own words; quoted AI context must be disclosed, and AI editing or translation for non-native speakers is accepted.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Using AI (i.e., LLMs) as tools for coding is welcome.",
+      "sourceUrl": "https://github.com/BurntSushi/ripgrep/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Autonomous agents are not allowed to be used for contributing to this project.",
+      "sourceUrl": "https://github.com/BurntSushi/ripgrep/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "If you are opening an issue, you should be able to describe the problem in your own words.",
+      "sourceUrl": "https://github.com/BurntSushi/ripgrep/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI should not be used to generate comments when communicating with maintainers.",
+      "sourceUrl": "https://github.com/BurntSushi/ripgrep/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If you wish to include context from an interaction with AI in your comments, it must be in a quote block (e.g., using `>`) and disclosed as such.",
+      "sourceUrl": "https://github.com/BurntSushi/ripgrep/blob/master/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/BurntSushi/ripgrep/blob/master/AI_POLICY.md",
+      "title": "AI Policy",
+      "hash": "b9ff6c7a33185f2331e1e333db35d594edc2f142521d8e2c9c40b0405104a12c",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

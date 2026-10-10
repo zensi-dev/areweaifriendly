@@ -1,0 +1,58 @@
+{
+  "name": "Oxc",
+  "description": "JavaScript oxidation compiler: parser, linter, formatter and more.",
+  "category": "tool",
+  "homepage": "https://oxc.rs/",
+  "repo": "https://github.com/oxc-project/oxc",
+  "summary": "AI tools are encouraged for development, but AI use must be disclosed and the contributor must review, test and take responsibility for AI-generated issues and PRs. Repeated low-quality PRs mean a ban.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable"
+      ]
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Please disclose AI usage to reduce maintainer fatigue",
+      "sourceUrl": "https://github.com/oxc-project/oxc/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "We encourage the use of AI tools to assist with development, but all contributions must be thoroughly reviewed and tested by the contributor before submission.",
+      "sourceUrl": "https://github.com/oxc-project/oxc/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "You are responsible for all AI-generated issues or PRs you submit",
+      "sourceUrl": "https://github.com/oxc-project/oxc/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/oxc-project/oxc/blob/main/CONTRIBUTING.md",
+      "title": "Contributing",
+      "hash": "280befb3e18756d2ae3785f7c0cb1a346e54e3c7db08850539a2edcf57a1dcf5",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

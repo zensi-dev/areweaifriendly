@@ -1,0 +1,56 @@
+{
+  "name": "Dart",
+  "description": "Client-optimized language for apps on any platform.",
+  "category": "language",
+  "homepage": "https://dart.dev/",
+  "repo": "https://github.com/dart-lang/sdk",
+  "summary": "AI-prepared changes are fine if you review all generated code, make sure it compiles and passes tests, and can discuss it. Verify any AI-generated text in descriptions and review comments.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You must review all AI-generated code before uploading it for review",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You must understand and be able to discuss the code you are uploading for review.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You must verify the accuracy of any AI-generated text you include in the change description or review discussion comments.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md",
+      "title": "Contributing to Dart",
+      "hash": "3e17005b0b352cb6a20106ff7fa8c3416de2603092652533e61add16f91eefb6",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

@@ -1,0 +1,74 @@
+{
+  "name": "systemd",
+  "description": "System and service manager for Linux.",
+  "category": "operating-system",
+  "homepage": "https://systemd.io/",
+  "repo": "https://github.com/systemd/systemd",
+  "summary": "AI may help create contributions you review, understand and own, with licences checked and no AI credited as author. Agents may not open PRs or post for you; write issues and review comments yourself. AI may help draft commit messages and PR descriptions if you edit them.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "license-compliance",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "You may use generative AI and LLM tools (\"AI\") to help create contributions, as long as you review and edit what they produce so it follows the project guidelines.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not submit AI-generated code that you do not understand.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not let an AI agent open pull requests or post for you.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Make sure your contribution, including any AI-generated code, is compatible with the project's license",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "You must speak for yourself. Do not let an AI agent open pull requests or post for you.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You may use AI to help write commit messages, code comments, and pull request descriptions, but you must review and edit the result so it matches the style of existing commits and pull requests.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md",
+      "title": "Contributing",
+      "hash": "8d7e24de1b7840c0679e8c14a887fecc8198ecd5b4722f96dddb84564ca2706e",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

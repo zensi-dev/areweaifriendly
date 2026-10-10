@@ -1,0 +1,77 @@
+{
+  "name": "Lichess",
+  "description": "Free, open source chess server.",
+  "category": "application",
+  "homepage": "https://lichess.org/",
+  "repo": "https://github.com/lichess-org/lila",
+  "summary": "AI-generated code is accepted if all AI use is disclosed (tool, extent and prompts), the human fully understands it and tests it with proof. Issues and discussions may use AI if a human reviews and edits the text. No AI-generated media.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "All AI usage in any form must be disclosed.",
+      "sourceUrl": "https://github.com/lichess-org/lila/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The human-in-the-loop must fully understand all code.",
+      "sourceUrl": "https://github.com/lichess-org/lila/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Include in the pull-request message, or in commit messages, the prompts you used to generate the code, and the AI tool you used.",
+      "sourceUrl": "https://github.com/lichess-org/lila/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Issues and discussions can use AI assistance but must have a full human-in-the-loop.",
+      "sourceUrl": "https://github.com/lichess-org/lila/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "This means that any content generated with AI must have been reviewed and edited by a human before submission.",
+      "sourceUrl": "https://github.com/lichess-org/lila/blob/master/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/lichess-org/lila/blob/master/AI_POLICY.md",
+      "title": "AI Usage Policy",
+      "hash": "ab1dccbcf0931f90f919f4987ff82f6af510ada1b1e8a80959b954338d8fa156",
+      "fetchedAt": "2026-10-10"
+    },
+    {
+      "url": "https://github.com/lichess-org/lila/blob/master/CONTRIBUTING.md",
+      "title": "Contributing",
+      "hash": "625a53d0251efa9f18e275b507a2cd7fb3ca495d66fa2085934f6f345fb5dacc",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

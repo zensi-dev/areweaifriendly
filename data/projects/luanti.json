@@ -1,0 +1,76 @@
+{
+  "name": "Luanti",
+  "description": "Open source voxel game engine, formerly Minetest.",
+  "category": "framework",
+  "homepage": "https://www.luanti.org/",
+  "repo": "https://github.com/luanti-org/luanti",
+  "summary": "AI may help with simple tasks such as completion, boilerplate and small fixes; generating substantial code is strongly discouraged, and vibe-coding and autonomous use are banned. Communication must be your own text, with grammar and translation help allowed. Significant AI use must be disclosed.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "minor-assist-only",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed",
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Generating substantial amounts of code with AI is strongly discouraged and may result in immediate closure of the PR.",
+      "sourceUrl": "https://github.com/luanti-org/luanti/blob/master/doc/developing/ai_policy.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "On the other hand, \"vibe-coding\" or autonomous AI usage is completely unacceptable.",
+      "sourceUrl": "https://github.com/luanti-org/luanti/blob/master/doc/developing/ai_policy.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "In any case, any significant AI usage used in a contribution must be disclosed in the PR description.",
+      "sourceUrl": "https://github.com/luanti-org/luanti/blob/master/doc/developing/ai_policy.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Using an LLM to debug an issue or search for security vulnerabilities, but make sure to verify the analysis completely and communicate it yourself.",
+      "sourceUrl": "https://github.com/luanti-org/luanti/blob/master/doc/developing/ai_policy.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not use AI-generated text when communicating with other humans, including when writing documentation.",
+      "sourceUrl": "https://github.com/luanti-org/luanti/blob/master/doc/developing/ai_policy.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "That said, using AI tools to assist with grammar or translations on human-written text is fine.",
+      "sourceUrl": "https://github.com/luanti-org/luanti/blob/master/doc/developing/ai_policy.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/luanti-org/luanti/blob/master/doc/developing/ai_policy.md",
+      "title": "Luanti Generative AI Policy",
+      "hash": "a0897f21bff51bc1c3be9a9375b963f447449f75ccd1bf3f0dbb13dc3bd9e866",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

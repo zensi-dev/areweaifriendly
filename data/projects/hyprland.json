@@ -1,0 +1,65 @@
+{
+  "name": "Hyprland",
+  "description": "Dynamic tiling Wayland compositor.",
+  "category": "application",
+  "homepage": "https://hypr.land/",
+  "repo": "https://github.com/hyprwm/Hyprland",
+  "summary": "AI may be used locally to learn and to write patches you fully understand, with detailed disclosure. AI must not write PR descriptions or issues or post anything; autonomous agents and AI-generated tickets mean a permanent ban.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Locally writing patches and/or new features, tests, etc.",
+      "sourceUrl": "https://github.com/hyprwm/.github/blob/main/policies/AI_USAGE.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "This disclosure must be explicit and detailed.",
+      "sourceUrl": "https://github.com/hyprwm/.github/blob/main/policies/AI_USAGE.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If there is no human in the chain, your submission is invalid.",
+      "sourceUrl": "https://github.com/hyprwm/.github/blob/main/policies/AI_USAGE.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "An AI model must not submit, write the description of, or in any other way interact with Pull Requests, Issues, or any other developer-facing communication channel.",
+      "sourceUrl": "https://github.com/hyprwm/.github/blob/main/policies/AI_USAGE.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "For major offenses, e.g. a fully autonomous AI agent, AI-generated PR descriptions, AI-generated tickets, we will be issuing permanent bans without questions.",
+      "sourceUrl": "https://github.com/hyprwm/.github/blob/main/policies/AI_USAGE.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/hyprwm/.github/blob/main/policies/AI_USAGE.md",
+      "title": "AI_USAGE.md",
+      "hash": "885b4683d9e20d9f0472864c45a8f53667c6ef69eb4c1ad2f89e96c7bca3a492",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

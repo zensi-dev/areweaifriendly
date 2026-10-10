@@ -1,0 +1,57 @@
+{
+  "name": "Gleam",
+  "description": "Type-safe functional language for the Erlang VM and JavaScript.",
+  "category": "language",
+  "homepage": "https://gleam.run/",
+  "repo": "https://github.com/gleam-lang/gleam",
+  "summary": "No contributions from AI agents. Bug reports, PR descriptions and comments must be written by a human; spelling and grammar tools and disclosed translation are fine. AI-assisted code by a human is not addressed.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We do not accept contributions from AI agents.",
+      "sourceUrl": "https://github.com/gleam-lang/gleam/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Bug reports, pull request descriptions, and comments must be written by a human, not by AI.",
+      "sourceUrl": "https://github.com/gleam-lang/gleam/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You may use software to help you with your English spelling and grammar.",
+      "sourceUrl": "https://github.com/gleam-lang/gleam/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/gleam-lang/gleam/blob/main/CONTRIBUTING.md",
+      "title": "Contributing to Gleam",
+      "hash": "aeb5dc939955e4cbd3cae7b3e70bff60888018adae88c1e0627b8a18c0f41f5a",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

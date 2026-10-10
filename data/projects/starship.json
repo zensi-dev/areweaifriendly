@@ -1,0 +1,69 @@
+{
+  "name": "Starship",
+  "description": "Minimal, fast, customizable prompt for any shell.",
+  "category": "tool",
+  "homepage": "https://starship.rs/",
+  "repo": "https://github.com/starship/starship",
+  "summary": "Every AI-assisted PR must disclose it in the PR template, and contributors must understand and defend every line. No substantial AI help on good first issues, no unverified AI replies, and no unsupervised autonomous agents.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Every Pull Request that utilizes AI-assisted tooling (including but not limited to Claude Code, Cursor, GitHub Copilot, ChatGPT, or local LLMs) must disclose its usage.",
+      "sourceUrl": "https://github.com/starship/starship/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You are expected to have read and understood every line of code you submit.",
+      "sourceUrl": "https://github.com/starship/starship/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributions via OpenClaw, or any other unsupervised autonomous agent operating in an automated loop, are strictly prohibited.",
+      "sourceUrl": "https://github.com/starship/starship/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "You are not allowed to reply to user issues or discussions with unverified or raw AI-generated information.",
+      "sourceUrl": "https://github.com/starship/starship/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If your response to a maintainer's question is an unedited copy-paste from an LLM, or if you cannot explain the mechanics of your PR, the PR will be closed.",
+      "sourceUrl": "https://github.com/starship/starship/blob/main/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/starship/starship/blob/main/AI_POLICY.md",
+      "title": "AI Usage Policy",
+      "hash": "b6e7c649a084df4540af44e3a7a617e81e7bb84b18ac80658c0074965fe44695",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

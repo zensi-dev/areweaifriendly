@@ -1,0 +1,70 @@
+{
+  "name": "Electron",
+  "description": "Framework for building desktop apps with JavaScript, HTML and CSS.",
+  "category": "framework",
+  "homepage": "https://www.electronjs.org/",
+  "repo": "https://github.com/electron/electron",
+  "summary": "AI tools are fine with a human in the loop who reviews, understands and can explain the work. Disclosure is required when AI code is accepted largely as written. No unauthorized autonomous agents, and no AI comments posted without meaningful human input.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-reviewed"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Contributors must review, understand, and be able to explain all content they submit, regardless of how it was produced.",
+      "sourceUrl": "https://github.com/electron/governance/blob/main/policy/ai.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Disclosure is mandatory when AI-generated code is accepted largely as-written.",
+      "sourceUrl": "https://github.com/electron/governance/blob/main/policy/ai.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Unauthorized, automated agents that take action without human input (e.g. bots that post comments or open PRs autonomously)",
+      "sourceUrl": "https://github.com/electron/governance/blob/main/policy/ai.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Posting AI-generated comments directly to issues or PRs without meaningful human input",
+      "sourceUrl": "https://github.com/electron/governance/blob/main/policy/ai.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Passing maintainer feedback to an LLM and posting the response as your own reply",
+      "sourceUrl": "https://github.com/electron/governance/blob/main/policy/ai.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/electron/governance/blob/main/policy/ai.md",
+      "title": "AI Tool Policy",
+      "hash": "d4dfe0238fa780010ac08cbdc914f57778f453deec4ec37b89f435ecf479dfb6",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

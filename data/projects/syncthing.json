@@ -1,0 +1,53 @@
+{
+  "name": "Syncthing",
+  "description": "Continuous peer-to-peer file synchronization.",
+  "category": "application",
+  "homepage": "https://syncthing.net/",
+  "repo": "https://github.com/syncthing/syncthing",
+  "summary": "Contributions that are wholly or mostly AI-generated are not accepted, and issues and comments must not be AI-generated.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We do not accept contributions that are wholly or mostly AI generated.",
+      "sourceUrl": "https://github.com/syncthing/syncthing/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Do not submit AI generated issues or comments. Report any details you experienced as a human, and let anyone who wants to perform AI analysis do so on their own.",
+      "sourceUrl": "https://github.com/syncthing/syncthing/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not submit AI generated issues or comments.",
+      "sourceUrl": "https://github.com/syncthing/syncthing/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/syncthing/syncthing/blob/main/CONTRIBUTING.md",
+      "title": "CONTRIBUTING.md",
+      "hash": "257e2ad6c0c295bf335d9ef41a4c9984ae6f84894afe3924bfdb6ec29bb0ada3",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

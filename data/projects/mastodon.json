@@ -1,0 +1,75 @@
+{
+  "name": "Mastodon",
+  "description": "Decentralized social network server.",
+  "category": "application",
+  "homepage": "https://joinmastodon.org/",
+  "repo": "https://github.com/mastodon/mastodon",
+  "summary": "AI-assisted contributions are not encouraged but allowed if you understand every line, disclose significant use and can vouch for licensing. Autonomous agents may not submit PRs, and PR descriptions and comments must not be AI-generated, except for translation.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "license-compliance",
+        "no-autonomous-agents"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We generally do not encourage AI-assisted contributions",
+      "sourceUrl": "https://github.com/mastodon/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If AI was used to generate a significant portion of your contribution (i.e. beyond simple autocomplete), we require you to disclose it in the Pull Request description.",
+      "sourceUrl": "https://github.com/mastodon/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Autonomous AI agents may not submit Pull Requests to Mastodon repositories.",
+      "sourceUrl": "https://github.com/mastodon/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If you cannot guarantee the provenance and legal safety of the AI-generated code, do not submit it.",
+      "sourceUrl": "https://github.com/mastodon/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Do not post comments on issues or PRs that are AI-generated. Discussions on the Mastodon repositories are for humans only.",
+      "sourceUrl": "https://github.com/mastodon/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Note that you should not use AI to create the PR description itself (unless you’ve used it for translation)",
+      "sourceUrl": "https://github.com/mastodon/.github/blob/main/AI_POLICY.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/mastodon/.github/blob/main/AI_POLICY.md",
+      "title": "AI Contribution Policy",
+      "hash": "9a047aa0b7dc04260061c863f889d02a0a62d86b8d1c58663a4045a88d5c1889",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

@@ -1,0 +1,62 @@
+{
+  "name": "wgpu",
+  "description": "Cross-platform, safe, pure-Rust graphics API.",
+  "category": "library",
+  "homepage": "https://wgpu.rs/",
+  "repo": "https://github.com/gfx-rs/wgpu",
+  "summary": "LLM-generated code is allowed; the author is responsible for it. Issue and PR descriptions and large explanatory comments should be written by you, not unadulterated LLM output.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Using LLMs and AIs to generate code that is part of a contribution is allowed.",
+      "sourceUrl": "https://github.com/gfx-rs/wgpu/blob/trunk/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The author is responsible for the code, regardless of how it was created.",
+      "sourceUrl": "https://github.com/gfx-rs/wgpu/blob/trunk/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Additionally, please write Issue and PR descriptions and large explanatory comment blocks yourself.",
+      "sourceUrl": "https://github.com/gfx-rs/wgpu/blob/trunk/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "be respectful of maintainers time by not giving them unadulterated LLM content to read.",
+      "sourceUrl": "https://github.com/gfx-rs/wgpu/blob/trunk/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/gfx-rs/wgpu/blob/trunk/CONTRIBUTING.md",
+      "title": "CONTRIBUTING.md",
+      "hash": "ca6e3d534352baf570deabfbefb0641f164c0d155f6b9ea349d55fced209402a",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}
