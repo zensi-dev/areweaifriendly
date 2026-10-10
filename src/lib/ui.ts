@@ -3,6 +3,8 @@ export const LIST_COLUMNS =
   'md:grid-cols-[1.25rem_minmax(0,1fr)_11.25rem_12rem] lg:grid-cols-[1.25rem_minmax(0,1fr)_12.75rem_13rem]';
 /** The three area faces inside their list column, so header labels sit over their faces. */
 export const AREA_COLUMNS = 'grid grid-cols-[repeat(3,3.75rem)] justify-items-center lg:grid-cols-[repeat(3,4.25rem)]';
+/** Homepage list rows per page. */
+export const LIST_PAGE_SIZE = 20;
 /** Verdict badge width; the header label shares it so both start on the same edge. */
 export const VERDICT_WIDTH = 'sm:w-[11.5rem]';
 

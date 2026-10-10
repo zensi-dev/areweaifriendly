@@ -6,18 +6,21 @@ import VerdictMark from './VerdictMark.astro';
 import { CATEGORY_INFO, STANCE_INFO } from '../lib/labels';
 import { formatDate, type SiteProject } from '../lib/projects';
 import { DIMENSIONS } from '../lib/schema';
+import { normalize, searchText } from '../lib/search';
 import { stanceTone } from '../lib/tones';
 import { AREA_COLUMNS, LIST_COLUMNS, VERDICT_WIDTH } from '../lib/ui';
 
 interface Props {
   project: SiteProject;
+  /** Rows past the first page start hidden; the homepage script pages through them. */
+  hidden?: boolean;
 }
 
-const { project: p } = Astro.props;
+const { project: p, hidden = false } = Astro.props;
 const mood = STANCE_INFO[p.stance];
 const quote = p.evidence.find((e) => e.dimension === 'contributions') ?? p.evidence[0];
 const quoteSource = quote && p.sources.find((s) => s.url === quote.sourceUrl);
-const search = [p.name, p.description, CATEGORY_INFO[p.category], p.slug].join(' ').toLowerCase();
+const search = searchText(p.name, p.description, CATEGORY_INFO[p.category], p.slug);
 ---
 
 <li
@@ -25,7 +28,9 @@ const search = [p.name, p.description, CATEGORY_INFO[p.category], p.slug].join('
   class="scroll-mt-24 border-b border-line has-open:bg-surface"
   data-stance={p.stance}
   data-category={p.category}
+  data-name={normalize(p.name)}
   data-search={search}
+  hidden={hidden}
 >
   <details class="group">
     <summary

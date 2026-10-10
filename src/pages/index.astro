@@ -8,7 +8,7 @@ import { formatDate, lastUpdated, projects, stanceCounts } from '../lib/projects
 import { CATEGORIES, DIMENSIONS } from '../lib/schema';
 import { moodSample, STANCES } from '../lib/stance';
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '../site.config';
-import { AREA_COLUMNS, LIST_COLUMNS, VERDICT_WIDTH, WIDE } from '../lib/ui';
+import { AREA_COLUMNS, LIST_COLUMNS, LIST_PAGE_SIZE, VERDICT_WIDTH, WIDE } from '../lib/ui';
 
 const counts = stanceCounts();
 const total = projects.length;
@@ -25,6 +25,8 @@ const moodGrid =
     : byMood.length <= 40
       ? { cols: 'grid-cols-8', tile: 'md' as const }
       : { cols: 'grid-cols-8 sm:grid-cols-12', tile: 'sm' as const };
+const pagerButton =
+  'inline-flex h-9 cursor-pointer items-center gap-1 rounded-md border border-line-strong bg-surface px-3 text-sm font-medium hover:border-ink disabled:cursor-default disabled:opacity-40 disabled:hover:border-line-strong';
 const field =
   'h-11 w-full rounded-md border border-line-strong bg-surface text-[0.9375rem] placeholder:text-faint focus:border-accent focus:ring-2 focus:ring-accent/25 focus:outline-none';
 
@@ -103,8 +105,8 @@ const jsonLd = {
     </div>
   </section>
 
-  <section class={WIDE} aria-labelledby="list-title">
-    <h2 id="list-title" class="sr-only">Projects</h2>
+  <section id="list" class={WIDE} aria-labelledby="list-title">
+    <h2 id="list-title" class="sr-only" tabindex="-1">Projects</h2>
     <div class="flex flex-col gap-2.5 bg-paper py-3 sm:sticky sm:top-0 sm:z-10 sm:flex-row">
       <label class="relative grow">
         <span class="sr-only">Search projects</span>
@@ -143,49 +145,141 @@ const jsonLd = {
         <span class:list={[VERDICT_WIDTH, 'justify-self-end']}>Friendly?</span>
       </div>
       <ul id="projects">
-        {projects.map((p) => <ProjectRow project={p} />)}
+        {projects.map((p, i) => <ProjectRow project={p} hidden={i >= LIST_PAGE_SIZE} />)}
       </ul>
+      {/* Without the script every row shows. Same layer as Tailwind's important [hidden] rule, which outranks unlayered styles. */}
+      <noscript><style is:inline>@layer base { #projects > li[hidden] { display: list-item !important; } }</style></noscript>
       <p id="empty" class="px-3 py-12 text-center text-muted" hidden>
         No project matches. Know one that belongs here? <a href="/about/#add">Add it</a>.
       </p>
     </div>
 
+    <nav id="pager" class="mt-6 flex items-center justify-between gap-3" aria-label="Project pages" hidden>
+      <button type="button" class:list={[pagerButton, 'pl-2']} data-step="-1">
+        <Icon name="chevron-right" size={16} class="rotate-180" />Previous
+      </button>
+      <ol id="page-numbers" class="flex items-center gap-1 max-sm:hidden"></ol>
+      <span id="page-of" class="text-sm text-muted tabular-nums sm:hidden"></span>
+      <button type="button" class:list={[pagerButton, 'pr-2']} data-step="1">
+        Next<Icon name="chevron-right" size={16} />
+      </button>
+    </nav>
+
     <p class="mt-4 text-caption text-muted" aria-live="polite">
-      Showing <span id="shown">{total}</span> of {total} projects. Updated {formatDate(lastUpdated())}.
+      <span id="status">Showing all {total} projects.</span> Updated {formatDate(lastUpdated())}.
     </p>
   </section>
 </Layout>
 
 <script>
+  import { queryTerms, rankMatches } from '../lib/search';
+  import { LIST_PAGE_SIZE } from '../lib/ui';
+
   const q = document.querySelector<HTMLInputElement>('#q')!;
   const category = document.querySelector<HTMLSelectElement>('#category')!;
   const chips = [...document.querySelectorAll<HTMLButtonElement>('[data-chip]')];
-  const rows = [...document.querySelectorAll<HTMLLIElement>('#projects > li')];
-  const shown = document.querySelector('#shown')!;
+  const projectList = document.querySelector<HTMLUListElement>('#projects')!;
+  const rows = [...projectList.children] as HTMLLIElement[];
+  const status = document.querySelector('#status')!;
   const empty = document.querySelector<HTMLElement>('#empty')!;
+  const list = document.querySelector<HTMLElement>('#list')!;
+  const listTitle = document.querySelector<HTMLElement>('#list-title')!;
+  const pager = document.querySelector<HTMLElement>('#pager')!;
+  const pageNumbers = document.querySelector('#page-numbers')!;
+  const pageOf = document.querySelector('#page-of')!;
+  const [prev, next] = [...pager.querySelectorAll<HTMLButtonElement>('[data-step]')];
   const stances = new Set<string>();
+  let matches = rows;
+  let page = 1;
 
-  function apply() {
-    const terms = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
-    let count = 0;
-    for (const row of rows) {
-      const visible =
-        terms.every((t) => row.dataset.search!.includes(t)) &&
-        (!category.value || row.dataset.category === category.value) &&
-        (!stances.size || stances.has(row.dataset.stance!));
-      row.hidden = !visible;
-      if (visible) count++;
+  function matchesFilters(row: HTMLLIElement) {
+    return (!category.value || row.dataset.category === category.value) && (!stances.size || stances.has(row.dataset.stance!));
+  }
+
+  /** Page numbers to show: first, last, current and its neighbours; null marks a gap. */
+  function pageItems(count: number) {
+    const keep = [...new Set([1, page - 1, page, page + 1, count])].filter((n) => n >= 1 && n <= count).sort((a, b) => a - b);
+    const items: (number | null)[] = [];
+    let last = 0;
+    for (const n of keep) {
+      if (n - last === 2) items.push(last + 1);
+      else if (n - last > 2) items.push(null);
+      items.push(n);
+      last = n;
     }
-    shown.textContent = String(count);
-    empty.hidden = count > 0;
+    return items;
+  }
+
+  function render() {
+    const count = Math.max(1, Math.ceil(matches.length / LIST_PAGE_SIZE));
+    page = Math.min(Math.max(1, page), count);
+    const start = (page - 1) * LIST_PAGE_SIZE;
+    const visible = matches.slice(start, start + LIST_PAGE_SIZE);
+    const shown = new Set(visible);
+    for (const row of rows) row.hidden = !shown.has(row);
+    // Ranked results reorder the rows; append keeps nodes, so open details stay open.
+    projectList.append(...visible);
+
+    const end = start + visible.length;
+    status.textContent = !matches.length
+      ? `No matches among ${rows.length} projects.`
+      : `Showing ${start + 1}–${end} of ${matches.length} ${matches.length === rows.length ? 'projects' : `matching projects (${rows.length} total)`}.`;
+    empty.hidden = matches.length > 0;
     for (const chip of chips) chip.setAttribute('aria-pressed', String(stances.has(chip.dataset.chip!)));
+
+    pager.hidden = count < 2;
+    prev.disabled = page === 1;
+    next.disabled = page === count;
+    pageOf.textContent = `Page ${page} of ${count}`;
+    pageNumbers.replaceChildren(
+      ...pageItems(count).map((n) => {
+        const li = document.createElement('li');
+        if (n === null) {
+          li.className = 'px-1 text-muted';
+          li.textContent = '…';
+          li.setAttribute('aria-hidden', 'true');
+          return li;
+        }
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className =
+          'h-9 min-w-9 cursor-pointer rounded-md px-2 text-sm font-medium tabular-nums hover:bg-surface aria-[current=page]:bg-ink aria-[current=page]:text-paper';
+        button.dataset.page = String(n);
+        button.textContent = String(n);
+        button.setAttribute('aria-label', `Page ${n}`);
+        if (n === page) button.setAttribute('aria-current', 'page');
+        li.append(button);
+        return li;
+      }),
+    );
 
     const params = new URLSearchParams();
     if (q.value.trim()) params.set('q', q.value.trim());
     if (category.value) params.set('category', category.value);
     if (stances.size) params.set('stance', [...stances].join(','));
+    if (page > 1) params.set('page', String(page));
     const query = params.toString();
     history.replaceState(null, '', `${location.pathname}${query ? `?${query}` : ''}${location.hash}`);
+  }
+
+  // With a query, best matches come first; without one the list keeps its newest-first order.
+  function filter() {
+    const terms = queryTerms(q.value);
+    const filtered = rows.filter(matchesFilters);
+    matches = terms.length ? rankMatches(filtered, terms, (row) => ({ name: row.dataset.name!, text: row.dataset.search! })) : filtered;
+  }
+
+  function apply() {
+    filter();
+    page = 1;
+    render();
+  }
+
+  function goTo(n: number) {
+    page = n;
+    render();
+    listTitle.focus({ preventScroll: true });
+    list.scrollIntoView({ block: 'start' });
   }
 
   const params = new URLSearchParams(location.search);
@@ -202,6 +296,11 @@ const jsonLd = {
       apply();
     });
   }
+  pager.addEventListener('click', (e) => {
+    const button = (e.target as Element).closest<HTMLButtonElement>('button');
+    if (!button || button.disabled) return;
+    goTo(button.dataset.page ? Number(button.dataset.page) : page + Number(button.dataset.step));
+  });
   document.addEventListener('keydown', (e) => {
     if (e.key === '/' && document.activeElement?.tagName !== 'INPUT' && !e.metaKey && !e.ctrlKey) {
       e.preventDefault();
@@ -212,17 +311,26 @@ const jsonLd = {
     }
   });
 
+  // Mood-grid links point at a row that may sit on another page or be hidden by the filters.
   function openFromHash() {
     const id = decodeURIComponent(location.hash.slice(1));
-    const row = id ? document.getElementById(id) : null;
-    const details = row?.querySelector('details');
-    if (row && details) {
-      details.open = true;
-      row.scrollIntoView({ block: 'start' });
+    const row = rows.find((r) => r.id === id);
+    if (!row) return;
+    if (!matches.includes(row)) {
+      q.value = '';
+      category.value = '';
+      stances.clear();
+      matches = rows;
     }
+    page = Math.floor(matches.indexOf(row) / LIST_PAGE_SIZE) + 1;
+    render();
+    row.querySelector('details')!.open = true;
+    row.scrollIntoView({ block: 'start' });
   }
   window.addEventListener('hashchange', openFromHash);
 
-  if (location.search) apply();
+  filter();
+  page = Number(params.get('page')) || 1;
+  render();
   openFromHash();
 </script>
