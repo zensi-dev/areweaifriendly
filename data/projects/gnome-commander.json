@@ -1,0 +1,51 @@
+{
+  "name": "GNOME Commander",
+  "description": "Two-pane file manager for GNOME.",
+  "category": "application",
+  "homepage": "https://gitlab.gnome.org/GNOME/gnome-commander",
+  "repo": "https://gitlab.gnome.org/GNOME/gnome-commander",
+  "summary": "Only 100% human-made contributions are accepted: no text, translations, images or code produced in part or fully by LLMs.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "This project accepts only contributions that are 100% human-made.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/gnome-commander/-/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Please do not contribute text, translations, images or code which have been in part or fully produced by LLMs",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/gnome-commander/-/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Please do not contribute text, translations, images or code which have been in part or fully produced by LLMs",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/gnome-commander/-/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://gitlab.gnome.org/GNOME/gnome-commander/-/blob/main/CONTRIBUTING.md",
+      "title": "CONTRIBUTING.md",
+      "hash": "27c2051d3e294082e878d00688720864fc93c9c1414d59285ee6912fa7d09ecf",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

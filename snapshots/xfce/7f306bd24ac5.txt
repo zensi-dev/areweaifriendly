@@ -1,0 +1,139 @@
+# Xfce Wiki
+
+##### Sub domains
+
+- Home
+
+- Docs
+
+- Archive
+
+- Wiki
+
+- Forum
+
+- Bugs
+
+- Blog
+
+- Translate
+
+- Git
+
+You are here: start » contribute » dev
+
+# Xfce Development Information
+
+-  Introduction
+
+-  Communication with the Xfce development team
+
+-  AI/LLM Assisted Contribution Policy
+
+-  Developer's Tools
+
+-  Debugging
+
+-  Additional Reading
+
+## Introduction
+
+ For new developers, it is recommended to read the Ultimate Contributor's Guide to Xfce in order to get an impression on how to contribute to Xfce.
+
+-  To request a contributor account, please see the docs for more information.
+
+-  Before getting involved with development, it may help to check the current roadmap to get an overview of our current progress.
+
+-  A guide to using Git with Xfce can be found here.
+
+-  For more information on making a release, see Making a Release.
+
+-  Xfce API documentation can be found on the Xfce development Wiki.
+
+## Communication with the Xfce development team
+
+ There are various ways to get in touch with Xfce developers:
+
+-  For general questions, the Xfce's Forum, the Xfce mailing list and our Matrix channel #xfce are places to go.
+
+-  For any translation stuff, join our Matrix channel #xfce-translation or write to the Xfce-i18n mailing list.
+
+-  For anything code related, join our Matrix channel #xfce-dev or write to the Xfce-dev mailing list.
+
+-  The Xfce Matrix space gives an overview on all available Xfce related Matrix channels. (not yet supported by all matrix clients)
+
+-  The former communication channels on IRC, #xfce and #xfce-dev on Libera can still be accessed, though they are not officially supported anymore.
+
+ All Xfce developers have a real life and live across multiple time zones. If you don't get an answer straight away, be patient and stay online!
+
+## AI/LLM Assisted Contribution Policy
+
+-  Contributions containing material generated with the assistance of an AI/LLM (e.g., large language models, Claude, ChatGPT, etc.) are permitted only if such use is explicitly disclosed in every merge request and issue report.
+
+ The purpose of this disclosure is to assist maintainers during code review. Maintainers are exempt from this requirement, but may disclose AI/LLM usage voluntarily.
+
+-  Contributors remain fully responsible for the accuracy, legality, and quality of their submissions.
+
+-  Contributors are required to accept the terms of this policy prior to joining Xfce GitLab .
+
+-  Low-quality or inappropriate AI-generated content may be rejected, and repeated violations may result in account suspension or ban.
+
+## Developer's Tools
+
+ (The following list is extracted from The Ultimate Contributor's Guide to Xfce)
+
+-  Use whatever text editor/IDE you are comfortable with.
+
+-  The terminal is your friend, get used to it, then you will love it.
+
+-  If you want a local Docker-based build environment and build script check out the xfce-build script and the xfce/xfce-build:latest container.
+
+-  Now that almost all components are gtk3-based, GtkInspector is an invaluable tool.
+
+-  Offline documentation browser such as Devhelp is faster and more convenient than using a web browser.
+
+-  Glade is a WYSIWYG interface editor, many Xfce components have their UI created using this editor.
+
+-  D-Feet is useful when dealing with D-Bus.
+
+-  Tricky bugs will need advanced tools to find their cause, in this case gdb and valgrind are good companions.
+
+-  Xorg’s utilities, for instance xev and xprop.
+
+-  xfce-test is a Docker container “based on Ubuntu with a build from git sources of all core Xfce components” used for testing and development. See the Xfce-test Quick Start Guide for basic installation instructions.
+
+## Debugging
+
+-  Debugging Xfce4-panel & plugins
+
+## Additional Reading
+
+-  How to start contributing to Xfce or any other open source project
+
+-  The GTK Project pages
+
+-  The GLib/GTK+ Development Platform
+
+-  Pro Git
+
+-  See the Xfce/Git page for additional reference material on using Git
+
+ Back To Top
+
+ Back to main Contribute page
+
+## Tools
+
+- Recent Changes
+
+- Media Manager
+
+- Sitemap
+
+- Log In
+
+contribute/dev/start.txt · Last modified: 2026/09/09 21:00 by kevinbowen
+
+Except where otherwise noted, content on this wiki is licensed under the following license: CC Attribution-Noncommercial-Share Alike 4.0 International
+
+ Copyright 2003-2026 Xfce Development Team.

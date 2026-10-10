@@ -1,0 +1,41 @@
+{
+  "name": "Showtime",
+  "description": "GNOME's video player.",
+  "category": "application",
+  "homepage": "https://apps.gnome.org/Showtime/",
+  "repo": "https://gitlab.gnome.org/GNOME/showtime",
+  "summary": "AI-generated contributions are not accepted.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We do not accept AI-generated contributions.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/showtime/-/blob/main/README.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://gitlab.gnome.org/GNOME/showtime/-/blob/main/README.md",
+      "title": "README.md",
+      "hash": "e4e92e810ae1b409c623322b369e64589241424b08934518e5b644e1ba957f5b",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Brasero",
+  "description": "CD/DVD burning application for GNOME.",
+  "category": "application",
+  "homepage": "https://gitlab.gnome.org/GNOME/brasero",
+  "repo": "https://gitlab.gnome.org/GNOME/brasero",
+  "summary": "Contributions generated entirely by LLMs and chatbots are not allowed in code, documentation, issues or artwork. Translating issue and comment text into English is an exception.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "This project does not allow contributions generated entirely by large languages models (LLMs) and chatbots.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "including, but not limited to, code, documentation, issues, and artworks.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "An exception applies for purely translating texts for issues and comments to English.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md",
+      "title": "Brasero",
+      "hash": "4be2acd8a054dd70d94eefd9e56130bb09d0f8d3dc1e946f79de7e5d907898a6",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "medium",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

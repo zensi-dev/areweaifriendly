@@ -1,0 +1,54 @@
+{
+  "name": "GNOME Shell Extensions",
+  "description": "Extensions for the GNOME desktop, reviewed and published on extensions.gnome.org.",
+  "category": "application",
+  "homepage": "https://extensions.gnome.org/",
+  "repo": "https://gitlab.gnome.org/GNOME/gnome-shell",
+  "summary": "Extensions submitted to extensions.gnome.org must not be AI-generated. AI as a learning aid or for code completion is allowed if developers can explain their code; signs of AI-generated output lead to rejection.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "minor-assist-only"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Extensions must not be AI-generated",
+      "sourceUrl": "https://gjs.guide/extensions/review-guidelines/review-guidelines.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "While it is not prohibited to use AI as a learning aid or a development tool (i.e. code completions), extension developers should be able to justify and explain the code they submit, within reason.",
+      "sourceUrl": "https://gjs.guide/extensions/review-guidelines/review-guidelines.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Submissions with large amounts of unnecessary code, inconsistent code style, imaginary API usage, comments serving as LLM prompts, or other indications of AI-generated output will be rejected.",
+      "sourceUrl": "https://gjs.guide/extensions/review-guidelines/review-guidelines.html"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://gjs.guide/extensions/review-guidelines/review-guidelines.html",
+      "title": "GNOME Shell Extensions Review Guidelines | GNOME JavaScript",
+      "hash": "28e4528287deb7ca91c2d7779e30b119648b2c3ccb228cfbd5b525cc6fe2a55a",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

@@ -1,0 +1,27 @@
+# Contributing to MATE Desktop
+
+These guidelines apply to all contributions across MATE Desktop projects.
+AI-assisted code receives no special treatment compared to human code.
+
+## Ownership and accountability
+
+- The contributor is fully responsible for every line of code they submit,
+ regardless of whether they are the original author or not.
+- The contributor must be able to explain and defend any code they submit.
+- The contributor must build and test their changes before submitting.
+
+## Contribution standards
+
+- Each commit must address a single focused problem and must not bundle
+ unrelated changes, reformatting, rewording, or refactoring.
+- Contributions must be small enough for line-by-line review. If a reviewer
+ cannot reasonably verify the entire change, it is too large.
+
+## Attribution
+
+- If disclosing AI assistance, use the `Assisted-by` format adopted by the
+ [Linux kernel guidelines](https://github.com/torvalds/linux/blob/master/Documentation/process/coding-assistants.rst#attribution).
+- Do not use `Co-Authored-By` with AI tool accounts or vendor emails, as it
+ pollutes the commit history.
+- Commit messages must be concise, describe the problem and fix, and be written
+ for human readers.

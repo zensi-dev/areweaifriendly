@@ -1,0 +1,70 @@
+{
+  "name": "Budgie",
+  "description": "Desktop environment by Buddies of Budgie.",
+  "category": "application",
+  "homepage": "https://buddiesofbudgie.org/",
+  "repo": "https://github.com/BuddiesOfBudgie/budgie-desktop",
+  "summary": "AI tools are allowed with humans as accountable authors: non-trivial AI-assisted code must be tested and carry an Assisted-by trailer. Code for the Budgie 11 rewrite should be human-crafted for now. AI help with issue and PR text needs no attribution.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "allowed",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "allowed",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "It is our position that only humans can be authors and ultimately be held accountable.",
+      "sourceUrl": "https://docs.buddiesofbudgie.org/organization/ai-policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Non-trivial AI-assisted code must be built, installed, and tested by the contributor",
+      "sourceUrl": "https://docs.buddiesofbudgie.org/organization/ai-policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "When AI tools assisted with code changes (writing, modifying, or generating code), add an Assisted-by trailer to the commit message with the tool and model identifier.",
+      "sourceUrl": "https://docs.buddiesofbudgie.org/organization/ai-policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "We kindly request that contributions to Budgie 11 minimize the use of large language models and AI tooling for code generation.",
+      "sourceUrl": "https://docs.buddiesofbudgie.org/organization/ai-policy"
+    },
+    {
+      "dimension": "issues",
+      "quote": "improve the clarity of communicating everything from blog posts to writing issues and pull requests.",
+      "sourceUrl": "https://docs.buddiesofbudgie.org/organization/ai-policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI was used to help write documentation for issues or pull requests (not committed code)",
+      "sourceUrl": "https://docs.buddiesofbudgie.org/organization/ai-policy"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://docs.buddiesofbudgie.org/organization/ai-policy",
+      "title": "AI Policy | Buddies of Budgie Docs",
+      "hash": "82b2f47b14a716c4c12012378874b65cb7b29debbad545a6a65c4c1a33ab4423",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

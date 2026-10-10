@@ -1,0 +1,54 @@
+{
+  "name": "MATE",
+  "description": "Desktop environment continuing GNOME 2.",
+  "category": "application",
+  "homepage": "https://mate-desktop.org/",
+  "repo": "https://github.com/mate-desktop",
+  "summary": "AI-assisted code gets no special treatment: the contributor is fully responsible, must explain and test every line, and disclosure, if given, uses an Assisted-by trailer.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable",
+        "human-reviewed"
+      ]
+    },
+    "issues": {
+      "verdict": "unspecified",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "AI-assisted code receives no special treatment compared to human code.",
+      "sourceUrl": "https://github.com/mate-desktop/.github/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The contributor is fully responsible for every line of code they submit, regardless of whether they are the original author or not.",
+      "sourceUrl": "https://github.com/mate-desktop/.github/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The contributor must be able to explain and defend any code they submit.",
+      "sourceUrl": "https://github.com/mate-desktop/.github/blob/master/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/mate-desktop/.github/blob/master/CONTRIBUTING.md",
+      "title": "Contributing to MATE Desktop",
+      "hash": "f9e8f72c2048e66831d1b911f1739955a3529852274ebaaf313d4c25b339a3dc",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

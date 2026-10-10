@@ -1,0 +1,51 @@
+{
+  "name": "river",
+  "description": "Dynamic tiling Wayland compositor.",
+  "category": "application",
+  "homepage": "https://isaacfreund.com/software/river/",
+  "repo": "https://codeberg.org/river/river",
+  "summary": "Generative AI and LLMs are strictly forbidden for all contributions, including bug reports and issue comments.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Use of generative AI/LLMs is strictly forbidden for all contributions to river.",
+      "sourceUrl": "https://codeberg.org/river/river/src/branch/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "This includes bug reports and comments on the issue tracker.",
+      "sourceUrl": "https://codeberg.org/river/river/src/branch/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "This includes bug reports and comments on the issue tracker.",
+      "sourceUrl": "https://codeberg.org/river/river/src/branch/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://codeberg.org/river/river/src/branch/main/CONTRIBUTING.md",
+      "title": "CONTRIBUTING.md",
+      "hash": "eb552f32b78e3bf1a08870b849b675a7d6f42faa348dbdf402e2c956d56ea427",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

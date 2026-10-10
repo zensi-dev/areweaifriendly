@@ -1,0 +1,57 @@
+{
+  "name": "Xfce",
+  "description": "Lightweight desktop environment for Unix-like systems.",
+  "category": "application",
+  "homepage": "https://xfce.org/",
+  "repo": "https://gitlab.xfce.org/xfce",
+  "summary": "AI/LLM-assisted material is allowed only if disclosed in every merge request and issue report. Contributors stay fully responsible for accuracy, legality and quality; low-quality AI content may be rejected.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure"
+      ]
+    },
+    "summaries": {
+      "verdict": "unspecified",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Contributions containing material generated with the assistance of an AI/LLM (e.g., large language models, Claude, ChatGPT, etc.) are permitted only if such use is explicitly disclosed in every merge request and issue report.",
+      "sourceUrl": "https://docs.xfce.org/contribute/dev/start"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributors remain fully responsible for the accuracy, legality, and quality of their submissions.",
+      "sourceUrl": "https://docs.xfce.org/contribute/dev/start"
+    },
+    {
+      "dimension": "issues",
+      "quote": "are permitted only if such use is explicitly disclosed in every merge request and issue report.",
+      "sourceUrl": "https://docs.xfce.org/contribute/dev/start"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://docs.xfce.org/contribute/dev/start",
+      "title": "Xfce Developer Docs: AI/LLM Assisted Contribution Policy",
+      "hash": "16f7afad54d51246b1f7643d714c7265ae6c1bdcddf8dc257472166a2a4674b1",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

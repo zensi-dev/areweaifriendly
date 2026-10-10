@@ -1,0 +1,86 @@
+{
+  "name": "GTK",
+  "description": "Multi-platform toolkit for graphical user interfaces, the base of GNOME.",
+  "category": "library",
+  "homepage": "https://www.gtk.org/",
+  "repo": "https://gitlab.gnome.org/GNOME/gtk",
+  "summary": "LLM tools may be used for narrow changes you verify and understand, never broad rewrites; licensing must be respected. Always disclose LLM use in issues and merge requests, never fabricate bug reports or results, and don't feed review feedback to an LLM. Comments that look LLM-generated are rejected.",
+  "policy": {
+    "contributions": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-accountable",
+        "human-reviewed",
+        "license-compliance"
+      ]
+    },
+    "issues": {
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "human-reviewed"
+      ]
+    },
+    "summaries": {
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Use AI as a tool. Verify behavior, correctness, and compatibility yourself prior to submitting your contribution.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/gtk/-/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do NOT use LLM/GenAI tools to generate broad rewrites, large refactorings, or style changes.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/gtk/-/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do NOT submit generated code, documentation, or tests that you don’t understand.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/gtk/-/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Respect the licensing and attribution requirements.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/gtk/-/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Always disclose the use of LLM/GenAI tools when creating an issue or a merge request.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/gtk/-/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Do NOT fabricate benchmarks, bug reports, test results, code samples, or reproducers.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/gtk/-/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do NOT feed the review feedback to an LLM/GenAI tool.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/gtk/-/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Reject comments and feedback that appear to be LLM/GenAI output.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/gtk/-/blob/main/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://gitlab.gnome.org/GNOME/gtk/-/blob/main/CONTRIBUTING.md",
+      "title": "Contribution guidelines",
+      "hash": "0fef519e454b12be7b819900067e38c961bd94fb86230f99c7d2cff274d47825",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}

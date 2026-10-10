@@ -1,0 +1,56 @@
+{
+  "name": "labwc",
+  "description": "Openbox-inspired Wayland window-stacking compositor.",
+  "category": "application",
+  "homepage": "https://labwc.github.io/",
+  "repo": "https://github.com/labwc/labwc",
+  "summary": "No AI-generated content in code, issues, discussions or PR descriptions. AI may be used for research, static analysis or debugging if its output isn't included; translation must use non-generative tools.",
+  "policy": {
+    "contributions": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "issues": {
+      "verdict": "banned",
+      "conditions": []
+    },
+    "summaries": {
+      "verdict": "banned",
+      "conditions": []
+    }
+  },
+  "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "We do not accept contributions containing AI-generated content.",
+      "sourceUrl": "https://github.com/labwc/labwc/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "This policy does not apply to other uses of AI, such as researching APIs, performing static analysis, or debugging, provided their output is not included in contributions.",
+      "sourceUrl": "https://github.com/labwc/labwc/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "This stance does not just apply to code, but also issues, discussions and PR descriptions.",
+      "sourceUrl": "https://github.com/labwc/labwc/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If you are not a native English speaker and need assistance with translations, please use a tool which doesn't use generative AI.",
+      "sourceUrl": "https://github.com/labwc/labwc/blob/master/CONTRIBUTING.md"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/labwc/labwc/blob/master/CONTRIBUTING.md",
+      "title": "How to Contribute",
+      "hash": "5317fa5300c21851e700e825b795307b32d7123114aa8ee44497c4c4cd61f609",
+      "fetchedAt": "2026-10-10"
+    }
+  ],
+  "confidence": "high",
+  "classifiedBy": "manual",
+  "classifiedAt": "2026-10-10",
+  "lastChanged": "2026-10-10"
+}
