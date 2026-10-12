@@ -61,15 +61,15 @@ You, as an end-user of Matplotlib can make a valuable contribution because you c
 
 - Write or update a comprehensive tutorial
 
-Our code is documented inline in the source code files in matplotlib/lib. Our website structure mirrors our folder structure, meaning that a narrative document's URL roughly corresponds to its location in our folder structure:
+Our code is documented inline in the source code files in lib/matplotlib. Our website structure mirrors our folder structure, meaning that a narrative document's URL roughly corresponds to its location in our folder structure:
 
 using the library
 
 - galleries/plot_types/
 
-- users/getting_started/
+- doc/users/getting_started/
 
-- galleries/user_explain/
+- galleries/users_explain/
 
 - galleries/tutorials/
 
