@@ -10,9 +10,9 @@
 
 - Reviewing Pull Requests
 
-- Creating Examples
-
 - Writing Documentation
+
+- Creating Examples
 
 - Explaining Examples
 

@@ -4,34 +4,29 @@
   "category": "library",
   "homepage": "https://scikit-image.org/",
   "repo": "https://github.com/scikit-image/scikit-image",
-  "summary": "AI may not be used to create novel code such as algorithms or tests, or to write PR descriptions and comments. It is allowed for exploring the codebase, iterating on hand-written code, trivial fixes and mechanical changes, with AI use declared and AI commits tagged Assisted-by.",
+  "summary": "scikit-image allows limited AI help for code contributions, such as exploring the codebase, fixing trivial bugs, or automating mechanical tasks, provided contributors disclose AI use, take responsibility, and ensure copyright compliance. AI-written pull request descriptions and issue or PR comments are not permitted.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
         "disclosure",
         "human-accountable",
-        "license-compliance",
-        "minor-assist-only"
+        "license-compliance"
       ]
     },
     "issues": {
-      "verdict": "conditional",
-      "conditions": [
-        "minor-assist-only"
-      ]
+      "verdict": "unspecified",
+      "conditions": []
     },
     "summaries": {
-      "verdict": "conditional",
-      "conditions": [
-        "minor-assist-only"
-      ]
+      "verdict": "banned",
+      "conditions": []
     }
   },
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "Creating novel code (algorithmic additions, writing tests, etc.).",
+      "quote": "Creating novel code (algorithmic additions, writing tests, etc.)",
       "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
     },
     {
@@ -45,12 +40,7 @@
       "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
     },
     {
-      "dimension": "contributions",
-      "quote": "You must take responsibility for copyright of the AI-generated code;",
-      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
-    },
-    {
-      "dimension": "issues",
+      "dimension": "summaries",
       "quote": "Writing pull request descriptions, or commenting on issues or PRs.",
       "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
     },
@@ -63,13 +53,13 @@
   "sources": [
     {
       "url": "https://scikit-image.org/docs/dev/development/contribute.html",
-      "title": "How to contribute to scikit-image",
-      "hash": "3ac93ce3e6dc1883d368968a05578732d23d87a858fcc2ba990ba9976a5d7de0",
-      "fetchedAt": "2026-10-09"
+      "title": "How to contribute to scikit-image — skimage 0.26.1rc0.dev0 documentation",
+      "hash": "b85a935a172e26393545cc5ed2e839b3ea2248011cac3de74f89d7b2c15e9908",
+      "fetchedAt": "2026-10-12"
     }
   ],
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-12",
+  "lastChanged": "2026-10-12"
 }
