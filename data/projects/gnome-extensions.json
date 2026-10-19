@@ -4,13 +4,12 @@
   "category": "application",
   "homepage": "https://extensions.gnome.org/",
   "repo": "https://gitlab.gnome.org/GNOME/gnome-shell",
-  "summary": "Extensions submitted to extensions.gnome.org must not be AI-generated. AI as a learning aid or for code completion is allowed if developers can explain their code; signs of AI-generated output lead to rejection.",
+  "summary": "AI tools such as code completions are allowed when developing GNOME Shell extensions, but developers must be able to justify and explain the code they submit, and submissions that appear largely AI-generated are rejected. The guidelines do not address AI-written issues or AI-written prose in project communication.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
-        "human-accountable",
-        "minor-assist-only"
+        "human-accountable"
       ]
     },
     "issues": {
@@ -23,11 +22,6 @@
     }
   },
   "evidence": [
-    {
-      "dimension": "contributions",
-      "quote": "Extensions must not be AI-generated",
-      "sourceUrl": "https://gjs.guide/extensions/review-guidelines/review-guidelines.html"
-    },
     {
       "dimension": "contributions",
       "quote": "While it is not prohibited to use AI as a learning aid or a development tool (i.e. code completions), extension developers should be able to justify and explain the code they submit, within reason.",
@@ -43,12 +37,12 @@
     {
       "url": "https://gjs.guide/extensions/review-guidelines/review-guidelines.html",
       "title": "GNOME Shell Extensions Review Guidelines | GNOME JavaScript",
-      "hash": "28e4528287deb7ca91c2d7779e30b119648b2c3ccb228cfbd5b525cc6fe2a55a",
-      "fetchedAt": "2026-10-10"
+      "hash": "b38751055913de7451917412a8ef63c20cc03c042f71bec93c6eab3e4c76bc0e",
+      "fetchedAt": "2026-10-19"
     }
   ],
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-19",
+  "lastChanged": "2026-10-19"
 }

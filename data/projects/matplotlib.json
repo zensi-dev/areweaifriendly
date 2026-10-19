@@ -4,7 +4,7 @@
   "category": "library",
   "homepage": "https://matplotlib.org/",
   "repo": "https://github.com/matplotlib/matplotlib",
-  "summary": "AI may help contributors understand code, get ideas and proof-read text, but they must fully understand the output and not solve problems they could not solve themselves. AI use is described in the PR template, PR summaries must be in the contributor's own words, and bots or agents may not interact with the project.",
+  "summary": "Matplotlib allows generative AI as a tool, but the human contributor remains responsible and must understand and verify AI output. Pull requests must disclose AI use, autonomous bots or agents may not create issues, pull requests or comments, and AI-written PR summaries are not accepted; only minor help such as translating or proof-reading text is allowed.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -24,6 +24,9 @@
     "summaries": {
       "verdict": "conditional",
       "conditions": [
+        "disclosure",
+        "human-reviewed",
+        "no-autonomous-agents",
         "minor-assist-only"
       ]
     }
@@ -36,12 +39,12 @@
     },
     {
       "dimension": "contributions",
-      "quote": "Solving topics that you wouldn't be able to solve yourself without AI",
+      "quote": "Using AI output without ensuring that you fully understand the output or without verifying that it is the correct approach.",
       "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
     },
     {
       "dimension": "contributions",
-      "quote": "Using AI output without ensuring that you fully understand the output or without verifying that it is the correct approach.",
+      "quote": "External AI tooling (e.g. bots, agents) directly interacting with the project; including creating issues, PRs or commenting on GitHub or Discourse.",
       "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
     },
     {
@@ -63,18 +66,33 @@
       "dimension": "summaries",
       "quote": "Describe what issue is resolved and why you chose this solution in your own words (no AI please).",
       "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "External AI tooling (e.g. bots, agents) directly interacting with the project; including creating issues, PRs or commenting on GitHub or Discourse.",
+      "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Describe if and how AI is used.",
+      "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Using AI output without ensuring that you fully understand the output or without verifying that it is the correct approach.",
+      "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
     }
   ],
   "sources": [
     {
       "url": "https://matplotlib.org/devdocs/devel/contribute.html",
-      "title": "Matplotlib contributing guide",
-      "hash": "92e03d8a6abe02af365e851285fca933c70001013bc61276a7a1ae8390afb67c",
-      "fetchedAt": "2026-10-09"
+      "title": "Contributing guide — Matplotlib 3.12.0.dev809+gd7a19fbf4 documentation",
+      "hash": "0a2215b6014b945876bc30f40d2df639f0f57f00025280cc1ae6ae0d1137f69f",
+      "fetchedAt": "2026-10-19"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-19",
+  "lastChanged": "2026-10-19"
 }

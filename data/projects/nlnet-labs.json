@@ -4,7 +4,7 @@
   "category": "foundation",
   "homepage": "https://nlnetlabs.nl/",
   "repo": "https://github.com/NLnetLabs",
-  "summary": "All code and documentation must be human-authored with no LLM output. LLM-found vulnerabilities and bug reports are accepted if a human verifies them and discloses LLM use, and LLMs may be used for linting, analysis and review. PR descriptions must be in the contributor's own words.",
+  "summary": "NLnet Labs requires code and documentation contributions to be human-authored and does not accept LLM-generated content. LLM-assisted issue reports are allowed only with disclosure and human verification, LLM use in interactions must be disclosed and remains the human's responsibility, and pull request descriptions must use the contributor's own words.",
   "policy": {
     "contributions": {
       "verdict": "banned",
@@ -22,7 +22,7 @@
       "verdict": "conditional",
       "conditions": [
         "disclosure",
-        "minor-assist-only"
+        "human-accountable"
       ]
     }
   },
@@ -34,7 +34,7 @@
     },
     {
       "dimension": "issues",
-      "quote": "We accept reports of vulnerabilities found with LLMs.",
+      "quote": "In your interactions with us, be respectful of our time, and disclose the use of an LLM. This includes opening issues, sending vulnerability reports, and posting on our community forum.",
       "sourceUrl": "https://nlnetlabs.nl/llm-policy/"
     },
     {
@@ -43,31 +43,26 @@
       "sourceUrl": "https://nlnetlabs.nl/llm-policy/"
     },
     {
-      "dimension": "issues",
-      "quote": "This includes opening issues, sending vulnerability reports, and posting on our community forum.",
+      "dimension": "summaries",
+      "quote": "In your interactions with us, be respectful of our time, and disclose the use of an LLM. This includes opening issues, sending vulnerability reports, and posting on our community forum.",
       "sourceUrl": "https://nlnetlabs.nl/llm-policy/"
     },
     {
       "dimension": "summaries",
-      "quote": "When you open a PR, use your own words and be concise in the PR description.",
-      "sourceUrl": "https://nlnetlabs.nl/llm-policy/"
-    },
-    {
-      "dimension": "summaries",
-      "quote": "In your interactions with us, be respectful of our time, and disclose the use of an LLM.",
+      "quote": "However, you remain responsible for the output of an LLM.",
       "sourceUrl": "https://nlnetlabs.nl/llm-policy/"
     }
   ],
   "sources": [
     {
       "url": "https://nlnetlabs.nl/llm-policy/",
-      "title": "NLnet Labs LLM Policy",
-      "hash": "40218d264b54b6190ce34c925567f336ebcab4aa81f355ec4c2dbd58f4c4d3e8",
-      "fetchedAt": "2026-10-09"
+      "title": "NLnet Labs - LLM Policy",
+      "hash": "4a9e0ce5981e0a6fbc9091044c8e42decee8a9d1f68bbc0b31abc9eadcf0c5d5",
+      "fetchedAt": "2026-10-19"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-19",
+  "lastChanged": "2026-10-19"
 }

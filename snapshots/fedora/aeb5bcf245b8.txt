@@ -1,4 +1,4 @@
-en-US ar ast az be bg bn ca cs de el es es_419 fa fi fil fr fur ga gl he hi hr hu hy id it ja jp ka kab km ko lo lt mr ms my nb_NO ne nl nn or pl pt pt_BR pt_PT ro ru si sk sq sv sw szl te tr tzm uk ur ur_PK uz vi zh_CN zh_Hans zh_Hant zh_TW
+en-US ar ast az be bg bn ca cs de el es es_419 fa fi fil fr fur ga gl he hi hr hu hy id it ja jp ka kab km ko lb lo lt mr ms my nb_NO ne nl nn or pl pt pt_BR pt_PT ro ru si sk sq sv sw szl te tr tzm uk ur ur_PK uz vi zh_CN zh_Hans zh_Hant zh_TW
 
 # AI-Assisted Contributions Policy
 

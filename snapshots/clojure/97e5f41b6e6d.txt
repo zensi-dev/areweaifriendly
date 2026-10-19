@@ -397,5 +397,5 @@ Many thanks for your contributions to Clojure!
 Copyright 2008-2022 Rich Hickey | Privacy Policy
 Logo & site design by Tom Hickey
 
-Published 2026-10-09
+Published 2026-10-16
 Update this page

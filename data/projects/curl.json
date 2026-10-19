@@ -4,7 +4,7 @@
   "category": "tool",
   "homepage": "https://curl.se/",
   "repo": "https://github.com/curl/curl",
-  "summary": "Code written with AI help is accepted if it meets the normal standards. AI-found bug and security reports must say so and be verified by a human, and pasted AI-generated reports and explanations are discouraged.",
+  "summary": "curl accepts AI-assisted code as long as it meets the project's normal quality and licensing requirements. AI-assisted issue reports must disclose AI use and be carefully verified by the reporter, while project communication should be concise and written in the contributor's own human voice rather than pasted AI-generated text.",
   "policy": {
     "contributions": {
       "verdict": "allowed",
@@ -20,7 +20,7 @@
     "summaries": {
       "verdict": "conditional",
       "conditions": [
-        "minor-assist-only"
+        "human-accountable"
       ]
     }
   },
@@ -32,7 +32,7 @@
     },
     {
       "dimension": "issues",
-      "quote": "If you asked an AI tool to find problems in curl, you must make sure to reveal this fact in your report.",
+      "quote": "If you asked an AI tool to find problems in curl, you **must** make sure to reveal this fact in your report.",
       "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
     },
     {
@@ -42,13 +42,13 @@
     },
     {
       "dimension": "summaries",
-      "quote": "Do not lazily paste massive, AI-generated explanations;",
+      "quote": "When communicating in the curl project, please explain your issues or improvements briefly and clearly in your own human voice.",
       "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
     },
     {
       "dimension": "summaries",
-      "quote": "If you actually find a problem with an AI and you have verified it yourself to be true: write the report yourself and explain the problem as you have learned it.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+      "quote": "Do not lazily paste massive, AI-generated explanations; as a contributor doing this infrequently, it is your responsibility to invest a few extra minutes into making your message digestible.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
     }
   ],
   "sources": [
@@ -61,12 +61,12 @@
     {
       "url": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md",
       "title": "curl vulnerability disclosure policy",
-      "hash": "e7e594521f4969794ff86ff9576822c147c626af501c6de0afa8d7f4434be0ca",
-      "fetchedAt": "2026-10-09"
+      "hash": "64b208d11656514ded88915810647a94092d90de7b67a2beb5656c6b84f06d57",
+      "fetchedAt": "2026-10-19"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-19",
+  "lastChanged": "2026-10-19"
 }

@@ -4,7 +4,7 @@
   "category": "tool",
   "homepage": "https://gvisor.dev/",
   "repo": "https://github.com/google/gvisor",
-  "summary": "Contributors are expected to embrace AI tools, with mandatory human oversight: all AI-generated content must be reviewed, the contributor remains the sole responsible author, and substantial AI content must be labelled, for example with Assisted-by. This applies to code, issues, security reports and comments.",
+  "summary": "gVisor welcomes the use of AI tools, but requires human oversight: AI-generated content must be reviewed by the contributor before submission, the contributor stays the sole author and is fully responsible for the work, and substantial AI-generated content must be labeled (for example with an Assisted-by trailer). These rules explicitly cover code changes, issues and security reports, and comments and feedback on pull requests or issues.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -18,6 +18,7 @@
       "verdict": "conditional",
       "conditions": [
         "disclosure",
+        "human-accountable",
         "human-reviewed"
       ]
     },
@@ -25,6 +26,7 @@
       "verdict": "conditional",
       "conditions": [
         "disclosure",
+        "human-accountable",
         "human-reviewed"
       ]
     }
@@ -32,12 +34,7 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "We expect our contributors to embrace AI tools.",
-      "sourceUrl": "https://gvisor.dev/contributing"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
+      "quote": "While contributors can use any AI tools to create their contributions, human oversight is mandatory. All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
       "sourceUrl": "https://gvisor.dev/contributing"
     },
     {
@@ -56,21 +53,31 @@
       "sourceUrl": "https://gvisor.dev/contributing"
     },
     {
+      "dimension": "issues",
+      "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
+      "sourceUrl": "https://gvisor.dev/contributing"
+    },
+    {
       "dimension": "summaries",
       "quote": "Comments and feedback on pull requests or issues",
+      "sourceUrl": "https://gvisor.dev/contributing"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Transparently label all contributions containing substantial AI-generated content.",
       "sourceUrl": "https://gvisor.dev/contributing"
     }
   ],
   "sources": [
     {
       "url": "https://gvisor.dev/contributing",
-      "title": "Contributing to gVisor",
-      "hash": "f3f9147b0e7100148592b02626906d3742e0efbec86cf925a1473ab52873e4ad",
-      "fetchedAt": "2026-10-09"
+      "title": "Contributing - gVisor",
+      "hash": "d02136bacee47d32996f2edbe56a8afa3347f06b1b9fe47bfc85b7df320dbb49",
+      "fetchedAt": "2026-10-19"
     }
   ],
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-19",
+  "lastChanged": "2026-10-19"
 }

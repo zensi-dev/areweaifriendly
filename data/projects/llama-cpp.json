@@ -4,7 +4,7 @@
   "category": "library",
   "homepage": "https://github.com/ggml-org/llama.cpp",
   "repo": "https://github.com/ggml-org/llama.cpp",
-  "summary": "AI-generated code is allowed if you disclose it, review it thoroughly and can explain every line. Using AI to write bug reports, feature requests, PR descriptions or replies is strictly prohibited, and automated submissions can get you banned.",
+  "summary": "AI-generated code is accepted, but contributors must disclose meaningful AI use, review and fully understand every line, and be able to explain it without AI help; fully autonomous agents and automated submissions are not allowed. AI-written bug reports, feature requests, PR descriptions, commit messages and reviewer replies are prohibited.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -32,18 +32,38 @@
     },
     {
       "dimension": "contributions",
-      "quote": "Undisclosed AI usage may result in your account being permanently banned from contributing to the project.",
+      "quote": "Explicitly disclose the manner in which AI was employed.",
       "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
-      "quote": "Automated commits or PR submissions (may result in contributor ban)",
+      "quote": "Perform a comprehensive manual review prior to submitting the pull request.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "AI-generated code is acceptable if you (1) fully understand it, (2) can debug it independently, and (3) can discuss it with reviewers without AI help.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do NOT commit or push without explicit human approval for each action.",
       "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
     },
     {
       "dimension": "issues",
       "quote": "It is strictly prohibited to use AI to write your posts for you (bug reports, feature requests, pull request descriptions, Github discussions, responding to humans, ...).",
       "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Automated commits or PR submissions (may result in contributor ban)",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do NOT write PR descriptions, commit messages, or reviewer responses",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
     },
     {
       "dimension": "summaries",
@@ -61,12 +81,12 @@
     {
       "url": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md",
       "title": "Instructions for llama.cpp",
-      "hash": "08cb4ee6c7fa71d529a6ee37b4d7bab7055144ae376336e6421356cc3e83c7c4",
-      "fetchedAt": "2026-10-10"
+      "hash": "158556b027fdb6379cbdfa57c08404406ef2427934b5dee783690e7f1c880576",
+      "fetchedAt": "2026-10-19"
     }
   ],
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-19",
   "lastChanged": "2026-10-10"
 }

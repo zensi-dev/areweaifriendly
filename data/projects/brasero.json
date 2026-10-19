@@ -4,13 +4,11 @@
   "category": "application",
   "homepage": "https://gitlab.gnome.org/GNOME/brasero",
   "repo": "https://gitlab.gnome.org/GNOME/brasero",
-  "summary": "Contributions generated entirely by LLMs and chatbots are not allowed in code, documentation, issues or artwork. Translating issue and comment text into English is an exception.",
+  "summary": "Brasero does not accept content generated entirely by LLMs or chatbots, and this ban covers code, documentation, issues and artworks. The only stated exception is using AI purely to translate issue and comment texts into English.",
   "policy": {
     "contributions": {
-      "verdict": "conditional",
-      "conditions": [
-        "minor-assist-only"
-      ]
+      "verdict": "banned",
+      "conditions": []
     },
     "issues": {
       "verdict": "conditional",
@@ -19,10 +17,8 @@
       ]
     },
     "summaries": {
-      "verdict": "conditional",
-      "conditions": [
-        "minor-assist-only"
-      ]
+      "verdict": "banned",
+      "conditions": []
     }
   },
   "evidence": [
@@ -33,12 +29,12 @@
     },
     {
       "dimension": "issues",
-      "quote": "including, but not limited to, code, documentation, issues, and artworks.",
+      "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks. An exception applies for purely translating texts for issues and comments to English.",
       "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
     },
     {
       "dimension": "summaries",
-      "quote": "An exception applies for purely translating texts for issues and comments to English.",
+      "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
       "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
     }
   ],
@@ -46,12 +42,12 @@
     {
       "url": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md",
       "title": "Brasero",
-      "hash": "4be2acd8a054dd70d94eefd9e56130bb09d0f8d3dc1e946f79de7e5d907898a6",
-      "fetchedAt": "2026-10-10"
+      "hash": "5e90f0cdc9867a642d23fdbed4593a5eec1c2bf0592a82c43c940a7db7bba25f",
+      "fetchedAt": "2026-10-19"
     }
   ],
   "confidence": "medium",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-19",
+  "lastChanged": "2026-10-19"
 }

@@ -4,7 +4,7 @@
   "category": "tool",
   "homepage": "https://uutils.github.io/",
   "repo": "https://github.com/uutils/coreutils",
-  "summary": "AI-assisted contributions are allowed under the same standards as any patch: understand and justify every line, self-review the diff and make sure nothing is derived from GNU coreutils or other GPL code.",
+  "summary": "AI-assisted contributions are allowed, but they must meet the same standards as any other patch: the contributor must understand and be able to justify every line, make sure the output is not derived from GPL-licensed sources, and self-review the diff before submitting. The guide does not address AI-written issues or AI-generated prose in project communication.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -26,17 +26,17 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "AI-assisted contributions are allowed, but the same standards apply as for any other patch.",
+      "quote": "AI-assisted contributions are allowed, but the same standards apply as for any other patch. If you use an AI tool to help write a change, you are still responsible for it: you should understand every line you submit and be able to explain and justify the change in review.",
       "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
-      "quote": "you should understand every line you submit and be able to explain and justify the change in review.",
+      "quote": "Be especially careful that the output is not derived from GNU coreutils or other GPL code - AI assistants are trained on GPL sources and can reproduce them verbatim, which this project cannot accept.",
       "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
-      "quote": "Be especially careful that the output is not derived from GNU coreutils or other GPL code",
+      "quote": "Keep patches small and focused so they are easy to review, and self-review the diff carefully before opening a pull request - reviewers are there to double-check a human's work, not an LLM's output.",
       "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
     }
   ],
@@ -44,12 +44,12 @@
     {
       "url": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md",
       "title": "Contributing to coreutils",
-      "hash": "30c2909a446ce234b80de5babbfa7bb83504300f314e884aa44000315bc79cdb",
-      "fetchedAt": "2026-10-10"
+      "hash": "17c90511b5c8b12d46e5f6e856b045daf99b31c274438db8ed34ef2783d8166c",
+      "fetchedAt": "2026-10-19"
     }
   ],
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-19",
   "lastChanged": "2026-10-10"
 }

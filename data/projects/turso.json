@@ -4,7 +4,7 @@
   "category": "library",
   "homepage": "https://turso.tech/",
   "repo": "https://github.com/tursodatabase/turso",
-  "summary": "AI coding agents are welcome if you understand, self-review and own the code you submit. Describe changes in your own words or heavily edit AI summaries; in unfamiliar areas, file a bug report instead of an AI-generated fix.",
+  "summary": "Turso welcomes contributions made with AI coding agents, provided the human contributor understands, reviews, and can defend the work. AI-generated summaries should be rewritten or heavily edited for accuracy; the document does not set AI-specific rules for issues.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -27,17 +27,12 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "You're welcome to develop Turso with AI coding agents such as Claude Code, Codex, or OpenCode.",
+      "quote": "We expect you to understand the code you submit. The best AI-assisted contributions come from people who treat the agent as a collaborator, not a substitute: you direct the work, review it critically, and own the result.",
       "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
-      "quote": "We expect you to understand the code you submit.",
-      "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Always self-review your code before submitting",
+      "quote": "Always self-review your code before submitting - make sure it's correct and follows the existing code standards in this repo.",
       "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
     },
     {
@@ -50,12 +45,12 @@
     {
       "url": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md",
       "title": "Contributing to Turso",
-      "hash": "722732e140069d968a72e5065dc11a503bee433eab890a8cc73088841ab3408f",
-      "fetchedAt": "2026-10-10"
+      "hash": "4d6c5f4675197c2d849c2fb0a017d21a7e3921f3eab088becb6ceb651bf779b2",
+      "fetchedAt": "2026-10-19"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-19",
   "lastChanged": "2026-10-10"
 }

@@ -4,21 +4,26 @@
   "category": "application",
   "homepage": "https://github.com/niri-wm/niri",
   "repo": "https://github.com/niri-wm/niri",
-  "summary": "LLMs may not be used to create anything: code, issues, comments and reviews must be human-written. LLM translation of human-written text is allowed if the original is included.",
+  "summary": "niri prohibits using LLMs to create pull request code, issue descriptions, comments and public reviews; those must be human-written. LLM translation of human-written text is allowed only if the original text is also provided.",
   "policy": {
     "contributions": {
-      "verdict": "banned",
-      "conditions": []
+      "verdict": "conditional",
+      "conditions": [
+        "disclosure",
+        "minor-assist-only"
+      ]
     },
     "issues": {
       "verdict": "conditional",
       "conditions": [
+        "disclosure",
         "minor-assist-only"
       ]
     },
     "summaries": {
       "verdict": "conditional",
       "conditions": [
+        "disclosure",
         "minor-assist-only"
       ]
     }
@@ -26,17 +31,32 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "You're not allowed to use LLMs to create.",
+      "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You may use LLMs for *translating* your human-written text; in this case you must also provide the original text to reduce the chance of miscommunication.",
       "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "issues",
-      "quote": "All pull request code, issue descriptions, comments, public reviews, etc. must be human-written.",
+      "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "You may use LLMs for *translating* your human-written text; in this case you must also provide the original text to reduce the chance of miscommunication.",
       "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "summaries",
-      "quote": "You may use LLMs for translating your human-written text; in this case you must also provide the original text to reduce the chance of miscommunication.",
+      "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You may use LLMs for *translating* your human-written text; in this case you must also provide the original text to reduce the chance of miscommunication.",
       "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
     }
   ],
@@ -44,12 +64,12 @@
     {
       "url": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md",
       "title": "Contributing to niri",
-      "hash": "775ba27483b5bf3089a989b7b5a93882a39a8a01b17a062f47811d2336fd0312",
-      "fetchedAt": "2026-10-10"
+      "hash": "d0e3962a2404b9a7965465e9f9ece6f61ab99d40675df06a1c7e7979c410b837",
+      "fetchedAt": "2026-10-19"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-19",
+  "lastChanged": "2026-10-19"
 }

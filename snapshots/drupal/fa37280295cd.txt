@@ -49,7 +49,7 @@ Advertising sustains the DA. Ads are hidden for members. Join today
 # Policy on the use of AI when contributing to Drupal
 
  Last updated on
- 5 October 2026
+ 11 October 2026
 
 ## Why this policy exists
 

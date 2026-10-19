@@ -4,7 +4,7 @@
   "category": "distribution",
   "homepage": "https://www.debian.org/",
   "repo": "https://salsa.debian.org/",
-  "summary": "By general resolution in August 2026, Debian chose \"Responsible Use of Generative AI\" over seven other options, including bans. Generative AI is neither endorsed nor prohibited: contributors must understand, review and test AI-assisted output, consider licensing and remain fully accountable. Disclosure is encouraged but not required, and mass automated actions need prior discussion and human oversight.",
+  "summary": "Debian's adopted resolution neither endorses nor prohibits generative AI tools, but contributors remain accountable for AI-assisted work and are expected to review and test it, with care for licensing. It encourages disclosure without requiring it and does not specifically address AI-written issues or summaries.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -15,10 +15,8 @@
       ]
     },
     "issues": {
-      "verdict": "conditional",
-      "conditions": [
-        "human-accountable"
-      ]
+      "verdict": "unspecified",
+      "conditions": []
     },
     "summaries": {
       "verdict": "unspecified",
@@ -28,45 +26,30 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "Debian neither endorses nor prohibits the use of generative AI tools in the development, maintenance, or documentation of software, packaging, documentation, and other media published within the Debian Project.",
+      "quote": "The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit. Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian.",
       "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
     },
     {
       "dimension": "contributions",
-      "quote": "Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian.",
+      "quote": "Project members are expected to exercise appropriate care when using generative AI tools, to consider the provenance and licensing implications of material they contribute, and to avoid introducing content whose legal status they cannot reasonably justify.",
       "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
     },
     {
       "dimension": "contributions",
-      "quote": "We enourage our contributors to disclose whether a contribution was made with AI assitance, but do not require them to do so.",
-      "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "to consider the provenance and licensing implications of material they contribute",
-      "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
-    },
-    {
-      "dimension": "issues",
-      "quote": "Contributors intending to perform actions with broad project impact, such as mass bug filing or patch submission, large-scale code modifications, or other automated changes or requests affecting many packages or contributors, should seek prior discussion and consensus through the appropriate project channels before proceeding.",
-      "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
-    },
-    {
-      "dimension": "issues",
-      "quote": "Any such automated process should be overseen by a human who remains accountable for its behavior and output.",
+      "quote": "The responsibility for every contribution rests with the contributor who submits it, who remains accountable for its technical quality, legal acceptability, and suitability for inclusion in Debian.",
       "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
     }
   ],
   "sources": [
     {
       "url": "https://www.debian.org/vote/2026/vote_002",
-      "title": "Debian General Resolution 2026-002: LLM usage in Debian",
-      "hash": "dc4a5e545d314f2282b18d33c4604c800d88181a7da5b465440f9b2931c4f8ea",
-      "fetchedAt": "2026-10-09"
+      "title": "General Resolution: LLM usage in Debian",
+      "hash": "1a2870e00b6b018f9939496d7c303335918629700f5882a918e190033d85e624",
+      "fetchedAt": "2026-10-19"
     }
   ],
   "confidence": "medium",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-19",
+  "lastChanged": "2026-10-19"
 }

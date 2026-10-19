@@ -4,7 +4,7 @@
   "category": "application",
   "homepage": "https://wordpress.org/",
   "repo": "https://github.com/WordPress/wordpress-develop",
-  "summary": "AI tools may assist with code, tests, docs and issues. Contributors must understand and review every line, keep everything GPL-compatible, and disclose meaningful AI help in the PR description or Trac ticket. AI may draft issue and PR descriptions if the details are reviewed and verified.",
+  "summary": "WordPress permits AI-assisted code, issue reports and communication under conditions: humans must review and take responsibility for the output, disclose meaningful AI use, and meet GPL compatibility requirements.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -18,12 +18,16 @@
     "issues": {
       "verdict": "conditional",
       "conditions": [
+        "disclosure",
+        "human-accountable",
         "human-reviewed"
       ]
     },
     "summaries": {
       "verdict": "conditional",
       "conditions": [
+        "disclosure",
+        "human-accountable",
         "human-reviewed"
       ]
     }
@@ -31,22 +35,22 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "AI tools can assist, but they are not contributors.",
-      "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "When AI meaningfully contributes to your work (beyond trivial reformatting), clearly mention that in your:",
-      "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Do not use tools whose terms forbid using their output in GPL-licensed projects or impose additional restrictions on redistribution.",
-      "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
-    },
-    {
-      "dimension": "contributions",
       "quote": "Treat AI output like code from an unknown external contributor: you must review and validate it before sharing it.",
+      "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Once submitted, code contributed by you, regardless of whether it was typed or AI-generated, is considered your code and therefore your responsibility.",
+      "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "All such contributions must be compatible with GPLv2 or later and must not impose additional restrictions on redistribution or reuse.",
+      "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You disclose meaningful AI assistance.",
       "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
     },
     {
@@ -60,21 +64,56 @@
       "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
     },
     {
+      "dimension": "issues",
+      "quote": "Include real logs, screenshots, or code snippets.",
+      "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "You disclose meaningful AI assistance.",
+      "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "AI tools can assist, but they are not contributors.",
+      "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
+    },
+    {
       "dimension": "summaries",
       "quote": "Ask AI to summarize a change, then correct and extend that summary.",
+      "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Use AI to draft, then review yourself.",
+      "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You disclose meaningful AI assistance.",
+      "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI tools can assist, but they are not contributors.",
+      "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Content that does not reflect what you actually implemented.",
       "sourceUrl": "https://make.wordpress.org/ai/handbook/ai-guidelines/"
     }
   ],
   "sources": [
     {
       "url": "https://make.wordpress.org/ai/handbook/ai-guidelines/",
-      "title": "WordPress AI Guidelines",
-      "hash": "a47e01229ea1b9518f4335f81443b27345cd0fe4ecfe71f14d6c67a4debdd631",
-      "fetchedAt": "2026-10-09"
+      "title": "AI Guidelines – WordPress AI",
+      "hash": "e6fb5371b4bc0350829d6aace23b8fc8a79c04ce9712d4d98e11bc151150f054",
+      "fetchedAt": "2026-10-19"
     }
   ],
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-19",
+  "lastChanged": "2026-10-19"
 }

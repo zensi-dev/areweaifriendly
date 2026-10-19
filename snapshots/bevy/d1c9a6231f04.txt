@@ -10,9 +10,9 @@
 
 - Reviewing Pull Requests
 
-- Creating Examples
-
 - Writing Documentation
+
+- Creating Examples
 
 - Explaining Examples
 
@@ -32,9 +32,9 @@
 
 - Policies
 
-- Code of Conduct
-
 - AI Policy
+
+- Code of Conduct
 
 - Reference
 

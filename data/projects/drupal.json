@@ -4,7 +4,7 @@
   "category": "application",
   "homepage": "https://www.drupal.org/",
   "repo": "https://git.drupalcode.org/project/drupal",
-  "summary": "AI tools may be used if contributors fully verify the code, can explain every decision, ensure GPL compatibility and disclose significant AI-generated code or text. AI output should not be pasted verbatim into issues and comments; contributors should use their own words.",
+  "summary": "Drupal permits AI-assisted work only if contributors disclose significant AI use, take responsibility for the output, verify it before submitting, and ensure code meets licensing requirements. AI-generated issue text and summaries must be reviewed and not posted as unreviewed output.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -19,26 +19,28 @@
       "verdict": "conditional",
       "conditions": [
         "disclosure",
-        "minor-assist-only"
+        "human-accountable",
+        "human-reviewed"
       ]
     },
     "summaries": {
       "verdict": "conditional",
       "conditions": [
         "disclosure",
-        "minor-assist-only"
+        "human-accountable",
+        "human-reviewed"
       ]
     }
   },
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "If you use an AI tool to generate a significant portion of the code or text you are submitting, you must disclose it.",
+      "quote": "If you use an AI tool to generate a significant portion of the code or text you are submitting, you must disclose it. You must disclose this use regardless of how thoroughly you reviewed the output.",
       "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
     },
     {
       "dimension": "contributions",
-      "quote": "You are fully responsible for the integrity of your submission.",
+      "quote": "You must thoroughly verify all dependencies, logic, and security implications of AI-generated code before submitting.",
       "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
     },
     {
@@ -47,8 +49,28 @@
       "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
     },
     {
+      "dimension": "contributions",
+      "quote": "You are fully responsible for the integrity of your submission.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
       "dimension": "issues",
-      "quote": "Using AI-generated issue summaries and comments can place an undue burden on maintainers.",
+      "quote": "Using AI-generated issue summaries and comments can place an undue burden on maintainers. You are responsible for the words and code you post to an issue.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "issues",
+      "quote": "If you use an AI tool to generate a significant portion of the code or text you are submitting, you must disclose it.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Posting issue comments, MR descriptions, or forum posts that are not-reviewed AI output.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Using AI to generate issue summaries, comments, or reviews that lack independently verified technical insights (for example, using an AI tool to summarize a thread simply to gain contribution credits).",
       "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
     },
     {
@@ -58,20 +80,25 @@
     },
     {
       "dimension": "summaries",
-      "quote": "Use your own words and be concise.",
+      "quote": "Posting issue comments, MR descriptions, or forum posts that are not-reviewed AI output.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If you use an AI tool to generate a significant portion of the code or text you are submitting, you must disclose it.",
       "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
     }
   ],
   "sources": [
     {
       "url": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal",
-      "title": "Policy on the use of AI when contributing to Drupal",
-      "hash": "034451a933fa0488f00161a5172425a78e97e891f10492cfb2e306cf8bc20dbb",
-      "fetchedAt": "2026-10-09"
+      "title": "Policy on the use of AI when contributing to Drupal | Issue procedures and etiquette | Drupal Wiki guide on Drupal.org",
+      "hash": "d5a9f5fcace28b03a2c9a66ad2309f4a9b194ae66b97feaba278467ddb44a10d",
+      "fetchedAt": "2026-10-19"
     }
   ],
-  "confidence": "medium",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "confidence": "high",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-19",
+  "lastChanged": "2026-10-19"
 }

@@ -1091,7 +1091,7 @@ Option 9
 Back to the Debian Project homepage.
 
  This page is also available in the following languages:
- Select your language français
+ Select your language français Nederlands
  How to set the default document language
 
 Home
@@ -1154,6 +1154,6 @@ Home
 
 See our contact page to get in touch. Web site source code is available.
 
- Last Modified: Sun, Aug 30 08:52:41 UTC 2026 Last Built: Wed, Sep 23 15:49:02 UTC 2026
+ Last Modified: Sat, Oct 17 23:48:15 UTC 2026 Last Built: Sun, Oct 18 03:32:51 UTC 2026
  Copyright © 2026 SPI and others; See license terms
  Debian is a registered trademark of Software in the Public Interest, Inc.
