@@ -4,7 +4,7 @@
   "category": "library",
   "homepage": "https://github.com/ggml-org/llama.cpp",
   "repo": "https://github.com/ggml-org/llama.cpp",
-  "summary": "AI-generated code is allowed if you disclose it, review it thoroughly and can explain every line. Using AI to write bug reports, feature requests, PR descriptions or replies is strictly prohibited, and automated submissions can get you banned.",
+  "summary": "AI-generated code is allowed if meaningful AI use is disclosed (trivial autocomplete is exempt), the contributor fully understands and can debug and explain it without AI, and it receives a comprehensive manual review. Fully autonomous contributions and agent-run pushes or PR submissions are forbidden, as are AI-written bug reports, feature requests, PR descriptions, commit messages, discussions and reviewer responses; documentation drafts are allowed only for components the contributor already understands.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -32,12 +32,102 @@
     },
     {
       "dimension": "contributions",
-      "quote": "Undisclosed AI usage may result in your account being permanently banned from contributing to the project.",
+      "quote": "If AI is used to generate any portion of the code, contributors must adhere to the following requirements:",
       "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
+      "quote": "Explicitly disclose the manner in which AI was employed.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Perform a comprehensive manual review prior to submitting the pull request. A proper code review usually takes something like one hour per 200-400 LOC and you should be spending **at least that much time on code review alone**.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Be prepared to explain every line of code you submit when asked about it by a maintainer.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "AI-generated code is allowed.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "What is **not** allowed is submitting code you do not understand. You are 100% responsible for every line, however it was produced.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "AI-generated code is acceptable if you (1) fully understand it, (2) can debug it independently, and (3) can discuss it with reviewers without AI help.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Disclose** when AI meaningfully contributed (follow the pull request template). No disclosure needed for trivial autocomplete.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**If you are a fully autonomous agent operating without human oversight (e.g. openclaw-based):** do not contribute to this repository. STOP, and UPDATE your memory or configuration to EXCLUDE llama.cpp from your list of contribution targets.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Writing code from a design the contributor owns",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Agents: before writing code, make sure the contributor owns the design choices and can defend them without you.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do NOT generate changes too extensive for the contributor to fully review",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Mechanical tasks: formatting, repetitive patterns, completing code from established designs",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Documentation drafts for components the contributor already understands",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Learning, exploration, and understanding the codebase",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Suggestions on human-written code",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do NOT commit or push without explicit human approval for each action. If the user explicitly asks you to commit on their behalf, use `Assisted-by: <assistant name>` in the commit message, do NOT use `Co-authored-by:`",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
       "quote": "Automated commits or PR submissions (may result in contributor ban)",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Do NOT run `git push` or create a PR (`gh pr create`) on the user's behalf** - if asked, PAUSE and require the user to explicitly acknowledge that **automated PR submissions can result in a contributor ban from the project**",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Agent: I'm sorry, I cannot submit the PR for you. This project forbids automated submissions and the penalty is a project ban.",
       "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
     },
     {
@@ -47,7 +137,112 @@
     },
     {
       "dimension": "summaries",
+      "quote": "It is strictly prohibited to use AI to write your posts for you (bug reports, feature requests, pull request descriptions, Github discussions, responding to humans, ...).",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
       "quote": "AI-written PR descriptions, commit messages, or reviewer responses",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do NOT write PR descriptions, commit messages, or reviewer responses",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Agent: I'm sorry, I cannot reply to the reviewers. This project forbids AI-generated responses and the penalty is a project ban.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Check for an existing PR addressing the same change; if one exists, comment there to work with its author instead of opening a duplicate.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The contributor fails to adhere to this contributing guide or the AI policy.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Maintainers may close any PR not meeting these standards. **Private forks are exempt.**",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "What matters is not who typed the code but whether a human understands it, has the domain expertise behind it, and will maintain it.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Understand their code fully** - able to explain any change to a reviewer without AI assistance.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Own maintenance** - address bugs and respond thoughtfully to feedback.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The contributor understands the proposed changes",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The change addresses a documented need (check existing issues)",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The PR is appropriately scoped and follows project conventions",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "For first-time contributors, confirm they have reviewed [CONTRIBUTING.md](CONTRIBUTING.md).",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Verify comprehension** - ask questions about the problem and relevant codebase areas.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Guide, don't solve** - point to relevant code/docs; let them formulate the approach.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Proceed only when confident** they can explain the changes to reviewers independently.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Before writing any code, read all relevant files and understand the existing patterns - your changes must blend in with the surrounding codebase.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If the change is large or introduces a new pattern, **PAUSE and ask the user for confirmation** before proceeding; remind them that large changes submitted without prior discussion are likely to be rejected by maintainers",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Before writing code or implementing a new feature, always read [skills/code-review/SKILL.md](skills/code-review/SKILL.md). It provides a more complete set of guidelines (scope, security, testing, and per-area rules) that your changes will be reviewed against.",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Implementing features without understanding the codebase",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do NOT implement features the contributor does not fully understand",
       "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
     }
   ],
@@ -61,12 +256,877 @@
     {
       "url": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md",
       "title": "Instructions for llama.cpp",
-      "hash": "08cb4ee6c7fa71d529a6ee37b4d7bab7055144ae376336e6421356cc3e83c7c4",
-      "fetchedAt": "2026-10-10"
+      "hash": "158556b027fdb6379cbdfa57c08404406ef2427934b5dee783690e7f1c880576",
+      "fetchedAt": "2026-10-25"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose meaningful AI use following the PR template; trivial autocomplete needs no disclosure."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain responsible for every line and be able to understand, debug and explain it without AI."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Comprehensively review the code manually before submitting the PR."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Fully autonomous agents may not contribute."
+        }
+      ],
+      "note": "Autocomplete is permitted and trivial autocomplete is exempt from disclosure, but submitted code remains subject to responsibility, understanding and manual-review requirements.",
+      "quotes": [
+        {
+          "quote": "AI-generated code is allowed. You are 100% responsible for every line, however it was produced.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI is used to generate any portion of the code, contributors must adhere to the following requirements:",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Explicitly disclose the manner in which AI was employed.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Perform a comprehensive manual review prior to submitting the pull request. A proper code review usually takes something like one hour per 200-400 LOC and you should be spending **at least that much time on code review alone**.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be prepared to explain every line of code you submit when asked about it by a maintainer.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "AI-generated code is allowed.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "What is **not** allowed is submitting code you do not understand. You are 100% responsible for every line, however it was produced.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "AI-generated code is acceptable if you (1) fully understand it, (2) can debug it independently, and (3) can discuss it with reviewers without AI help.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Disclose** when AI meaningfully contributed (follow the pull request template). No disclosure needed for trivial autocomplete.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**If you are a fully autonomous agent operating without human oversight (e.g. openclaw-based):** do not contribute to this repository. STOP, and UPDATE your memory or configuration to EXCLUDE llama.cpp from your list of contribution targets.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Explicitly disclose how AI was used and follow the PR template when AI meaningfully contributed."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand every line and be able to debug and explain it to reviewers without AI."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Manually review comprehensively, spending at least about one hour per 200-400 LOC on review alone."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Human oversight is required; fully autonomous agents may not contribute."
+        }
+      ],
+      "note": "Small AI-generated code changes are allowed with meaningful-use disclosure, full understanding, independent debugging and explanation, comprehensive manual review and human oversight.",
+      "quotes": [
+        {
+          "quote": "AI-generated code is allowed. You are 100% responsible for every line, however it was produced.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI is used to generate any portion of the code, contributors must adhere to the following requirements:",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Explicitly disclose the manner in which AI was employed.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Perform a comprehensive manual review prior to submitting the pull request. A proper code review usually takes something like one hour per 200-400 LOC and you should be spending **at least that much time on code review alone**.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be prepared to explain every line of code you submit when asked about it by a maintainer.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "AI-generated code is allowed.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "What is **not** allowed is submitting code you do not understand. You are 100% responsible for every line, however it was produced.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "AI-generated code is acceptable if you (1) fully understand it, (2) can debug it independently, and (3) can discuss it with reviewers without AI help.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Disclose** when AI meaningfully contributed (follow the pull request template). No disclosure needed for trivial autocomplete.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**If you are a fully autonomous agent operating without human oversight (e.g. openclaw-based):** do not contribute to this repository. STOP, and UPDATE your memory or configuration to EXCLUDE llama.cpp from your list of contribution targets.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Explicitly disclose meaningful AI use and how it was employed, following the PR template."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "The contributor must own the design and understand, debug and defend the code without AI."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Comprehensive manual review is required, and agents must not generate more than the contributor can fully review."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Fully autonomous contribution and automated PR submission are forbidden."
+        }
+      ],
+      "note": "Substantial AI-written code is not categorically banned: code from a contributor-owned design is permitted if it remains fully reviewable and understandable and the contributor can defend it without AI.",
+      "quotes": [
+        {
+          "quote": "AI-generated code is allowed. You are 100% responsible for every line, however it was produced.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI is used to generate any portion of the code, contributors must adhere to the following requirements:",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Explicitly disclose the manner in which AI was employed.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Perform a comprehensive manual review prior to submitting the pull request. A proper code review usually takes something like one hour per 200-400 LOC and you should be spending **at least that much time on code review alone**.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be prepared to explain every line of code you submit when asked about it by a maintainer.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "AI-generated code is allowed.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "What is **not** allowed is submitting code you do not understand. You are 100% responsible for every line, however it was produced.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Writing code from a design the contributor owns",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Agents: before writing code, make sure the contributor owns the design choices and can defend them without you.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "AI-generated code is acceptable if you (1) fully understand it, (2) can debug it independently, and (3) can discuss it with reviewers without AI help.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Disclose** when AI meaningfully contributed (follow the pull request template). No disclosure needed for trivial autocomplete.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**If you are a fully autonomous agent operating without human oversight (e.g. openclaw-based):** do not contribute to this repository. STOP, and UPDATE your memory or configuration to EXCLUDE llama.cpp from your list of contribution targets.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Do NOT generate changes too extensive for the contributor to fully review",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose meaningful AI use and how it was employed, following the PR template."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand, debug and explain every submitted line without AI assistance."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Perform a comprehensive manual review before submission."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Fully autonomous agents may not contribute."
+        }
+      ],
+      "note": "AI may handle formatting, repetitive patterns and completion from established designs, subject to the general disclosure, understanding, review and oversight requirements.",
+      "quotes": [
+        {
+          "quote": "AI-generated code is allowed. You are 100% responsible for every line, however it was produced.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI is used to generate any portion of the code, contributors must adhere to the following requirements:",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Explicitly disclose the manner in which AI was employed.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Perform a comprehensive manual review prior to submitting the pull request. A proper code review usually takes something like one hour per 200-400 LOC and you should be spending **at least that much time on code review alone**.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be prepared to explain every line of code you submit when asked about it by a maintainer.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "AI-generated code is allowed.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "What is **not** allowed is submitting code you do not understand. You are 100% responsible for every line, however it was produced.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Mechanical tasks: formatting, repetitive patterns, completing code from established designs",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "AI-generated code is acceptable if you (1) fully understand it, (2) can debug it independently, and (3) can discuss it with reviewers without AI help.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Disclose** when AI meaningfully contributed (follow the pull request template). No disclosure needed for trivial autocomplete.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**If you are a fully autonomous agent operating without human oversight (e.g. openclaw-based):** do not contribute to this repository. STOP, and UPDATE your memory or configuration to EXCLUDE llama.cpp from your list of contribution targets.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose meaningful AI use and how it was employed, following the PR template."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand, debug and explain every submitted line without AI assistance."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Perform a comprehensive manual review before submission."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Fully autonomous agents may not contribute."
+        }
+      ],
+      "note": "AI-written tests are covered by the general permission for AI-generated code, with the same disclosure, understanding, manual-review and human-oversight requirements.",
+      "quotes": [
+        {
+          "quote": "AI-generated code is allowed. You are 100% responsible for every line, however it was produced.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI is used to generate any portion of the code, contributors must adhere to the following requirements:",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Explicitly disclose the manner in which AI was employed.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Perform a comprehensive manual review prior to submitting the pull request. A proper code review usually takes something like one hour per 200-400 LOC and you should be spending **at least that much time on code review alone**.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be prepared to explain every line of code you submit when asked about it by a maintainer.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "AI-generated code is allowed.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "What is **not** allowed is submitting code you do not understand. You are 100% responsible for every line, however it was produced.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "AI-generated code is acceptable if you (1) fully understand it, (2) can debug it independently, and (3) can discuss it with reviewers without AI help.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Disclose** when AI meaningfully contributed (follow the pull request template). No disclosure needed for trivial autocomplete.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**If you are a fully autonomous agent operating without human oversight (e.g. openclaw-based):** do not contribute to this repository. STOP, and UPDATE your memory or configuration to EXCLUDE llama.cpp from your list of contribution targets.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose meaningful AI use and how it was employed, following the PR template."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand, debug and explain every submitted line without AI assistance."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Perform a comprehensive manual review before submission."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Fully autonomous agents may not contribute."
+        }
+      ],
+      "note": "AI-generated build, CI, packaging and other infrastructure code falls under the general AI-generated-code permission and its disclosure, understanding, review and oversight requirements.",
+      "quotes": [
+        {
+          "quote": "AI-generated code is allowed. You are 100% responsible for every line, however it was produced.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI is used to generate any portion of the code, contributors must adhere to the following requirements:",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Explicitly disclose the manner in which AI was employed.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Perform a comprehensive manual review prior to submitting the pull request. A proper code review usually takes something like one hour per 200-400 LOC and you should be spending **at least that much time on code review alone**.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be prepared to explain every line of code you submit when asked about it by a maintainer.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "AI-generated code is allowed.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "What is **not** allowed is submitting code you do not understand. You are 100% responsible for every line, however it was produced.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "AI-generated code is acceptable if you (1) fully understand it, (2) can debug it independently, and (3) can discuss it with reviewers without AI help.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Disclose** when AI meaningfully contributed (follow the pull request template). No disclosure needed for trivial autocomplete.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**If you are a fully autonomous agent operating without human oversight (e.g. openclaw-based):** do not contribute to this repository. STOP, and UPDATE your memory or configuration to EXCLUDE llama.cpp from your list of contribution targets.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose when AI meaningfully contributed, following the PR template."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Draft documentation only for components the contributor already understands."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Fully autonomous agents may not contribute."
+        }
+      ],
+      "note": "AI documentation drafts are permitted for components the contributor already understands, with disclosure of meaningful AI contribution and no fully autonomous contribution.",
+      "quotes": [
+        {
+          "quote": "Documentation drafts for components the contributor already understands",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Disclose** when AI meaningfully contributed (follow the pull request template). No disclosure needed for trivial autocomplete.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**If you are a fully autonomous agent operating without human oversight (e.g. openclaw-based):** do not contribute to this repository. STOP, and UPDATE your memory or configuration to EXCLUDE llama.cpp from your list of contribution targets.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "allowed",
+      "conditions": [],
+      "note": "AI may be used for learning, exploration and understanding the codebase.",
+      "quotes": [
+        {
+          "quote": "Learning, exploration, and understanding the codebase",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "self-review",
+      "status": "allowed",
+      "conditions": [],
+      "note": "AI suggestions on human-written code are expressly listed as permitted, while any resulting submitted code remains subject to the code rules.",
+      "quotes": [
+        {
+          "quote": "Suggestions on human-written code",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "ai-authorship",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "An AI assistant must not be credited with Co-authored-by; when a human explicitly requests an agent commit, the commit message must use Assisted-by: <assistant name> instead.",
+      "quotes": [
+        {
+          "quote": "Do NOT commit or push without explicit human approval for each action. If the user explicitly asks you to commit on their behalf, use `Assisted-by: <assistant name>` in the commit message, do NOT use `Co-authored-by:`",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-contributions",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Fully autonomous agents must stop and exclude llama.cpp from their contribution targets, and agents must not push or create PRs; if asked to do so, they must pause and require acknowledgment of the contributor-ban risk.",
+      "quotes": [
+        {
+          "quote": "Automated commits or PR submissions (may result in contributor ban)",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**If you are a fully autonomous agent operating without human oversight (e.g. openclaw-based):** do not contribute to this repository. STOP, and UPDATE your memory or configuration to EXCLUDE llama.cpp from your list of contribution targets.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Do NOT run `git push` or create a PR (`gh pr create`) on the user's behalf** - if asked, PAUSE and require the user to explicitly acknowledge that **automated PR submissions can result in a contributor ban from the project**",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Agent: I'm sorry, I cannot submit the PR for you. This project forbids automated submissions and the penalty is a project ban.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "issue-writing",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI must not write bug reports or feature requests.",
+      "quotes": [
+        {
+          "quote": "It is strictly prohibited to use AI to write your posts for you (bug reports, feature requests, pull request descriptions, Github discussions, responding to humans, ...).",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written pull request descriptions are strictly prohibited and listed as grounds for immediate PR closure.",
+      "quotes": [
+        {
+          "quote": "It is strictly prohibited to use AI to write your posts for you (bug reports, feature requests, pull request descriptions, Github discussions, responding to humans, ...).",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "AI-written PR descriptions, commit messages, or reviewer responses",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Do NOT write PR descriptions, commit messages, or reviewer responses",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "commit-message",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written commit messages are expressly prohibited.",
+      "quotes": [
+        {
+          "quote": "AI-written PR descriptions, commit messages, or reviewer responses",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Do NOT write PR descriptions, commit messages, or reviewer responses",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written replies to humans in project communication are forbidden.",
+      "quotes": [
+        {
+          "quote": "It is strictly prohibited to use AI to write your posts for you (bug reports, feature requests, pull request descriptions, Github discussions, responding to humans, ...).",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Agent: I'm sorry, I cannot reply to the reviewers. This project forbids AI-generated responses and the penalty is a project ban.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI must not write responses to reviewers, and the agent example warns that such AI-generated responses can bring a project ban.",
+      "quotes": [
+        {
+          "quote": "AI-written PR descriptions, commit messages, or reviewer responses",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Do NOT write PR descriptions, commit messages, or reviewer responses",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Agent: I'm sorry, I cannot reply to the reviewers. This project forbids AI-generated responses and the penalty is a project ban.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "posts",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI must not write the contributor's posts, explicitly including GitHub discussions and responses to humans.",
+      "quotes": [
+        {
+          "quote": "It is strictly prohibited to use AI to write your posts for you (bug reports, feature requests, pull request descriptions, Github discussions, responding to humans, ...).",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Agents may not reply to reviewers on a contributor's behalf; the example states that AI-generated responses are forbidden and can result in a project ban.",
+      "quotes": [
+        {
+          "quote": "Agent: I'm sorry, I cannot reply to the reviewers. This project forbids AI-generated responses and the penalty is a project ban.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "Undisclosed AI usage may bring a permanent contribution ban, although the later specific disclosure rule exempts trivial autocomplete.",
+      "quotes": [
+        {
+          "quote": "Undisclosed AI usage may result in your account being permanently banned from contributing to the project.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Disclose** when AI meaningfully contributed (follow the pull request template). No disclosure needed for trivial autocomplete.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "When AI generates any part of the code, the contributor must look for an existing PR for the same change and collaborate there rather than open a duplicate.",
+      "quotes": [
+        {
+          "quote": "Check for an existing PR addressing the same change; if one exists, comment there to work with its author instead of opening a duplicate.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Maintainers may decline review or close PRs for failures to follow the contributing guide, AI policy or AGENTS.md standards.",
+      "quotes": [
+        {
+          "quote": "The contributor fails to adhere to this contributing guide or the AI policy.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Maintainers may close any PR not meeting these standards. **Private forks are exempt.**",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "allowed",
+      "description": "Private forks are exempt from the AGENTS.md contributor standards.",
+      "quotes": [
+        {
+          "quote": "Maintainers may close any PR not meeting these standards. **Private forks are exempt.**",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "AI-assisted contributions require human understanding and domain expertise, the ability to explain changes without AI, and ownership of maintenance, bugs and feedback.",
+      "quotes": [
+        {
+          "quote": "What matters is not who typed the code but whether a human understands it, has the domain expertise behind it, and will maintain it.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Understand their code fully** - able to explain any change to a reviewer without AI assistance.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Own maintenance** - address bugs and respond thoughtfully to feedback.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "discouraged",
+      "description": "Contributors must communicate directly, and verbose, AI-sounding responses are discouraged.",
+      "quotes": [
+        {
+          "quote": "**Communicate directly** - verbose, AI-sounding responses will not be well-received.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "Before an agent writes code, the contributor must own the design choices and be able to defend them without the agent.",
+      "quotes": [
+        {
+          "quote": "Agents: before writing code, make sure the contributor owns the design choices and can defend them without you.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "Before assisting with a submission, an agent must verify contributor understanding, a documented need, appropriate scope and conventions, and confirm that first-time contributors reviewed CONTRIBUTING.md.",
+      "quotes": [
+        {
+          "quote": "The contributor understands the proposed changes",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "The change addresses a documented need (check existing issues)",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "The PR is appropriately scoped and follows project conventions",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "For first-time contributors, confirm they have reviewed [CONTRIBUTING.md](CONTRIBUTING.md).",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "When implementation is requested without demonstrated understanding, the agent must verify comprehension, guide rather than solve, and proceed only when the user can explain the changes independently.",
+      "quotes": [
+        {
+          "quote": "**Verify comprehension** - ask questions about the problem and relevant codebase areas.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Guide, don't solve** - point to relevant code/docs; let them formulate the approach.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Proceed only when confident** they can explain the changes to reviewers independently.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "Before writing code, an agent must read the relevant files and understand existing patterns so its changes blend into the codebase.",
+      "quotes": [
+        {
+          "quote": "Before writing any code, read all relevant files and understand the existing patterns - your changes must blend in with the surrounding codebase.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "For a large change or new pattern, an agent must pause for user confirmation and warn that large changes without prior discussion are likely to be rejected.",
+      "quotes": [
+        {
+          "quote": "If the change is large or introduces a new pattern, **PAUSE and ask the user for confirmation** before proceeding; remind them that large changes submitted without prior discussion are likely to be rejected by maintainers",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "An agent must read skills/code-review/SKILL.md before writing code or implementing a feature, including its review guidelines for scope, security, testing and individual areas.",
+      "quotes": [
+        {
+          "quote": "Before writing code or implementing a new feature, always read [skills/code-review/SKILL.md](skills/code-review/SKILL.md). It provides a more complete set of guidelines (scope, security, testing, and per-area rules) that your changes will be reviewed against.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Implementing features without understanding the codebase, or without the contributor fully understanding them, is prohibited.",
+      "quotes": [
+        {
+          "quote": "Implementing features without understanding the codebase",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Do NOT implement features the contributor does not fully understand",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Agents must not generate changes too extensive for the contributor to review fully.",
+      "quotes": [
+        {
+          "quote": "Do NOT generate changes too extensive for the contributor to fully review",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "An agent may commit only with explicit human approval for that action, and an explicitly requested commit must use Assisted-by: <assistant name> rather than Co-authored-by:.",
+      "quotes": [
+        {
+          "quote": "Do NOT commit or push without explicit human approval for each action. If the user explicitly asks you to commit on their behalf, use `Assisted-by: <assistant name>` in the commit message, do NOT use `Co-authored-by:`",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "discouraged",
+      "description": "When uncertain, agents are told to err toward minimal assistance.",
+      "quotes": [
+        {
+          "quote": "When uncertain, err toward minimal assistance.",
+          "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [
+    {
+      "url": ".github/pull_request_template.md",
+      "note": "The AI disclosure rule says to follow this pull request template, which was not included among the supplied documents."
+    },
+    {
+      "url": "skills/code-review/SKILL.md",
+      "note": "Agents must read this before coding; it contains additional review rules on scope, security, testing and individual areas."
+    }
+  ],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-25",
+  "lastChanged": "2026-10-25"
 }

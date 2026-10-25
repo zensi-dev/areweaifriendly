@@ -4,7 +4,7 @@
   "category": "application",
   "homepage": "https://www.home-assistant.io/",
   "repo": "https://github.com/home-assistant/core",
-  "summary": "Under the Open Home Foundation policy, AI may be used for code and docs if the contributor reviews, understands and can explain every change. Autonomous agents are not allowed. AI may help with writing, but answers to maintainers must be the contributor's own, and quoted AI output must be marked.",
+  "summary": "Home Assistant allows AI-assisted code and documentation, including fully generated code, and AI help with issue and pull-request text, comments and reviews, provided a human reviews and understands the work and can explain it. Autonomous agents and AI-written answers to maintainer questions are not allowed; some repositories also require honest answers to AI questions in pull request templates.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -17,64 +17,993 @@
     "issues": {
       "verdict": "conditional",
       "conditions": [
+        "human-accountable",
+        "human-reviewed",
         "no-autonomous-agents"
       ]
     },
     "summaries": {
       "verdict": "conditional",
       "conditions": [
-        "disclosure",
-        "minor-assist-only"
+        "human-accountable",
+        "human-reviewed",
+        "no-autonomous-agents"
       ]
     }
   },
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "We support using AI (i.e., LLMs) as tools when contributing to Open Home Foundation projects. However, you are responsible for any contributions you submit, and we are responsible for any contributions we merge and release.",
+      "quote": "You are responsible for everything you submit. You must understand it, and be able to explain every change in your own words.",
       "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
     },
     {
       "dimension": "contributions",
-      "quote": "All contributions must be reviewed and understood by the contributor before submission.",
+      "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
       "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
     },
     {
       "dimension": "contributions",
-      "quote": "We do not allow autonomous agents to be used for contributing to our projects.",
+      "quote": "AI can be a helpful tool to write code and documentation. But our projects are open source foundations that many people build on, so we require a human in the loop who understands the work the AI produced.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Review and understand every contribution before you submit it. You should be able to explain every change in your pull request.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Pull requests that look like unreviewed AI output are closed without review.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You can use AI tools to help you contribute.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Don't use AI to answer questions from maintainers. You should understand your own work and be able to explain it.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The Android and iOS apps ask you to confirm that you read the AI policy, and to select exactly one of three options: you didn't use AI, AI assistance was used, or AI fully generated the code but you reviewed and understood it, and will respond without AI during the review.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Using AI tools is allowed. What matters is that you understand what you submit.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "We support using AI, like large language models, as a tool when you contribute.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "We don't allow autonomous agents to contribute to our projects. We close pull requests and issues that we believe were created autonomously, and we may mark automated comments as spam.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "That includes contributions that bypass the issue or pull request templates.",
       "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
     },
     {
       "dimension": "issues",
-      "quote": "We will close any pull requests or issues that we believe were created autonomously, and may mark automated comments as spam.",
+      "quote": "This is the AI policy of the Open Home Foundation. It applies to every contribution to Home Assistant and the other projects of the foundation: code, documentation, issues, pull requests, comments, and reviews.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "issues",
+      "quote": "You can use AI tools to help you contribute.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "issues",
+      "quote": "You are responsible for everything you submit. You must understand it, and be able to explain every change in your own words.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Submitting AI-generated content that you haven't reviewed and understood yourself wastes that time, and it won't be accepted.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "issues",
+      "quote": "We don't allow autonomous agents to contribute to our projects. We close pull requests and issues that we believe were created autonomously, and we may mark automated comments as spam.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "issues",
+      "quote": "You can use AI tools to help you write. But don't let a tool post content on your behalf that you haven't reviewed.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "issues",
+      "quote": "That includes contributions that bypass the issue or pull request templates.",
       "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
     },
     {
       "dimension": "summaries",
-      "quote": "Do not use AI to generate answers to questions from maintainers.",
+      "quote": "We don't allow autonomous agents to contribute to our projects. We close pull requests and issues that we believe were created autonomously, and we may mark automated comments as spam.",
       "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
     },
     {
       "dimension": "summaries",
-      "quote": "Using AI to improve grammar or clarity is fine, but the substance of your responses must be your own.",
+      "quote": "You can use AI tools to help you write. But don't let a tool post content on your behalf that you haven't reviewed.",
       "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
     },
     {
       "dimension": "summaries",
-      "quote": "If you wish to include context from an interaction with AI in your comments, it must be in a quote block (e.g., using >) and disclosed as such.",
+      "quote": "When you open a pull request, you must be able to explain the proposed changes in your own words. That includes the description and your answers to questions.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If AI helped you write the description, check it for technical accuracy.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "This is the AI policy of the Open Home Foundation. It applies to every contribution to Home Assistant and the other projects of the foundation: code, documentation, issues, pull requests, comments, and reviews.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You are responsible for everything you submit. You must understand it, and be able to explain every change in your own words.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Submitting AI-generated content that you haven't reviewed and understood yourself wastes that time, and it won't be accepted.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Keep your responses to what is needed to make your point. We may hide comments that we believe are unreviewed AI output.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Answer questions from maintainers yourself, not with AI.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Don't use AI to answer questions from maintainers. You should understand your own work and be able to explain it.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Using AI to improve grammar or clarity is fine, but the substance of your answers must be your own.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "The Android and iOS apps ask you to confirm that you read the AI policy, and to select exactly one of three options: you didn't use AI, AI assistance was used, or AI fully generated the code but you reviewed and understood it, and will respond without AI during the review.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If you use AI to translate your comments, make sure the translation says what you mean. Consider adding your original text in a details block, like this:",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Using it to improve the grammar or clarity of text you wrote yourself is fine.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Want to include something from a conversation with an AI? Put it in a quote block, using >, and say where it came from.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Add your own comment that explains why it matters. Don't share long snippets.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Several repositories ask about AI in their pull request template. Leave those parts in place, and answer them honestly.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Home Assistant Core and the frontend have two checkboxes in the checklist: \"I understand the code I am submitting and can explain how it works\", and \"Any generated code has been carefully reviewed for correctness and compliance with project standards\".",
       "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
     }
   ],
   "sources": [
     {
       "url": "https://developers.home-assistant.io/docs/ai_policy",
-      "title": "Open Home Foundation AI Policy",
-      "hash": "27790280938a2c11ee1a153b469ac6e126d272aac9a69b0085f4db39dfcd2c09",
-      "fetchedAt": "2026-10-09"
+      "title": "AI policy | Home Assistant Contributors",
+      "hash": "358289b1589c66f4133c2ebad6dee5a6d5279166e26b4962183d028d6704a179",
+      "fetchedAt": "2026-10-25"
     }
   ],
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand the completed code and be able to explain every change in your own words."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and understand AI-generated code before submitting it."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "A human must remain in the loop; autonomous agents cannot contribute."
+        }
+      ],
+      "note": "AI completion is allowed as code-writing assistance only when the contributor reviews and understands the resulting code and can explain every change.",
+      "quotes": [
+        {
+          "quote": "You are responsible for everything you submit. You must understand it, and be able to explain every change in your own words.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "AI can be a helpful tool to write code and documentation. But our projects are open source foundations that many people build on, so we require a human in the loop who understands the work the AI produced.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Review and understand every contribution before you submit it. You should be able to explain every change in your pull request.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Pull requests that look like unreviewed AI output are closed without review.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand the submission and be able to explain every change in your own words."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and understand AI-generated work before submitting it."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "A human must remain in the loop; autonomous agents cannot contribute."
+        }
+      ],
+      "note": "Small AI-written code changes are allowed if the contributor reviews and understands them and can explain every change; unreviewed output is not accepted.",
+      "quotes": [
+        {
+          "quote": "You can use AI tools to help you contribute.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "You are responsible for everything you submit. You must understand it, and be able to explain every change in your own words.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "AI can be a helpful tool to write code and documentation. But our projects are open source foundations that many people build on, so we require a human in the loop who understands the work the AI produced.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Review and understand every contribution before you submit it. You should be able to explain every change in your pull request.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Pull requests that look like unreviewed AI output are closed without review.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand the submission, explain every change, and answer review questions yourself."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and understand even fully AI-generated code before submitting it."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "A human must remain in the loop; autonomous agents cannot contribute."
+        }
+      ],
+      "note": "Large or fully AI-generated code is allowed with human review and understanding, but the contributor must explain it and answer maintainers without AI; unreviewed pull requests are closed.",
+      "quotes": [
+        {
+          "quote": "You are responsible for everything you submit. You must understand it, and be able to explain every change in your own words.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Don't use AI to answer questions from maintainers. You should understand your own work and be able to explain it.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "AI can be a helpful tool to write code and documentation. But our projects are open source foundations that many people build on, so we require a human in the loop who understands the work the AI produced.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Review and understand every contribution before you submit it. You should be able to explain every change in your pull request.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Pull requests that look like unreviewed AI output are closed without review.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "The Android and iOS apps ask you to confirm that you read the AI policy, and to select exactly one of three options: you didn't use AI, AI assistance was used, or AI fully generated the code but you reviewed and understood it, and will respond without AI during the review.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Using AI tools is allowed. What matters is that you understand what you submit.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand the submission and be able to explain every change in your own words."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and understand AI-generated work before submitting it."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "A human must remain in the loop; autonomous agents cannot contribute."
+        }
+      ],
+      "note": "Mechanical AI-generated code edits are subject to the same rules as other code: human review, understanding, and the ability to explain every change are required.",
+      "quotes": [
+        {
+          "quote": "You are responsible for everything you submit. You must understand it, and be able to explain every change in your own words.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "AI can be a helpful tool to write code and documentation. But our projects are open source foundations that many people build on, so we require a human in the loop who understands the work the AI produced.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Review and understand every contribution before you submit it. You should be able to explain every change in your pull request.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Pull requests that look like unreviewed AI output are closed without review.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand the submission and be able to explain every change in your own words."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and understand AI-generated work before submitting it."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "A human must remain in the loop; autonomous agents cannot contribute."
+        }
+      ],
+      "note": "AI-written tests and benchmarks are treated as code and are allowed only with human review, understanding, and the ability to explain the submitted changes.",
+      "quotes": [
+        {
+          "quote": "You are responsible for everything you submit. You must understand it, and be able to explain every change in your own words.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "AI can be a helpful tool to write code and documentation. But our projects are open source foundations that many people build on, so we require a human in the loop who understands the work the AI produced.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Review and understand every contribution before you submit it. You should be able to explain every change in your pull request.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Pull requests that look like unreviewed AI output are closed without review.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand the submission and be able to explain every change in your own words."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and understand AI-generated work before submitting it."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "A human must remain in the loop; autonomous agents cannot contribute."
+        }
+      ],
+      "note": "AI-written build, CI, packaging, or other infrastructure code falls under the general code permission and requires human review, understanding, and explanation.",
+      "quotes": [
+        {
+          "quote": "You are responsible for everything you submit. You must understand it, and be able to explain every change in your own words.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "AI can be a helpful tool to write code and documentation. But our projects are open source foundations that many people build on, so we require a human in the loop who understands the work the AI produced.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Review and understand every contribution before you submit it. You should be able to explain every change in your pull request.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Pull requests that look like unreviewed AI output are closed without review.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand the AI-produced documentation and be able to explain the changes in your pull request."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and understand every contribution before submitting it."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "A human must remain in the loop; autonomous agents cannot contribute."
+        }
+      ],
+      "note": "AI may write documentation, but a human must review and understand it and be able to explain the pull request; pull requests resembling unreviewed AI output are closed without review.",
+      "quotes": [
+        {
+          "quote": "You are responsible for everything you submit. You must understand it, and be able to explain every change in your own words.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "We support using AI, like large language models, as a tool when you contribute.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "AI can be a helpful tool to write code and documentation. But our projects are open source foundations that many people build on, so we require a human in the loop who understands the work the AI produced.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Review and understand every contribution before you submit it. You should be able to explain every change in your pull request.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Pull requests that look like unreviewed AI output are closed without review.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "agent-contributions",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Autonomous agents may not contribute, and autonomously created pull requests are closed; the policy includes contributions that bypass issue or pull request templates in this enforcement.",
+      "quotes": [
+        {
+          "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "We don't allow autonomous agents to contribute to our projects. We close pull requests and issues that we believe were created autonomously, and we may mark automated comments as spam.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "That includes contributions that bypass the issue or pull request templates.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "issue-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain responsible for and understand what you submit."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-assisted issue content before posting it."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Issues created autonomously are closed."
+        }
+      ],
+      "note": "AI may help write issue text, but the submitter must review and understand it; autonomous issue creation is prohibited.",
+      "quotes": [
+        {
+          "quote": "This is the AI policy of the Open Home Foundation. It applies to every contribution to Home Assistant and the other projects of the foundation: code, documentation, issues, pull requests, comments, and reviews.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "You can use AI tools to help you contribute.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "You are responsible for everything you submit. You must understand it, and be able to explain every change in your own words.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Submitting AI-generated content that you haven't reviewed and understood yourself wastes that time, and it won't be accepted.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "We don't allow autonomous agents to contribute to our projects. We close pull requests and issues that we believe were created autonomously, and we may mark automated comments as spam.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "You can use AI tools to help you write. But don't let a tool post content on your behalf that you haven't reviewed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "agent-issues",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Autonomous agents may not open issues, and issues believed to have been created autonomously are closed, with template-bypassing contributions included in this enforcement.",
+      "quotes": [
+        {
+          "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "We don't allow autonomous agents to contribute to our projects. We close pull requests and issues that we believe were created autonomously, and we may mark automated comments as spam.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "That includes contributions that bypass the issue or pull request templates.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Explain the proposed changes in your own words, including the description."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Check an AI-assisted description for technical accuracy."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Pull requests created autonomously are closed."
+        }
+      ],
+      "note": "AI may help write a pull request description if it is checked for technical accuracy and the contributor can explain the changes in their own words.",
+      "quotes": [
+        {
+          "quote": "We don't allow autonomous agents to contribute to our projects. We close pull requests and issues that we believe were created autonomously, and we may mark automated comments as spam.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "You can use AI tools to help you write. But don't let a tool post content on your behalf that you haven't reviewed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "When you open a pull request, you must be able to explain the proposed changes in your own words. That includes the description and your answers to questions.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "If AI helped you write the description, check it for technical accuracy.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain responsible for and understand submitted AI-generated content."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review content before a tool posts it; unreviewed AI comments may be hidden."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Autonomous agents cannot contribute, and automated comments may be marked as spam."
+        }
+      ],
+      "note": "AI may help write comments, but they must be reviewed and understood before posting and kept to the point; comments believed to be unreviewed AI output may be hidden.",
+      "quotes": [
+        {
+          "quote": "This is the AI policy of the Open Home Foundation. It applies to every contribution to Home Assistant and the other projects of the foundation: code, documentation, issues, pull requests, comments, and reviews.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "You are responsible for everything you submit. You must understand it, and be able to explain every change in your own words.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Submitting AI-generated content that you haven't reviewed and understood yourself wastes that time, and it won't be accepted.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "We don't allow autonomous agents to contribute to our projects. We close pull requests and issues that we believe were created autonomously, and we may mark automated comments as spam.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "You can use AI tools to help you write. But don't let a tool post content on your behalf that you haven't reviewed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Keep your responses to what is needed to make your point. We may hide comments that we believe are unreviewed AI output.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI must not supply the substance of answers to maintainer questions, although grammar or clarity improvements are allowed and mobile contributors expressly commit to respond without AI.",
+      "quotes": [
+        {
+          "quote": "Answer questions from maintainers yourself, not with AI.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "When you open a pull request, you must be able to explain the proposed changes in your own words. That includes the description and your answers to questions.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Don't use AI to answer questions from maintainers. You should understand your own work and be able to explain it.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Using AI to improve grammar or clarity is fine, but the substance of your answers must be your own.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "The Android and iOS apps ask you to confirm that you read the AI policy, and to select exactly one of three options: you didn't use AI, AI assistance was used, or AI fully generated the code but you reviewed and understood it, and will respond without AI during the review.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "code-review-others",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain responsible for and understand AI-generated review content."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-assisted content before it is posted."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Autonomous agents cannot contribute reviews."
+        }
+      ],
+      "note": "AI may help write reviews of others' work, but the human reviewer must review and understand the content before posting and cannot act as an autonomous agent.",
+      "quotes": [
+        {
+          "quote": "This is the AI policy of the Open Home Foundation. It applies to every contribution to Home Assistant and the other projects of the foundation: code, documentation, issues, pull requests, comments, and reviews.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "You are responsible for everything you submit. You must understand it, and be able to explain every change in your own words.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Submitting AI-generated content that you haven't reviewed and understood yourself wastes that time, and it won't be accepted.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "We don't allow autonomous agents to contribute to our projects. We close pull requests and issues that we believe were created autonomously, and we may mark automated comments as spam.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "You can use AI tools to help you write. But don't let a tool post content on your behalf that you haven't reviewed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "translation",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Make sure the translation says what you mean."
+        },
+        {
+          "condition": "include-original",
+          "strength": "recommended",
+          "detail": "Consider adding the original text in a details block."
+        }
+      ],
+      "note": "AI translation of your own comments is allowed if you verify the meaning, and including the original text in a details block is recommended.",
+      "quotes": [
+        {
+          "quote": "If you use AI to translate your comments, make sure the translation says what you mean. Consider adding your original text in a details block, like this:",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "proofreading",
+      "status": "allowed",
+      "conditions": [],
+      "note": "AI may improve the grammar or clarity of text the contributor wrote, including answers to maintainers, but it may not supply the substance of those answers.",
+      "quotes": [
+        {
+          "quote": "Using AI to improve grammar or clarity is fine, but the substance of your answers must be your own.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Using it to improve the grammar or clarity of text you wrote yourself is fine.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "quoting-ai",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "mark-quotes",
+          "strength": "required",
+          "detail": "Use a > quote block, say where the output came from, and add your own comment explaining its relevance."
+        },
+        {
+          "condition": "size-limit",
+          "strength": "required",
+          "detail": "Do not share long snippets."
+        }
+      ],
+      "note": "AI output may be included only in a marked quote block with its source, an explanatory comment from the contributor, and no long snippets.",
+      "quotes": [
+        {
+          "quote": "Want to include something from a conversation with an AI? Put it in a quote block, using >, and say where it came from.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Add your own comment that explains why it matters. Don't share long snippets.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "use": "agent-comments",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A tool must not post content on your behalf that you have not reviewed."
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Autonomous agents are prohibited, and automated comments may be marked as spam."
+        }
+      ],
+      "note": "A tool may post on a contributor's behalf only after the contributor reviews the content; autonomous agents are not allowed and automated comments may be marked as spam.",
+      "quotes": [
+        {
+          "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "We don't allow autonomous agents to contribute to our projects. We close pull requests and issues that we believe were created autonomously, and we may mark automated comments as spam.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "You can use AI tools to help you write. But don't let a tool post content on your behalf that you haven't reviewed.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "Keep your responses to what is needed to make your point. We may hide comments that we believe are unreviewed AI output.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "allowed",
+      "description": "Contributors may treat AI-tool comments like other review comments, briefly explain disagreements, and ask a maintainer when in doubt, with maintainers having the final say.",
+      "quotes": [
+        {
+          "quote": "Treat a comment from an AI tool like any other review comment. If you think it's wrong, say so.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "A short explanation is enough. Maintainers always have the final say.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        },
+        {
+          "quote": "If in doubt, ask a maintainer.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "Contributions that violate the AI policy are closed, and repeated violations can lead to being blocked from contributing to Open Home Foundation projects.",
+      "quotes": [
+        {
+          "quote": "Contributions that don't follow this policy are closed. Repeated violations can get you blocked from contributing to Open Home Foundation projects.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "allowed",
+      "description": "A contributor who believes a contribution was closed by mistake may contact a maintainer to discuss it.",
+      "quotes": [
+        {
+          "quote": "If you think your contribution was closed by mistake, reach out to a maintainer to talk about it.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "Repositories whose pull request templates ask about AI require contributors to leave those sections in place and answer them honestly.",
+      "quotes": [
+        {
+          "quote": "Several repositories ask about AI in their pull request template. Leave those parts in place, and answer them honestly.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "Home Assistant Core and frontend pull request checklists ask contributors to confirm that they understand and can explain their code and that generated code was carefully reviewed for correctness and compliance with project standards.",
+      "quotes": [
+        {
+          "quote": "Home Assistant Core and the frontend have two checkboxes in the checklist: \"I understand the code I am submitting and can explain how it works\", and \"Any generated code has been carefully reviewed for correctness and compliance with project standards\".",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "Android and iOS pull request templates require confirming that the AI policy was read and selecting exactly one option: no AI use, AI assistance, or fully AI-generated code that was reviewed and understood, with review responses made without AI.",
+      "quotes": [
+        {
+          "quote": "The Android and iOS apps ask you to confirm that you read the AI policy, and to select exactly one of three options: you didn't use AI, AI assistance was used, or AI fully generated the code but you reviewed and understood it, and will respond without AI during the review.",
+          "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [
+    {
+      "url": "Contribute with AI tools",
+      "note": "The policy refers readers to this document for practical AI-tool skills and workflows for common contribution tasks; its text was not supplied."
+    },
+    {
+      "url": "AI_POLICY.md",
+      "note": "The policy names this file in the Home Assistant organization's .github repository as the published copy that applies if the two versions differ."
+    }
+  ],
+  "rubricVersion": 1,
   "confidence": "medium",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-25",
+  "lastChanged": "2026-10-25"
 }

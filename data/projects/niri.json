@@ -4,11 +4,13 @@
   "category": "application",
   "homepage": "https://github.com/niri-wm/niri",
   "repo": "https://github.com/niri-wm/niri",
-  "summary": "LLMs may not be used to create anything: code, issues, comments and reviews must be human-written. LLM translation of human-written text is allowed if the original is included.",
+  "summary": "niri generally forbids LLM-created content and requires pull request code and tests, issue descriptions, comments, and public reviews to be human-written. Private LLM use is allowed except for writing from scratch, and LLMs may translate a contributor's own text only if the original text is also provided.",
   "policy": {
     "contributions": {
-      "verdict": "banned",
-      "conditions": []
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
     },
     "issues": {
       "verdict": "conditional",
@@ -26,17 +28,52 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "You're not allowed to use LLMs to create.",
+      "quote": "You're not allowed to use LLMs to *create*.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
       "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "issues",
-      "quote": "All pull request code, issue descriptions, comments, public reviews, etc. must be human-written.",
+      "quote": "You're not allowed to use LLMs to *create*.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
       "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "summaries",
-      "quote": "You may use LLMs for translating your human-written text; in this case you must also provide the original text to reduce the chance of miscommunication.",
+      "quote": "You're not allowed to use LLMs to *create*.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You may use LLMs for *translating* your human-written text; in this case you must also provide the original text to reduce the chance of miscommunication.",
       "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
     }
   ],
@@ -44,12 +81,311 @@
     {
       "url": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md",
       "title": "Contributing to niri",
-      "hash": "775ba27483b5bf3089a989b7b5a93882a39a8a01b17a062f47811d2336fd0312",
-      "fetchedAt": "2026-10-10"
+      "hash": "d0e3962a2404b9a7965465e9f9ece6f61ab99d40675df06a1c7e7979c410b837",
+      "fetchedAt": "2026-10-25"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "LLM completions may not be used for submitted pull request code, which must be human-written.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "LLMs may not write even small pull request changes because all pull request code must be human-written.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "LLMs may not write substantial pull request changes because all pull request code must be human-written.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "LLM-generated mechanical edits may not be submitted as pull request code, which must be human-written.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Tests are explicitly included in the prohibition: LLM-written test code may not be submitted in pull requests.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "LLM-generated build, CI, packaging, or other infrastructure code may not be submitted as pull request code.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "The general prohibition on using LLMs to create forbids LLM-written documentation submitted as a change.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Private LLM use for research or learning is permitted, but LLMs must not write the submitted work from scratch.",
+      "quotes": [
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "issue-writing",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Issue descriptions must be human-written, so LLMs may not write issue reports or feature requests from scratch.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "The general prohibition on LLM creation forbids LLM-written pull request descriptions.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "commit-message",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "The general prohibition on LLM creation forbids LLM-written commit messages.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Comments must be human-written, so LLM-written comments on issues or pull requests are forbidden.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Answers to maintainers or reviewers posted as comments must be human-written rather than LLM-written.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-review-others",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Public reviews must be human-written, including reviews of other people's pull requests.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "All pull request code (including tests), issue descriptions, comments, public reviews, etc. must be human-written.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "posts",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "LLM-written project posts fall under the general prohibition on using LLMs to create content.",
+      "quotes": [
+        {
+          "quote": "You're not allowed to use LLMs to *create*.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You can use LLMs privately (not like I can check or control that), but not to write from scratch.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "translation",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "include-original",
+          "strength": "required",
+          "detail": "Provide the original text along with the LLM translation."
+        }
+      ],
+      "note": "LLMs may translate text written by the contributor, but the original human-written text must also be provided.",
+      "quotes": [
+        {
+          "quote": "You may use LLMs for *translating* your human-written text; in this case you must also provide the original text to reduce the chance of miscommunication.",
+          "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-25",
+  "lastChanged": "2026-10-25"
 }

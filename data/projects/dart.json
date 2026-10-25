@@ -4,13 +4,13 @@
   "category": "language",
   "homepage": "https://dart.dev/",
   "repo": "https://github.com/dart-lang/sdk",
-  "summary": "AI-prepared changes are fine if you review all generated code, make sure it compiles and passes tests, and can discuss it. Verify any AI-generated text in descriptions and review comments.",
+  "summary": "Dart permits AI-assisted contributions, but contributors must review all generated code, ensure it meets standards and compiles and passes at least their added tests, and understand and be able to discuss it. AI-generated text in change descriptions and review discussions must be verified for accuracy; reviewers are advised to consider closing changes with listed AI-related red flags.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
-        "human-accountable",
-        "human-reviewed"
+        "human-reviewed",
+        "human-accountable"
       ]
     },
     "issues": {
@@ -27,7 +27,27 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "You must review all AI-generated code before uploading it for review",
+      "quote": "PRs prepared using AI tools must follow these requirements:",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You must review all AI-generated code before uploading it for review, and before requesting\n re-review of any updates to the uploaded change.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You are responsible for ensuring that code you submit meets coding standards.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Unmodified AI output generally does _not_ meet those standards.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You must ensure that uploaded code compiles and passes at least the tests you have yourself\n added as part of the change.",
       "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
     },
     {
@@ -36,21 +56,616 @@
       "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
     },
     {
+      "dimension": "contributions",
+      "quote": "Non-trivial changes require discussion and iteration during review. If you do not understand the\n code, you cannot meaningfully respond to review feedback.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Submitting a change containing hundreds of lines of code that the contributor doesn't understand is\n always a problem.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
       "dimension": "summaries",
-      "quote": "You must verify the accuracy of any AI-generated text you include in the change description or review discussion comments.",
+      "quote": "PRs prepared using AI tools must follow these requirements:",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You must verify the accuracy of any AI-generated text you include in the change description or\n review discussion comments.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If an AI provides you incorrect information, it is just hallucinating; if you choose to paste\n that text into GitHub, you are misrepresenting your change to your reviewer.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Consider immediately closing changes that have any of the following red flags:",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "The change description has entirely replaced our template with AI-generated output.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "The change description does not match the changes.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If the contributor did not review both the changes and the description enough to notice this,\n they have not followed the AI contribution policy.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You must understand and be able to discuss the code you are uploading for review.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Non-trivial changes require discussion and iteration during review. If you do not understand the\n code, you cannot meaningfully respond to review feedback.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "In our experience, simply feeding review feedback into an AI agent and uncritically reposting\n its output will not lead to a constructive review.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "In particular, do not tell a reviewer that you have addressed their feedback just because\n AI output says so. It is your responsibility to make sure that review feedback has actually\n been addressed.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Because the Dart team’s time is limited, and the capacity for people outside the team to generate\nplausible-looking code is unlimited, be mindful as a reviewer about what code you choose to review.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Consider immediately closing changes that have any of the following red flags:",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The change description has entirely replaced our template with AI-generated output.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The change description does not match the changes.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The change contains irrelevant AI-generated files, such as agent planning .md files.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If the contributor did not review both the changes and the description enough to notice this,\n they have not followed the AI contribution policy.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If the contributor did not review the changes enough to notice and remove these files, they\n have not followed the AI contribution policy.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "As always when closing a change, explain why and provide next steps.",
       "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
     }
   ],
   "sources": [
     {
       "url": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md",
-      "title": "Contributing to Dart",
-      "hash": "3e17005b0b352cb6a20106ff7fa8c3416de2603092652533e61add16f91eefb6",
-      "fetchedAt": "2026-10-10"
+      "title": "Contributing feedback",
+      "hash": "5576963d822a717ba0a072d9ef9c2d4995d43562e225c26206f5eab499116a97",
+      "fetchedAt": "2026-10-25"
     }
   ],
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated code before upload and before requesting re-review; ensure coding standards, compilation, and passage of at least the tests you added."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and be able to discuss the uploaded code well enough to respond meaningfully to review feedback."
+        }
+      ],
+      "note": "Code inserted through AI completion is subject to the same requirements as other AI-generated code: personal review, standards and compile/test checks, and sufficient understanding to discuss it.",
+      "quotes": [
+        {
+          "quote": "PRs prepared using AI tools must follow these requirements:",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must review all AI-generated code before uploading it for review, and before requesting\n re-review of any updates to the uploaded change.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You are responsible for ensuring that code you submit meets coding standards.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Unmodified AI output generally does _not_ meet those standards.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must ensure that uploaded code compiles and passes at least the tests you have yourself\n added as part of the change.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must understand and be able to discuss the code you are uploading for review.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Non-trivial changes require discussion and iteration during review. If you do not understand the\n code, you cannot meaningfully respond to review feedback.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated code before upload and before requesting re-review; ensure coding standards, compilation, and passage of at least the tests you added."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and be able to discuss the uploaded code well enough to respond meaningfully to review feedback."
+        }
+      ],
+      "note": "Small AI-written changes may be submitted only after full review and the required checks, and the contributor must understand and be able to discuss the code.",
+      "quotes": [
+        {
+          "quote": "PRs prepared using AI tools must follow these requirements:",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must review all AI-generated code before uploading it for review, and before requesting\n re-review of any updates to the uploaded change.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You are responsible for ensuring that code you submit meets coding standards.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Unmodified AI output generally does _not_ meet those standards.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must ensure that uploaded code compiles and passes at least the tests you have yourself\n added as part of the change.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must understand and be able to discuss the code you are uploading for review.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Non-trivial changes require discussion and iteration during review. If you do not understand the\n code, you cannot meaningfully respond to review feedback.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated code before upload and before requesting re-review; ensure coding standards, compilation, and passage of at least the tests you added."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and be able to discuss the uploaded code well enough to respond meaningfully to review feedback."
+        }
+      ],
+      "note": "Substantial AI-written code is subject to the same review, verification and understanding requirements, and submitting hundreds of lines the contributor does not understand is explicitly identified as a problem.",
+      "quotes": [
+        {
+          "quote": "PRs prepared using AI tools must follow these requirements:",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must review all AI-generated code before uploading it for review, and before requesting\n re-review of any updates to the uploaded change.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You are responsible for ensuring that code you submit meets coding standards.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Unmodified AI output generally does _not_ meet those standards.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must ensure that uploaded code compiles and passes at least the tests you have yourself\n added as part of the change.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must understand and be able to discuss the code you are uploading for review.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Non-trivial changes require discussion and iteration during review. If you do not understand the\n code, you cannot meaningfully respond to review feedback.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Submitting a change containing hundreds of lines of code that the contributor doesn't understand is\n always a problem.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated code before upload and before requesting re-review; ensure coding standards, compilation, and passage of at least the tests you added."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and be able to discuss the uploaded code well enough to respond meaningfully to review feedback."
+        }
+      ],
+      "note": "AI-generated mechanical or repetitive code edits must be reviewed and verified before upload and re-review, and the contributor must understand and be able to discuss them.",
+      "quotes": [
+        {
+          "quote": "PRs prepared using AI tools must follow these requirements:",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must review all AI-generated code before uploading it for review, and before requesting\n re-review of any updates to the uploaded change.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You are responsible for ensuring that code you submit meets coding standards.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Unmodified AI output generally does _not_ meet those standards.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must ensure that uploaded code compiles and passes at least the tests you have yourself\n added as part of the change.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must understand and be able to discuss the code you are uploading for review.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Non-trivial changes require discussion and iteration during review. If you do not understand the\n code, you cannot meaningfully respond to review feedback.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-written test code like all other AI-generated code, and ensure the uploaded code compiles and passes at least the tests added in the change."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and be able to discuss the uploaded code well enough to respond meaningfully to review feedback."
+        }
+      ],
+      "note": "AI-written tests must be personally reviewed, the uploaded code must compile and pass at least the contributor's added tests, and the contributor must understand and be able to discuss the change.",
+      "quotes": [
+        {
+          "quote": "PRs prepared using AI tools must follow these requirements:",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must review all AI-generated code before uploading it for review, and before requesting\n re-review of any updates to the uploaded change.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You are responsible for ensuring that code you submit meets coding standards.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Unmodified AI output generally does _not_ meet those standards.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must ensure that uploaded code compiles and passes at least the tests you have yourself\n added as part of the change.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must understand and be able to discuss the code you are uploading for review.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Non-trivial changes require discussion and iteration during review. If you do not understand the\n code, you cannot meaningfully respond to review feedback.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated code before upload and before requesting re-review; ensure coding standards, compilation, and passage of at least the tests you added."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and be able to discuss the uploaded code well enough to respond meaningfully to review feedback."
+        }
+      ],
+      "note": "The blanket rules for all AI-generated code also cover AI-written build, CI and other infrastructure code, requiring review, verification and personal understanding before submission.",
+      "quotes": [
+        {
+          "quote": "PRs prepared using AI tools must follow these requirements:",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must review all AI-generated code before uploading it for review, and before requesting\n re-review of any updates to the uploaded change.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You are responsible for ensuring that code you submit meets coding standards.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Unmodified AI output generally does _not_ meet those standards.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must ensure that uploaded code compiles and passes at least the tests you have yourself\n added as part of the change.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must understand and be able to discuss the code you are uploading for review.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Non-trivial changes require discussion and iteration during review. If you do not understand the\n code, you cannot meaningfully respond to review feedback.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Verify the accuracy of AI-generated text in the change description and review the description against the actual changes."
+        }
+      ],
+      "note": "AI-generated change-description text must be verified for accuracy and match the changes, while entirely replacing the project template with AI output is a red flag that reviewers are advised to consider closing.",
+      "quotes": [
+        {
+          "quote": "PRs prepared using AI tools must follow these requirements:",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must verify the accuracy of any AI-generated text you include in the change description or\n review discussion comments.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If an AI provides you incorrect information, it is just hallucinating; if you choose to paste\n that text into GitHub, you are misrepresenting your change to your reviewer.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Consider immediately closing changes that have any of the following red flags:",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "The change description has entirely replaced our template with AI-generated output.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "The change description does not match the changes.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If the contributor did not review both the changes and the description enough to notice this,\n they have not followed the AI contribution policy.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Verify the accuracy of any AI-generated text included in review discussion comments."
+        }
+      ],
+      "note": "AI-generated text in review discussion comments must be checked for accuracy, and pasting incorrect AI output is treated as misrepresenting the change to its reviewer.",
+      "quotes": [
+        {
+          "quote": "PRs prepared using AI tools must follow these requirements:",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must verify the accuracy of any AI-generated text you include in the change description or\n review discussion comments.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If an AI provides you incorrect information, it is just hallucinating; if you choose to paste\n that text into GitHub, you are misrepresenting your change to your reviewer.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Verify the accuracy of AI-generated text used in review discussion comments."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and discuss the code, and personally ensure review feedback has actually been addressed rather than trusting an AI statement that it has."
+        }
+      ],
+      "note": "AI assistance with review responses requires accuracy verification and personal understanding; uncritically reposting an agent's output is discouraged, and claiming feedback is addressed merely because AI says so is prohibited.",
+      "quotes": [
+        {
+          "quote": "PRs prepared using AI tools must follow these requirements:",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must understand and be able to discuss the code you are uploading for review.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Non-trivial changes require discussion and iteration during review. If you do not understand the\n code, you cannot meaningfully respond to review feedback.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "In our experience, simply feeding review feedback into an AI agent and uncritically reposting\n its output will not lead to a constructive review.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must verify the accuracy of any AI-generated text you include in the change description or\n review discussion comments.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If an AI provides you incorrect information, it is just hallucinating; if you choose to paste\n that text into GitHub, you are misrepresenting your change to your reviewer.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "In particular, do not tell a reviewer that you have addressed their feedback just because\n AI output says so. It is your responsibility to make sure that review feedback has actually\n been addressed.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "discouraged",
+      "description": "Reviewers are advised to be selective and consider immediately closing changes with these red flags: a description wholly replacing the template with AI output, a description that does not match the change, or irrelevant AI-generated files such as agent planning .md files.",
+      "quotes": [
+        {
+          "quote": "Because the Dart team’s time is limited, and the capacity for people outside the team to generate\nplausible-looking code is unlimited, be mindful as a reviewer about what code you choose to review.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Consider immediately closing changes that have any of the following red flags:",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "The change description has entirely replaced our template with AI-generated output.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "The change description does not match the changes.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "The change contains irrelevant AI-generated files, such as agent planning .md files.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Failing to review the change and description enough to catch a mismatch, or to notice and remove irrelevant AI-generated files, is explicitly treated as not following the AI contribution policy.",
+      "quotes": [
+        {
+          "quote": "The change description does not match the changes.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If the contributor did not review both the changes and the description enough to notice this,\n they have not followed the AI contribution policy.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "The change contains irrelevant AI-generated files, such as agent planning .md files.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If the contributor did not review the changes enough to notice and remove these files, they\n have not followed the AI contribution policy.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "Whenever reviewers close a change, they must explain why and provide next steps.",
+      "quotes": [
+        {
+          "quote": "As always when closing a change, explain why and provide next steps.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "discouraged",
+      "description": "Reviewers are told that reviewing apparent unfiltered or minimally filtered AI code or comment responses is not a good use of time unless they would both fix the issue themselves and use such a high-latency agent, even after multiple review rounds.",
+      "quotes": [
+        {
+          "quote": "As a guiding principle, if at any point in the process you feel that you are getting unfiltered\nor minimally filtered AI output as code and/or comment responses, ask yourself:",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If this change weren’t here, would I choose to spend my time fixing this issue?",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Would I choose to fix it using an AI agent that took hours or days to respond to every prompt?",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Unless the answer to both questions is yes, the review is not a good use of your time.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "This applies even if you are multiple rounds into the review: if the contributor closed the change,\nwould you take it over using an extremely high-latency agent? Beware the sunk cost fallacy.",
+          "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-25",
+  "lastChanged": "2026-10-25"
 }
