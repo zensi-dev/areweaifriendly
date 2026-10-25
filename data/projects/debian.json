@@ -4,7 +4,7 @@
   "category": "distribution",
   "homepage": "https://www.debian.org/",
   "repo": "https://salsa.debian.org/",
-  "summary": "By general resolution in August 2026, Debian chose \"Responsible Use of Generative AI\" over seven other options, including bans. Generative AI is neither endorsed nor prohibited: contributors must understand, review and test AI-assisted output, consider licensing and remain fully accountable. Disclosure is encouraged but not required, and mass automated actions need prior discussion and human oversight.",
+  "summary": "Debian permits but does not endorse generative AI assistance for development, packaging, documentation and other published media; disclosure is encouraged, not required. Contributors must understand, review and test output, remain accountable and address licensing; non-public information may not be sent to third-party AI services without authorization, and broad-impact actions need prior discussion and consensus with accountable human oversight of automation.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -15,10 +15,8 @@
       ]
     },
     "issues": {
-      "verdict": "conditional",
-      "conditions": [
-        "human-accountable"
-      ]
+      "verdict": "unspecified",
+      "conditions": []
     },
     "summaries": {
       "verdict": "unspecified",
@@ -33,7 +31,22 @@
     },
     {
       "dimension": "contributions",
+      "quote": "The Debian Project nevertheless expects that all contributions submitted to Debian, regardless of how and with which tools they were produced, satisfy the same standards of quality, correctness, maintainability, and legal compliance.",
+      "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit.",
+      "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+    },
+    {
+      "dimension": "contributions",
       "quote": "Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian.",
+      "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Blindly accepting or uploading AI-generated material without appropriate human review is inconsistent with Debian's established development practices.",
       "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
     },
     {
@@ -43,16 +56,41 @@
     },
     {
       "dimension": "contributions",
-      "quote": "to consider the provenance and licensing implications of material they contribute",
+      "quote": "Instead, Debian continues to rely on the judgment and responsibility of its individual contributors.",
       "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
     },
     {
-      "dimension": "issues",
+      "dimension": "contributions",
+      "quote": "Project members are expected to exercise appropriate care when using generative AI tools, to consider the provenance and licensing implications of material they contribute, and to avoid introducing content whose legal status they cannot reasonably justify.",
+      "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Existing Debian policies governing licensing, copyright, software freedom, and the acceptance of contributions continue to apply irrespective of the tools used to produce those contributions.",
+      "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "This resolution therefore affirms that generative AI is neither exempt from nor subject to special rules beyond the standards already expected of Debian contributors.",
+      "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The responsibility for every contribution rests with the contributor who submits it, who remains accountable for its technical quality, legal acceptability, and suitability for inclusion in Debian.",
+      "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The use of generative AI does not alter Debian's established expectations regarding large-scale or automated project actions.",
+      "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+    },
+    {
+      "dimension": "contributions",
       "quote": "Contributors intending to perform actions with broad project impact, such as mass bug filing or patch submission, large-scale code modifications, or other automated changes or requests affecting many packages or contributors, should seek prior discussion and consensus through the appropriate project channels before proceeding.",
       "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
     },
     {
-      "dimension": "issues",
+      "dimension": "contributions",
       "quote": "Any such automated process should be overseen by a human who remains accountable for its behavior and output.",
       "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
     }
@@ -60,13 +98,671 @@
   "sources": [
     {
       "url": "https://www.debian.org/vote/2026/vote_002",
-      "title": "Debian General Resolution 2026-002: LLM usage in Debian",
-      "hash": "dc4a5e545d314f2282b18d33c4604c800d88181a7da5b465440f9b2931c4f8ea",
-      "fetchedAt": "2026-10-09"
+      "title": "General Resolution: LLM usage in Debian",
+      "hash": "1a2870e00b6b018f9939496d7c303335918629700f5882a918e190033d85e624",
+      "fetchedAt": "2026-10-25"
     }
   ],
-  "confidence": "medium",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "The submitting contributor remains responsible for the work's quality, legality and suitability and must understand it."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and test AI-assisted output, modifying it where appropriate before incorporation; blindly accepting or uploading it is inconsistent with Debian practice."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Consider provenance and licensing, avoid content whose legal status cannot reasonably be justified, and follow existing Debian licensing and software-freedom policies."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI assistance is encouraged but not required; no particular form is prescribed."
+        }
+      ],
+      "note": "AI completion may be used for Debian code if the contributor understands, reviews and tests the resulting work, remains accountable and addresses licensing; disclosure is voluntary.",
+      "quotes": [
+        {
+          "quote": "Debian neither endorses nor prohibits the use of generative AI tools in the development, maintenance, or documentation of software, packaging, documentation, and other media published within the Debian Project.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The Debian Project nevertheless expects that all contributions submitted to Debian, regardless of how and with which tools they were produced, satisfy the same standards of quality, correctness, maintainability, and legal compliance.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Blindly accepting or uploading AI-generated material without appropriate human review is inconsistent with Debian's established development practices.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "We enourage our contributors to disclose whether a contribution was made with AI assitance, but do not require them to do so.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Instead, Debian continues to rely on the judgment and responsibility of its individual contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Project members are expected to exercise appropriate care when using generative AI tools, to consider the provenance and licensing implications of material they contribute, and to avoid introducing content whose legal status they cannot reasonably justify.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Existing Debian policies governing licensing, copyright, software freedom, and the acceptance of contributions continue to apply irrespective of the tools used to produce those contributions.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "This resolution therefore affirms that generative AI is neither exempt from nor subject to special rules beyond the standards already expected of Debian contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The responsibility for every contribution rests with the contributor who submits it, who remains accountable for its technical quality, legal acceptability, and suitability for inclusion in Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "The submitting contributor remains responsible for the work's quality, legality and suitability and must understand it."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and test AI-assisted output, modifying it where appropriate before incorporation; blindly accepting or uploading it is inconsistent with Debian practice."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Consider provenance and licensing, avoid content whose legal status cannot reasonably be justified, and follow existing Debian licensing and software-freedom policies."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI assistance is encouraged but not required; no particular form is prescribed."
+        }
+      ],
+      "note": "Small AI-assisted code changes are permitted under the same accountability, review, testing and licensing duties as other contributions; disclosure is encouraged but optional.",
+      "quotes": [
+        {
+          "quote": "Debian neither endorses nor prohibits the use of generative AI tools in the development, maintenance, or documentation of software, packaging, documentation, and other media published within the Debian Project.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The Debian Project nevertheless expects that all contributions submitted to Debian, regardless of how and with which tools they were produced, satisfy the same standards of quality, correctness, maintainability, and legal compliance.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Blindly accepting or uploading AI-generated material without appropriate human review is inconsistent with Debian's established development practices.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "We enourage our contributors to disclose whether a contribution was made with AI assitance, but do not require them to do so.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Instead, Debian continues to rely on the judgment and responsibility of its individual contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Project members are expected to exercise appropriate care when using generative AI tools, to consider the provenance and licensing implications of material they contribute, and to avoid introducing content whose legal status they cannot reasonably justify.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Existing Debian policies governing licensing, copyright, software freedom, and the acceptance of contributions continue to apply irrespective of the tools used to produce those contributions.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "This resolution therefore affirms that generative AI is neither exempt from nor subject to special rules beyond the standards already expected of Debian contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The responsibility for every contribution rests with the contributor who submits it, who remains accountable for its technical quality, legal acceptability, and suitability for inclusion in Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "The submitting contributor remains responsible for the work's quality, legality and suitability and must understand it."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and test AI-assisted output, modifying it where appropriate before incorporation; blindly accepting or uploading it is inconsistent with Debian practice."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Consider provenance and licensing, avoid content whose legal status cannot reasonably be justified, and follow existing Debian licensing and software-freedom policies."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI assistance is encouraged but not required; no particular form is prescribed."
+        },
+        {
+          "condition": "prior-approval",
+          "strength": "required",
+          "detail": "For broad-impact large-scale or automated changes, seek prior discussion and consensus through the appropriate project channels before proceeding."
+        }
+      ],
+      "note": "Substantial AI-assisted code is not prohibited, but broad-impact large-scale changes also need prior discussion and consensus, with accountable human oversight for automation.",
+      "quotes": [
+        {
+          "quote": "Debian neither endorses nor prohibits the use of generative AI tools in the development, maintenance, or documentation of software, packaging, documentation, and other media published within the Debian Project.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The Debian Project nevertheless expects that all contributions submitted to Debian, regardless of how and with which tools they were produced, satisfy the same standards of quality, correctness, maintainability, and legal compliance.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Blindly accepting or uploading AI-generated material without appropriate human review is inconsistent with Debian's established development practices.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "We enourage our contributors to disclose whether a contribution was made with AI assitance, but do not require them to do so.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Instead, Debian continues to rely on the judgment and responsibility of its individual contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Project members are expected to exercise appropriate care when using generative AI tools, to consider the provenance and licensing implications of material they contribute, and to avoid introducing content whose legal status they cannot reasonably justify.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Existing Debian policies governing licensing, copyright, software freedom, and the acceptance of contributions continue to apply irrespective of the tools used to produce those contributions.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The use of generative AI does not alter Debian's established expectations regarding large-scale or automated project actions.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Contributors intending to perform actions with broad project impact, such as mass bug filing or patch submission, large-scale code modifications, or other automated changes or requests affecting many packages or contributors, should seek prior discussion and consensus through the appropriate project channels before proceeding.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Any such automated process should be overseen by a human who remains accountable for its behavior and output.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "This resolution therefore affirms that generative AI is neither exempt from nor subject to special rules beyond the standards already expected of Debian contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The responsibility for every contribution rests with the contributor who submits it, who remains accountable for its technical quality, legal acceptability, and suitability for inclusion in Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "The submitting contributor remains responsible for the work's quality, legality and suitability and must understand it."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and test AI-assisted output, modifying it where appropriate before incorporation; blindly accepting or uploading it is inconsistent with Debian practice."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Consider provenance and licensing, avoid content whose legal status cannot reasonably be justified, and follow existing Debian licensing and software-freedom policies."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI assistance is encouraged but not required; no particular form is prescribed."
+        },
+        {
+          "condition": "prior-approval",
+          "strength": "required",
+          "detail": "For broad-impact large-scale or automated changes, seek prior discussion and consensus through the appropriate project channels before proceeding."
+        }
+      ],
+      "note": "AI-assisted mechanical changes are permitted under the normal accountability, review and licensing duties; broad-impact automated changes additionally need prior consensus and accountable human oversight.",
+      "quotes": [
+        {
+          "quote": "Debian neither endorses nor prohibits the use of generative AI tools in the development, maintenance, or documentation of software, packaging, documentation, and other media published within the Debian Project.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The Debian Project nevertheless expects that all contributions submitted to Debian, regardless of how and with which tools they were produced, satisfy the same standards of quality, correctness, maintainability, and legal compliance.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Blindly accepting or uploading AI-generated material without appropriate human review is inconsistent with Debian's established development practices.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "We enourage our contributors to disclose whether a contribution was made with AI assitance, but do not require them to do so.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Instead, Debian continues to rely on the judgment and responsibility of its individual contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Project members are expected to exercise appropriate care when using generative AI tools, to consider the provenance and licensing implications of material they contribute, and to avoid introducing content whose legal status they cannot reasonably justify.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Existing Debian policies governing licensing, copyright, software freedom, and the acceptance of contributions continue to apply irrespective of the tools used to produce those contributions.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The use of generative AI does not alter Debian's established expectations regarding large-scale or automated project actions.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Contributors intending to perform actions with broad project impact, such as mass bug filing or patch submission, large-scale code modifications, or other automated changes or requests affecting many packages or contributors, should seek prior discussion and consensus through the appropriate project channels before proceeding.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Any such automated process should be overseen by a human who remains accountable for its behavior and output.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "This resolution therefore affirms that generative AI is neither exempt from nor subject to special rules beyond the standards already expected of Debian contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The responsibility for every contribution rests with the contributor who submits it, who remains accountable for its technical quality, legal acceptability, and suitability for inclusion in Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "The submitting contributor remains responsible for the work's quality, legality and suitability and must understand it."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and test AI-assisted output, modifying it where appropriate before incorporation; blindly accepting or uploading it is inconsistent with Debian practice."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Consider provenance and licensing, avoid content whose legal status cannot reasonably be justified, and follow existing Debian licensing and software-freedom policies."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI assistance is encouraged but not required; no particular form is prescribed."
+        }
+      ],
+      "note": "AI may assist with contributed tests, but the contributor must understand, review and test the output, remain accountable and address its provenance and licensing; disclosure is voluntary.",
+      "quotes": [
+        {
+          "quote": "Debian neither endorses nor prohibits the use of generative AI tools in the development, maintenance, or documentation of software, packaging, documentation, and other media published within the Debian Project.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The Debian Project nevertheless expects that all contributions submitted to Debian, regardless of how and with which tools they were produced, satisfy the same standards of quality, correctness, maintainability, and legal compliance.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Blindly accepting or uploading AI-generated material without appropriate human review is inconsistent with Debian's established development practices.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "We enourage our contributors to disclose whether a contribution was made with AI assitance, but do not require them to do so.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Instead, Debian continues to rely on the judgment and responsibility of its individual contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Project members are expected to exercise appropriate care when using generative AI tools, to consider the provenance and licensing implications of material they contribute, and to avoid introducing content whose legal status they cannot reasonably justify.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Existing Debian policies governing licensing, copyright, software freedom, and the acceptance of contributions continue to apply irrespective of the tools used to produce those contributions.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "This resolution therefore affirms that generative AI is neither exempt from nor subject to special rules beyond the standards already expected of Debian contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The responsibility for every contribution rests with the contributor who submits it, who remains accountable for its technical quality, legal acceptability, and suitability for inclusion in Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "The submitting contributor remains responsible for the work's quality, legality and suitability and must understand it."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and test AI-assisted output, modifying it where appropriate before incorporation; blindly accepting or uploading it is inconsistent with Debian practice."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Consider provenance and licensing, avoid content whose legal status cannot reasonably be justified, and follow existing Debian licensing and software-freedom policies."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI assistance is encouraged but not required; no particular form is prescribed."
+        }
+      ],
+      "note": "AI assistance with packaging and other Debian infrastructure code is permitted subject to contributor accountability, human review and testing, and licensing care; disclosure is optional.",
+      "quotes": [
+        {
+          "quote": "Debian neither endorses nor prohibits the use of generative AI tools in the development, maintenance, or documentation of software, packaging, documentation, and other media published within the Debian Project.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The Debian Project nevertheless expects that all contributions submitted to Debian, regardless of how and with which tools they were produced, satisfy the same standards of quality, correctness, maintainability, and legal compliance.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Blindly accepting or uploading AI-generated material without appropriate human review is inconsistent with Debian's established development practices.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "We enourage our contributors to disclose whether a contribution was made with AI assitance, but do not require them to do so.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Instead, Debian continues to rely on the judgment and responsibility of its individual contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Project members are expected to exercise appropriate care when using generative AI tools, to consider the provenance and licensing implications of material they contribute, and to avoid introducing content whose legal status they cannot reasonably justify.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Existing Debian policies governing licensing, copyright, software freedom, and the acceptance of contributions continue to apply irrespective of the tools used to produce those contributions.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "This resolution therefore affirms that generative AI is neither exempt from nor subject to special rules beyond the standards already expected of Debian contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The responsibility for every contribution rests with the contributor who submits it, who remains accountable for its technical quality, legal acceptability, and suitability for inclusion in Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "The submitting contributor remains responsible for the work's quality, legality and suitability and must understand it."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Understand and review AI-assisted output, test it where applicable and modify it where appropriate before incorporating it into Debian."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Consider provenance and licensing, avoid content whose legal status cannot reasonably be justified, and follow existing Debian licensing and software-freedom policies."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI assistance is encouraged but not required; no particular form is prescribed."
+        }
+      ],
+      "note": "AI-assisted Debian documentation is permitted if the contributor understands and reviews it, remains accountable and addresses provenance and licensing; disclosure is encouraged but not mandatory.",
+      "quotes": [
+        {
+          "quote": "Debian neither endorses nor prohibits the use of generative AI tools in the development, maintenance, or documentation of software, packaging, documentation, and other media published within the Debian Project.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The Debian Project nevertheless expects that all contributions submitted to Debian, regardless of how and with which tools they were produced, satisfy the same standards of quality, correctness, maintainability, and legal compliance.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Blindly accepting or uploading AI-generated material without appropriate human review is inconsistent with Debian's established development practices.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "We enourage our contributors to disclose whether a contribution was made with AI assitance, but do not require them to do so.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Instead, Debian continues to rely on the judgment and responsibility of its individual contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Project members are expected to exercise appropriate care when using generative AI tools, to consider the provenance and licensing implications of material they contribute, and to avoid introducing content whose legal status they cannot reasonably justify.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Existing Debian policies governing licensing, copyright, software freedom, and the acceptance of contributions continue to apply irrespective of the tools used to produce those contributions.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "This resolution therefore affirms that generative AI is neither exempt from nor subject to special rules beyond the standards already expected of Debian contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The responsibility for every contribution rests with the contributor who submits it, who remains accountable for its technical quality, legal acceptability, and suitability for inclusion in Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        }
+      ]
+    },
+    {
+      "use": "assets",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "The submitting contributor remains responsible for the work's quality, legality and suitability and must understand it."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Understand and review AI-assisted output, test it where applicable and modify it where appropriate before incorporating it into Debian."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Consider provenance and licensing, avoid content whose legal status cannot reasonably be justified, and follow existing Debian licensing and software-freedom policies."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI assistance is encouraged but not required; no particular form is prescribed."
+        }
+      ],
+      "note": "AI-generated or modified media for Debian may be contributed subject to human review, submitter accountability and careful provenance and licensing checks; disclosure is voluntary.",
+      "quotes": [
+        {
+          "quote": "Debian neither endorses nor prohibits the use of generative AI tools in the development, maintenance, or documentation of software, packaging, documentation, and other media published within the Debian Project.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The Debian Project nevertheless expects that all contributions submitted to Debian, regardless of how and with which tools they were produced, satisfy the same standards of quality, correctness, maintainability, and legal compliance.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Blindly accepting or uploading AI-generated material without appropriate human review is inconsistent with Debian's established development practices.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "We enourage our contributors to disclose whether a contribution was made with AI assitance, but do not require them to do so.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Instead, Debian continues to rely on the judgment and responsibility of its individual contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Project members are expected to exercise appropriate care when using generative AI tools, to consider the provenance and licensing implications of material they contribute, and to avoid introducing content whose legal status they cannot reasonably justify.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Existing Debian policies governing licensing, copyright, software freedom, and the acceptance of contributions continue to apply irrespective of the tools used to produce those contributions.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "This resolution therefore affirms that generative AI is neither exempt from nor subject to special rules beyond the standards already expected of Debian contributors.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "The responsibility for every contribution rests with the contributor who submits it, who remains accountable for its technical quality, legal acceptability, and suitability for inclusion in Debian.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "conditional",
+      "description": "AI workflows must not disclose confidential, private, security-sensitive or other non-public Debian material, including embargoed security information, cryptographic keys or credentials, to third-party AI services unless explicitly authorized and consistent with Debian's security and privacy requirements.",
+      "quotes": [
+        {
+          "quote": "Contributors are expected to exercise appropriate care when designing and implementing workflows that incorporate generative AI tools.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "In particular, they should ensure that confidential information, private communications, security-sensitive information (such as embargoed information about security bugs that is not yet public), cryptographic keys, credentials, and other non-public material relating to the Debian Project, its infrastructure, or its community are not disclosed to third-party AI services unless such disclosure has been explicitly authorized and is consistent with Debian's security and privacy requirements.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "conditional",
+      "description": "For AI-related actions with broad project impact, such as mass bug filing, patch submission or large-scale code modifications, contributors should seek prior discussion and consensus before proceeding, and any automated process should be overseen by an accountable human.",
+      "quotes": [
+        {
+          "quote": "The use of generative AI does not alter Debian's established expectations regarding large-scale or automated project actions.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Contributors intending to perform actions with broad project impact, such as mass bug filing or patch submission, large-scale code modifications, or other automated changes or requests affecting many packages or contributors, should seek prior discussion and consensus through the appropriate project channels before proceeding.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        },
+        {
+          "quote": "Any such automated process should be overseen by a human who remains accountable for its behavior and output.",
+          "sourceUrl": "https://www.debian.org/vote/2026/vote_002"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "high",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-25",
+  "lastChanged": "2026-10-25"
 }

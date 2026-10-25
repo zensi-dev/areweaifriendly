@@ -49,7 +49,7 @@ Advertising sustains the DA. Ads are hidden for members. Join today
 # Policy on the use of AI when contributing to Drupal
 
  Last updated on
- 5 October 2026
+ 20 October 2026
 
 ## Why this policy exists
 
@@ -63,7 +63,7 @@ Using AI-generated issue summaries and comments can place an undue burden on mai
 
 - When the full output is helpful, you can provide it as an attachment.
 
-Most importantly, no matter whether you are using AI or not, you must be a good listener and collaborator with the project maintainer, original issue reporter, and other contributors on the issue. A "drive-by" contribution where you don't follow up on feedback, or ignore previous discussion on the issue, will likely result in an account ban.
+Most importantly, no matter whether you are using AI or not, you must be a good listener and collaborator with the project maintainer, original issue reporter, and other contributors on the issue. Repeatedly posting low-effort contributions and immediately abandoning them will get your account banned. This is also known as a "drive-by contribution" where you don't follow up on feedback, or ignore previous discussion on the issue.
 
 ## The core principle: you are responsible for what you submit
 

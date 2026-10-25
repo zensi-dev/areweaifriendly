@@ -3,7 +3,7 @@
   "description": "Community Linux distribution sponsored by Red Hat.",
   "category": "distribution",
   "homepage": "https://fedoraproject.org/",
-  "summary": "AI-assisted contributions are allowed. Contributors are fully accountable for them and must disclose AI use when a significant part comes from a tool unchanged.",
+  "summary": "Fedora allows AI-assisted contributions if contributors remain accountable for quality, licensing and utility and disclose significant unmodified AI output; other disclosure is encouraged, but routine language cleanup does not require it. AI may assist reviews but cannot make sole or final substantive or subjective judgments or evaluate community standing, and large-scale AI initiatives need separate Fedora Council discussion.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -18,8 +18,10 @@
       "conditions": []
     },
     "summaries": {
-      "verdict": "unspecified",
-      "conditions": []
+      "verdict": "conditional",
+      "conditions": [
+        "human-accountable"
+      ]
     }
   },
   "evidence": [
@@ -30,12 +32,82 @@
     },
     {
       "dimension": "contributions",
-      "quote": "You MUST disclose the use of AI tools when the significant part of the contribution is taken from a tool without changes.",
+      "quote": "Accountability: You MUST take the responsibility for your contribution. Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
       "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
     },
     {
       "dimension": "contributions",
-      "quote": "Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
+      "quote": "All contributions, whether from a human author or assisted by large language models (LLMs) or other generative AI tools, must meet the project’s standards for inclusion.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The contributor is always the author and is fully accountable for the entirety of these contributions.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Transparency: You MUST disclose the use of AI tools when the significant part of the contribution is taken from a tool without changes.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You SHOULD disclose the other uses of AI tools, where it might be useful.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Disclosures are made where authorship is normally indicated. For contributions tracked in git, the recommended method is an Assisted-by: commit message trailer.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Routine use of assistive tools for correcting grammar and spelling, or for clarifying language, does not require disclosure.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "For other contributions, disclosure may include document preambles, design file metadata, translation notes, or wiki page categories.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Routine use of assistive tools for correcting grammar and spelling, or for clarifying language, does not require disclosure.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Contribution & Community Evaluation: AI tools may be used to assist human reviewers by providing analysis and suggestions.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You MUST NOT use AI as the sole or final arbiter in making a substantive or subjective judgment on a contribution, nor may it be used to evaluate a person’s standing within the community (e.g., for funding, leadership roles, or Code of Conduct matters).",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "The final accountability for accepting a contribution, even if implemented by an automated system, always rests with the human contributor who authorizes the action.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contribution & Community Evaluation: AI tools may be used to assist human reviewers by providing analysis and suggestions.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You MUST NOT use AI as the sole or final arbiter in making a substantive or subjective judgment on a contribution, nor may it be used to evaluate a person’s standing within the community (e.g., for funding, leadership roles, or Code of Conduct matters).",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The final accountability for accepting a contribution, even if implemented by an automated system, always rests with the human contributor who authorizes the action.",
       "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
     }
   ],
@@ -43,12 +115,696 @@
     {
       "url": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/",
       "title": "AI-Assisted Contributions Policy :: Fedora Docs",
-      "hash": "ff9339ee5e6d5723235fbe002a258fde2a4d89ca9ee39e59c19bfb5e24843c8b",
-      "fetchedAt": "2026-10-09"
+      "hash": "5f5d764e913d9cb939add974497b33c1242f6552cee80e04cfec62aa9f9f08f6",
+      "fetchedAt": "2026-10-25"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Take responsibility for the contribution, vouch for its quality and utility, and remain its fully accountable author."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Vouch for the submission’s license compliance and ensure it meets Fedora’s standards for inclusion."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use when a significant part of the contribution is taken from the tool without changes, where authorship is normally indicated."
+        }
+      ],
+      "note": "AI code completion is permitted, with contributor accountability and disclosure required when a significant part of the contribution is unmodified tool output; other disclosure is recommended where useful.",
+      "quotes": [
+        {
+          "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Accountability: You MUST take the responsibility for your contribution. Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "All contributions, whether from a human author or assisted by large language models (LLMs) or other generative AI tools, must meet the project’s standards for inclusion.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "The contributor is always the author and is fully accountable for the entirety of these contributions.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Transparency: You MUST disclose the use of AI tools when the significant part of the contribution is taken from a tool without changes.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "You SHOULD disclose the other uses of AI tools, where it might be useful.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Disclosures are made where authorship is normally indicated. For contributions tracked in git, the recommended method is an Assisted-by: commit message trailer.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Take responsibility for the contribution, vouch for its quality and utility, and remain its fully accountable author."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Vouch for the submission’s license compliance and ensure it meets Fedora’s standards for inclusion."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use when a significant part of the contribution is taken from the tool without changes, where authorship is normally indicated."
+        }
+      ],
+      "note": "AI may assist with small code changes under the general accountability, licensing, and transparency requirements.",
+      "quotes": [
+        {
+          "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Accountability: You MUST take the responsibility for your contribution. Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "All contributions, whether from a human author or assisted by large language models (LLMs) or other generative AI tools, must meet the project’s standards for inclusion.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "The contributor is always the author and is fully accountable for the entirety of these contributions.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Transparency: You MUST disclose the use of AI tools when the significant part of the contribution is taken from a tool without changes.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "You SHOULD disclose the other uses of AI tools, where it might be useful.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Disclosures are made where authorship is normally indicated. For contributions tracked in git, the recommended method is an Assisted-by: commit message trailer.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Take responsibility for the contribution, vouch for its quality and utility, and remain its fully accountable author."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Vouch for the submission’s license compliance and ensure it meets Fedora’s standards for inclusion."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use when a significant part of the contribution is taken from the tool without changes, where authorship is normally indicated."
+        }
+      ],
+      "note": "AI may assist with substantial code contributions under the same accountability, licensing, and transparency requirements.",
+      "quotes": [
+        {
+          "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Accountability: You MUST take the responsibility for your contribution. Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "All contributions, whether from a human author or assisted by large language models (LLMs) or other generative AI tools, must meet the project’s standards for inclusion.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "The contributor is always the author and is fully accountable for the entirety of these contributions.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Transparency: You MUST disclose the use of AI tools when the significant part of the contribution is taken from a tool without changes.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "You SHOULD disclose the other uses of AI tools, where it might be useful.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Disclosures are made where authorship is normally indicated. For contributions tracked in git, the recommended method is an Assisted-by: commit message trailer.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Take responsibility for the contribution, vouch for its quality and utility, and remain its fully accountable author."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Vouch for the submission’s license compliance and ensure it meets Fedora’s standards for inclusion."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use when a significant part of the contribution is taken from the tool without changes, where authorship is normally indicated."
+        }
+      ],
+      "note": "AI-assisted repetitive or mechanical code edits are permitted under the general accountability, licensing, and transparency requirements.",
+      "quotes": [
+        {
+          "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Accountability: You MUST take the responsibility for your contribution. Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "All contributions, whether from a human author or assisted by large language models (LLMs) or other generative AI tools, must meet the project’s standards for inclusion.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "The contributor is always the author and is fully accountable for the entirety of these contributions.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Transparency: You MUST disclose the use of AI tools when the significant part of the contribution is taken from a tool without changes.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "You SHOULD disclose the other uses of AI tools, where it might be useful.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Disclosures are made where authorship is normally indicated. For contributions tracked in git, the recommended method is an Assisted-by: commit message trailer.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Take responsibility for the contribution, vouch for its quality and utility, and remain its fully accountable author."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Vouch for the submission’s license compliance and ensure it meets Fedora’s standards for inclusion."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use when a significant part of the contribution is taken from the tool without changes, where authorship is normally indicated."
+        }
+      ],
+      "note": "AI may assist with contributed tests or benchmarks under the general accountability, licensing, and transparency requirements.",
+      "quotes": [
+        {
+          "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Accountability: You MUST take the responsibility for your contribution. Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "All contributions, whether from a human author or assisted by large language models (LLMs) or other generative AI tools, must meet the project’s standards for inclusion.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "The contributor is always the author and is fully accountable for the entirety of these contributions.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Transparency: You MUST disclose the use of AI tools when the significant part of the contribution is taken from a tool without changes.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "You SHOULD disclose the other uses of AI tools, where it might be useful.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Disclosures are made where authorship is normally indicated. For contributions tracked in git, the recommended method is an Assisted-by: commit message trailer.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Take responsibility for the contribution, vouch for its quality and utility, and remain its fully accountable author."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Vouch for the submission’s license compliance and ensure it meets Fedora’s standards for inclusion."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use when a significant part of the contribution is taken from the tool without changes, where authorship is normally indicated."
+        }
+      ],
+      "note": "AI may assist with contributed build, CI, packaging, or other infrastructure code under the general accountability, licensing, and transparency requirements.",
+      "quotes": [
+        {
+          "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Accountability: You MUST take the responsibility for your contribution. Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "All contributions, whether from a human author or assisted by large language models (LLMs) or other generative AI tools, must meet the project’s standards for inclusion.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "The contributor is always the author and is fully accountable for the entirety of these contributions.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Transparency: You MUST disclose the use of AI tools when the significant part of the contribution is taken from a tool without changes.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "You SHOULD disclose the other uses of AI tools, where it might be useful.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Disclosures are made where authorship is normally indicated. For contributions tracked in git, the recommended method is an Assisted-by: commit message trailer.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Take responsibility for the contribution, vouch for its quality and utility, and remain its fully accountable author."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Vouch for the submission’s license compliance and ensure it meets Fedora’s standards for inclusion."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use when a significant part of the contribution is taken from the tool without changes, where authorship is normally indicated."
+        }
+      ],
+      "note": "AI-assisted documentation is permitted under the general contribution rules, with disclosure possible in document preambles or wiki categories and no disclosure required for routine grammar, spelling, or language-clarification assistance.",
+      "quotes": [
+        {
+          "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Accountability: You MUST take the responsibility for your contribution. Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "All contributions, whether from a human author or assisted by large language models (LLMs) or other generative AI tools, must meet the project’s standards for inclusion.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "The contributor is always the author and is fully accountable for the entirety of these contributions.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Transparency: You MUST disclose the use of AI tools when the significant part of the contribution is taken from a tool without changes.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "You SHOULD disclose the other uses of AI tools, where it might be useful.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Routine use of assistive tools for correcting grammar and spelling, or for clarifying language, does not require disclosure.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Disclosures are made where authorship is normally indicated. For contributions tracked in git, the recommended method is an Assisted-by: commit message trailer.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "For other contributions, disclosure may include document preambles, design file metadata, translation notes, or wiki page categories.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "use": "localization",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Take responsibility for the contribution, vouch for its quality and utility, and remain its fully accountable author."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Vouch for the submission’s license compliance and ensure it meets Fedora’s standards for inclusion."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use when a significant part of the contribution is taken from the tool without changes, where authorship is normally indicated."
+        }
+      ],
+      "note": "AI-assisted translation contributions fall under the general permission, and disclosure may be given in translation notes.",
+      "quotes": [
+        {
+          "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Accountability: You MUST take the responsibility for your contribution. Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "All contributions, whether from a human author or assisted by large language models (LLMs) or other generative AI tools, must meet the project’s standards for inclusion.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "The contributor is always the author and is fully accountable for the entirety of these contributions.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Transparency: You MUST disclose the use of AI tools when the significant part of the contribution is taken from a tool without changes.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "You SHOULD disclose the other uses of AI tools, where it might be useful.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Disclosures are made where authorship is normally indicated. For contributions tracked in git, the recommended method is an Assisted-by: commit message trailer.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "For other contributions, disclosure may include document preambles, design file metadata, translation notes, or wiki page categories.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "use": "assets",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Take responsibility for the contribution, vouch for its quality and utility, and remain its fully accountable author."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Vouch for the submission’s license compliance and ensure it meets Fedora’s standards for inclusion."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use when a significant part of the contribution is taken from the tool without changes, where authorship is normally indicated."
+        }
+      ],
+      "note": "AI-assisted design and asset contributions are covered by the general permission, and disclosure may be placed in design file metadata.",
+      "quotes": [
+        {
+          "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Accountability: You MUST take the responsibility for your contribution. Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "All contributions, whether from a human author or assisted by large language models (LLMs) or other generative AI tools, must meet the project’s standards for inclusion.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "The contributor is always the author and is fully accountable for the entirety of these contributions.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Transparency: You MUST disclose the use of AI tools when the significant part of the contribution is taken from a tool without changes.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "You SHOULD disclose the other uses of AI tools, where it might be useful.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Disclosures are made where authorship is normally indicated. For contributions tracked in git, the recommended method is an Assisted-by: commit message trailer.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "For other contributions, disclosure may include document preambles, design file metadata, translation notes, or wiki page categories.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Take responsibility for any resulting contribution and remain its fully accountable author."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Any resulting submission must still meet Fedora’s licensing and inclusion standards."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclose other AI uses where useful; for git contributions, an Assisted-by: commit message trailer is the recommended method."
+        }
+      ],
+      "note": "AI research assistance is permitted under the general contribution permission; any resulting contribution remains the contributor’s responsibility, and disclosure of other AI uses is recommended where useful.",
+      "quotes": [
+        {
+          "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Accountability: You MUST take the responsibility for your contribution. Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "All contributions, whether from a human author or assisted by large language models (LLMs) or other generative AI tools, must meet the project’s standards for inclusion.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "The contributor is always the author and is fully accountable for the entirety of these contributions.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "You SHOULD disclose the other uses of AI tools, where it might be useful.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Disclosures are made where authorship is normally indicated. For contributions tracked in git, the recommended method is an Assisted-by: commit message trailer.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "use": "self-review",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Take responsibility for any resulting contribution and remain its fully accountable author."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Any resulting submission must still meet Fedora’s licensing and inclusion standards."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclose other AI uses where useful; for git contributions, an Assisted-by: commit message trailer is the recommended method."
+        }
+      ],
+      "note": "AI assistance with reviewing one’s own work is permitted under the general contribution permission, while the contributor remains accountable and other AI-use disclosure is recommended where useful.",
+      "quotes": [
+        {
+          "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Accountability: You MUST take the responsibility for your contribution. Contributing to Fedora means vouching for the quality, license compliance, and utility of your submission.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "All contributions, whether from a human author or assisted by large language models (LLMs) or other generative AI tools, must meet the project’s standards for inclusion.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "The contributor is always the author and is fully accountable for the entirety of these contributions.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "You SHOULD disclose the other uses of AI tools, where it might be useful.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Disclosures are made where authorship is normally indicated. For contributions tracked in git, the recommended method is an Assisted-by: commit message trailer.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "use": "proofreading",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Routine assistive tools may correct grammar and spelling or clarify language without requiring disclosure.",
+      "quotes": [
+        {
+          "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Routine use of assistive tools for correcting grammar and spelling, or for clarifying language, does not require disclosure.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "use": "code-review-others",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "AI may provide analysis and suggestions, but must not be the sole or final arbiter of substantive or subjective judgments; the human authorizing acceptance remains accountable."
+        }
+      ],
+      "note": "AI may assist reviewers with analysis and suggestions, but cannot make the sole or final substantive or subjective judgment on a contribution.",
+      "quotes": [
+        {
+          "quote": "Contribution & Community Evaluation: AI tools may be used to assist human reviewers by providing analysis and suggestions.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "You MUST NOT use AI as the sole or final arbiter in making a substantive or subjective judgment on a contribution, nor may it be used to evaluate a person’s standing within the community (e.g., for funding, leadership roles, or Code of Conduct matters).",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "The final accountability for accepting a contribution, even if implemented by an automated system, always rests with the human contributor who authorizes the action.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "Across contributions, AI may assist human reviewers but must not be the sole or final arbiter of substantive or subjective judgments, and the human authorizing acceptance remains accountable.",
+      "quotes": [
+        {
+          "quote": "Contribution & Community Evaluation: AI tools may be used to assist human reviewers by providing analysis and suggestions.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "You MUST NOT use AI as the sole or final arbiter in making a substantive or subjective judgment on a contribution, nor may it be used to evaluate a person’s standing within the community (e.g., for funding, leadership roles, or Code of Conduct matters).",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "The final accountability for accepting a contribution, even if implemented by an automated system, always rests with the human contributor who authorizes the action.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "AI may not be used to evaluate a person’s standing within the community, including for funding, leadership roles, or Code of Conduct matters.",
+      "quotes": [
+        {
+          "quote": "You MUST NOT use AI as the sole or final arbiter in making a substantive or subjective judgment on a contribution, nor may it be used to evaluate a person’s standing within the community (e.g., for funding, leadership roles, or Code of Conduct matters).",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "allowed",
+      "description": "Automated tooling remains permitted for objective technical validation, including CI/CD pipelines, automated testing, and spam filtering.",
+      "quotes": [
+        {
+          "quote": "This does not prohibit the use of automated tooling for objective technical validation, such as CI/CD pipelines, automated testing, or spam filtering.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "conditional",
+      "description": "Large-scale AI initiatives that could significantly change project operations or cause exponential growth in contributions are outside this policy and need separate discussion with the Fedora Council.",
+      "quotes": [
+        {
+          "quote": "Large scale initiatives: The policy does not cover the large scale initiatives which may significantly change the ways the project operates or lead to exponential growth in contributions in some parts of the project.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        },
+        {
+          "quote": "Such initiatives need to be discussed separately with the Fedora Council.",
+          "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-25",
+  "lastChanged": "2026-10-25"
 }

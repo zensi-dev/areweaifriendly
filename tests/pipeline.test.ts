@@ -45,6 +45,16 @@ test('areaChanges lists only areas that changed', () => {
   expect(areaChanges(before, after)).toEqual(['Code contributions: Unfriendly (Minor help only) → Mostly friendly (Disclose, Limited scope)']);
 });
 
+test('areaChanges ignores the order of conditions', () => {
+  const before: Policy = {
+    contributions: { verdict: 'conditional', conditions: ['human-accountable', 'human-reviewed'] },
+    issues: { verdict: 'unspecified', conditions: [] },
+    summaries: { verdict: 'unspecified', conditions: [] },
+  };
+  const after: Policy = { ...before, contributions: { verdict: 'conditional', conditions: ['human-reviewed', 'human-accountable'] } };
+  expect(areaChanges(before, after)).toEqual([]);
+});
+
 describe('mapLimit', () => {
   test('keeps input order and never runs more than the limit at once', async () => {
     let running = 0;

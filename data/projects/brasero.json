@@ -4,7 +4,7 @@
   "category": "application",
   "homepage": "https://gitlab.gnome.org/GNOME/brasero",
   "repo": "https://gitlab.gnome.org/GNOME/brasero",
-  "summary": "Contributions generated entirely by LLMs and chatbots are not allowed in code, documentation, issues or artwork. Translating issue and comment text into English is an exception.",
+  "summary": "Brasero does not allow contributions generated entirely by LLMs or chatbots, and applies its AI-generated-content ban to code, documentation, issues and artwork. It excepts pure translation of issue and comment text into English; using AI to answer questions or find information is allowed but discouraged, and support is not provided for anything referencing AI output.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -28,12 +28,37 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "This project does not allow contributions generated entirely by large languages models (LLMs) and chatbots.",
+      "quote": "This project does not allow contributions generated entirely by large languages models (LLMs) and chatbots. This ban includes, but is not limited to, tools like ChatGPT, Claude, Copilot, DeepSeek, and Devin AI.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "An exception applies for purely translating texts for issues and comments to English.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "AI tools can be used to answer questions and find information. However, we encourage contributors to avoid them in favor of using [existing documentation](https://developer.gnome.org) and our [chats and forums](https://welcome.gnome.org).",
       "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
     },
     {
       "dimension": "issues",
-      "quote": "including, but not limited to, code, documentation, issues, and artworks.",
+      "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "An exception applies for purely translating texts for issues and comments to English.",
+      "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
       "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
     },
     {
@@ -46,12 +71,209 @@
     {
       "url": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md",
       "title": "Brasero",
-      "hash": "4be2acd8a054dd70d94eefd9e56130bb09d0f8d3dc1e946f79de7e5d907898a6",
-      "fetchedAt": "2026-10-10"
+      "hash": "5e90f0cdc9867a642d23fdbed4593a5eec1c2bf0592a82c43c940a7db7bba25f",
+      "fetchedAt": "2026-10-25"
     }
   ],
+  "rules": [
+    {
+      "use": "code-small",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Small code changes generated entirely by an LLM or chatbot are covered by the contribution ban.",
+      "quotes": [
+        {
+          "quote": "This project does not allow contributions generated entirely by large languages models (LLMs) and chatbots. This ban includes, but is not limited to, tools like ChatGPT, Claude, Copilot, DeepSeek, and Devin AI.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        },
+        {
+          "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Substantial code contributions generated entirely by an LLM or chatbot are not allowed.",
+      "quotes": [
+        {
+          "quote": "This project does not allow contributions generated entirely by large languages models (LLMs) and chatbots. This ban includes, but is not limited to, tools like ChatGPT, Claude, Copilot, DeepSeek, and Devin AI.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        },
+        {
+          "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated repetitive code edits are covered by the ban on generated code contributions.",
+      "quotes": [
+        {
+          "quote": "This project does not allow contributions generated entirely by large languages models (LLMs) and chatbots. This ban includes, but is not limited to, tools like ChatGPT, Claude, Copilot, DeepSeek, and Devin AI.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        },
+        {
+          "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated tests and benchmarks are covered by the ban as code contributions.",
+      "quotes": [
+        {
+          "quote": "This project does not allow contributions generated entirely by large languages models (LLMs) and chatbots. This ban includes, but is not limited to, tools like ChatGPT, Claude, Copilot, DeepSeek, and Devin AI.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        },
+        {
+          "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated build, CI, packaging and other infrastructure code is covered by the code contribution ban.",
+      "quotes": [
+        {
+          "quote": "This project does not allow contributions generated entirely by large languages models (LLMs) and chatbots. This ban includes, but is not limited to, tools like ChatGPT, Claude, Copilot, DeepSeek, and Devin AI.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        },
+        {
+          "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated documentation is explicitly named as covered by the ban.",
+      "quotes": [
+        {
+          "quote": "This project does not allow contributions generated entirely by large languages models (LLMs) and chatbots. This ban includes, but is not limited to, tools like ChatGPT, Claude, Copilot, DeepSeek, and Devin AI.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        },
+        {
+          "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        }
+      ]
+    },
+    {
+      "use": "localization",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI translation of project documentation or interface text remains under the general content ban; the translation exception only covers issue and comment text translated into English.",
+      "quotes": [
+        {
+          "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        },
+        {
+          "quote": "An exception applies for purely translating texts for issues and comments to English.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        }
+      ]
+    },
+    {
+      "use": "assets",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated artwork is explicitly named as covered by the ban.",
+      "quotes": [
+        {
+          "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "discouraged",
+      "conditions": [],
+      "note": "AI may be used to answer questions and find information, but contributors are encouraged to use the existing documentation and project chats and forums instead.",
+      "quotes": [
+        {
+          "quote": "AI tools can be used to answer questions and find information. However, we encourage contributors to avoid them in favor of using [existing documentation](https://developer.gnome.org) and our [chats and forums](https://welcome.gnome.org).",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        }
+      ]
+    },
+    {
+      "use": "issue-writing",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated issue text is banned; only pure translation of issue text into English is excepted.",
+      "quotes": [
+        {
+          "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        },
+        {
+          "quote": "An exception applies for purely translating texts for issues and comments to English.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated comments are covered by the general ban, with only pure translation of comment text into English excepted.",
+      "quotes": [
+        {
+          "quote": "This ban of AI generated content applies to all parts of the projects, including, but not limited to, code, documentation, issues, and artworks.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        },
+        {
+          "quote": "An exception applies for purely translating texts for issues and comments to English.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        }
+      ]
+    },
+    {
+      "use": "translation",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Pure translation of texts for issues and comments into English is explicitly excepted from the ban.",
+      "quotes": [
+        {
+          "quote": "An exception applies for purely translating texts for issues and comments to English.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "The project says it cannot provide support for anything referencing AI output.",
+      "quotes": [
+        {
+          "quote": "Since AI generated information is frequently misleading or false, we cannot supply support on anything referencing AI output.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/brasero/-/blob/master/README.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
   "confidence": "medium",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-25",
+  "lastChanged": "2026-10-25"
 }

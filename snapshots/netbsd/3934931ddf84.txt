@@ -44,8 +44,6 @@ Skip to main content.
 
 - CVSWeb
 
-- Mercurial
-
 - Cross-reference
 
 - Release engineering

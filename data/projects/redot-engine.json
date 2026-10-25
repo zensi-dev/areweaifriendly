@@ -4,12 +4,11 @@
   "category": "application",
   "homepage": "https://www.redotengine.org/",
   "repo": "https://github.com/Redot-Engine/redot-engine",
-  "summary": "Redot Engine explicitly allows contributors to use LLMs and agentic coding assistants, as long as the human understands and takes responsibility for the work, tests pull requests manually before review, discloses AI involvement in art assets, and keeps licensing clear. Purely AI-generated artwork is not permitted, and unreviewed, low-effort or spammy AI output may be rejected.",
+  "summary": "Redot generally permits LLMs and agentic coding assistants, but contributors must understand and take responsibility for submitted code, review AI output, manually test PRs without AI, and ensure licensing is clear. Mass-generated or low-effort PRs, unreviewed or untested AI output, and AI-generated spam are prohibited; purely AI-generated artwork is banned, while AI-assisted art requires detailed disclosure and a maintainer determination of sufficient human authorship.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
-        "disclosure",
         "human-accountable",
         "human-reviewed",
         "license-compliance"
@@ -20,26 +19,44 @@
       "conditions": []
     },
     "summaries": {
-      "verdict": "conditional",
-      "conditions": [
-        "human-accountable"
-      ]
+      "verdict": "unspecified",
+      "conditions": []
     }
   },
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "Contributors are permitted to use LLMs / Agentic Coding Assistants in their workflows.",
+      "quote": "- Contributors are permitted to use LLMs / Agentic Coding Assistants in their workflows.",
       "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
     },
     {
       "dimension": "contributions",
-      "quote": "Contributors are expected to understand the code they submit, and are fully responsible for it.",
+      "quote": "- Contributors are expected to understand the code they submit, and are fully responsible for it.",
       "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
     },
     {
       "dimension": "contributions",
-      "quote": "Contributors are expected to manually test their PRs without the use of AI before submission to verify they actually work prior to code review.",
+      "quote": "- Contributors are expected to manually test their PRs without the use of AI before submission to verify they actually work prior to code review.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Contributors are expected to be able to answer technical questions about their code during code review, and justify architectural decisions.*",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Submitting code that the contributor does not understand. (AKA Vibe coding)",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Submitting unreviewed or untested AI-generated output.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Submitting generated content with unclear licensing provenance.",
       "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
     },
     {
@@ -49,13 +66,118 @@
     },
     {
       "dimension": "contributions",
+      "quote": "Because the provenance of AI-generated output may be unclear, contributors are responsible for ensuring:",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Submitted material is legally distributable.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Compatible with the project license.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Does not knowingly reproduce proprietary or copyrighted material.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Mass-generated or low-effort pull requests.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Contributors are expected to ensure that any comments or supporting documentation is correct and accurate.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "While AI may be used to dictate direction for several viable options, the contributor should still perform due diligence\nto research the options themselves even if they use AI to aggregate pros and cons and inform them of the options and inner workings.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Purely AI-generated artwork and graphics are not permitted anywhere in this repository or places governed by this document.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
       "quote": "If AI is used anywhere in the process for creation of art assets, it must be disclosed upon submission along with a detailed explanation of how it was used.",
       "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
     },
     {
-      "dimension": "summaries",
-      "quote": "Contributors are expected to ensure that any comments or supporting documentation is correct and accurate.",
+      "dimension": "contributions",
+      "quote": "Maintainers will make a determination on if a particular work constitutes enough human authorship for inclusion.",
       "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Generally the larger the role AI played in the creation of the work, the less likely it is to be accepted.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- AI-generated code is subject to the same quality standards as human-written code.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Maintainers may reject any PR that does not meet our quality standards, regardless of whether it was made by AI or a human.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- All code is to be thoroughly reviewed by human maintainers.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- All PRs are to be tested by a maintainer locally before merge.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Request clarification regarding AI-assisted contributions.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Require revisions or additional testing.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Reject low-quality or unverifiable submissions.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "- AI-generated spam in issues or discussions.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Using AI tools to generate security-sensitive code without rigorous review.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If licensing status cannot be reasonably verified, the contribution may be rejected.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributors are encouraged to review the latest version of this policy before submitting changes.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Please also ensure that you have reviewed our [AI Policy](AI_POLICY.md) if you are planning on\nusing AI tools when creating your PRs.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/CONTRIBUTING.md"
     }
   ],
   "sources": [
@@ -68,12 +190,766 @@
     {
       "url": "https://github.com/Redot-Engine/redot-engine/blob/master/CONTRIBUTING.md",
       "title": "Contributors guidelines",
-      "hash": "96e98fa65e56b045f2d08ec34324dd9fb7762e09b08c6a92f2e3527984880767",
-      "fetchedAt": "2026-10-10"
+      "hash": "96df787f148b8758d00b270d2ee625ae87301ee0f079b1ff6b8c0993f897c006",
+      "fetchedAt": "2026-10-25"
     }
   ],
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and take full responsibility for submitted code, answer technical questions about it, and justify architectural decisions."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-generated output and manually test the PR without AI before submission to verify that it works."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Ensure licensing provenance is clear and material is legally distributable, license-compatible, and does not knowingly reproduce proprietary or copyrighted material."
+        }
+      ],
+      "note": "AI code completion is permitted, but contributors must understand and take responsibility for submitted code, review and manually test it without AI, and satisfy the licensing rules.",
+      "quotes": [
+        {
+          "quote": "- Contributors are permitted to use LLMs / Agentic Coding Assistants in their workflows.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to understand the code they submit, and are fully responsible for it.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to manually test their PRs without the use of AI before submission to verify they actually work prior to code review.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to be able to answer technical questions about their code during code review, and justify architectural decisions.*",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting code that the contributor does not understand. (AKA Vibe coding)",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting unreviewed or untested AI-generated output.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting generated content with unclear licensing provenance.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Contributors must not submit content that violates copyright, license terms, or third-party usage restrictions.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Because the provenance of AI-generated output may be unclear, contributors are responsible for ensuring:",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitted material is legally distributable.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Compatible with the project license.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Does not knowingly reproduce proprietary or copyrighted material.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and take full responsibility for submitted code, answer technical questions about it, and justify architectural decisions."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-generated output and manually test the PR without AI before submission to verify that it works."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Ensure licensing provenance is clear and material is legally distributable, license-compatible, and does not knowingly reproduce proprietary or copyrighted material."
+        }
+      ],
+      "note": "AI-assisted small code changes are permitted if the contributor understands and takes responsibility for them, reviews and manually tests them without AI, and meets the licensing requirements.",
+      "quotes": [
+        {
+          "quote": "- Contributors are permitted to use LLMs / Agentic Coding Assistants in their workflows.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to understand the code they submit, and are fully responsible for it.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to manually test their PRs without the use of AI before submission to verify they actually work prior to code review.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to be able to answer technical questions about their code during code review, and justify architectural decisions.*",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting code that the contributor does not understand. (AKA Vibe coding)",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting unreviewed or untested AI-generated output.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting generated content with unclear licensing provenance.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Contributors must not submit content that violates copyright, license terms, or third-party usage restrictions.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Because the provenance of AI-generated output may be unclear, contributors are responsible for ensuring:",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitted material is legally distributable.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Compatible with the project license.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Does not knowingly reproduce proprietary or copyrighted material.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and take full responsibility for submitted code, answer technical questions about it, and justify architectural decisions."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-generated output and manually test the PR without AI before submission to verify that it works."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Ensure licensing provenance is clear and material is legally distributable, license-compatible, and does not knowingly reproduce proprietary or copyrighted material."
+        }
+      ],
+      "note": "There is no categorical ban on substantial AI-assisted code, but mass-generated or low-effort PRs are prohibited and the normal understanding, review, manual-testing and licensing requirements apply.",
+      "quotes": [
+        {
+          "quote": "- Contributors are permitted to use LLMs / Agentic Coding Assistants in their workflows.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to understand the code they submit, and are fully responsible for it.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to manually test their PRs without the use of AI before submission to verify they actually work prior to code review.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to be able to answer technical questions about their code during code review, and justify architectural decisions.*",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting code that the contributor does not understand. (AKA Vibe coding)",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting unreviewed or untested AI-generated output.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Mass-generated or low-effort pull requests.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting generated content with unclear licensing provenance.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Contributors must not submit content that violates copyright, license terms, or third-party usage restrictions.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Because the provenance of AI-generated output may be unclear, contributors are responsible for ensuring:",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitted material is legally distributable.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Compatible with the project license.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Does not knowingly reproduce proprietary or copyrighted material.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and take full responsibility for submitted code, answer technical questions about it, and justify architectural decisions."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-generated output and manually test the PR without AI before submission to verify that it works."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Ensure licensing provenance is clear and material is legally distributable, license-compatible, and does not knowingly reproduce proprietary or copyrighted material."
+        }
+      ],
+      "note": "AI-assisted mechanical code edits are permitted under the same requirements to understand and take responsibility for the code, review and manually test it without AI, and ensure licensing compliance.",
+      "quotes": [
+        {
+          "quote": "- Contributors are permitted to use LLMs / Agentic Coding Assistants in their workflows.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to understand the code they submit, and are fully responsible for it.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to manually test their PRs without the use of AI before submission to verify they actually work prior to code review.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to be able to answer technical questions about their code during code review, and justify architectural decisions.*",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting code that the contributor does not understand. (AKA Vibe coding)",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting unreviewed or untested AI-generated output.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting generated content with unclear licensing provenance.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Contributors must not submit content that violates copyright, license terms, or third-party usage restrictions.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Because the provenance of AI-generated output may be unclear, contributors are responsible for ensuring:",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitted material is legally distributable.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Compatible with the project license.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Does not knowingly reproduce proprietary or copyrighted material.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and take full responsibility for submitted code, answer technical questions about it, and justify architectural decisions."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-generated output and manually test the PR without AI before submission to verify that it works."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Ensure licensing provenance is clear and material is legally distributable, license-compatible, and does not knowingly reproduce proprietary or copyrighted material."
+        }
+      ],
+      "note": "AI-assisted test code is permitted, but contributors must understand and take responsibility for it, review it, manually test the PR without AI, and satisfy the licensing rules.",
+      "quotes": [
+        {
+          "quote": "- Contributors are permitted to use LLMs / Agentic Coding Assistants in their workflows.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to understand the code they submit, and are fully responsible for it.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to manually test their PRs without the use of AI before submission to verify they actually work prior to code review.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to be able to answer technical questions about their code during code review, and justify architectural decisions.*",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting code that the contributor does not understand. (AKA Vibe coding)",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting unreviewed or untested AI-generated output.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting generated content with unclear licensing provenance.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Contributors must not submit content that violates copyright, license terms, or third-party usage restrictions.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Because the provenance of AI-generated output may be unclear, contributors are responsible for ensuring:",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitted material is legally distributable.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Compatible with the project license.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Does not knowingly reproduce proprietary or copyrighted material.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and take full responsibility for submitted code, answer technical questions about it, and justify architectural decisions."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-generated output and manually test the PR without AI before submission to verify that it works."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Ensure licensing provenance is clear and material is legally distributable, license-compatible, and does not knowingly reproduce proprietary or copyrighted material."
+        }
+      ],
+      "note": "AI-assisted infrastructure code is permitted under the general requirements for understanding, responsibility, review, manual testing without AI, and licensing compliance.",
+      "quotes": [
+        {
+          "quote": "- Contributors are permitted to use LLMs / Agentic Coding Assistants in their workflows.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to understand the code they submit, and are fully responsible for it.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to manually test their PRs without the use of AI before submission to verify they actually work prior to code review.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to be able to answer technical questions about their code during code review, and justify architectural decisions.*",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting code that the contributor does not understand. (AKA Vibe coding)",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting unreviewed or untested AI-generated output.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting generated content with unclear licensing provenance.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Contributors must not submit content that violates copyright, license terms, or third-party usage restrictions.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Because the provenance of AI-generated output may be unclear, contributors are responsible for ensuring:",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitted material is legally distributable.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Compatible with the project license.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Does not knowingly reproduce proprietary or copyrighted material.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Ensure comments and supporting documentation are correct and accurate, and do not submit unreviewed AI-generated output."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Ensure licensing provenance is clear and material is legally distributable, license-compatible, and does not knowingly reproduce proprietary or copyrighted material."
+        }
+      ],
+      "note": "AI may assist with documentation in contributor workflows, but supporting documentation must be correct and accurate, generated output must be reviewed, and licensing provenance must be clear.",
+      "quotes": [
+        {
+          "quote": "- Contributors are permitted to use LLMs / Agentic Coding Assistants in their workflows.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Contributors are expected to ensure that any comments or supporting documentation is correct and accurate.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting unreviewed or untested AI-generated output.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting generated content with unclear licensing provenance.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Contributors must not submit content that violates copyright, license terms, or third-party usage restrictions.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Because the provenance of AI-generated output may be unclear, contributors are responsible for ensuring:",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitted material is legally distributable.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Compatible with the project license.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Does not knowingly reproduce proprietary or copyrighted material.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "allowed",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "recommended",
+          "detail": "Perform due diligence by researching options yourself, even if AI aggregates pros and cons or explains options and inner workings."
+        }
+      ],
+      "note": "AI may help identify options, aggregate pros and cons and explain inner workings, but contributors should still research the options themselves.",
+      "quotes": [
+        {
+          "quote": "- Contributors are permitted to use LLMs / Agentic Coding Assistants in their workflows.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "While AI may be used to dictate direction for several viable options, the contributor should still perform due diligence\nto research the options themselves even if they use AI to aggregate pros and cons and inform them of the options and inner workings.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "assets",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose any AI use in creating an art asset upon submission, with a detailed explanation of how it was used."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Do not submit unreviewed AI-generated output."
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Ensure licensing provenance is clear and material is legally distributable, license-compatible, and does not knowingly reproduce proprietary or copyrighted material."
+        }
+      ],
+      "note": "Purely AI-generated artwork and graphics are prohibited; AI-assisted art requires detailed disclosure and clear licensing, and maintainers will assess whether it has enough human authorship, with greater AI involvement making acceptance less likely.",
+      "quotes": [
+        {
+          "quote": "- Submitting unreviewed or untested AI-generated output.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitting generated content with unclear licensing provenance.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Purely AI-generated artwork and graphics are not permitted anywhere in this repository or places governed by this document.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "If AI is used anywhere in the process for creation of art assets, it must be disclosed upon submission along with a detailed explanation of how it was used.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Maintainers will make a determination on if a particular work constitutes enough human authorship for inclusion.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Generally the larger the role AI played in the creation of the work, the less likely it is to be accepted.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Contributors must not submit content that violates copyright, license terms, or third-party usage restrictions.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Because the provenance of AI-generated output may be unclear, contributors are responsible for ensuring:",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Submitted material is legally distributable.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Compatible with the project license.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Does not knowingly reproduce proprietary or copyrighted material.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "conditional",
+      "description": "AI usage is generally permitted in many cases, subject to the restrictions in the Prohibited Usage section.",
+      "quotes": [
+        {
+          "quote": "While AI usage is generally permitted in many cases, this section outlines restrictions on how generative AI may be used.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "AI-generated code is held to the same quality standards as human-written code, and maintainers may reject PRs that fail those standards.",
+      "quotes": [
+        {
+          "quote": "- AI-generated code is subject to the same quality standards as human-written code.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Maintainers may reject any PR that does not meet our quality standards, regardless of whether it was made by AI or a human.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "All code must receive thorough human-maintainer review, and every PR must be tested locally by a maintainer before merge.",
+      "quotes": [
+        {
+          "quote": "- All code is to be thoroughly reviewed by human maintainers.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- All PRs are to be tested by a maintainer locally before merge.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "Maintainers may request clarification about AI-assisted contributions and require revisions or additional testing.",
+      "quotes": [
+        {
+          "quote": "- Request clarification regarding AI-assisted contributions.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Require revisions or additional testing.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Mass-generated or low-effort PRs are prohibited, and maintainers may reject low-quality or unverifiable submissions.",
+      "quotes": [
+        {
+          "quote": "- Reject low-quality or unverifiable submissions.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "- Mass-generated or low-effort pull requests.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "Maintainers may remove spam or abusive AI-generated content.",
+      "quotes": [
+        {
+          "quote": "- Remove spam or abusive AI-generated content.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "Violating the Prohibited Usage section may result in a bar from future contributions.",
+      "quotes": [
+        {
+          "quote": "Contributors violating this section of the policy may be barred from making future contributions to the project.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "area": "issues",
+      "status": "not-allowed",
+      "description": "AI-generated spam in issues or discussions is prohibited.",
+      "quotes": [
+        {
+          "quote": "- AI-generated spam in issues or discussions.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "AI-generated security-sensitive code requires rigorous review.",
+      "quotes": [
+        {
+          "quote": "- Using AI tools to generate security-sensitive code without rigorous review.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "AI-generated work must not be misrepresented as entirely human-authored when disclosure is requested or required.",
+      "quotes": [
+        {
+          "quote": "- Misrepresenting AI-generated work as entirely human-authored when disclosure is requested or required.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "allowed",
+      "description": "The artwork and graphics rules do not modify contributors' existing contractual agreements or terms with the Redot Foundation.",
+      "quotes": [
+        {
+          "quote": "*Note, this section of the policy does not modify any other existing contractual agreements or terms a contributor may have with the Redot Foundation.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Generated content with unclear licensing provenance is prohibited, and a contribution may be rejected if its licensing status cannot be reasonably verified.",
+      "quotes": [
+        {
+          "quote": "- Submitting generated content with unclear licensing provenance.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "If licensing status cannot be reasonably verified, the contribution may be rejected.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "Contributors planning AI-assisted PRs must review the AI Policy, and contributors are encouraged to review its latest version before submitting changes.",
+      "quotes": [
+        {
+          "quote": "Contributors are encouraged to review the latest version of this policy before submitting changes.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
+        },
+        {
+          "quote": "Please also ensure that you have reviewed our [AI Policy](AI_POLICY.md) if you are planning on\nusing AI tools when creating your PRs.",
+          "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
   "confidence": "medium",
   "classifiedBy": "ai",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "classifiedAt": "2026-10-25",
+  "lastChanged": "2026-10-25"
 }

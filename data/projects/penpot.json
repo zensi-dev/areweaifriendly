@@ -4,7 +4,7 @@
   "category": "application",
   "homepage": "https://penpot.app/",
   "repo": "https://github.com/penpot/penpot",
-  "summary": "Responsible AI use is supported for issues, PRs and other submissions, as long as a human carefully reviews and verifies AI-assisted content before submitting it.",
+  "summary": "Penpot supports responsible AI use, but AI-assisted contributions—including issues and pull requests—must meet quality and accuracy standards and be carefully reviewed and verified by a human before submission. Unreviewed AI-generated code is not accepted, and contributions that fall short may be rejected or closed without detailed review.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -33,17 +33,47 @@
     },
     {
       "dimension": "contributions",
-      "quote": "Submit AI-generated code without human review.",
+      "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Submit AI-generated code without human review.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "- Never add a `Co-authored-by` trailer — it is forbidden and fails\n `./scripts/check-commit`",
       "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
     },
     {
       "dimension": "issues",
-      "quote": "all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+      "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
       "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
     },
     {
       "dimension": "summaries",
       "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Contributions that don't meet these standards may be rejected or closed without detailed review or a reply.",
       "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
     }
   ],
@@ -51,12 +81,539 @@
     {
       "url": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md",
       "title": "Contributing Guide",
-      "hash": "9bd599caed25e83254f20da08e7c158173d3ed8089ab1f934a9e29898ce063bf",
-      "fetchedAt": "2026-10-10"
+      "hash": "d1d951834235e85ede1c8d2ee2ed8755a46d0dc8fd436a920cf2326a97dcfdbc",
+      "fetchedAt": "2026-10-25"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted code before submission."
+        }
+      ],
+      "note": "AI code completion is supported, but completed code submitted to Penpot must be carefully reviewed and verified by a human.",
+      "quotes": [
+        {
+          "quote": "We support the responsible use of AI tools in the development process.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "- Submit AI-generated code without human review.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted code before submission."
+        }
+      ],
+      "note": "Small AI-assisted code changes must meet the quality and oversight standards and be carefully reviewed and verified by a human before submission.",
+      "quotes": [
+        {
+          "quote": "We support the responsible use of AI tools in the development process.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "- Submit AI-generated code without human review.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted code before submission."
+        }
+      ],
+      "note": "Substantial AI-generated code has the same human-review requirement, and the guide states no AI-specific size limit.",
+      "quotes": [
+        {
+          "quote": "We support the responsible use of AI tools in the development process.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "- Submit AI-generated code without human review.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted code before submission."
+        }
+      ],
+      "note": "AI-generated mechanical or repetitive edits must be carefully reviewed and verified by a human before submission.",
+      "quotes": [
+        {
+          "quote": "We support the responsible use of AI tools in the development process.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "- Submit AI-generated code without human review.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted code before submission."
+        }
+      ],
+      "note": "AI-assisted tests and benchmarks may be submitted only after careful human review and verification.",
+      "quotes": [
+        {
+          "quote": "We support the responsible use of AI tools in the development process.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "- Submit AI-generated code without human review.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted code before submission."
+        }
+      ],
+      "note": "For AI-generated build, CI, packaging or other infrastructure code, the AI-specific rule is careful human review and verification before submission.",
+      "quotes": [
+        {
+          "quote": "We support the responsible use of AI tools in the development process.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "- Submit AI-generated code without human review.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted content before submission."
+        }
+      ],
+      "note": "AI-assisted documentation and other submitted writing must meet the quality standards and be carefully reviewed and verified by a human.",
+      "quotes": [
+        {
+          "quote": "We support the responsible use of AI tools in the development process.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "localization",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted content before submission."
+        }
+      ],
+      "note": "AI-assisted translations submitted to Penpot fall under the general requirement for careful human review and verification.",
+      "quotes": [
+        {
+          "quote": "We support the responsible use of AI tools in the development process.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "assets",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted content before submission."
+        }
+      ],
+      "note": "AI-generated or AI-modified assets submitted as contributions are subject to the general quality, oversight, review and verification requirements.",
+      "quotes": [
+        {
+          "quote": "We support the responsible use of AI tools in the development process.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Penpot supports responsible AI use during development, including research or code-base exploration whose AI output is not submitted.",
+      "quotes": [
+        {
+          "quote": "We support the responsible use of AI tools in the development process.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "self-review",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Responsible use of AI to review or analyze one's own changes is supported as part of the development process.",
+      "quotes": [
+        {
+          "quote": "We support the responsible use of AI tools in the development process.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "ai-authorship",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI tools cannot be credited in a Co-authored-by trailer because all such trailers are forbidden; naming an AI tool as commit author is not separately addressed.",
+      "quotes": [
+        {
+          "quote": "- Never add a `Co-authored-by` trailer — it is forbidden and fails\n `./scripts/check-commit`",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-contributions",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify agent-produced content before submission."
+        }
+      ],
+      "note": "The guide contemplates coding-agent use, but agent-produced code or other submitted content must be carefully reviewed and verified by a human before submission.",
+      "quotes": [
+        {
+          "quote": "We support the responsible use of AI tools in the development process.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "- Submit AI-generated code without human review.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "issue-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted issue before submission."
+        }
+      ],
+      "note": "AI-assisted issue text must meet quality and accuracy standards and be carefully reviewed and verified by a human before submission.",
+      "quotes": [
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted text before submission."
+        }
+      ],
+      "note": "AI-assisted pull-request descriptions must be carefully reviewed and verified by a human before submission.",
+      "quotes": [
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "commit-message",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted text before submission."
+        }
+      ],
+      "note": "AI-assisted commit messages included in a contribution are subject to the general human-review and verification requirement.",
+      "quotes": [
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted text before submission."
+        }
+      ],
+      "note": "AI-assisted comments submitted as part of an issue or pull request must be carefully reviewed and verified by a human first.",
+      "quotes": [
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted text before submission."
+        }
+      ],
+      "note": "AI-assisted answers to reviewers or maintainers must be carefully reviewed and verified by a human before submission.",
+      "quotes": [
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-review-others",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human must carefully review and verify the AI-assisted review before submission."
+        }
+      ],
+      "note": "AI-generated review text submitted on another person's contribution is subject to the general human-review and verification requirement.",
+      "quotes": [
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "For Claude Code 2.1.277 and later, contributors relying on the AGENTS.md fallback must not keep CLAUDE.md, .claude/CLAUDE.md or CLAUDE.local.md in the checkout because those files hide Penpot's guidance.",
+      "quotes": [
+        {
+          "quote": "Claude Code reads `AGENTS.md` from 2.1.277, but only in a\n project that has no instruction file of its own, so keep no `CLAUDE.md`,\n `.claude/CLAUDE.md` or `CLAUDE.local.md` in your checkout: any one of them\n hides this repository's guidance from your session.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "conditional",
+      "description": "The guide prescribes a per-clone skill link or skills installation for Claude Code, and a temporary AGENTS.md-to-CLAUDE.md symlink below version 2.1.277 or on Bedrock, Vertex and Foundry installations without the fallback.",
+      "quotes": [
+        {
+          "quote": "Skills still load from\n `.claude/skills` alone, so link it once per clone with\n `mkdir -p .claude && ln -s ../.agents/skills .claude/skills`, or with\n `npx skills add ./.agents/skills --agent claude-code`.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Below 2.1.277, and\n on Bedrock, Vertex and Foundry where the fallback has not arrived, add\n `ln -s AGENTS.md CLAUDE.md` and remove it once your client has the\n feature.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "conditional",
+      "description": "Personal agent instructions, personal skills and personal Claude steering belong in AGENTS.local.md, .agents/local/skills/ and .claude/rules/*.md respectively.",
+      "quotes": [
+        {
+          "quote": "Personal instructions belong in `AGENTS.local.md`, personal\n skills in `.agents/local/skills/`, and personal Claude steering in\n `.claude/rules/*.md`, which Claude loads beside the project instructions\n without switching the fallback off.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Contributions that fail the stated quality, accuracy, human-oversight or review standards may be rejected or closed without detailed review or a reply.",
+      "quotes": [
+        {
+          "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Contributions that don't meet these standards may be rejected or closed without detailed review or a reply.",
+          "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [
+    {
+      "url": "AGENTS.md",
+      "note": "The guide points to AGENTS.md for AI-agent instructions and coding-agent guidance, but that file was not supplied."
+    },
+    {
+      "url": ".agents/skills/",
+      "note": "The guide says coding-agent guidance also lives in this skills directory, whose contents were not supplied."
+    }
+  ],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-25",
+  "lastChanged": "2026-10-25"
 }

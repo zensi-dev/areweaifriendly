@@ -11,7 +11,7 @@
  * Writes a Markdown report to $CHECK_REPORT (default: check-report.md).
  */
 import { writeFile } from 'node:fs/promises';
-import { isDeepStrictEqual, parseArgs } from 'node:util';
+import { parseArgs } from 'node:util';
 import { classify, configFromEnv, RUBRIC_VERSION, type ClassifierConfig } from './lib/classify';
 import { fetchSource, type FetchedSource } from './lib/fetch';
 import { areaChanges, mapLimit, reviewNotes, ruleChanges, setOutputs, stanceLabel, toSources } from './lib/pipeline';
@@ -56,7 +56,8 @@ async function check(slug: string): Promise<{ changed?: string; problems: string
   }
 
   const changes = ruleChanges(project.rules, result.rules);
-  const ratingChanged = !isDeepStrictEqual(result.policy, project.policy);
+  const areas = areaChanges(project.policy, result.policy);
+  const ratingChanged = areas.length > 0;
   const verdictChanged = ratingChanged || changes.length > 0;
   for (const f of fetched) await writeSnapshot(slug, f.url, f.text);
   await writeProject(slug, {
@@ -90,7 +91,7 @@ async function check(slug: string): Promise<{ changed?: string; problems: string
         : `Re-classified, rules unchanged (${after})`;
   const details = [
     ...changes.map((c) => `- ${c}`),
-    ...(ratingChanged ? areaChanges(project.policy, result.policy).map((c) => `- ${c}`) : []),
+    ...areas.map((c) => `- ${c}`),
   ];
   console.log(`${slug}: ${headline}`);
   return {

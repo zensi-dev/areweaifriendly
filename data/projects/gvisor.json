@@ -4,29 +4,22 @@
   "category": "tool",
   "homepage": "https://gvisor.dev/",
   "repo": "https://github.com/google/gvisor",
-  "summary": "Contributors are expected to embrace AI tools, with mandatory human oversight: all AI-generated content must be reviewed, the contributor remains the sole responsible author, and substantial AI content must be labelled, for example with Assisted-by. This applies to code, issues, security reports and comments.",
+  "summary": "gVisor encourages AI tools as an aid to, not a replacement for, contributors’ critical judgment. AI-generated contributions require thorough human review before submission, and the contributor remains fully responsible and must be ready to discuss and justify the work.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
-        "disclosure",
         "human-accountable",
         "human-reviewed"
       ]
     },
     "issues": {
-      "verdict": "conditional",
-      "conditions": [
-        "disclosure",
-        "human-reviewed"
-      ]
+      "verdict": "unspecified",
+      "conditions": []
     },
     "summaries": {
-      "verdict": "conditional",
-      "conditions": [
-        "disclosure",
-        "human-reviewed"
-      ]
+      "verdict": "unspecified",
+      "conditions": []
     }
   },
   "evidence": [
@@ -37,12 +30,17 @@
     },
     {
       "dimension": "contributions",
-      "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
+      "quote": "This policy ensures that AI-generated contributions are always guided, validated, and owned by a skilled human, promoting better software and a stronger community than policing how code gets written.",
       "sourceUrl": "https://gvisor.dev/contributing"
     },
     {
       "dimension": "contributions",
-      "quote": "Transparently label all contributions containing substantial AI-generated content.",
+      "quote": "While contributors can use any AI tools to create their contributions, human oversight is mandatory.",
+      "sourceUrl": "https://gvisor.dev/contributing"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
       "sourceUrl": "https://gvisor.dev/contributing"
     },
     {
@@ -51,26 +49,454 @@
       "sourceUrl": "https://gvisor.dev/contributing"
     },
     {
-      "dimension": "issues",
-      "quote": "Issues or security vulnerabilities",
+      "dimension": "contributions",
+      "quote": "AI should augment your abilities, not replace your critical judgment.",
       "sourceUrl": "https://gvisor.dev/contributing"
     },
     {
-      "dimension": "summaries",
-      "quote": "Comments and feedback on pull requests or issues",
+      "dimension": "contributions",
+      "quote": "Contributors should ensure their work meets a high standard before seeking review, respecting maintainers’ time, and must be prepared to discuss and justify their contributions during the review process.",
       "sourceUrl": "https://gvisor.dev/contributing"
     }
   ],
   "sources": [
     {
       "url": "https://gvisor.dev/contributing",
-      "title": "Contributing to gVisor",
-      "hash": "f3f9147b0e7100148592b02626906d3742e0efbec86cf925a1473ab52873e4ad",
-      "fetchedAt": "2026-10-09"
+      "title": "Contributing - gVisor",
+      "hash": "6b66892835b7719430fc7c7abfd17f4dad21ec65bc88757e3b738dd391d2e54c",
+      "fetchedAt": "2026-10-25"
     }
   ],
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Thoroughly review all AI-generated content before submitting it for review."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain the sole author, take full responsibility for accuracy, quality and maintainability, and be prepared to discuss and justify the contribution."
+        }
+      ],
+      "note": "AI code completion is permitted, but the contributor must thoroughly review the resulting code and remain fully responsible for the contribution.",
+      "quotes": [
+        {
+          "quote": "We expect our contributors to embrace AI tools.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "This policy ensures that AI-generated contributions are always guided, validated, and owned by a skilled human, promoting better software and a stronger community than policing how code gets written.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "While contributors can use any AI tools to create their contributions, human oversight is mandatory.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "The contributor remains the sole author and is fully responsible for the contribution’s accuracy, quality, and maintainability.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "AI should augment your abilities, not replace your critical judgment.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "Contributors should ensure their work meets a high standard before seeking review, respecting maintainers’ time, and must be prepared to discuss and justify their contributions during the review process.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Thoroughly review all AI-generated content before submitting it for review."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain the sole author, take full responsibility for accuracy, quality and maintainability, and be prepared to discuss and justify the contribution."
+        }
+      ],
+      "note": "AI may write small or targeted code changes, subject to thorough contributor review and full human responsibility for the submitted work.",
+      "quotes": [
+        {
+          "quote": "We expect our contributors to embrace AI tools.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "This policy ensures that AI-generated contributions are always guided, validated, and owned by a skilled human, promoting better software and a stronger community than policing how code gets written.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "While contributors can use any AI tools to create their contributions, human oversight is mandatory.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "The contributor remains the sole author and is fully responsible for the contribution’s accuracy, quality, and maintainability.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "AI should augment your abilities, not replace your critical judgment.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "Contributors should ensure their work meets a high standard before seeking review, respecting maintainers’ time, and must be prepared to discuss and justify their contributions during the review process.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Thoroughly review all AI-generated content before submitting it for review."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain the sole author, take full responsibility for accuracy, quality and maintainability, and be prepared to discuss and justify the contribution."
+        }
+      ],
+      "note": "Substantial AI-written code may be contributed, provided the contributor thoroughly reviews it, owns its quality and maintainability, and can discuss and justify it.",
+      "quotes": [
+        {
+          "quote": "We expect our contributors to embrace AI tools.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "This policy ensures that AI-generated contributions are always guided, validated, and owned by a skilled human, promoting better software and a stronger community than policing how code gets written.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "While contributors can use any AI tools to create their contributions, human oversight is mandatory.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "The contributor remains the sole author and is fully responsible for the contribution’s accuracy, quality, and maintainability.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "AI should augment your abilities, not replace your critical judgment.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "Contributors should ensure their work meets a high standard before seeking review, respecting maintainers’ time, and must be prepared to discuss and justify their contributions during the review process.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Thoroughly review all AI-generated content before submitting it for review."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain the sole author, take full responsibility for accuracy, quality and maintainability, and be prepared to discuss and justify the contribution."
+        }
+      ],
+      "note": "AI may make repetitive or mechanical code edits as part of a contribution, with mandatory human oversight and thorough review before submission.",
+      "quotes": [
+        {
+          "quote": "We expect our contributors to embrace AI tools.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "This policy ensures that AI-generated contributions are always guided, validated, and owned by a skilled human, promoting better software and a stronger community than policing how code gets written.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "While contributors can use any AI tools to create their contributions, human oversight is mandatory.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "The contributor remains the sole author and is fully responsible for the contribution’s accuracy, quality, and maintainability.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "AI should augment your abilities, not replace your critical judgment.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "Contributors should ensure their work meets a high standard before seeking review, respecting maintainers’ time, and must be prepared to discuss and justify their contributions during the review process.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Thoroughly review all AI-generated content before submitting it for review."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain the sole author, take full responsibility for accuracy, quality and maintainability, and be prepared to discuss and justify the contribution."
+        }
+      ],
+      "note": "AI may write tests or benchmarks for a contribution, but the contributor must review them thoroughly and remain responsible for the work.",
+      "quotes": [
+        {
+          "quote": "We expect our contributors to embrace AI tools.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "This policy ensures that AI-generated contributions are always guided, validated, and owned by a skilled human, promoting better software and a stronger community than policing how code gets written.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "While contributors can use any AI tools to create their contributions, human oversight is mandatory.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "The contributor remains the sole author and is fully responsible for the contribution’s accuracy, quality, and maintainability.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "AI should augment your abilities, not replace your critical judgment.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "Contributors should ensure their work meets a high standard before seeking review, respecting maintainers’ time, and must be prepared to discuss and justify their contributions during the review process.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Thoroughly review all AI-generated content before submitting it for review."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain the sole author, take full responsibility for accuracy, quality and maintainability, and be prepared to discuss and justify the contribution."
+        }
+      ],
+      "note": "AI may generate build, CI, packaging or other infrastructure changes, subject to the same mandatory review and contributor accountability.",
+      "quotes": [
+        {
+          "quote": "We expect our contributors to embrace AI tools.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "This policy ensures that AI-generated contributions are always guided, validated, and owned by a skilled human, promoting better software and a stronger community than policing how code gets written.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "While contributors can use any AI tools to create their contributions, human oversight is mandatory.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "The contributor remains the sole author and is fully responsible for the contribution’s accuracy, quality, and maintainability.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "AI should augment your abilities, not replace your critical judgment.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "Contributors should ensure their work meets a high standard before seeking review, respecting maintainers’ time, and must be prepared to discuss and justify their contributions during the review process.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Thoroughly review all AI-generated content before submitting it for review."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain the sole author, take full responsibility for accuracy, quality and maintainability, and be prepared to discuss and justify the contribution."
+        }
+      ],
+      "note": "AI-generated documentation or other written material may be submitted as part of a contribution after thorough contributor review, with full responsibility retained by the contributor.",
+      "quotes": [
+        {
+          "quote": "We expect our contributors to embrace AI tools.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "This policy ensures that AI-generated contributions are always guided, validated, and owned by a skilled human, promoting better software and a stronger community than policing how code gets written.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "While contributors can use any AI tools to create their contributions, human oversight is mandatory.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "The contributor remains the sole author and is fully responsible for the contribution’s accuracy, quality, and maintainability.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "AI should augment your abilities, not replace your critical judgment.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "Contributors should ensure their work meets a high standard before seeking review, respecting maintainers’ time, and must be prepared to discuss and justify their contributions during the review process.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        }
+      ]
+    },
+    {
+      "use": "localization",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Thoroughly review all AI-generated content before submitting it for review."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain the sole author, take full responsibility for accuracy, quality and maintainability, and be prepared to discuss and justify the contribution."
+        }
+      ],
+      "note": "AI translation may be used for contributed project strings or documentation, provided the contributor thoroughly reviews the output and takes full responsibility for it.",
+      "quotes": [
+        {
+          "quote": "We expect our contributors to embrace AI tools.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "This policy ensures that AI-generated contributions are always guided, validated, and owned by a skilled human, promoting better software and a stronger community than policing how code gets written.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "While contributors can use any AI tools to create their contributions, human oversight is mandatory.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "The contributor remains the sole author and is fully responsible for the contribution’s accuracy, quality, and maintainability.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "AI should augment your abilities, not replace your critical judgment.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "Contributors should ensure their work meets a high standard before seeking review, respecting maintainers’ time, and must be prepared to discuss and justify their contributions during the review process.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        }
+      ]
+    },
+    {
+      "use": "assets",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Thoroughly review all AI-generated content before submitting it for review."
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain the sole author, take full responsibility for accuracy, quality and maintainability, and be prepared to discuss and justify the contribution."
+        }
+      ],
+      "note": "AI-generated or AI-modified assets may be included in a contribution under the same requirements for thorough human review and contributor responsibility.",
+      "quotes": [
+        {
+          "quote": "We expect our contributors to embrace AI tools.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "This policy ensures that AI-generated contributions are always guided, validated, and owned by a skilled human, promoting better software and a stronger community than policing how code gets written.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "While contributors can use any AI tools to create their contributions, human oversight is mandatory.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "All AI-generated content must be thoroughly reviewed by the contributor before being submitted for review.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "The contributor remains the sole author and is fully responsible for the contribution’s accuracy, quality, and maintainability.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "AI should augment your abilities, not replace your critical judgment.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        },
+        {
+          "quote": "Contributors should ensure their work meets a high standard before seeking review, respecting maintainers’ time, and must be prepared to discuss and justify their contributions during the review process.",
+          "sourceUrl": "https://gvisor.dev/contributing"
+        }
+      ]
+    }
+  ],
+  "otherRules": [],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-25",
+  "lastChanged": "2026-10-25"
 }

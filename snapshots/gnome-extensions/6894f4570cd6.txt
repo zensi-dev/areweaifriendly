@@ -351,6 +351,8 @@ Reviewing Python modules, HTML, and web JavaScript dependencies is out of scope 
 
 Extensions may install modules from well-known services such as pip, npm or yarn but MUST require explicit user action. For example, the extension preferences may include a page which describes the modules to be installed with a button.
 
+If you are using a standalone GJS file, it should start with #!@GJS@ -m to make it clear that the file is a standalone GJS script.
+
 ### Clipboard Access must be declared ​
 
 Extensions that access the clipboard, with or without user interaction, MUST declare it in the description.

@@ -202,8 +202,37 @@ describe('checkOutput', () => {
     out.statements.push({ id: 3, sourceUrl: source.url, section: '', quote: 'No AI-written bug reports.' });
     const warnings = checkOutput(out, [source]).warnings.join('\n');
     expect(warnings).toContain('cites statement 9, which does not exist');
-    expect(warnings).toContain('Rule "code-large" appears twice');
+    expect(warnings).toContain('Rule "code-large" appears twice; merged.');
     expect(warnings).toContain('Statement 3 is not used by any rule');
+  });
+  test('merges duplicate rules with the same status and keeps the first of conflicting ones', () => {
+    const out = structuredClone(goodOutput);
+    out.rules.push(
+      {
+        use: 'code-large',
+        status: 'conditional',
+        conditions: [
+          { condition: 'disclosure', strength: 'required', detail: 'other wording' },
+          { condition: 'human-reviewed', strength: 'recommended', detail: '' },
+        ],
+        note: 'Second copy.',
+        statementIds: [1, 2],
+      },
+      { use: 'issue-writing', status: 'allowed', conditions: [], note: 'Conflicting copy.', statementIds: [1] },
+    );
+    const result = checkOutput(out, [source]);
+    expect(result.rules).toHaveLength(2);
+    expect(result.rules[0].note).toBe('Allowed if disclosed in the pull request.');
+    expect(result.rules[0].conditions).toEqual([
+      { condition: 'disclosure', strength: 'required', detail: 'in the PR' },
+      { condition: 'human-reviewed', strength: 'recommended' },
+    ]);
+    expect(result.rules[0].quotes.map((q) => q.quote)).toEqual([
+      'You may use AI tools if you disclose it in the PR.',
+      'No AI-written bug reports.',
+    ]);
+    expect(result.rules[1].status).toBe('not-allowed');
+    expect(result.warnings.join('\n')).toContain('Rule "issue-writing" appears twice with different statuses (not-allowed, allowed); kept "not-allowed".');
   });
   test('checks rule statuses against their conditions', () => {
     const out = structuredClone(goodOutput);
@@ -229,10 +258,10 @@ describe('checkOutput', () => {
   });
   test('fixes verdicts that contradict their conditions', () => {
     const out = structuredClone(goodOutput);
-    out.policy.contributions = { verdict: 'allowed', conditions: ['disclosure', 'disclosure'] };
+    out.policy.contributions = { verdict: 'allowed', conditions: ['human-reviewed', 'disclosure', 'disclosure'] };
     out.policy.issues = { verdict: 'banned', conditions: ['disclosure'] };
     const result = checkOutput(out, [source]);
-    expect(result.policy.contributions).toEqual({ verdict: 'conditional', conditions: ['disclosure'] });
+    expect(result.policy.contributions).toEqual({ verdict: 'conditional', conditions: ['disclosure', 'human-reviewed'] });
     expect(result.policy.issues).toEqual({ verdict: 'banned', conditions: [] });
     expect(result.warnings).toHaveLength(2);
   });
