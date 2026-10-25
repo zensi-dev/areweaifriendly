@@ -20,7 +20,9 @@ function areaText(d: DimensionPolicy): string {
 
 /** Areas whose verdict or conditions changed, one Markdown line each. */
 export function areaChanges(before: Project['policy'], after: Project['policy']): string[] {
-  return DIMENSIONS.filter((d) => JSON.stringify(before[d]) !== JSON.stringify(after[d])).map(
+  const same = (a: DimensionPolicy, b: DimensionPolicy) =>
+    a.verdict === b.verdict && a.conditions.length === b.conditions.length && a.conditions.every((c) => b.conditions.includes(c));
+  return DIMENSIONS.filter((d) => !same(before[d], after[d])).map(
     (d) => `${DIMENSION_INFO[d].label}: ${areaText(before[d])} → ${areaText(after[d])}`,
   );
 }

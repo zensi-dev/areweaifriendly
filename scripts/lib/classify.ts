@@ -158,6 +158,8 @@ How to map statements to uses:
 - "All contributions" or "contributions" covers the code uses. It covers issues or text only if the wording clearly includes them.
 - When a general statement and a more specific statement disagree about a use, the specific one decides that use. Example: "AI-generated content is not accepted, except for translating your comments" means comments are not allowed and translation is allowed.
 - Never carry a rule from one use or area to another because it seems likely. "No AI-written code" says nothing about bug reports.
+- Give each use exactly one rule. If the policy treats a use differently in different parts of the project (for example some repositories or product versions but not others), the rule takes the status for the parts where AI is permitted most, its note says where it does not apply, and the stricter part is recorded as an other rule.
+- If AI use is forbidden by default and permitted only as an exception granted case by case (for example "must not be committed without prior written approval by the core team"), the uses are not-allowed and the exception is an other rule. This differs from routine prior agreement: "discuss larger changes in an issue before opening a pull request" is a prior-approval condition on a permitted use.
 - Rules that fit no use go in "otherRules" with area "contributions", "issues", "summaries" or "general" and a one-sentence description. Examples: an exemption for core maintainers, a ban on sharing embargoed security information with AI services, a rule about AI in moderation.
 
 ## Status of a rule
@@ -194,14 +196,14 @@ Rate code contributions, issues and AI-written text from your rules. Verdicts:
 
 Area conditions:
 - disclosure, human-accountable, human-reviewed, license-compliance, no-autonomous-agents: a requirement that applies to the main permitted ways of using AI in the area.
-- limited-scope: AI may write content only for some kinds or sizes of work in this area (for example only small fixes, tests or mechanical changes, but not larger generated changes), or only after maintainer agreement.
+- limited-scope: AI may write content only for some kinds or sizes of work in this area (for example only small fixes, tests or mechanical changes, but not larger generated changes), or only in some parts of the project. Asking maintainers first is not limited scope: a prior-approval condition on permitted uses does not appear in the area rating.
 - minor-assist-only: AI may not write the submitted content; only minor help is permitted, such as autocomplete, proofreading, translating one's own text, or research whose output is not submitted. Use "conditional" with "minor-assist-only".
 
 How to choose for code contributions:
 - If AI-written code of any size is permitted, the verdict is allowed or conditional with its requirements.
 - If AI-written code is permitted only for some kinds or sizes of work, use conditional with "limited-scope" plus the other requirements.
 - If no AI-written code is permitted but autocomplete or research is, use conditional with "minor-assist-only".
-- If nothing is permitted, use banned.
+- If nothing is permitted, use banned. Uses that are forbidden unless an exception is granted case by case count as not permitted.
 Apply the same reasoning to issues (is AI-written report text permitted?) and to text (are AI-written descriptions and comments permitted?). Discouraged uses count as permitted when rating.
 
 If documents disagree, follow the most specific and most recent official statement. An adopted decision outranks proposals or rejected options on the same page. Lower your confidence when you had to resolve a conflict.
@@ -421,7 +423,8 @@ export function checkOutput(output: ModelOutput, sources: FetchedSource[], warni
   const policy = structuredClone(output.policy);
   for (const dim of DIMENSIONS) {
     const d = policy[dim];
-    d.conditions = [...new Set(d.conditions)];
+    // Fixed order, so a re-check that only reorders conditions is not reported as a change.
+    d.conditions = CONDITIONS.filter((c) => d.conditions.includes(c));
     if (d.verdict === 'allowed' && d.conditions.length) {
       d.verdict = 'conditional';
       warnings.push(`${dim}: "allowed" came with conditions; treated as "conditional".`);
@@ -459,10 +462,6 @@ export function checkOutput(output: ModelOutput, sources: FetchedSource[], warni
   const rules: Rule[] = [];
   for (const r of output.rules) {
     const what = `Rule "${r.use}"`;
-    if (rules.some((k) => k.use === r.use)) {
-      warnings.push(`${what} appears twice; kept the first.`);
-      continue;
-    }
     const quotes = quotesFor(r.statementIds, what);
     if (!quotes.length) {
       warnings.push(`${what} (${r.status}) dropped: no verified quote supports it.`);
@@ -476,13 +475,30 @@ export function checkOutput(output: ModelOutput, sources: FetchedSource[], warni
       warnings.push(`${what}: conditions dropped because it is not allowed.`);
       conditions = [];
     }
-    if (r.status === 'conditional' && !conditions.some((c) => c.strength === 'required')) {
+    const rule: Rule = { use: r.use, status: r.status, conditions, note: r.note.trim() || USE_INFO[r.use].label, quotes };
+    const first = rules.find((k) => k.use === r.use);
+    if (!first) rules.push(rule);
+    else if (first.status !== rule.status) {
+      warnings.push(`${what} appears twice with different statuses (${first.status}, ${rule.status}); kept "${first.status}".`);
+    } else {
+      // Same status split over two entries: keep one rule with every condition and quote.
+      warnings.push(`${what} appears twice; merged.`);
+      for (const c of rule.conditions) {
+        const kept = first.conditions.find((k) => k.condition === c.condition);
+        if (!kept) first.conditions.push(c);
+        else if (c.strength === 'required') kept.strength = 'required';
+      }
+      for (const q of rule.quotes) if (!first.quotes.some((k) => k.quote === q.quote && k.sourceUrl === q.sourceUrl)) first.quotes.push(q);
+    }
+  }
+  for (const r of rules) {
+    const what = `Rule "${r.use}"`;
+    if (r.status === 'conditional' && !r.conditions.some((c) => c.strength === 'required')) {
       warnings.push(`${what}: "conditional" without a required condition.`);
     }
-    if (r.status === 'allowed' && conditions.some((c) => c.strength === 'required')) {
+    if (r.status === 'allowed' && r.conditions.some((c) => c.strength === 'required')) {
       warnings.push(`${what}: "allowed" but has a required condition.`);
     }
-    rules.push({ use: r.use, status: r.status, conditions, note: r.note.trim() || USE_INFO[r.use].label, quotes });
   }
 
   const otherRules: OtherRule[] = [];
