@@ -17,15 +17,17 @@
       ]
     },
     "issues": {
-      "verdict": "unspecified",
-      "conditions": []
+      "verdict": "conditional",
+      "conditions": [
+        "no-autonomous-agents"
+      ]
     },
     "summaries": {
       "verdict": "conditional",
       "conditions": [
         "human-reviewed",
-        "minor-assist-only",
-        "no-autonomous-agents"
+        "no-autonomous-agents",
+        "minor-assist-only"
       ]
     }
   },
@@ -430,7 +432,7 @@
   "referencedPolicies": [],
   "rubricVersion": 1,
   "confidence": "medium",
-  "classifiedBy": "ai",
+  "classifiedBy": "manual",
   "classifiedAt": "2026-10-25",
   "lastChanged": "2026-10-25"
 }

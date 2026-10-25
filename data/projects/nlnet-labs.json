@@ -9,9 +9,9 @@
     "contributions": {
       "verdict": "conditional",
       "conditions": [
-        "minor-assist-only",
         "disclosure",
-        "human-accountable"
+        "human-accountable",
+        "minor-assist-only"
       ]
     },
     "issues": {
@@ -125,6 +125,11 @@
     {
       "dimension": "summaries",
       "quote": "Alternatively, you could also write in your native language if you cannot assess the correctness of the translation.",
+      "sourceUrl": "https://nlnetlabs.nl/llm-policy/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Use of LLM translation is discouraged based on their generative attributes that would most likely confuse rather than ease the discussion.",
       "sourceUrl": "https://nlnetlabs.nl/llm-policy/"
     }
   ],
@@ -549,7 +554,7 @@
     },
     {
       "use": "translation",
-      "status": "allowed",
+      "status": "discouraged",
       "conditions": [
         {
           "condition": "disclosure",
@@ -557,7 +562,7 @@
           "detail": "Disclose machine-translation use so both sides are aware of possible mistranslation"
         }
       ],
-      "note": "Machine translation can be helpful for communication; disclosure is encouraged, and writing in one's native language is an alternative if the contributor cannot assess translation correctness.",
+      "note": "LLM translation is discouraged; if used, disclosing it is encouraged, or write in your native language instead.",
       "quotes": [
         {
           "quote": "Translation can be helpful if English is not your native language. If you use machine translation when communicating with us, we encourage you to disclose such use to us so that both sides are aware of possible miscommunication as a result of mistranslation.",
@@ -565,6 +570,10 @@
         },
         {
           "quote": "Alternatively, you could also write in your native language if you cannot assess the correctness of the translation.",
+          "sourceUrl": "https://nlnetlabs.nl/llm-policy/"
+        },
+        {
+          "quote": "Use of LLM translation is discouraged based on their generative attributes that would most likely confuse rather than ease the discussion.",
           "sourceUrl": "https://nlnetlabs.nl/llm-policy/"
         }
       ]
@@ -610,7 +619,7 @@
   ],
   "rubricVersion": 1,
   "confidence": "medium",
-  "classifiedBy": "ai",
+  "classifiedBy": "manual",
   "classifiedAt": "2026-10-25",
   "lastChanged": "2026-10-25"
 }

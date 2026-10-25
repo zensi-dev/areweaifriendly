@@ -9,8 +9,8 @@
     "contributions": {
       "verdict": "conditional",
       "conditions": [
-        "human-reviewed",
-        "human-accountable"
+        "human-accountable",
+        "human-reviewed"
       ]
     },
     "issues": {

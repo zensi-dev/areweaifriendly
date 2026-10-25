@@ -10,8 +10,7 @@
       "verdict": "conditional",
       "conditions": [
         "disclosure",
-        "human-accountable",
-        "limited-scope"
+        "human-accountable"
       ]
     },
     "issues": {
@@ -280,7 +279,7 @@
   "referencedPolicies": [],
   "rubricVersion": 1,
   "confidence": "high",
-  "classifiedBy": "ai",
+  "classifiedBy": "manual",
   "classifiedAt": "2026-10-25",
   "lastChanged": "2026-10-25"
 }
