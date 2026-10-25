@@ -5,53 +5,54 @@
  *   bun scripts/check.ts                 check all projects
  *   bun scripts/check.ts curl qemu       check some projects
  *   bun scripts/check.ts --force curl    re-classify even if nothing changed
+ *   bun scripts/check.ts --concurrency 4 check at most 4 projects at a time (default $CHECK_CONCURRENCY or 16)
  *
+ * Projects are checked in parallel; the report lists them in slug order once all are done.
  * Writes a Markdown report to $CHECK_REPORT (default: check-report.md).
  */
 import { writeFile } from 'node:fs/promises';
 import { isDeepStrictEqual, parseArgs } from 'node:util';
 import { classify, configFromEnv, RUBRIC_VERSION, type ClassifierConfig } from './lib/classify';
 import { fetchSource, type FetchedSource } from './lib/fetch';
-import { areaChanges, reviewNotes, ruleChanges, setOutputs, stanceLabel, toSources } from './lib/pipeline';
+import { areaChanges, mapLimit, reviewNotes, ruleChanges, setOutputs, stanceLabel, toSources } from './lib/pipeline';
 import { listSlugs, readProject, today, writeProject, writeSnapshot } from './lib/store';
 
 const { values, positionals } = parseArgs({
-  options: { force: { type: 'boolean', default: false } },
+  options: { force: { type: 'boolean', default: false }, concurrency: { type: 'string', default: process.env.CHECK_CONCURRENCY || '16' } },
   allowPositionals: true,
 });
 const slugs = positionals.length ? positionals : await listSlugs();
+const concurrency = Number(values.concurrency);
+if (!Number.isInteger(concurrency) || concurrency < 1) throw new Error('--concurrency must be a positive whole number');
 
 let config: ClassifierConfig | undefined;
 const getConfig = () => (config ??= configFromEnv());
 
-const changed: string[] = [];
-const problems: string[] = [];
 const date = today();
 
-for (const slug of slugs) {
+/** Checks one project; returns its report section (if re-classified) and any problems. */
+async function check(slug: string): Promise<{ changed?: string; problems: string[] }> {
   const project = await readProject(slug);
+  const problems: string[] = [];
+  const results = await Promise.allSettled(project.sources.map((source) => fetchSource(source.url)));
   const fetched: FetchedSource[] = [];
-  for (const source of project.sources) {
-    try {
-      fetched.push(await fetchSource(source.url));
-    } catch (err) {
-      problems.push(`- **${project.name}**: ${(err as Error).message}`);
-    }
+  for (const r of results) {
+    if (r.status === 'fulfilled') fetched.push(r.value);
+    else problems.push(`- **${project.name}**: ${(r.reason as Error).message}`);
   }
-  if (fetched.length !== project.sources.length) continue;
+  if (problems.length) return { problems };
 
   const textChanged = fetched.some((f, i) => f.hash !== project.sources[i].hash);
   if (!textChanged && !values.force) {
     console.log(`${slug}: unchanged`);
-    continue;
+    return { problems };
   }
 
   let result;
   try {
     result = await classify(getConfig(), project, fetched);
   } catch (err) {
-    problems.push(`- **${project.name}**: classification failed: ${(err as Error).message}`);
-    continue;
+    return { problems: [`- **${project.name}**: classification failed: ${(err as Error).message}`] };
   }
 
   const changes = ruleChanges(project.rules, result.rules);
@@ -91,9 +92,16 @@ for (const slug of slugs) {
     ...changes.map((c) => `- ${c}`),
     ...(ratingChanged ? areaChanges(project.policy, result.policy).map((c) => `- ${c}`) : []),
   ];
-  changed.push(`### ${project.name}\n\n${headline}\n\n${details.length ? `${details.join('\n')}\n\n` : ''}${reviewNotes(result)}`);
   console.log(`${slug}: ${headline}`);
+  return {
+    changed: `### ${project.name}\n\n${headline}\n\n${details.length ? `${details.join('\n')}\n\n` : ''}${reviewNotes(result)}`,
+    problems,
+  };
 }
+
+const outcomes = await mapLimit(slugs, concurrency, check);
+const changed = outcomes.flatMap((o) => (o.changed ? [o.changed] : []));
+const problems = outcomes.flatMap((o) => o.problems);
 
 const report = [
   changed.length ? `## Updated projects\n\n${changed.join('\n\n')}` : 'No policy changes.',

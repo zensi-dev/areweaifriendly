@@ -58,6 +58,23 @@ export function reviewNotes(c: Classification): string {
   return lines.join('\n');
 }
 
+/**
+ * Runs `fn` on every item with at most `limit` calls in flight, starting the next item as soon as
+ * one finishes. Results keep the order of `items`.
+ */
+export async function mapLimit<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
+  const results = new Array<R>(items.length);
+  let next = 0;
+  const worker = async () => {
+    while (next < items.length) {
+      const i = next++;
+      results[i] = await fn(items[i]!);
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return results;
+}
+
 /** Writes key=value pairs for later workflow steps; a no-op outside GitHub Actions. */
 export async function setOutputs(values: Record<string, string>): Promise<void> {
   const file = process.env.GITHUB_OUTPUT;

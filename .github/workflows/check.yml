@@ -30,6 +30,9 @@ jobs:
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_MODEL: ${{ secrets.AI_MODEL }}
           AI_RESPONSE_FORMAT: ${{ secrets.AI_RESPONSE_FORMAT }}
+          # Optional repository variables; empty means the script's defaults (20 minutes, 16 at a time).
+          AI_TIMEOUT_SECONDS: ${{ vars.AI_TIMEOUT_SECONDS }}
+          CHECK_CONCURRENCY: ${{ vars.CHECK_CONCURRENCY }}
           CHECK_REPORT: ${{ runner.temp }}/report.md
 
       - run: cat "$RUNNER_TEMP/report.md" >> "$GITHUB_STEP_SUMMARY"

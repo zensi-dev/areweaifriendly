@@ -58,6 +58,7 @@ describe('configFromEnv', () => {
     expect(c.baseUrl).toBe(`http://localhost:${server.port}/v1`);
     expect(c.responseFormat).toBe('json_schema');
     expect(c.maxInputChars).toBe(300_000);
+    expect(c.timeoutMs).toBe(1_200_000);
   });
 });
 
@@ -130,6 +131,39 @@ describe('classify against an OpenAI-compatible server', () => {
     reply = () => Response.json({ choices: [{ message: { content: null, refusal: 'no' } }] });
     await expect(classify(configFromEnv(env), { name: 'E', homepage: 'https://e.org' }, [source])).rejects.toThrow('refused');
   });
+});
+
+test('retries rate-limited requests after the delay the provider asks for', async () => {
+  let calls = 0;
+  reply = () =>
+    ++calls < 3
+      ? new Response('slow down', { status: 429, headers: { 'retry-after': '0' } })
+      : Response.json({ choices: [{ message: { content: JSON.stringify(goodOutput) } }] });
+  const result = await classify(configFromEnv(env), { name: 'E', homepage: 'https://e.org' }, [source]);
+  expect(calls).toBe(3);
+  expect(result.rules).toHaveLength(2);
+});
+
+test('a reply body that stalls past the timeout is reported as a timeout', async () => {
+  const stalling = Bun.serve({
+    port: 0,
+    fetch: () =>
+      new Response(
+        new ReadableStream({
+          start(c) {
+            c.enqueue(new TextEncoder().encode('\n   \n'));
+          },
+        }),
+        { headers: { 'content-type': 'application/json' } },
+      ),
+  });
+  try {
+    const config = configFromEnv({ ...env, AI_BASE_URL: `http://localhost:${stalling.port}/v1`, AI_TIMEOUT_SECONDS: '0.2' });
+    const err = await classify(config, { name: 'E', homepage: 'https://e.org' }, [source]).catch((e) => e);
+    expect(err.message).toBe('Classifier request failed: timed out while waiting for the reply');
+  } finally {
+    stalling.stop(true);
+  }
 });
 
 test('network errors do not reveal the endpoint', async () => {

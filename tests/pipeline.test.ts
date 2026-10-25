@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { areaChanges, ruleChanges, ruleLine } from '../scripts/lib/pipeline';
+import { areaChanges, mapLimit, ruleChanges, ruleLine } from '../scripts/lib/pipeline';
 import type { Policy, Rule } from '../src/lib/schema';
 
 const quote = [{ quote: 'q', sourceUrl: 'https://example.org/' }];
@@ -43,4 +43,22 @@ test('areaChanges lists only areas that changed', () => {
   };
   const after: Policy = { ...before, contributions: { verdict: 'conditional', conditions: ['disclosure', 'limited-scope'] } };
   expect(areaChanges(before, after)).toEqual(['Code contributions: Unfriendly (Minor help only) → Mostly friendly (Disclose, Limited scope)']);
+});
+
+describe('mapLimit', () => {
+  test('keeps input order and never runs more than the limit at once', async () => {
+    let running = 0;
+    let peak = 0;
+    const result = await mapLimit([30, 5, 20, 1, 10], 2, async (ms) => {
+      peak = Math.max(peak, ++running);
+      await Bun.sleep(ms);
+      running--;
+      return ms * 2;
+    });
+    expect(result).toEqual([60, 10, 40, 2, 20]);
+    expect(peak).toBe(2);
+  });
+  test('handles an empty list', async () => {
+    expect(await mapLimit([], 4, async (x) => x)).toEqual([]);
+  });
 });

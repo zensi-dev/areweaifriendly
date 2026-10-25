@@ -28,6 +28,8 @@ export type ClassifierConfig = {
   model: string;
   responseFormat: 'json_schema' | 'json_object';
   maxInputChars: number;
+  /** Whole request, including the wait for the reply body; reasoning models can take many minutes. */
+  timeoutMs: number;
 };
 
 export function configFromEnv(env: Record<string, string | undefined> = process.env): ClassifierConfig {
@@ -43,6 +45,7 @@ export function configFromEnv(env: Record<string, string | undefined> = process.
     model: env.AI_MODEL!,
     responseFormat,
     maxInputChars: Number(env.AI_MAX_INPUT_CHARS) || 300_000,
+    timeoutMs: (Number(env.AI_TIMEOUT_SECONDS) || 1200) * 1000,
   };
 }
 
@@ -539,6 +542,11 @@ function parseJson(raw: string): unknown {
 export type ToolCall = { id: string; type: 'function'; function: { name: string; arguments: string } };
 export type AssistantMessage = { role: 'assistant'; content?: string | null; tool_calls?: ToolCall[] };
 
+function isTimeout(err: unknown): boolean {
+  const name = (err as Error)?.name;
+  return name === 'TimeoutError' || name === 'AbortError';
+}
+
 /**
  * Errors from here end up in public Actions logs, PR bodies and issue comments, so they
  * never include the endpoint URL, host name or the provider's response text: those would
@@ -552,21 +560,25 @@ export async function chatCompletion(config: ClassifierConfig, body: object, fet
         method: 'POST',
         headers: { 'content-type': 'application/json', authorization: `Bearer ${config.apiKey}` },
         body: JSON.stringify(body),
-        signal: AbortSignal.timeout(300_000),
+        signal: AbortSignal.timeout(config.timeoutMs),
       });
     } catch (err) {
-      const timedOut = (err as Error).name === 'TimeoutError';
-      throw new Error(`Classifier request failed: ${timedOut ? 'timed out' : 'network error'}`);
+      throw new Error(`Classifier request failed: ${isTimeout(err) ? 'timed out' : 'network error'}`);
     }
-    if ((res.status === 429 || res.status >= 500) && attempt < 3) {
-      await Bun.sleep(attempt * 10_000);
+    // Many checks run at once, so rate limits are expected: wait as long as the provider asks, then retry.
+    if ((res.status === 429 || res.status >= 500) && attempt < 5) {
+      const header = res.headers.get('retry-after');
+      const retryAfter = header === null || header.trim() === '' ? NaN : Number(header);
+      await Bun.sleep(retryAfter >= 0 ? Math.min(retryAfter, 120) * 1000 : attempt * 15_000);
       continue;
     }
     if (!res.ok) throw new Error(`Classifier request failed: HTTP ${res.status}`);
     let json: { choices?: { message?: AssistantMessage & { refusal?: string | null } }[] };
     try {
       json = await res.json();
-    } catch {
+    } catch (err) {
+      // Some providers send headers and keep-alive padding at once, so the timeout can hit while the body is still coming.
+      if (isTimeout(err)) throw new Error('Classifier request failed: timed out while waiting for the reply');
       throw new Error('Classifier returned a response that is not JSON');
     }
     const message = json.choices?.[0]?.message;
