@@ -21,6 +21,17 @@ const classification: Classification = {
     summaries: { verdict: 'unspecified', conditions: [] },
   },
   evidence: [{ dimension: 'contributions', quote: 'You may use AI tools if you disclose it.', sourceUrl: submission.sources[0] }],
+  rules: [
+    {
+      use: 'code-large',
+      status: 'conditional',
+      conditions: [{ condition: 'disclosure', strength: 'required', detail: 'Assisted-by trailer' }],
+      note: 'Allowed if disclosed.',
+      quotes: [{ quote: 'You may use AI tools if you disclose it.', sourceUrl: submission.sources[0] }],
+    },
+  ],
+  otherRules: [],
+  referencedPolicies: [],
   sources: [{ url: submission.sources[0], publisher: 'project', isPolicy: true, note: 'The AI policy.' }],
   warnings: [],
 };
@@ -75,6 +86,7 @@ describe('rendering', () => {
     expect(accepted).toStartWith(`${REVIEW_MARKER}\n### Review passed`);
     expect(accepted).toContain('| Issues & bug reports | Banned | Allowed (differs) |');
     expect(accepted).toContain('| Code contributions | Allowed with conditions: AI use must be disclosed | Allowed with conditions |');
+    expect(accepted).toContain('**Rules**\n\n- Code contributions\n  - Large or generated changes: Allowed with conditions (Disclose AI use: Assisted-by trailer). Allowed if disclosed.');
 
     const rejected = { submission, problems: ['Fix this.'], flags: [] };
     expect(renderComment(rejected, { editTriggersReview: true })).toContain('runs again automatically');

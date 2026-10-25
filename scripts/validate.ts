@@ -42,12 +42,25 @@ for (const slug of await listSlugs()) {
     }
   }
 
-  for (const e of project.evidence) {
+  const quotes = [
+    ...project.evidence,
+    ...(project.rules ?? []).flatMap((r) => r.quotes),
+    ...(project.otherRules ?? []).flatMap((r) => r.quotes),
+  ];
+  for (const e of quotes) {
     const text = texts.get(e.sourceUrl);
     if (!project.sources.some((s) => s.url === e.sourceUrl)) err(`quote cites unknown source ${e.sourceUrl}`);
     else if (text !== undefined && !quoteAppearsIn(e.quote, text)) {
       err(`quote not found in snapshot of ${e.sourceUrl}: "${e.quote.slice(0, 80)}"`);
     }
+  }
+
+  const uses = new Set<string>();
+  for (const r of project.rules ?? []) {
+    if (uses.has(r.use)) err(`rule for "${r.use}" appears twice`);
+    uses.add(r.use);
+    if (r.status === 'not-allowed' && r.conditions.length) err(`rule "${r.use}": "not-allowed" may not list conditions`);
+    if (new Set(r.conditions.map((c) => c.condition)).size !== r.conditions.length) err(`rule "${r.use}": repeated condition`);
   }
 
   console.log(`${slug.padEnd(24)} ${deriveStance(project.policy)}`);

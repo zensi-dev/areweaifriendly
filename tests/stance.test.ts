@@ -20,6 +20,9 @@ describe('areaStance', () => {
   test('disclosure makes it mostly friendly', () => {
     expect(areaStance({ verdict: 'conditional', conditions: ['disclosure', 'human-accountable'] })).toBe('mostly-friendly');
   });
+  test('limited scope makes it mostly friendly', () => {
+    expect(areaStance({ verdict: 'conditional', conditions: ['limited-scope', 'human-accountable'] })).toBe('mostly-friendly');
+  });
   test('minor help only is unfriendly', () => {
     expect(areaStance({ verdict: 'conditional', conditions: ['minor-assist-only'] })).toBe('unfriendly');
   });

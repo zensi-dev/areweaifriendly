@@ -1,8 +1,8 @@
-import { CONDITION_INFO, DIMENSION_INFO } from '../../src/lib/labels';
+import { CONDITION_INFO, DIMENSION_INFO, RULE_AREA_LABEL, RULE_STATUS_INFO, USE_INFO } from '../../src/lib/labels';
 import { DIMENSIONS, type DimensionPolicy } from '../../src/lib/schema';
 import type { Classification } from './classify';
 import { ANSWER_OPTIONS, REVIEW_MARKER, type Submission } from './issue-form';
-import { stanceLabel } from './pipeline';
+import { ruleLine, stanceLabel } from './pipeline';
 
 export { REVIEW_MARKER };
 
@@ -75,6 +75,18 @@ export function renderFindings(r: Review): string {
       const answer = r.submission.answers[dim];
       const mine = answer ? ANSWER_OPTIONS[answer] + (answer === c.policy[dim].verdict ? '' : ' (differs)') : '–';
       out.push(`| ${DIMENSION_INFO[dim].label} | ${verdictText(c.policy[dim])} | ${mine} |`);
+    }
+    if (c.rules.length || c.otherRules.length) {
+      out.push('', '**Rules**', '');
+      for (const dim of DIMENSIONS) {
+        const rules = c.rules.filter((rule) => USE_INFO[rule.use].area === dim);
+        if (!rules.length) continue;
+        out.push(`- ${DIMENSION_INFO[dim].label}`);
+        for (const rule of rules) out.push(`  - ${md(ruleLine(rule))}. ${md(rule.note)}`);
+      }
+      for (const o of c.otherRules) {
+        out.push(`- Other (${RULE_AREA_LABEL[o.area]}): ${RULE_STATUS_INFO[o.status].label}. ${md(o.description)}`);
+      }
     }
     out.push('', '**Sources**', '');
     for (const s of c.sources) {

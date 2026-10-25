@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/Icon.astro';
 import PolicyTable from '../../components/PolicyTable.astro';
+import RuleList from '../../components/RuleList.astro';
 import MoodTile from '../../components/MoodTile.astro';
 import { CATEGORY_INFO, DIMENSION_INFO, STANCE_INFO } from '../../lib/labels';
 import { formatDate, projects, type SiteProject } from '../../lib/projects';
@@ -23,7 +24,8 @@ const { project: p } = Astro.props;
 const stance = STANCE_INFO[p.stance];
 const url = `${SITE_URL}/projects/${p.slug}/`;
 const sourceTitle = (u: string) => p.sources.find((s) => s.url === u)?.title ?? u;
-const quotes = DIMENSIONS.map((dim) => ({ dim, items: p.evidence.filter((e) => e.dimension === dim) })).filter(
+// Entries with detailed rules show their quotes next to each rule instead.
+const quotes = (p.rules ? [] : DIMENSIONS).map((dim) => ({ dim, items: p.evidence.filter((e) => e.dimension === dim) })).filter(
   (g) => g.items.length,
 );
 const section = 'mt-12';
@@ -103,6 +105,15 @@ const jsonLd = {
       <h2 id="glance" class={heading}>Policy by area</h2>
       <PolicyTable policy={p.policy} explain class="border-y border-line" />
     </section>
+
+    {
+      p.rules && (
+        <section class={section} aria-labelledby="rules">
+          <h2 id="rules" class={heading}>What is allowed and what is not</h2>
+          <RuleList rules={p.rules} otherRules={p.otherRules ?? []} sources={p.sources} />
+        </section>
+      )
+    }
 
     {
       quotes.length > 0 && (

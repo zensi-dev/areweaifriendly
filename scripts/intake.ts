@@ -18,7 +18,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { parseArgs } from 'node:util';
 import { slugify, SLUG_RE } from '../src/lib/schema';
-import { classify, configFromEnv } from './lib/classify';
+import { classify, configFromEnv, RUBRIC_VERSION } from './lib/classify';
 import { fetchPage } from './lib/fetch';
 import { FIELDS, issueHints, parseSubmission, SubmissionError, type IssueComment, type Submission } from './lib/issue-form';
 import { setOutputs, toSources } from './lib/pipeline';
@@ -164,6 +164,10 @@ if (pre.problems.length) {
       summary: result.summary,
       policy: result.policy,
       evidence: result.evidence,
+      rules: result.rules,
+      otherRules: result.otherRules,
+      referencedPolicies: result.referencedPolicies,
+      rubricVersion: RUBRIC_VERSION,
       sources: toSources(fetched, date),
       confidence: result.confidence,
       classifiedBy: 'ai',

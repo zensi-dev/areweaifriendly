@@ -1,4 +1,4 @@
-import { CATEGORY_INFO, CONDITION_INFO, DIMENSION_INFO, STANCE_INFO } from './labels';
+import { CATEGORY_INFO, CONDITION_INFO, DIMENSION_INFO, RULE_CONDITION_INFO, RULE_STATUS_INFO, STANCE_INFO, USE_INFO } from './labels';
 import type { SiteProject } from './projects';
 import { DIMENSIONS } from './schema';
 import { areaStance, STANCES } from './stance';
@@ -35,7 +35,34 @@ export function projectMarkdown(p: SiteProject, headingLevel = 1): string {
     const conditions = d.conditions.map((c) => CONDITION_INFO[c].label).join('; ');
     lines.push(`- **${DIMENSION_INFO[dim].label}**: ${STANCE_INFO[areaStance(d)].plain}${conditions ? ` (${conditions})` : ''}`);
   }
-  if (p.evidence.length) {
+  if (p.rules) {
+    lines.push('', `${h}# What is allowed and what is not`, '');
+    for (const dim of DIMENSIONS) {
+      const rules = p.rules.filter((r) => USE_INFO[r.use].area === dim);
+      const other = (p.otherRules ?? []).filter((o) => o.area === dim);
+      lines.push(`${h}## ${DIMENSION_INFO[dim].label}`, '');
+      if (!rules.length && !other.length) lines.push('Not covered by the policy.', '');
+      for (const r of rules) {
+        const conditions = r.conditions.map(
+          (c) => `${RULE_CONDITION_INFO[c.condition].label}${c.detail ? `: ${c.detail}` : ''}${c.strength === 'recommended' ? ' (recommended)' : ''}`,
+        );
+        lines.push(`- **${USE_INFO[r.use].label}**: ${RULE_STATUS_INFO[r.status].label}. ${r.note}${conditions.length ? ` Conditions: ${conditions.join('; ')}.` : ''}`);
+        for (const q of r.quotes) lines.push(`  > "${q.quote}" (${q.sourceUrl})`);
+      }
+      for (const o of other) {
+        lines.push(`- **Other**: ${RULE_STATUS_INFO[o.status].label}. ${o.description}`);
+        for (const q of o.quotes) lines.push(`  > "${q.quote}" (${q.sourceUrl})`);
+      }
+      if (rules.length || other.length) lines.push('');
+    }
+    const general = (p.otherRules ?? []).filter((o) => o.area === 'general');
+    if (general.length) {
+      lines.push(`${h}## General`, '');
+      for (const o of general) lines.push(`- ${RULE_STATUS_INFO[o.status].label}: ${o.description}`);
+      lines.push('');
+    }
+    if (lines.at(-1) === '') lines.pop();
+  } else if (p.evidence.length) {
     lines.push('', `${h}# In their own words`, '');
     for (const e of p.evidence) lines.push(`- ${DIMENSION_INFO[e.dimension].label}: "${e.quote}" (${e.sourceUrl})`);
   }

@@ -2,8 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import MoodTile from '../components/MoodTile.astro';
-import { CONDITION_INFO, DIMENSION_INFO, STANCE_INFO } from '../lib/labels';
-import { CONDITIONS, DIMENSIONS } from '../lib/schema';
+import { CONDITION_INFO, DIMENSION_INFO, RULE_STATUS_INFO, STANCE_INFO, USE_INFO } from '../lib/labels';
+import { CONDITIONS, DIMENSIONS, RULE_STATUSES, USES } from '../lib/schema';
 import { STANCES } from '../lib/stance';
 import { READING } from '../lib/ui';
 import { REPO_URL, SITE_NAME } from '../site.config';
@@ -76,9 +76,45 @@ const p = 'mt-4';
     </ul>
     <p class={p}>
       Conditions that every good contribution meets anyway, like taking responsibility for your work, keep an area
-      <em>Friendly</em>. Extra hoops, like mandatory disclosure, make it <em>Mostly friendly</em>. Allowing only
-      minor help makes it <em>Unfriendly</em>.
+      <em>Friendly</em>. Extra hoops, like mandatory disclosure, or allowing AI only for some kinds of work, make it
+      <em>Mostly friendly</em>. Allowing only minor help makes it <em>Unfriendly</em>.
     </p>
+    <h2 class={h2}>What we record</h2>
+    <p>
+      Behind each rating is a detailed list of what the project allows and forbids. We check every policy for the
+      same uses of AI, and record each one the policy mentions as one of:
+    </p>
+    <ul class="my-4 grid gap-1.5">
+      {
+        RULE_STATUSES.map((st) => (
+          <li class="flex items-baseline gap-2.5 text-muted">
+            <Icon name={RULE_STATUS_INFO[st].icon} size={14} class="self-center text-faint" />
+            <strong class="font-semibold text-ink">{RULE_STATUS_INFO[st].label}</strong>
+            {RULE_STATUS_INFO[st].meaning}
+          </li>
+        ))
+      }
+    </ul>
+    <p class={p}>Each comes with the policy’s own words and any conditions, such as disclosing AI use. The uses we check:</p>
+    {
+      DIMENSIONS.map((d) => (
+        <details class="mt-3 border-b border-line pb-3">
+          <summary class="flex cursor-pointer items-center gap-2 font-semibold">
+            <Icon name={DIMENSION_INFO[d].icon} size={15} class="text-faint" />
+            {DIMENSION_INFO[d].label}
+          </summary>
+          <dl class="mt-2 grid gap-2 pl-[23px] text-sm">
+            {USES.filter((u) => USE_INFO[u].area === d).map((u) => (
+              <div>
+                <dt class="font-semibold">{USE_INFO[u].label}</dt>
+                <dd class="text-muted">{USE_INFO[u].meaning}</dd>
+              </div>
+            ))}
+          </dl>
+        </details>
+      ))
+    }
+    <p class={p}>Rules that fit none of these are listed as other rules, so nothing a policy says is left out.</p>
 
     <h2 class={h2}>Where the data comes from</h2>
     <ol class="list-decimal space-y-2 pl-5">

@@ -10,9 +10,9 @@
  */
 import { writeFile } from 'node:fs/promises';
 import { isDeepStrictEqual, parseArgs } from 'node:util';
-import { classify, configFromEnv, type ClassifierConfig } from './lib/classify';
+import { classify, configFromEnv, RUBRIC_VERSION, type ClassifierConfig } from './lib/classify';
 import { fetchSource, type FetchedSource } from './lib/fetch';
-import { reviewNotes, setOutputs, stanceLabel, toSources } from './lib/pipeline';
+import { areaChanges, reviewNotes, ruleChanges, setOutputs, stanceLabel, toSources } from './lib/pipeline';
 import { listSlugs, readProject, today, writeProject, writeSnapshot } from './lib/store';
 
 const { values, positionals } = parseArgs({
@@ -54,13 +54,19 @@ for (const slug of slugs) {
     continue;
   }
 
-  const verdictChanged = !isDeepStrictEqual(result.policy, project.policy);
+  const changes = ruleChanges(project.rules, result.rules);
+  const ratingChanged = !isDeepStrictEqual(result.policy, project.policy);
+  const verdictChanged = ratingChanged || changes.length > 0;
   for (const f of fetched) await writeSnapshot(slug, f.url, f.text);
   await writeProject(slug, {
     ...project,
     summary: result.summary,
     policy: result.policy,
     evidence: result.evidence,
+    rules: result.rules,
+    otherRules: result.otherRules,
+    referencedPolicies: result.referencedPolicies,
+    rubricVersion: RUBRIC_VERSION,
     sources: toSources(fetched, date).map((s, i) =>
       fetched[i].hash === project.sources[i].hash ? project.sources[i] : s,
     ),
@@ -72,12 +78,20 @@ for (const slug of slugs) {
 
   const before = stanceLabel(project.policy);
   const after = stanceLabel(result.policy);
-  const headline = verdictChanged
-    ? `Verdicts changed (${before} → ${after})`
-    : textChanged
-      ? `Policy text changed, verdicts unchanged (${after})`
-      : `Re-classified, verdicts unchanged (${after})`;
-  changed.push(`### ${project.name}\n\n${headline}\n\n${reviewNotes(result)}`);
+  const headline = ratingChanged
+    ? before === after
+      ? `Area ratings changed, overall rating unchanged (${after})`
+      : `Rating changed (${before} → ${after})`
+    : verdictChanged
+      ? `Rules changed, ratings unchanged (${after})`
+      : textChanged
+        ? `Policy text changed, rules unchanged (${after})`
+        : `Re-classified, rules unchanged (${after})`;
+  const details = [
+    ...changes.map((c) => `- ${c}`),
+    ...(ratingChanged ? areaChanges(project.policy, result.policy).map((c) => `- ${c}`) : []),
+  ];
+  changed.push(`### ${project.name}\n\n${headline}\n\n${details.length ? `${details.join('\n')}\n\n` : ''}${reviewNotes(result)}`);
   console.log(`${slug}: ${headline}`);
 }
 
