@@ -32,9 +32,9 @@
 
 - Policies
 
-- Code of Conduct
-
 - AI Policy
+
+- Code of Conduct
 
 - Reference
 

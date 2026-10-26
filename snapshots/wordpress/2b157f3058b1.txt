@@ -42,7 +42,7 @@
 
 - Evolution of this guide
 
-↑ Back to top
+Back to top
 
 AI tools are now part of how many people write code, tests, and documentation. This guide explains how to use them responsibly when contributing to the WordPress project, so that your contributions are:
 

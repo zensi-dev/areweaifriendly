@@ -4,15 +4,14 @@
   "category": "library",
   "homepage": "https://vllm.ai/",
   "repo": "https://github.com/vllm-project/vllm",
-  "summary": "AI-assisted PRs are allowed, but pure code-agent PRs are not: a human must review every changed line, run the tests and defend the change. AI-assisted PR descriptions must say AI was used and include test results.",
+  "summary": "vLLM allows AI-assisted contributions but requires a human submitter who understands and can defend the change, reviews every changed line, and runs the relevant tests, with the PR description stating that AI assistance was used. Fully autonomous code-agent pull requests are not allowed.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
         "disclosure",
         "human-accountable",
-        "human-reviewed",
-        "no-autonomous-agents"
+        "human-reviewed"
       ]
     },
     "issues": {
@@ -27,7 +26,12 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "Pure code-agent PRs are not allowed. A human submitter must understand and defend the change end-to-end.",
+      "quote": "These instructions apply to **all** AI-assisted contributions to `vllm-project/vllm`.",
+      "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Pure code-agent PRs are **not allowed**. A human submitter must understand and defend the change end-to-end.",
       "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
     },
     {
@@ -37,7 +41,17 @@
     },
     {
       "dimension": "contributions",
+      "quote": "PR descriptions for AI-assisted work **must** include:",
+      "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
       "quote": "Clear statement that AI assistance was used.",
+      "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Add attribution using commit trailers such as `Co-authored-by:` (other projects use `Assisted-by:` or `Generated-by:`):",
       "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
     }
   ],
@@ -45,12 +59,491 @@
     {
       "url": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md",
       "title": "Agent Instructions for vLLM",
-      "hash": "093608aa9a1a3452695739e1a90dd201c3fc3657773d97e7e33b9bef05e5be56",
-      "fetchedAt": "2026-10-10"
+      "hash": "4b66ebbbdd81424b2d1a5edd5a38801be47f9f578117c74d100c0a5e3c53567d",
+      "fetchedAt": "2026-10-26"
     }
   ],
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Clear statement in the PR description that AI assistance was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "A human submitter must understand and defend the change end-to-end"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "The submitting human must review every changed line and run relevant tests"
+        }
+      ],
+      "note": "AI assistance with code is allowed when a human submits, reviews every changed line, runs tests and discloses the AI use in the PR description.",
+      "quotes": [
+        {
+          "quote": "These instructions apply to **all** AI-assisted contributions to `vllm-project/vllm`.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Pure code-agent PRs are **not allowed**. A human submitter must understand and defend the change end-to-end.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "The submitting human must review every changed line and run relevant tests.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "PR descriptions for AI-assisted work **must** include:",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Clear statement that AI assistance was used.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Clear statement in the PR description that AI assistance was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "A human submitter must understand and defend the change end-to-end"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "The submitting human must review every changed line and run relevant tests"
+        }
+      ],
+      "note": "Small AI-assisted changes are allowed under the same accountability and disclosure rules; one-off PRs for tiny edits are discouraged for everyone, not just AI users.",
+      "quotes": [
+        {
+          "quote": "These instructions apply to **all** AI-assisted contributions to `vllm-project/vllm`.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Pure code-agent PRs are **not allowed**. A human submitter must understand and defend the change end-to-end.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "The submitting human must review every changed line and run relevant tests.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "PR descriptions for AI-assisted work **must** include:",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Clear statement that AI assistance was used.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Clear statement in the PR description that AI assistance was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "A human submitter must understand and defend the change end-to-end"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "The submitting human must review every changed line and run relevant tests"
+        }
+      ],
+      "note": "Large AI-assisted changes are permitted as long as a human understands and defends them, reviews every line, runs tests and discloses the AI use.",
+      "quotes": [
+        {
+          "quote": "These instructions apply to **all** AI-assisted contributions to `vllm-project/vllm`.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Pure code-agent PRs are **not allowed**. A human submitter must understand and defend the change end-to-end.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "The submitting human must review every changed line and run relevant tests.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "PR descriptions for AI-assisted work **must** include:",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Clear statement that AI assistance was used.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Clear statement in the PR description that AI assistance was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "A human submitter must understand and defend the change end-to-end"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "The submitting human must review every changed line and run relevant tests"
+        }
+      ],
+      "note": "Mechanical AI-assisted edits are allowed with the same human review, accountability and disclosure requirements.",
+      "quotes": [
+        {
+          "quote": "These instructions apply to **all** AI-assisted contributions to `vllm-project/vllm`.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Pure code-agent PRs are **not allowed**. A human submitter must understand and defend the change end-to-end.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "The submitting human must review every changed line and run relevant tests.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "PR descriptions for AI-assisted work **must** include:",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Clear statement that AI assistance was used.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Clear statement in the PR description that AI assistance was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "A human submitter must understand and defend the change end-to-end"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "The submitting human must review every changed line and run relevant tests"
+        }
+      ],
+      "note": "AI-written tests are allowed if a human reviews every changed line, runs the tests and discloses the AI assistance.",
+      "quotes": [
+        {
+          "quote": "These instructions apply to **all** AI-assisted contributions to `vllm-project/vllm`.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Pure code-agent PRs are **not allowed**. A human submitter must understand and defend the change end-to-end.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "The submitting human must review every changed line and run relevant tests.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "PR descriptions for AI-assisted work **must** include:",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Clear statement that AI assistance was used.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Clear statement in the PR description that AI assistance was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "A human submitter must understand and defend the change end-to-end"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "The submitting human must review every changed line and run relevant tests"
+        }
+      ],
+      "note": "AI-assisted build or CI changes are allowed with human review of every line, testing and disclosure in the PR description.",
+      "quotes": [
+        {
+          "quote": "These instructions apply to **all** AI-assisted contributions to `vllm-project/vllm`.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Pure code-agent PRs are **not allowed**. A human submitter must understand and defend the change end-to-end.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "The submitting human must review every changed line and run relevant tests.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "PR descriptions for AI-assisted work **must** include:",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Clear statement that AI assistance was used.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Clear statement in the PR description that AI assistance was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "A human submitter must understand and defend the change end-to-end"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "The submitting human must review every changed line and run relevant tests"
+        }
+      ],
+      "note": "AI-written documentation changes are allowed when a human reviews them, stands behind them and discloses the AI assistance.",
+      "quotes": [
+        {
+          "quote": "These instructions apply to **all** AI-assisted contributions to `vllm-project/vllm`.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Pure code-agent PRs are **not allowed**. A human submitter must understand and defend the change end-to-end.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "The submitting human must review every changed line and run relevant tests.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "PR descriptions for AI-assisted work **must** include:",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Clear statement that AI assistance was used.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "localization",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Clear statement in the PR description that AI assistance was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "A human submitter must understand and defend the change end-to-end"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "The submitting human must review every changed line and run relevant tests"
+        }
+      ],
+      "note": "AI or machine translation submitted as a contribution falls under the same human review, accountability and disclosure rules.",
+      "quotes": [
+        {
+          "quote": "These instructions apply to **all** AI-assisted contributions to `vllm-project/vllm`.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Pure code-agent PRs are **not allowed**. A human submitter must understand and defend the change end-to-end.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "The submitting human must review every changed line and run relevant tests.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "PR descriptions for AI-assisted work **must** include:",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Clear statement that AI assistance was used.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "assets",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Clear statement in the PR description that AI assistance was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "A human submitter must understand and defend the change end-to-end"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "The submitting human must review every changed line and run relevant tests"
+        }
+      ],
+      "note": "AI-generated assets are covered by the general AI-assisted contribution rules: human submitter, human review and disclosure in the PR description.",
+      "quotes": [
+        {
+          "quote": "These instructions apply to **all** AI-assisted contributions to `vllm-project/vllm`.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Pure code-agent PRs are **not allowed**. A human submitter must understand and defend the change end-to-end.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "The submitting human must review every changed line and run relevant tests.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "PR descriptions for AI-assisted work **must** include:",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Clear statement that AI assistance was used.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "ai-authorship",
+      "status": "allowed",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Attribution via commit trailers such as Co-authored-by: (or Assisted-by:/Generated-by:)"
+        }
+      ],
+      "note": "Commit messages should carry attribution trailers naming the agent, using Co-authored-by: or equivalents such as Assisted-by: or Generated-by:.",
+      "quotes": [
+        {
+          "quote": "Add attribution using commit trailers such as `Co-authored-by:` (other projects use `Assisted-by:` or `Generated-by:`):",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-contributions",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Pure code-agent pull requests are not allowed; a human must understand and defend the change end-to-end.",
+      "quotes": [
+        {
+          "quote": "Pure code-agent PRs are **not allowed**. A human submitter must understand and defend the change end-to-end.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "conditional",
+      "description": "All AI-assisted contributions are subject to these instructions, and breaching them can result in automatic banning.",
+      "quotes": [
+        {
+          "quote": "These instructions apply to **all** AI-assisted contributions to `vllm-project/vllm`.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Breaching these guidelines can result in automatic banning.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "PR descriptions for AI-assisted work must include why the change is not duplicating an existing PR, the test commands run and their results, model evaluation results when the change affects output, accuracy or serving, and a clear statement that AI assistance was used.",
+      "quotes": [
+        {
+          "quote": "PR descriptions for AI-assisted work **must** include:",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        },
+        {
+          "quote": "Clear statement that AI assistance was used.",
+          "sourceUrl": "https://github.com/vllm-project/vllm/blob/main/AGENTS.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [
+    {
+      "url": "tests/AGENTS.md",
+      "note": "Domain-specific agent instructions for the test suite, referenced from AGENTS.md."
+    },
+    {
+      "url": "rust/AGENTS.md",
+      "note": "Domain-specific agent instructions for the Rust frontend."
+    },
+    {
+      "url": "docs/contributing/editing-agent-instructions.md",
+      "note": "Rules for modifying AGENTS.md and the domain-specific guides it references."
+    },
+    {
+      "url": ".agents/skills/pr-checklist/SKILL.md",
+      "note": "Agent skill checklist that must be run and addressed before opening a PR or requesting re-review."
+    }
+  ],
+  "rubricVersion": 1,
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-26",
+  "lastChanged": "2026-10-26"
 }

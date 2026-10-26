@@ -3,7 +3,7 @@
   "description": "Source-based Linux distribution.",
   "category": "distribution",
   "homepage": "https://www.gentoo.org/",
-  "summary": "Contributing any content created with the help of AI language tools is forbidden, citing copyright, quality and ethical concerns.",
+  "summary": "Gentoo's Council expressly forbids contributing any content created with the assistance of natural-language AI tools, including code, documentation, patch descriptions and bug reports. Adding packages for AI-related software, or for upstream software developed with such tools, is still permitted.",
   "policy": {
     "contributions": {
       "verdict": "banned",
@@ -25,13 +25,28 @@
       "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
     },
     {
+      "dimension": "contributions",
+      "quote": "Wikipedia: Signs of AI Writing can be helpful to recognize LLM-authored documentation, patch descriptions, bug reports and so on.",
+      "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+    },
+    {
       "dimension": "issues",
       "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
       "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
     },
     {
+      "dimension": "issues",
+      "quote": "Wikipedia: Signs of AI Writing can be helpful to recognize LLM-authored documentation, patch descriptions, bug reports and so on.",
+      "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+    },
+    {
       "dimension": "summaries",
       "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+      "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Wikipedia: Signs of AI Writing can be helpful to recognize LLM-authored documentation, patch descriptions, bug reports and so on.",
       "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
     }
   ],
@@ -39,12 +54,317 @@
     {
       "url": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy",
       "title": "Project:Council/AI policy - Gentoo wiki",
-      "hash": "17ed2f4e8bb682d5b2dc3c3999fb127d24b1c965dc31e403b37b84973f2abfe7",
-      "fetchedAt": "2026-10-09"
+      "hash": "e1615f454310af7db6fff280af825a7e5a158253c5efb86020cf11470e74ad55",
+      "fetchedAt": "2026-10-26"
     }
   ],
-  "confidence": "medium",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Code produced with the help of AI completion tools may not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Even small AI-assisted code changes are expressly forbidden.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Substantial AI-written code contributions are expressly forbidden.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-assisted mechanical or repetitive code edits may not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written tests and benchmarks may not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written build, CI or packaging code may not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "LLM-authored documentation is named as content that must not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        },
+        {
+          "quote": "Wikipedia: Signs of AI Writing can be helpful to recognize LLM-authored documentation, patch descriptions, bug reports and so on.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "localization",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI- or machine-translated project strings and documentation count as AI-assisted content and are forbidden.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "ai-authorship",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Crediting an AI tool as author is part of contributing AI-assisted content, which is forbidden.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "agent-contributions",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI agents or bots may not open pull requests or push commits.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "issue-writing",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "LLM-authored bug reports are named as content that must not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        },
+        {
+          "quote": "Wikipedia: Signs of AI Writing can be helpful to recognize LLM-authored documentation, patch descriptions, bug reports and so on.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "agent-issues",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI agents or bots may not file issues or reports.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "LLM-written patch descriptions are named as content that must not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        },
+        {
+          "quote": "Wikipedia: Signs of AI Writing can be helpful to recognize LLM-authored documentation, patch descriptions, bug reports and so on.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "commit-message",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Commit messages written with AI assistance may not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written comments and replies on issues and pull requests may not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written answers to maintainers' questions may not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "code-review-others",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated reviews of other people's changes may not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "posts",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written posts to project forums, lists or blogs may not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "translation",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-translated versions of one's own text may not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "proofreading",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Text polished with AI tools has been created with AI assistance and may not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "quoting-ai",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Including AI-generated output in a message contributes AI-created content, which is forbidden.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "thread-summaries",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written summaries posted to project discussions may not be contributed.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    },
+    {
+      "use": "agent-comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI bots may not post comments, reviews or triage messages.",
+      "quotes": [
+        {
+          "quote": "It is expressly forbidden to contribute to Gentoo any content that has been created with the assistance of Natural Language Processing artificial intelligence tools.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "allowed",
+      "description": "The policy does not prohibit adding packages for AI-related software, or packages for software that is developed with the help of such tools upstream.",
+      "quotes": [
+        {
+          "quote": "This policy affects Gentoo contributions and the official Gentoo projects. It does not prohibit adding packages for AI-related software or software that is being developed with the help of such tools upstream.",
+          "sourceUrl": "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "high",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-26",
+  "lastChanged": "2026-10-26"
 }

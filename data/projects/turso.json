@@ -4,7 +4,7 @@
   "category": "library",
   "homepage": "https://turso.tech/",
   "repo": "https://github.com/tursodatabase/turso",
-  "summary": "AI coding agents are welcome if you understand, self-review and own the code you submit. Describe changes in your own words or heavily edit AI summaries; in unfamiliar areas, file a bug report instead of an AI-generated fix.",
+  "summary": "Turso explicitly welcomes developing with AI coding agents, provided contributors understand the code they submit, self-review it, and can explain and defend their pull requests. AI-generated tests must be verified to fail without the change, AI-written PR summaries must be rewritten in the contributor's own words, and people unfamiliar with an area are encouraged to file a bug report rather than send an AI-generated fix.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -18,31 +18,49 @@
       "conditions": []
     },
     "summaries": {
-      "verdict": "conditional",
-      "conditions": [
-        "human-reviewed"
-      ]
+      "verdict": "unspecified",
+      "conditions": []
     }
   },
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "You're welcome to develop Turso with AI coding agents such as Claude Code, Codex, or OpenCode.",
+      "quote": "You're welcome to develop Turso with AI coding agents such as Claude Code, Codex, or OpenCode. Used well, they can help you explore the codebase, draft tests, and polish your contributions.",
       "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
-      "quote": "We expect you to understand the code you submit.",
+      "quote": "We expect you to understand the code you submit. The best AI-assisted contributions come from people who treat the agent as a collaborator, not a substitute: you direct the work, review it critically, and own the result.",
       "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
-      "quote": "Always self-review your code before submitting",
+      "quote": "A PR you can explain and defend is far more valuable than a large one you can't.",
+      "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Always self-review your code before submitting - make sure it's correct and follows the existing code standards in this repo.",
+      "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Include regression tests.** Verify that your tests actually FAIL without your changes — this is especially important when the tests are AI-generated.",
       "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "summaries",
-      "quote": "Describe the change in your own words, or heavily edit any AI-generated summary so it reads naturally and accurately.",
+      "quote": "**Keep it small and focused.** Describe the change in your own words, or heavily edit any AI-generated summary so it reads naturally and accurately.",
+      "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Contribute in areas you understand.** If you spot a bug in something like the MVCC or b-tree layer but aren't familiar with it, the most helpful thing you can do is file a clear bug report rather than submit an AI-generated fix.",
+      "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Keep it small and focused.** Describe the change in your own words, or heavily edit any AI-generated summary so it reads naturally and accurately.",
       "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
     }
   ],
@@ -50,12 +68,245 @@
     {
       "url": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md",
       "title": "Contributing to Turso",
-      "hash": "722732e140069d968a72e5065dc11a503bee433eab890a8cc73088841ab3408f",
-      "fetchedAt": "2026-10-10"
+      "hash": "4d6c5f4675197c2d849c2fb0a017d21a7e3921f3eab088becb6ceb651bf779b2",
+      "fetchedAt": "2026-10-26"
     }
   ],
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You must understand the code you submit and be able to explain and defend it"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Always self-review your code before submitting"
+        }
+      ],
+      "note": "AI coding agents are welcome, but you must understand, self-review and be able to defend the resulting code.",
+      "quotes": [
+        {
+          "quote": "You're welcome to develop Turso with AI coding agents such as Claude Code, Codex, or OpenCode. Used well, they can help you explore the codebase, draft tests, and polish your contributions.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "We expect you to understand the code you submit. The best AI-assisted contributions come from people who treat the agent as a collaborator, not a substitute: you direct the work, review it critically, and own the result.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "A PR you can explain and defend is far more valuable than a large one you can't.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Always self-review your code before submitting - make sure it's correct and follows the existing code standards in this repo.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You direct the work, review it critically and own the result; you must understand the code"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Always self-review your code before submitting"
+        }
+      ],
+      "note": "Small AI-assisted changes are accepted if you understand them and self-review them before submitting.",
+      "quotes": [
+        {
+          "quote": "You're welcome to develop Turso with AI coding agents such as Claude Code, Codex, or OpenCode. Used well, they can help you explore the codebase, draft tests, and polish your contributions.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "We expect you to understand the code you submit. The best AI-assisted contributions come from people who treat the agent as a collaborator, not a substitute: you direct the work, review it critically, and own the result.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "A PR you can explain and defend is far more valuable than a large one you can't.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Always self-review your code before submitting - make sure it's correct and follows the existing code standards in this repo.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "A PR you can explain and defend; treat the agent as a collaborator, not a substitute"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Always self-review your code before submitting"
+        }
+      ],
+      "note": "Larger AI-assisted changes are accepted but must be explainable and defensible, and self-reviewed before submission.",
+      "quotes": [
+        {
+          "quote": "You're welcome to develop Turso with AI coding agents such as Claude Code, Codex, or OpenCode. Used well, they can help you explore the codebase, draft tests, and polish your contributions.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "We expect you to understand the code you submit. The best AI-assisted contributions come from people who treat the agent as a collaborator, not a substitute: you direct the work, review it critically, and own the result.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "A PR you can explain and defend is far more valuable than a large one you can't.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Always self-review your code before submitting - make sure it's correct and follows the existing code standards in this repo.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You must understand the code you submit"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Always self-review your code before submitting"
+        }
+      ],
+      "note": "Mechanical AI-assisted edits are accepted as long as you understand and self-review the result.",
+      "quotes": [
+        {
+          "quote": "You're welcome to develop Turso with AI coding agents such as Claude Code, Codex, or OpenCode. Used well, they can help you explore the codebase, draft tests, and polish your contributions.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "We expect you to understand the code you submit. The best AI-assisted contributions come from people who treat the agent as a collaborator, not a substitute: you direct the work, review it critically, and own the result.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Always self-review your code before submitting - make sure it's correct and follows the existing code standards in this repo.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Verify that AI-generated tests actually FAIL without your changes"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You must understand the code you submit"
+        }
+      ],
+      "note": "AI-drafted tests are fine, but you must check that they fail without your change and self-review them.",
+      "quotes": [
+        {
+          "quote": "You're welcome to develop Turso with AI coding agents such as Claude Code, Codex, or OpenCode. Used well, they can help you explore the codebase, draft tests, and polish your contributions.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "We expect you to understand the code you submit. The best AI-assisted contributions come from people who treat the agent as a collaborator, not a substitute: you direct the work, review it critically, and own the result.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Include regression tests.** Verify that your tests actually FAIL without your changes — this is especially important when the tests are AI-generated.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Always self-review your code before submitting - make sure it's correct and follows the existing code standards in this repo.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Using AI agents to explore and explain the codebase is explicitly welcomed.",
+      "quotes": [
+        {
+          "quote": "You're welcome to develop Turso with AI coding agents such as Claude Code, Codex, or OpenCode. Used well, they can help you explore the codebase, draft tests, and polish your contributions.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Describe the change in your own words, or heavily edit the AI-generated summary"
+        }
+      ],
+      "note": "An AI-written PR summary is acceptable only if you rewrite it in your own words or heavily edit it for accuracy.",
+      "quotes": [
+        {
+          "quote": "**Keep it small and focused.** Describe the change in your own words, or heavily edit any AI-generated summary so it reads naturally and accurately.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "discouraged",
+      "description": "Contributors unfamiliar with an area (such as the MVCC or b-tree layer) are encouraged to file a clear bug report instead of submitting an AI-generated fix.",
+      "quotes": [
+        {
+          "quote": "**Contribute in areas you understand.** If you spot a bug in something like the MVCC or b-tree layer but aren't familiar with it, the most helpful thing you can do is file a clear bug report rather than submit an AI-generated fix.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "discouraged",
+      "description": "AI-assisted pull requests should be kept small and focused; a large PR you cannot explain is less valuable than a small one you can defend.",
+      "quotes": [
+        {
+          "quote": "A PR you can explain and defend is far more valuable than a large one you can't.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Keep it small and focused.** Describe the change in your own words, or heavily edit any AI-generated summary so it reads naturally and accurately.",
+          "sourceUrl": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-26",
+  "lastChanged": "2026-10-26"
 }
