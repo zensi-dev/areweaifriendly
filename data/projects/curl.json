@@ -4,7 +4,7 @@
   "category": "tool",
   "homepage": "https://curl.se/",
   "repo": "https://github.com/curl/curl",
-  "summary": "curl can accept AI-assisted code when it meets the same coding, clarity, documentation, testing and licensing requirements as other contributions. AI use to find problems must be disclosed and the findings verified; AI-generated reports are discouraged in favor of reports written by the reporter, AI translation is welcomed with optional disclosure, and massive lazily pasted AI explanations are forbidden in curl communications.",
+  "summary": "curl accepts AI-assisted code as long as it meets normal coding, documentation and testing standards, and welcomes AI translation of contributors' own texts and documentation. AI-found issues must be disclosed and verified, and AI-generated reports or explanations should not be pasted wholesale; write them in your own words.",
   "policy": {
     "contributions": {
       "verdict": "allowed",
@@ -14,6 +14,7 @@
       "verdict": "conditional",
       "conditions": [
         "disclosure",
+        "human-accountable",
         "human-reviewed"
       ]
     },
@@ -27,88 +28,63 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "We can accept code written with the help of AI into the project, but the code\nmust still follow coding standards, be written clearly, be documented, feature\ntest cases and adhere to all the normal requirements we have.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-    },
-    {
-      "dimension": "issues",
-      "quote": "If you asked an AI tool to find problems in curl, you **must** make sure to\nreveal this fact in your report.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-    },
-    {
-      "dimension": "issues",
-      "quote": "You must also double-check the findings carefully before reporting them to us\nto validate that the issues are indeed existing and working exactly as the AI\nsays.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-    },
-    {
-      "dimension": "issues",
-      "quote": "If you actually find\na problem with an AI and you have verified it yourself to be true: write the\nreport yourself and explain the problem as you have learned it.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-    },
-    {
-      "dimension": "issues",
-      "quote": "Further: it is *rarely* a good idea to copy and paste an AI generated report\nto the project.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-    },
-    {
-      "dimension": "issues",
-      "quote": "When communicating in the curl project, please explain your issues or\n improvements briefly and clearly in your own human voice.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
-    },
-    {
-      "dimension": "issues",
-      "quote": "Do not lazily\n paste massive, AI-generated explanations; as a contributor doing this\n infrequently, it is your responsibility to invest a few extra minutes into\n making your message digestible.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
-    },
-    {
-      "dimension": "summaries",
-      "quote": "Translation services help users write reports, texts and documentation in\nnon-native languages and we encourage and welcome such contributors and\ncontributions.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-    },
-    {
-      "dimension": "summaries",
-      "quote": "As AI-based translation tools sometimes have a way to make the output sound a\nlittle robotic and add an \"AI tone\" to the text, you may want to consider\nmentioning that you used such a tool.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-    },
-    {
-      "dimension": "summaries",
-      "quote": "Failing to do so risks that maintainers\nwrongly dismiss translated texts as AI slop.",
+      "quote": "We can accept code written with the help of AI into the project, but the code must still follow coding standards, be written clearly, be documented, feature test cases and adhere to all the normal requirements we have.",
       "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
     },
     {
       "dimension": "contributions",
-      "quote": "When contributing content to the curl project, you give us permission to use\nit as-is and you must make sure you are allowed to distribute it to us.",
+      "quote": "When contributing a pull request you should of course always make sure that the proposal is good quality and a best effort that follows our guidelines. A basic rule of thumb is that if someone can spot that the contribution was made with the help of AI, you have more work to do.",
       "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
     },
     {
       "dimension": "contributions",
-      "quote": "By submitting a change to us, you agree that the changes can and should be\nadopted by curl and get redistributed under the curl license. Authors should\nbe explicitly aware that the burden is on them to ensure no unlicensed code is\nsubmitted to the project.",
+      "quote": "Translation services help users write reports, texts and documentation in non-native languages and we encourage and welcome such contributors and contributions.",
       "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
     },
     {
       "dimension": "contributions",
-      "quote": "This is independent if AI is used or not.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "A basic rule of thumb is that if someone can spot that the contribution was made\nwith the help of AI, you have more work to do.",
+      "quote": "As AI-based translation tools sometimes have a way to make the output sound a little robotic and add an \"AI tone\" to the text, you may want to consider mentioning that you used such a tool. Failing to do so risks that maintainers wrongly dismiss translated texts as AI slop.",
       "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
     },
     {
       "dimension": "issues",
-      "quote": "We ban users immediately who submit made up fake reports to the project.",
+      "quote": "If you asked an AI tool to find problems in curl, you **must** make sure to reveal this fact in your report.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "You must also double-check the findings carefully before reporting them to us to validate that the issues are indeed existing and working exactly as the AI says. AI-based tools frequently generate inaccurate or fabricated results.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Further: it is *rarely* a good idea to copy and paste an AI generated report to the project. Those generated reports typically are too wordy and rarely to the point (in addition to the common fabricated details).",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "If you actually find a problem with an AI and you have verified it yourself to be true: write the report yourself and explain the problem as you have learned it.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "When communicating in the curl project, please explain your issues or improvements briefly and clearly in your own human voice. Do not lazily paste massive, AI-generated explanations; it is your responsibility to invest a few extra minutes into making your message digestible.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "When communicating in the curl project, please explain your issues or improvements briefly and clearly in your own human voice. Do not lazily paste massive, AI-generated explanations; it is your responsibility to invest a few extra minutes into making your message digestible.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Translation services help users write reports, texts and documentation in non-native languages and we encourage and welcome such contributors and contributions.",
       "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
     },
     {
       "dimension": "summaries",
-      "quote": "When communicating in the curl project, please explain your issues or\n improvements briefly and clearly in your own human voice.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
-    },
-    {
-      "dimension": "summaries",
-      "quote": "Do not lazily\n paste massive, AI-generated explanations; as a contributor doing this\n infrequently, it is your responsibility to invest a few extra minutes into\n making your message digestible.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
+      "quote": "As AI-based translation tools sometimes have a way to make the output sound a little robotic and add an \"AI tone\" to the text, you may want to consider mentioning that you used such a tool. Failing to do so risks that maintainers wrongly dismiss translated texts as AI slop.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
     }
   ],
   "sources": [
@@ -121,8 +97,8 @@
     {
       "url": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md",
       "title": "curl vulnerability disclosure policy",
-      "hash": "64b208d11656514ded88915810647a94092d90de7b67a2beb5656c6b84f06d57",
-      "fetchedAt": "2026-10-25"
+      "hash": "f4349cbd96437b5231d3af1f03ac20a0a3203db5d93228193afad1e00ae06ee0",
+      "fetchedAt": "2026-10-26"
     }
   ],
   "rules": [
@@ -130,10 +106,10 @@
       "use": "code-completion",
       "status": "allowed",
       "conditions": [],
-      "note": "AI-assisted code can be accepted if it meets curl's usual coding-standard, clarity, documentation, testing and other normal requirements.",
+      "note": "AI-assisted code is accepted if it follows coding standards and all normal project requirements.",
       "quotes": [
         {
-          "quote": "We can accept code written with the help of AI into the project, but the code\nmust still follow coding standards, be written clearly, be documented, feature\ntest cases and adhere to all the normal requirements we have.",
+          "quote": "We can accept code written with the help of AI into the project, but the code must still follow coding standards, be written clearly, be documented, feature test cases and adhere to all the normal requirements we have.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         }
       ]
@@ -142,10 +118,10 @@
       "use": "code-small",
       "status": "allowed",
       "conditions": [],
-      "note": "Small AI-assisted code changes can be accepted under the same coding-standard, clarity, documentation, testing and other normal requirements as other code.",
+      "note": "Small AI-assisted code changes are accepted if they follow coding standards and all normal project requirements.",
       "quotes": [
         {
-          "quote": "We can accept code written with the help of AI into the project, but the code\nmust still follow coding standards, be written clearly, be documented, feature\ntest cases and adhere to all the normal requirements we have.",
+          "quote": "We can accept code written with the help of AI into the project, but the code must still follow coding standards, be written clearly, be documented, feature test cases and adhere to all the normal requirements we have.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         }
       ]
@@ -154,10 +130,14 @@
       "use": "code-large",
       "status": "allowed",
       "conditions": [],
-      "note": "AI-assisted code, including substantial changes, can be accepted if it meets curl's usual coding-standard, clarity, documentation, testing and other normal requirements.",
+      "note": "AI-assisted code, including larger changes, is accepted but must be good quality, clearly written, documented and tested; obviously AI-generated contributions need more work.",
       "quotes": [
         {
-          "quote": "We can accept code written with the help of AI into the project, but the code\nmust still follow coding standards, be written clearly, be documented, feature\ntest cases and adhere to all the normal requirements we have.",
+          "quote": "When contributing a pull request you should of course always make sure that the proposal is good quality and a best effort that follows our guidelines. A basic rule of thumb is that if someone can spot that the contribution was made with the help of AI, you have more work to do.",
+          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+        },
+        {
+          "quote": "We can accept code written with the help of AI into the project, but the code must still follow coding standards, be written clearly, be documented, feature test cases and adhere to all the normal requirements we have.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         }
       ]
@@ -166,10 +146,10 @@
       "use": "code-mechanical",
       "status": "allowed",
       "conditions": [],
-      "note": "AI-assisted code changes can be accepted if they meet curl's usual coding-standard, clarity, documentation, testing and other normal requirements.",
+      "note": "Mechanical AI-assisted code changes are accepted if they follow coding standards and all normal project requirements.",
       "quotes": [
         {
-          "quote": "We can accept code written with the help of AI into the project, but the code\nmust still follow coding standards, be written clearly, be documented, feature\ntest cases and adhere to all the normal requirements we have.",
+          "quote": "We can accept code written with the help of AI into the project, but the code must still follow coding standards, be written clearly, be documented, feature test cases and adhere to all the normal requirements we have.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         }
       ]
@@ -178,10 +158,10 @@
       "use": "code-tests",
       "status": "allowed",
       "conditions": [],
-      "note": "Code written with AI help, including test code, can be accepted subject to curl's usual quality and other normal requirements.",
+      "note": "AI-assisted test code is accepted if it follows coding standards and all normal project requirements.",
       "quotes": [
         {
-          "quote": "We can accept code written with the help of AI into the project, but the code\nmust still follow coding standards, be written clearly, be documented, feature\ntest cases and adhere to all the normal requirements we have.",
+          "quote": "We can accept code written with the help of AI into the project, but the code must still follow coding standards, be written clearly, be documented, feature test cases and adhere to all the normal requirements we have.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         }
       ]
@@ -190,10 +170,32 @@
       "use": "code-infra",
       "status": "allowed",
       "conditions": [],
-      "note": "Code written with AI help, including infrastructure code, can be accepted subject to curl's usual quality and other normal requirements.",
+      "note": "AI-assisted infrastructure code is accepted if it follows coding standards and all normal project requirements.",
       "quotes": [
         {
-          "quote": "We can accept code written with the help of AI into the project, but the code\nmust still follow coding standards, be written clearly, be documented, feature\ntest cases and adhere to all the normal requirements we have.",
+          "quote": "We can accept code written with the help of AI into the project, but the code must still follow coding standards, be written clearly, be documented, feature test cases and adhere to all the normal requirements we have.",
+          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+        }
+      ]
+    },
+    {
+      "use": "localization",
+      "status": "allowed",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Consider mentioning you used an AI translation tool"
+        }
+      ],
+      "note": "AI translation of documentation in non-native languages is welcome, and mentioning the tool is encouraged to avoid the text being dismissed as AI slop.",
+      "quotes": [
+        {
+          "quote": "Translation services help users write reports, texts and documentation in non-native languages and we encourage and welcome such contributors and contributions.",
+          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+        },
+        {
+          "quote": "As AI-based translation tools sometimes have a way to make the output sound a little robotic and add an \"AI tone\" to the text, you may want to consider mentioning that you used such a tool. Failing to do so risks that maintainers wrongly dismiss translated texts as AI slop.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         }
       ]
@@ -205,26 +207,22 @@
         {
           "condition": "disclosure",
           "strength": "required",
-          "detail": "Reveal in the report that an AI tool was asked to find problems in curl."
+          "detail": "Reveal in the report that an AI tool was used to find the problems"
         },
         {
           "condition": "human-reviewed",
           "strength": "required",
-          "detail": "Carefully double-check AI findings and validate that the issues exist and work exactly as the AI claims before reporting."
+          "detail": "Double-check the findings before reporting"
         }
       ],
-      "note": "AI may be used to find problems only if the report reveals that use and the reporter first validates that the findings exist and behave exactly as the AI claims.",
+      "note": "AI may be used to find problems if this is disclosed and every finding is verified before reporting.",
       "quotes": [
         {
-          "quote": "If you asked an AI tool to find problems in curl, you **must** make sure to\nreveal this fact in your report.",
+          "quote": "If you asked an AI tool to find problems in curl, you **must** make sure to reveal this fact in your report.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         },
         {
-          "quote": "You must also double-check the findings carefully before reporting them to us\nto validate that the issues are indeed existing and working exactly as the AI\nsays.",
-          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-        },
-        {
-          "quote": "If you actually find\na problem with an AI and you have verified it yourself to be true: write the\nreport yourself and explain the problem as you have learned it.",
+          "quote": "You must also double-check the findings carefully before reporting them to us to validate that the issues are indeed existing and working exactly as the AI says. AI-based tools frequently generate inaccurate or fabricated results.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         }
       ]
@@ -232,16 +230,26 @@
     {
       "use": "issue-writing",
       "status": "discouraged",
-      "conditions": [],
-      "note": "Copying and pasting an AI-generated report is discouraged, and a reporter who has verified an AI-found problem should write the report themselves and explain it as they learned it.",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Write the report yourself and explain the problem as you learned it"
+        }
+      ],
+      "note": "Copy-pasting AI-generated reports is discouraged; reports should be written in your own words, especially when AI found the problem.",
       "quotes": [
         {
-          "quote": "Further: it is *rarely* a good idea to copy and paste an AI generated report\nto the project.",
+          "quote": "Further: it is *rarely* a good idea to copy and paste an AI generated report to the project. Those generated reports typically are too wordy and rarely to the point (in addition to the common fabricated details).",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         },
         {
-          "quote": "If you actually find\na problem with an AI and you have verified it yourself to be true: write the\nreport yourself and explain the problem as you have learned it.",
+          "quote": "If you actually find a problem with an AI and you have verified it yourself to be true: write the report yourself and explain the problem as you have learned it.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+        },
+        {
+          "quote": "When communicating in the curl project, please explain your issues or improvements briefly and clearly in your own human voice. Do not lazily paste massive, AI-generated explanations; it is your responsibility to invest a few extra minutes into making your message digestible.",
+          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
         }
       ]
     },
@@ -252,38 +260,59 @@
         {
           "condition": "disclosure",
           "strength": "required",
-          "detail": "If AI was used to find the problem, reveal that fact in the report."
+          "detail": "Reveal that an AI tool was used to find the problems"
         },
         {
           "condition": "human-reviewed",
           "strength": "required",
-          "detail": "Carefully verify AI findings yourself before reporting them."
+          "detail": "Double-check the findings before reporting"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Write the report yourself and explain the problem as you learned it"
         }
       ],
-      "note": "When AI is used to find a vulnerability, the report must disclose that use and the finding must be carefully verified; the reporter should write the report personally, and massive lazily pasted AI explanations are forbidden.",
+      "note": "AI may help find security problems if its use is disclosed and findings are verified; the report should be written by the reporter, not copied from AI.",
       "quotes": [
         {
-          "quote": "If you asked an AI tool to find problems in curl, you **must** make sure to\nreveal this fact in your report.",
+          "quote": "If you asked an AI tool to find problems in curl, you **must** make sure to reveal this fact in your report.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         },
         {
-          "quote": "You must also double-check the findings carefully before reporting them to us\nto validate that the issues are indeed existing and working exactly as the AI\nsays.",
+          "quote": "You must also double-check the findings carefully before reporting them to us to validate that the issues are indeed existing and working exactly as the AI says. AI-based tools frequently generate inaccurate or fabricated results.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         },
         {
-          "quote": "Further: it is *rarely* a good idea to copy and paste an AI generated report\nto the project.",
+          "quote": "If you actually find a problem with an AI and you have verified it yourself to be true: write the report yourself and explain the problem as you have learned it.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         },
         {
-          "quote": "If you actually find\na problem with an AI and you have verified it yourself to be true: write the\nreport yourself and explain the problem as you have learned it.",
-          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-        },
-        {
-          "quote": "When communicating in the curl project, please explain your issues or\n improvements briefly and clearly in your own human voice.",
+          "quote": "When communicating in the curl project, please explain your issues or improvements briefly and clearly in your own human voice. Do not lazily paste massive, AI-generated explanations; it is your responsibility to invest a few extra minutes into making your message digestible.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
-        },
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "discouraged",
+      "conditions": [],
+      "note": "Pull request descriptions should be in your own human voice; do not lazily paste massive AI-generated explanations.",
+      "quotes": [
         {
-          "quote": "Do not lazily\n paste massive, AI-generated explanations; as a contributor doing this\n infrequently, it is your responsibility to invest a few extra minutes into\n making your message digestible.",
+          "quote": "When communicating in the curl project, please explain your issues or improvements briefly and clearly in your own human voice. Do not lazily paste massive, AI-generated explanations; it is your responsibility to invest a few extra minutes into making your message digestible.",
+          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "discouraged",
+      "conditions": [],
+      "note": "Comments and replies should be in your own human voice; do not lazily paste massive AI-generated explanations.",
+      "quotes": [
+        {
+          "quote": "When communicating in the curl project, please explain your issues or improvements briefly and clearly in your own human voice. Do not lazily paste massive, AI-generated explanations; it is your responsibility to invest a few extra minutes into making your message digestible.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
         }
       ]
@@ -295,88 +324,27 @@
         {
           "condition": "disclosure",
           "strength": "recommended",
-          "detail": "Consider mentioning that an AI-based translation tool was used."
+          "detail": "Consider mentioning you used an AI translation tool"
         }
       ],
-      "note": "AI-based translation is welcomed for reports, texts and documentation in non-native languages, and mentioning the tool is suggested rather than required.",
+      "note": "AI translation of your own reports, texts and documentation is welcome, and mentioning the tool is encouraged to avoid the text being dismissed as AI slop.",
       "quotes": [
         {
-          "quote": "Translation services help users write reports, texts and documentation in\nnon-native languages and we encourage and welcome such contributors and\ncontributions.",
+          "quote": "Translation services help users write reports, texts and documentation in non-native languages and we encourage and welcome such contributors and contributions.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         },
         {
-          "quote": "As AI-based translation tools sometimes have a way to make the output sound a\nlittle robotic and add an \"AI tone\" to the text, you may want to consider\nmentioning that you used such a tool.",
-          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-        },
-        {
-          "quote": "Failing to do so risks that maintainers\nwrongly dismiss translated texts as AI slop.",
+          "quote": "As AI-based translation tools sometimes have a way to make the output sound a little robotic and add an \"AI tone\" to the text, you may want to consider mentioning that you used such a tool. Failing to do so risks that maintainers wrongly dismiss translated texts as AI slop.",
           "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
         }
       ]
     }
   ],
-  "otherRules": [
-    {
-      "area": "contributions",
-      "status": "conditional",
-      "description": "The rights and licensing obligations for submitted content, including ensuring that no unlicensed code is submitted, apply equally whether or not AI is used.",
-      "quotes": [
-        {
-          "quote": "When contributing content to the curl project, you give us permission to use\nit as-is and you must make sure you are allowed to distribute it to us.",
-          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-        },
-        {
-          "quote": "By submitting a change to us, you agree that the changes can and should be\nadopted by curl and get redistributed under the curl license. Authors should\nbe explicitly aware that the burden is on them to ensure no unlicensed code is\nsubmitted to the project.",
-          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-        },
-        {
-          "quote": "This is independent if AI is used or not.",
-          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-        }
-      ]
-    },
-    {
-      "area": "contributions",
-      "status": "discouraged",
-      "description": "If someone can tell that a contribution was made with AI help, the contributor should treat that as a sign that the contribution needs more work.",
-      "quotes": [
-        {
-          "quote": "A basic rule of thumb is that if someone can spot that the contribution was made\nwith the help of AI, you have more work to do.",
-          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-        }
-      ]
-    },
-    {
-      "area": "issues",
-      "status": "not-allowed",
-      "description": "Made-up fake reports are forbidden, and users who submit them are banned immediately.",
-      "quotes": [
-        {
-          "quote": "We ban users immediately who submit made up fake reports to the project.",
-          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-        }
-      ]
-    },
-    {
-      "area": "summaries",
-      "status": "not-allowed",
-      "description": "Project communications should be brief, clear and in the contributor's own human voice; lazily pasting massive AI-generated explanations is forbidden.",
-      "quotes": [
-        {
-          "quote": "When communicating in the curl project, please explain your issues or\n improvements briefly and clearly in your own human voice.",
-          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
-        },
-        {
-          "quote": "Do not lazily\n paste massive, AI-generated explanations; as a contributor doing this\n infrequently, it is your responsibility to invest a few extra minutes into\n making your message digestible.",
-          "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
-        }
-      ]
-    }
-  ],
+  "otherRules": [],
   "referencedPolicies": [],
   "rubricVersion": 1,
   "confidence": "medium",
   "classifiedBy": "ai",
-  "classifiedAt": "2026-10-25",
-  "lastChanged": "2026-10-25"
+  "classifiedAt": "2026-10-26",
+  "lastChanged": "2026-10-26"
 }

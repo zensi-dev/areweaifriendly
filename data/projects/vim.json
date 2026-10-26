@@ -4,12 +4,15 @@
   "category": "application",
   "homepage": "https://www.vim.org/",
   "repo": "https://github.com/vim/vim",
-  "summary": "AI may be used for contributions if its use is disclosed. AI-generated code must follow the Vim code style and be properly tested.",
+  "summary": "AI use is allowed for research, small targeted fixes, and help writing tests, but contributors must disclose AI use with an Assisted-by trailer, understand and be able to explain every line, and ensure licensing. Large mostly generated pull requests, AI-generated commit messages and PR descriptions, pasted AI answers to reviewers, and AI-written reviews of others' pull requests are not acceptable.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
-        "disclosure"
+        "disclosure",
+        "human-accountable",
+        "license-compliance",
+        "limited-scope"
       ]
     },
     "issues": {
@@ -17,19 +20,81 @@
       "conditions": []
     },
     "summaries": {
-      "verdict": "unspecified",
-      "conditions": []
+      "verdict": "conditional",
+      "conditions": [
+        "minor-assist-only"
+      ]
     }
   },
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "When using AI for contributions, please disclose this.",
+      "quote": "Use of AI is allowed within the limits mentioned below, but you remain fully responsible for everything you submit. Disclosure of AI use is required, using an `Assisted-by:` trailer.",
       "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
-      "quote": "Any AI-generated code must follow the Vim code style.",
+      "quote": "Research, looking things up, understanding existing code.",
+      "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Small, targeted fixes (e.g. for security issues).",
+      "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You must understand every line of your change and be able to explain it.",
+      "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You must have the right to submit the code under the Vim license.",
+      "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Help with writing tests and benchmarks.",
+      "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Large pull requests that were mostly generated.",
+      "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Generated commit messages or PR descriptions.",
+      "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Write them yourself that ensures you have a good understanding of the change.",
+      "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Answering review questions by pasting AI output.",
+      "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Posting AI-generated reviews on other people's pull requests. Automated CI checks are fine.",
+      "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Fixing spelling, grammar and translations is fine.",
+      "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You are expected to fix problems your change introduces.",
+      "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Maintainers decide whether a contribution is acceptable.",
       "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
     }
   ],
@@ -37,12 +102,237 @@
     {
       "url": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md",
       "title": "Contributing to Vim",
-      "hash": "b350cbd082d93533051aae5bec46a850c9c9bbd857b932dfc70856c27245f3b2",
-      "fetchedAt": "2026-10-09"
+      "hash": "c825fafecb59f4fce515b3512e65528f4c85a13639e2f3b584dbeb98d0c371e9",
+      "fetchedAt": "2026-10-26"
     }
   ],
+  "rules": [
+    {
+      "use": "research",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Allowed for looking things up and understanding existing code.",
+      "quotes": [
+        {
+          "quote": "Use of AI is allowed within the limits mentioned below, but you remain fully responsible for everything you submit. Disclosure of AI use is required, using an `Assisted-by:` trailer.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Research, looking things up, understanding existing code.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "`Assisted-by:` trailer"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand every line and be able to explain it"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Right to submit the code under the Vim license"
+        }
+      ],
+      "note": "Allowed for small, targeted fixes such as security issues, with disclosure, full responsibility and licensing compliance.",
+      "quotes": [
+        {
+          "quote": "Use of AI is allowed within the limits mentioned below, but you remain fully responsible for everything you submit. Disclosure of AI use is required, using an `Assisted-by:` trailer.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Small, targeted fixes (e.g. for security issues).",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must understand every line of your change and be able to explain it.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must have the right to submit the code under the Vim license.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "`Assisted-by:` trailer"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand every line and be able to explain it"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Right to submit the code under the Vim license"
+        }
+      ],
+      "note": "Allowed as help with writing tests and benchmarks, with disclosure, full responsibility and licensing compliance.",
+      "quotes": [
+        {
+          "quote": "Use of AI is allowed within the limits mentioned below, but you remain fully responsible for everything you submit. Disclosure of AI use is required, using an `Assisted-by:` trailer.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Help with writing tests and benchmarks.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must understand every line of your change and be able to explain it.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must have the right to submit the code under the Vim license.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Large pull requests that are mostly AI-generated are not acceptable and may be closed.",
+      "quotes": [
+        {
+          "quote": "Large pull requests that were mostly generated.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated PR descriptions are not acceptable; write them yourself.",
+      "quotes": [
+        {
+          "quote": "Generated commit messages or PR descriptions.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Write them yourself that ensures you have a good understanding of the change.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "commit-message",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated commit messages are not acceptable; write them yourself.",
+      "quotes": [
+        {
+          "quote": "Generated commit messages or PR descriptions.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Write them yourself that ensures you have a good understanding of the change.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Answering reviewers by pasting AI output is not acceptable; explain your own understanding.",
+      "quotes": [
+        {
+          "quote": "Answering review questions by pasting AI output.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-review-others",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated reviews on other people's pull requests are not acceptable; automated CI checks are fine.",
+      "quotes": [
+        {
+          "quote": "Posting AI-generated reviews on other people's pull requests. Automated CI checks are fine.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "proofreading",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Fixing spelling and grammar is explicitly fine.",
+      "quotes": [
+        {
+          "quote": "Fixing spelling, grammar and translations is fine.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "translation",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Fixing translations is explicitly fine.",
+      "quotes": [
+        {
+          "quote": "Fixing spelling, grammar and translations is fine.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "Contributors are expected to fix problems their AI-assisted changes introduce.",
+      "quotes": [
+        {
+          "quote": "You are expected to fix problems your change introduces.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "Maintainers decide whether an AI-assisted contribution is acceptable.",
+      "quotes": [
+        {
+          "quote": "Maintainers decide whether a contribution is acceptable.",
+          "sourceUrl": "https://github.com/vim/vim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [
+    {
+      "url": "AGENTS.md",
+      "note": "Contains information and instructions for AI coding agents."
+    },
+    {
+      "url": "CODE_OF_CONDUCT.md",
+      "note": "Covers the use of AI in discussions."
+    }
+  ],
+  "rubricVersion": 1,
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-26",
+  "lastChanged": "2026-10-26"
 }

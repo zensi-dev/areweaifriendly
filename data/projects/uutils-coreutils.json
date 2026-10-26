@@ -4,14 +4,15 @@
   "category": "tool",
   "homepage": "https://uutils.github.io/",
   "repo": "https://github.com/uutils/coreutils",
-  "summary": "AI-assisted contributions are allowed under the same standards as any patch: understand and justify every line, self-review the diff and make sure nothing is derived from GNU coreutils or other GPL code.",
+  "summary": "AI-assisted contributions are allowed, but contributors must understand and be able to justify every line, self-review the diff, keep patches small and focused, and ensure AI output is not derived from GNU coreutils or other GPL code.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
         "human-accountable",
         "human-reviewed",
-        "license-compliance"
+        "license-compliance",
+        "limited-scope"
       ]
     },
     "issues": {
@@ -26,17 +27,22 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "AI-assisted contributions are allowed, but the same standards apply as for any other patch.",
+      "quote": "AI-assisted contributions are allowed, but the same standards apply as for\nany other patch.",
       "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
-      "quote": "you should understand every line you submit and be able to explain and justify the change in review.",
+      "quote": "If you use an AI tool to help write a change, you are still\nresponsible for it: you should understand every line you submit and be able\nto explain and justify the change in review.",
       "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
-      "quote": "Be especially careful that the output is not derived from GNU coreutils or other GPL code",
+      "quote": "Be especially careful that the\noutput is not derived from GNU coreutils or other GPL code - AI assistants\nare trained on GPL sources and can reproduce them verbatim, which this\nproject cannot accept.",
+      "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Keep patches small and focused\nso they are easy to review, and self-review the diff carefully before opening\na pull request - reviewers are there to double-check a human's work, not an\nLLM's output.",
       "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
     }
   ],
@@ -44,12 +50,377 @@
     {
       "url": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md",
       "title": "Contributing to coreutils",
-      "hash": "30c2909a446ce234b80de5babbfa7bb83504300f314e884aa44000315bc79cdb",
-      "fetchedAt": "2026-10-10"
+      "hash": "17c90511b5c8b12d46e5f6e856b045daf99b31c274438db8ed34ef2783d8166c",
+      "fetchedAt": "2026-10-26"
     }
   ],
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand every line and explain/justify it in review"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Self-review the diff before opening a pull request"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Output must not be derived from GNU coreutils or other GPL code"
+        },
+        {
+          "condition": "size-limit",
+          "strength": "required",
+          "detail": "Keep patches small and focused"
+        }
+      ],
+      "note": "AI-assisted code is allowed when the contributor understands and can justify every line, self-reviews the diff, keeps the patch small and focused, and avoids GPL-derived output.",
+      "quotes": [
+        {
+          "quote": "AI-assisted contributions are allowed, but the same standards apply as for\nany other patch.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you use an AI tool to help write a change, you are still\nresponsible for it: you should understand every line you submit and be able\nto explain and justify the change in review.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be especially careful that the\noutput is not derived from GNU coreutils or other GPL code - AI assistants\nare trained on GPL sources and can reproduce them verbatim, which this\nproject cannot accept.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Keep patches small and focused\nso they are easy to review, and self-review the diff carefully before opening\na pull request - reviewers are there to double-check a human's work, not an\nLLM's output.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand every line and explain/justify it in review"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Self-review the diff before opening a pull request"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Output must not be derived from GNU coreutils or other GPL code"
+        },
+        {
+          "condition": "size-limit",
+          "strength": "required",
+          "detail": "Keep patches small and focused"
+        }
+      ],
+      "note": "AI-assisted code is allowed when the contributor understands and can justify every line, self-reviews the diff, keeps the patch small and focused, and avoids GPL-derived output.",
+      "quotes": [
+        {
+          "quote": "AI-assisted contributions are allowed, but the same standards apply as for\nany other patch.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you use an AI tool to help write a change, you are still\nresponsible for it: you should understand every line you submit and be able\nto explain and justify the change in review.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be especially careful that the\noutput is not derived from GNU coreutils or other GPL code - AI assistants\nare trained on GPL sources and can reproduce them verbatim, which this\nproject cannot accept.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Keep patches small and focused\nso they are easy to review, and self-review the diff carefully before opening\na pull request - reviewers are there to double-check a human's work, not an\nLLM's output.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand every line and explain/justify it in review"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Self-review the diff before opening a pull request"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Output must not be derived from GNU coreutils or other GPL code"
+        },
+        {
+          "condition": "size-limit",
+          "strength": "required",
+          "detail": "Keep patches small and focused"
+        }
+      ],
+      "note": "AI may assist with substantial changes only if they are split into small, focused patches that the contributor understands and self-reviews, and the output is not GPL-derived.",
+      "quotes": [
+        {
+          "quote": "AI-assisted contributions are allowed, but the same standards apply as for\nany other patch.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you use an AI tool to help write a change, you are still\nresponsible for it: you should understand every line you submit and be able\nto explain and justify the change in review.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be especially careful that the\noutput is not derived from GNU coreutils or other GPL code - AI assistants\nare trained on GPL sources and can reproduce them verbatim, which this\nproject cannot accept.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Keep patches small and focused\nso they are easy to review, and self-review the diff carefully before opening\na pull request - reviewers are there to double-check a human's work, not an\nLLM's output.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand every line and explain/justify it in review"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Self-review the diff before opening a pull request"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Output must not be derived from GNU coreutils or other GPL code"
+        },
+        {
+          "condition": "size-limit",
+          "strength": "required",
+          "detail": "Keep patches small and focused"
+        }
+      ],
+      "note": "AI-assisted mechanical edits are allowed if understood, self-reviewed, kept small and focused, and not derived from GNU or other GPL code.",
+      "quotes": [
+        {
+          "quote": "AI-assisted contributions are allowed, but the same standards apply as for\nany other patch.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you use an AI tool to help write a change, you are still\nresponsible for it: you should understand every line you submit and be able\nto explain and justify the change in review.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be especially careful that the\noutput is not derived from GNU coreutils or other GPL code - AI assistants\nare trained on GPL sources and can reproduce them verbatim, which this\nproject cannot accept.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Keep patches small and focused\nso they are easy to review, and self-review the diff carefully before opening\na pull request - reviewers are there to double-check a human's work, not an\nLLM's output.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand every line and explain/justify it in review"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Self-review the diff before opening a pull request"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Output must not be derived from GNU coreutils or other GPL code"
+        },
+        {
+          "condition": "size-limit",
+          "strength": "required",
+          "detail": "Keep patches small and focused"
+        }
+      ],
+      "note": "AI-assisted tests are allowed under the same conditions: understand and justify every line, self-review, keep patches small, and avoid GPL-derived output.",
+      "quotes": [
+        {
+          "quote": "AI-assisted contributions are allowed, but the same standards apply as for\nany other patch.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you use an AI tool to help write a change, you are still\nresponsible for it: you should understand every line you submit and be able\nto explain and justify the change in review.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be especially careful that the\noutput is not derived from GNU coreutils or other GPL code - AI assistants\nare trained on GPL sources and can reproduce them verbatim, which this\nproject cannot accept.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Keep patches small and focused\nso they are easy to review, and self-review the diff carefully before opening\na pull request - reviewers are there to double-check a human's work, not an\nLLM's output.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand every line and explain/justify it in review"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Self-review the diff before opening a pull request"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Output must not be derived from GNU coreutils or other GPL code"
+        },
+        {
+          "condition": "size-limit",
+          "strength": "required",
+          "detail": "Keep patches small and focused"
+        }
+      ],
+      "note": "AI-assisted infrastructure code is allowed under the same conditions: understand and justify every line, self-review, keep patches small, and avoid GPL-derived output.",
+      "quotes": [
+        {
+          "quote": "AI-assisted contributions are allowed, but the same standards apply as for\nany other patch.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you use an AI tool to help write a change, you are still\nresponsible for it: you should understand every line you submit and be able\nto explain and justify the change in review.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be especially careful that the\noutput is not derived from GNU coreutils or other GPL code - AI assistants\nare trained on GPL sources and can reproduce them verbatim, which this\nproject cannot accept.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Keep patches small and focused\nso they are easy to review, and self-review the diff carefully before opening\na pull request - reviewers are there to double-check a human's work, not an\nLLM's output.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand every line and explain/justify it in review"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Self-review the diff before opening a pull request"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Output must not be derived from GNU coreutils or other GPL code"
+        },
+        {
+          "condition": "size-limit",
+          "strength": "required",
+          "detail": "Keep patches small and focused"
+        }
+      ],
+      "note": "AI-assisted documentation changes are allowed under the same conditions: understand and justify every line, self-review, keep patches small, and avoid GPL-derived text.",
+      "quotes": [
+        {
+          "quote": "AI-assisted contributions are allowed, but the same standards apply as for\nany other patch.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you use an AI tool to help write a change, you are still\nresponsible for it: you should understand every line you submit and be able\nto explain and justify the change in review.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be especially careful that the\noutput is not derived from GNU coreutils or other GPL code - AI assistants\nare trained on GPL sources and can reproduce them verbatim, which this\nproject cannot accept.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Keep patches small and focused\nso they are easy to review, and self-review the diff carefully before opening\na pull request - reviewers are there to double-check a human's work, not an\nLLM's output.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "localization",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand every line and explain/justify it in review"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Self-review the diff before opening a pull request"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Output must not be derived from GNU coreutils or other GPL code"
+        },
+        {
+          "condition": "size-limit",
+          "strength": "required",
+          "detail": "Keep patches small and focused"
+        }
+      ],
+      "note": "AI-assisted localization changes are subject to the same conditions: human understanding and justification, self-review, small patches, and no GPL-derived output.",
+      "quotes": [
+        {
+          "quote": "AI-assisted contributions are allowed, but the same standards apply as for\nany other patch.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you use an AI tool to help write a change, you are still\nresponsible for it: you should understand every line you submit and be able\nto explain and justify the change in review.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Be especially careful that the\noutput is not derived from GNU coreutils or other GPL code - AI assistants\nare trained on GPL sources and can reproduce them verbatim, which this\nproject cannot accept.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Keep patches small and focused\nso they are easy to review, and self-review the diff carefully before opening\na pull request - reviewers are there to double-check a human's work, not an\nLLM's output.",
+          "sourceUrl": "https://github.com/uutils/coreutils/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-10-26",
+  "lastChanged": "2026-10-26"
 }
