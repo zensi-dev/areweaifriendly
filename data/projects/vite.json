@@ -4,7 +4,7 @@
   "category": "tool",
   "homepage": "https://vite.dev/",
   "repo": "https://github.com/vitejs/vite",
-  "summary": "AI tools are welcome if you fully understand and can explain what you submit. Comments, issues and PR descriptions must be in your own words.",
+  "summary": "Vite welcomes thoughtful AI use, but contributors must write all comments, issues, and pull request descriptions in their own words and must fully understand and explain any contribution they submit. Violations may cause the issue or pull request to be closed.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -13,31 +13,47 @@
       ]
     },
     "issues": {
-      "verdict": "conditional",
-      "conditions": [
-        "minor-assist-only"
-      ]
+      "verdict": "banned",
+      "conditions": []
     },
     "summaries": {
-      "verdict": "conditional",
-      "conditions": [
-        "minor-assist-only"
-      ]
+      "verdict": "banned",
+      "conditions": []
     }
   },
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "Never let an LLM think for you - only submit contributions you fully understand and can explain.",
+      "quote": "We welcome the thoughtful use of AI tools when contributing to Vite, but ask all contributors to follow [two core principles](https://roe.dev/blog/using-ai-in-open-source):",
       "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
     },
     {
-      "dimension": "issues",
-      "quote": "Never let an LLM speak for you - all comments, issues, and PR descriptions should be written in your own words, reflecting your own understanding.",
+      "dimension": "contributions",
+      "quote": "**Never let an LLM think for you** - only submit contributions you fully understand and can explain.",
       "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "summaries",
+      "quote": "**Never let an LLM speak for you** - all comments, issues, and PR descriptions should be written in your own words, reflecting your own understanding.",
+      "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If we find that these principles were not followed, we may close the issue or pull request directly.",
+      "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "**Never let an LLM speak for you** - all comments, issues, and PR descriptions should be written in your own words, reflecting your own understanding.",
+      "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "If we find that these principles were not followed, we may close the issue or pull request directly.",
+      "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
       "quote": "If we find that these principles were not followed, we may close the issue or pull request directly.",
       "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
     }
@@ -46,12 +62,367 @@
     {
       "url": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md",
       "title": "Vite Contributing Guide",
-      "hash": "dbc7ec7325fa949253af6ae376c857a04526085285fb03c42127415865ae6454",
-      "fetchedAt": "2026-10-10"
+      "hash": "94ced7f846f1d10ed686d959f4b750de4759cc8f6ea0aae47f835b55df7b20fe",
+      "fetchedAt": "2026-11-02"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Only submit contributions you fully understand and can explain"
+        }
+      ],
+      "note": "AI-assisted code is allowed as long as you fully understand and can explain the contribution.",
+      "quotes": [
+        {
+          "quote": "We welcome the thoughtful use of AI tools when contributing to Vite, but ask all contributors to follow [two core principles](https://roe.dev/blog/using-ai-in-open-source):",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Never let an LLM think for you** - only submit contributions you fully understand and can explain.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Only submit contributions you fully understand and can explain"
+        }
+      ],
+      "note": "AI-assisted small code changes are allowed as long as you fully understand and can explain them.",
+      "quotes": [
+        {
+          "quote": "We welcome the thoughtful use of AI tools when contributing to Vite, but ask all contributors to follow [two core principles](https://roe.dev/blog/using-ai-in-open-source):",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Never let an LLM think for you** - only submit contributions you fully understand and can explain.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Only submit contributions you fully understand and can explain"
+        }
+      ],
+      "note": "Substantial AI-assisted code changes are allowed as long as you fully understand and can explain the contribution.",
+      "quotes": [
+        {
+          "quote": "We welcome the thoughtful use of AI tools when contributing to Vite, but ask all contributors to follow [two core principles](https://roe.dev/blog/using-ai-in-open-source):",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Never let an LLM think for you** - only submit contributions you fully understand and can explain.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Only submit contributions you fully understand and can explain"
+        }
+      ],
+      "note": "AI-assisted mechanical edits are allowed as long as you fully understand and can explain the contribution.",
+      "quotes": [
+        {
+          "quote": "We welcome the thoughtful use of AI tools when contributing to Vite, but ask all contributors to follow [two core principles](https://roe.dev/blog/using-ai-in-open-source):",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Never let an LLM think for you** - only submit contributions you fully understand and can explain.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Only submit contributions you fully understand and can explain"
+        }
+      ],
+      "note": "AI-assisted tests are allowed as long as you fully understand and can explain the contribution.",
+      "quotes": [
+        {
+          "quote": "We welcome the thoughtful use of AI tools when contributing to Vite, but ask all contributors to follow [two core principles](https://roe.dev/blog/using-ai-in-open-source):",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Never let an LLM think for you** - only submit contributions you fully understand and can explain.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Only submit contributions you fully understand and can explain"
+        }
+      ],
+      "note": "AI-assisted infrastructure code is allowed as long as you fully understand and can explain the contribution.",
+      "quotes": [
+        {
+          "quote": "We welcome the thoughtful use of AI tools when contributing to Vite, but ask all contributors to follow [two core principles](https://roe.dev/blog/using-ai-in-open-source):",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Never let an LLM think for you** - only submit contributions you fully understand and can explain.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Only submit contributions you fully understand and can explain"
+        }
+      ],
+      "note": "AI-assisted documentation changes are allowed as long as you fully understand and can explain them.",
+      "quotes": [
+        {
+          "quote": "We welcome the thoughtful use of AI tools when contributing to Vite, but ask all contributors to follow [two core principles](https://roe.dev/blog/using-ai-in-open-source):",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Never let an LLM think for you** - only submit contributions you fully understand and can explain.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "localization",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Only submit contributions you fully understand and can explain"
+        }
+      ],
+      "note": "AI or machine translation of project documentation is allowed as long as you fully understand and can explain the contribution.",
+      "quotes": [
+        {
+          "quote": "We welcome the thoughtful use of AI tools when contributing to Vite, but ask all contributors to follow [two core principles](https://roe.dev/blog/using-ai-in-open-source):",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Never let an LLM think for you** - only submit contributions you fully understand and can explain.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "assets",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Only submit contributions you fully understand and can explain"
+        }
+      ],
+      "note": "AI-generated assets are allowed as long as you fully understand and can explain the contribution.",
+      "quotes": [
+        {
+          "quote": "We welcome the thoughtful use of AI tools when contributing to Vite, but ask all contributors to follow [two core principles](https://roe.dev/blog/using-ai-in-open-source):",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Never let an LLM think for you** - only submit contributions you fully understand and can explain.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Using AI to learn about the codebase is welcomed as thoughtful use of AI tools.",
+      "quotes": [
+        {
+          "quote": "We welcome the thoughtful use of AI tools when contributing to Vite, but ask all contributors to follow [two core principles](https://roe.dev/blog/using-ai-in-open-source):",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written comments are not allowed because all comments must be written in your own words.",
+      "quotes": [
+        {
+          "quote": "**Never let an LLM speak for you** - all comments, issues, and PR descriptions should be written in your own words, reflecting your own understanding.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we find that these principles were not followed, we may close the issue or pull request directly.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "issue-writing",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written issue text is not allowed because issues must be written in your own words.",
+      "quotes": [
+        {
+          "quote": "**Never let an LLM speak for you** - all comments, issues, and PR descriptions should be written in your own words, reflecting your own understanding.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we find that these principles were not followed, we may close the issue or pull request directly.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written pull request descriptions are not allowed because they must be written in your own words.",
+      "quotes": [
+        {
+          "quote": "**Never let an LLM speak for you** - all comments, issues, and PR descriptions should be written in your own words, reflecting your own understanding.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we find that these principles were not followed, we may close the issue or pull request directly.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written answers to reviewers are not allowed because all comments must be written in your own words.",
+      "quotes": [
+        {
+          "quote": "**Never let an LLM speak for you** - all comments, issues, and PR descriptions should be written in your own words, reflecting your own understanding.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we find that these principles were not followed, we may close the issue or pull request directly.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-review-others",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated reviews of other people's pull requests are not allowed because comments must be written in your own words.",
+      "quotes": [
+        {
+          "quote": "**Never let an LLM speak for you** - all comments, issues, and PR descriptions should be written in your own words, reflecting your own understanding.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we find that these principles were not followed, we may close the issue or pull request directly.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI agents may not post comments because all comments must be written in your own words.",
+      "quotes": [
+        {
+          "quote": "**Never let an LLM speak for you** - all comments, issues, and PR descriptions should be written in your own words, reflecting your own understanding.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we find that these principles were not followed, we may close the issue or pull request directly.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-issues",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI agents may not open issues because issues must be written in your own words.",
+      "quotes": [
+        {
+          "quote": "**Never let an LLM speak for you** - all comments, issues, and PR descriptions should be written in your own words, reflecting your own understanding.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we find that these principles were not followed, we may close the issue or pull request directly.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-contributions",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Autonomous AI agents may not submit contributions because contributors must fully understand and explain what they submit.",
+      "quotes": [
+        {
+          "quote": "**Never let an LLM think for you** - only submit contributions you fully understand and can explain.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we find that these principles were not followed, we may close the issue or pull request directly.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "Issues or pull requests that do not follow the AI principles may be closed directly.",
+      "quotes": [
+        {
+          "quote": "If we find that these principles were not followed, we may close the issue or pull request directly.",
+          "sourceUrl": "https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-02",
+  "lastChanged": "2026-11-02"
 }

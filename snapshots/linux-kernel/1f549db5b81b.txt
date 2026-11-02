@@ -1,3 +1,7 @@
+English
+
+- Portuguese (Brazilian)
+
 # AI Coding Assistants¶
 
 This document provides guidance for AI tools and developers using AI assistance when contributing to the Linux kernel.
@@ -36,20 +40,6 @@ AI agents MUST NOT add Signed-off-by tags. Only humans can legally certify the D
 
 - Taking full responsibility for the contribution
 
-## Attribution¶
-
-When AI tools contribute to kernel development, proper attribution helps track the evolving role of AI in the development process. Contributions should include an Assisted-by tag in the following format:
-
-Assisted-by: LLM [TOOL1] [TOOL2]
-
-- [TOOL1] [TOOL2] are optional specialized analysis tools used (e.g., coccinelle, sparse, smatch, clang-tidy)
-
-Basic development tools (git, gcc, make, editors) should not be listed.
-
-Example:
-
-Assisted-by: LLM coccinelle sparse
-
 ## Procedure for finding and fixing bugs¶
 
 When an AI assistant is used to find and fix bugs, it MUST follow at least these steps:
@@ -64,7 +54,7 @@ When an AI assistant is used to find and fix bugs, it MUST follow at least these
 
 - Build and verify that the fix works either using the reproducer or by re-running a complete analysis; drop any fix that doesn’t work and try another one. The fix must not add build warnings and must pass the checkpatch.pl checks (see Submitting patches: the essential guide to getting your code into the kernel).
 
-- Commit the working fix with a detailed message describing the problem, the solution and a Fixes tag. Do not add a Signed-off-by tag, and add an Assisted-by tag, as described above.
+- Commit the working fix with a detailed message describing the problem, the solution and a Fixes tag. Do not add a Signed-off-by tag.
 
 - Identify the maintainers and lists using scripts/get_maintainer.pl. Security bugs shows how to do that.
 

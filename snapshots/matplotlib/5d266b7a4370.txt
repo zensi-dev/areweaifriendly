@@ -99,7 +99,7 @@ Other documentation is generated from the following external sources:
 
 Instructions and guidelines for contributing documentation are found in:
 
-- Write documentation
+- Build and write documentation
 
 - Documentation style guide
 

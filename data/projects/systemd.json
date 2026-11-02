@@ -4,26 +4,25 @@
   "category": "operating-system",
   "homepage": "https://systemd.io/",
   "repo": "https://github.com/systemd/systemd",
-  "summary": "AI may help create contributions you review, understand and own, with licences checked and no AI credited as author. Agents may not open PRs or post for you; write issues and review comments yourself. AI may help draft commit messages and PR descriptions if you edit them.",
+  "summary": "Contributors may use generative AI to help write code and documentation, but must review and edit the output, understand and be able to explain it, and ensure license compatibility. AI tools must not be listed as authors, and must not open pull requests or issues, write issues, review comments, or mailing-list posts for contributors; commit messages and pull request descriptions may be AI-assisted if reviewed.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
         "human-accountable",
-        "license-compliance",
-        "no-autonomous-agents"
+        "human-reviewed",
+        "license-compliance"
       ]
     },
     "issues": {
-      "verdict": "conditional",
-      "conditions": [
-        "minor-assist-only"
-      ]
+      "verdict": "banned",
+      "conditions": []
     },
     "summaries": {
       "verdict": "conditional",
       "conditions": [
-        "human-reviewed"
+        "human-reviewed",
+        "limited-scope"
       ]
     }
   },
@@ -35,7 +34,27 @@
     },
     {
       "dimension": "contributions",
+      "quote": "You must be able to explain every part of your contribution and why it was done that way, and you own the code like any other code you wrote.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
       "quote": "Do not submit AI-generated code that you do not understand.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If you cannot explain the code you contributed, your contribution will not be merged and any further pull requests will likely not get reviewed.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Make sure your contribution, including any AI-generated code, is compatible with the project's license as documented in [`LICENSES/README.md`](https://github.com/systemd/systemd/blob/main/LICENSES/README.md).",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not list AI tools as author or co-author, or credit them in any way that suggests ownership.",
       "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
     },
     {
@@ -45,16 +64,51 @@
     },
     {
       "dimension": "contributions",
-      "quote": "Make sure your contribution, including any AI-generated code, is compatible with the project's license",
+      "quote": "Specifically, we do not allow the use of such tools to communicate on your behalf. You must speak for yourself. It is not permissible to let such tools open pull requests or issues, leave or respond to comments, or post to the systemd-devel mailing list.",
       "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
     },
     {
       "dimension": "issues",
-      "quote": "You must speak for yourself. Do not let an AI agent open pull requests or post for you.",
+      "quote": "Write issues, review comments, and posts to the [systemd-devel mailing list](https://lists.freedesktop.org/mailman/listinfo/systemd-devel) yourself.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Specifically, we do not allow the use of such tools to communicate on your behalf. You must speak for yourself. It is not permissible to let such tools open pull requests or issues, leave or respond to comments, or post to the systemd-devel mailing list.",
       "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
     },
     {
       "dimension": "summaries",
+      "quote": "You may use AI to help write commit messages, code comments, and pull request descriptions, but you must review and edit the result so it matches the style of existing commits and pull requests.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "A pull request description briefly explains what the change does and why. Avoid the \"AI voice\": unusual metaphors, filler, headings and bullet lists for a simple change, file-by-file summaries that restate the diff, and excessive detail about unimportant things.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "The first time maintainers find that you let AI communicate for you, or that you posted AI-written text without reviewing it, you get a warning. The second time, you are banned from the project.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Write issues, review comments, and posts to the [systemd-devel mailing list](https://lists.freedesktop.org/mailman/listinfo/systemd-devel) yourself.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Specifically, we do not allow the use of such tools to communicate on your behalf. You must speak for yourself. It is not permissible to let such tools open pull requests or issues, leave or respond to comments, or post to the systemd-devel mailing list.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not let an AI agent open pull requests or post for you.",
+      "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
       "quote": "You may use AI to help write commit messages, code comments, and pull request descriptions, but you must review and edit the result so it matches the style of existing commits and pull requests.",
       "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
     }
@@ -63,12 +117,508 @@
     {
       "url": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md",
       "title": "Contributing",
-      "hash": "8d7e24de1b7840c0679e8c14a887fecc8198ecd5b4722f96dddb84564ca2706e",
-      "fetchedAt": "2026-10-10"
+      "hash": "579f59ebe269146e92e46b5da622c6fbcc2761dcd4dc4cb9df582f7747a23df5",
+      "fetchedAt": "2026-11-02"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and edit AI output to follow project guidelines"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You must understand and be able to explain every part"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "AI-generated code must be license-compatible"
+        }
+      ],
+      "note": "AI-assisted code completion is allowed if you review and edit it, understand and can explain it, and keep it license-compatible.",
+      "quotes": [
+        {
+          "quote": "You may use generative AI and LLM tools (\"AI\") to help create contributions, as long as you review and edit what they produce so it follows the project guidelines.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must be able to explain every part of your contribution and why it was done that way, and you own the code like any other code you wrote.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Do not submit AI-generated code that you do not understand.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you cannot explain the code you contributed, your contribution will not be merged and any further pull requests will likely not get reviewed.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Make sure your contribution, including any AI-generated code, is compatible with the project's license as documented in [`LICENSES/README.md`](https://github.com/systemd/systemd/blob/main/LICENSES/README.md).",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and edit AI output to follow project guidelines"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You must understand and be able to explain every part"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "AI-generated code must be license-compatible"
+        }
+      ],
+      "note": "AI may help write small code changes if the result is reviewed, understood, explainable and license-compatible.",
+      "quotes": [
+        {
+          "quote": "You may use generative AI and LLM tools (\"AI\") to help create contributions, as long as you review and edit what they produce so it follows the project guidelines.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must be able to explain every part of your contribution and why it was done that way, and you own the code like any other code you wrote.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Do not submit AI-generated code that you do not understand.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you cannot explain the code you contributed, your contribution will not be merged and any further pull requests will likely not get reviewed.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Make sure your contribution, including any AI-generated code, is compatible with the project's license as documented in [`LICENSES/README.md`](https://github.com/systemd/systemd/blob/main/LICENSES/README.md).",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and edit AI output to follow project guidelines"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You must understand and be able to explain every part"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "AI-generated code must be license-compatible"
+        }
+      ],
+      "note": "AI-generated large changes are not banned, but you must review and edit them, understand and explain them, and keep them license-compatible.",
+      "quotes": [
+        {
+          "quote": "You may use generative AI and LLM tools (\"AI\") to help create contributions, as long as you review and edit what they produce so it follows the project guidelines.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must be able to explain every part of your contribution and why it was done that way, and you own the code like any other code you wrote.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Do not submit AI-generated code that you do not understand.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you cannot explain the code you contributed, your contribution will not be merged and any further pull requests will likely not get reviewed.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Make sure your contribution, including any AI-generated code, is compatible with the project's license as documented in [`LICENSES/README.md`](https://github.com/systemd/systemd/blob/main/LICENSES/README.md).",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and edit AI output to follow project guidelines"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You must understand and be able to explain every part"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "AI-generated code must be license-compatible"
+        }
+      ],
+      "note": "AI may perform mechanical code edits if you review and edit them, understand and can explain them, and keep them license-compatible.",
+      "quotes": [
+        {
+          "quote": "You may use generative AI and LLM tools (\"AI\") to help create contributions, as long as you review and edit what they produce so it follows the project guidelines.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must be able to explain every part of your contribution and why it was done that way, and you own the code like any other code you wrote.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Do not submit AI-generated code that you do not understand.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you cannot explain the code you contributed, your contribution will not be merged and any further pull requests will likely not get reviewed.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Make sure your contribution, including any AI-generated code, is compatible with the project's license as documented in [`LICENSES/README.md`](https://github.com/systemd/systemd/blob/main/LICENSES/README.md).",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and edit AI output to follow project guidelines"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You must understand and be able to explain every part"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "AI-generated code must be license-compatible"
+        }
+      ],
+      "note": "AI may help write tests if you review and edit them, understand and can explain them, and keep them license-compatible.",
+      "quotes": [
+        {
+          "quote": "You may use generative AI and LLM tools (\"AI\") to help create contributions, as long as you review and edit what they produce so it follows the project guidelines.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must be able to explain every part of your contribution and why it was done that way, and you own the code like any other code you wrote.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Do not submit AI-generated code that you do not understand.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you cannot explain the code you contributed, your contribution will not be merged and any further pull requests will likely not get reviewed.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Make sure your contribution, including any AI-generated code, is compatible with the project's license as documented in [`LICENSES/README.md`](https://github.com/systemd/systemd/blob/main/LICENSES/README.md).",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and edit AI output to follow project guidelines"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You must understand and be able to explain every part"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "AI-generated code must be license-compatible"
+        }
+      ],
+      "note": "AI may help write build, CI or packaging code if you review and edit it, understand and can explain it, and keep it license-compatible.",
+      "quotes": [
+        {
+          "quote": "You may use generative AI and LLM tools (\"AI\") to help create contributions, as long as you review and edit what they produce so it follows the project guidelines.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must be able to explain every part of your contribution and why it was done that way, and you own the code like any other code you wrote.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Do not submit AI-generated code that you do not understand.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you cannot explain the code you contributed, your contribution will not be merged and any further pull requests will likely not get reviewed.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Make sure your contribution, including any AI-generated code, is compatible with the project's license as documented in [`LICENSES/README.md`](https://github.com/systemd/systemd/blob/main/LICENSES/README.md).",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and edit AI output to follow project guidelines"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You must be able to explain every part"
+        }
+      ],
+      "note": "AI may help write documentation as part of a contribution if you review and edit it and can explain it.",
+      "quotes": [
+        {
+          "quote": "You may use generative AI and LLM tools (\"AI\") to help create contributions, as long as you review and edit what they produce so it follows the project guidelines.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You must be able to explain every part of your contribution and why it was done that way, and you own the code like any other code you wrote.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "ai-authorship",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI tools must not be listed as author or co-author or credited in a way that suggests ownership.",
+      "quotes": [
+        {
+          "quote": "Do not list AI tools as author or co-author, or credit them in any way that suggests ownership.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-contributions",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI agents may not open pull requests or make contributions for you.",
+      "quotes": [
+        {
+          "quote": "Do not let an AI agent open pull requests or post for you.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Specifically, we do not allow the use of such tools to communicate on your behalf. You must speak for yourself. It is not permissible to let such tools open pull requests or issues, leave or respond to comments, or post to the systemd-devel mailing list.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "issue-writing",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Issues must be written by you; AI must not write or open issue text for you.",
+      "quotes": [
+        {
+          "quote": "Write issues, review comments, and posts to the [systemd-devel mailing list](https://lists.freedesktop.org/mailman/listinfo/systemd-devel) yourself.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Specifically, we do not allow the use of such tools to communicate on your behalf. You must speak for yourself. It is not permissible to let such tools open pull requests or issues, leave or respond to comments, or post to the systemd-devel mailing list.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-issues",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI agents may not open issues for you.",
+      "quotes": [
+        {
+          "quote": "Write issues, review comments, and posts to the [systemd-devel mailing list](https://lists.freedesktop.org/mailman/listinfo/systemd-devel) yourself.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Specifically, we do not allow the use of such tools to communicate on your behalf. You must speak for yourself. It is not permissible to let such tools open pull requests or issues, leave or respond to comments, or post to the systemd-devel mailing list.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and edit the result to match existing style and avoid the \"AI voice\""
+        }
+      ],
+      "note": "AI may help draft pull request descriptions if you review and edit them to match existing style and avoid an AI voice.",
+      "quotes": [
+        {
+          "quote": "You may use AI to help write commit messages, code comments, and pull request descriptions, but you must review and edit the result so it matches the style of existing commits and pull requests.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "A pull request description briefly explains what the change does and why. Avoid the \"AI voice\": unusual metaphors, filler, headings and bullet lists for a simple change, file-by-file summaries that restate the diff, and excessive detail about unimportant things.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "The first time maintainers find that you let AI communicate for you, or that you posted AI-written text without reviewing it, you get a warning. The second time, you are banned from the project.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "commit-message",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and edit the result to match existing commit style"
+        }
+      ],
+      "note": "AI may help write commit messages if you review and edit them to match existing commit style.",
+      "quotes": [
+        {
+          "quote": "You may use AI to help write commit messages, code comments, and pull request descriptions, but you must review and edit the result so it matches the style of existing commits and pull requests.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Comments and replies on issues or pull requests must be written by you; AI must not communicate for you.",
+      "quotes": [
+        {
+          "quote": "Write issues, review comments, and posts to the [systemd-devel mailing list](https://lists.freedesktop.org/mailman/listinfo/systemd-devel) yourself.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "The first time maintainers find that you let AI communicate for you, or that you posted AI-written text without reviewing it, you get a warning. The second time, you are banned from the project.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Specifically, we do not allow the use of such tools to communicate on your behalf. You must speak for yourself. It is not permissible to let such tools open pull requests or issues, leave or respond to comments, or post to the systemd-devel mailing list.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "You must respond to reviewers yourself; AI must not respond on your behalf.",
+      "quotes": [
+        {
+          "quote": "The first time maintainers find that you let AI communicate for you, or that you posted AI-written text without reviewing it, you get a warning. The second time, you are banned from the project.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Specifically, we do not allow the use of such tools to communicate on your behalf. You must speak for yourself. It is not permissible to let such tools open pull requests or issues, leave or respond to comments, or post to the systemd-devel mailing list.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-review-others",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Review comments on other people's pull requests must be written by you; AI must not post reviews for you.",
+      "quotes": [
+        {
+          "quote": "Write issues, review comments, and posts to the [systemd-devel mailing list](https://lists.freedesktop.org/mailman/listinfo/systemd-devel) yourself.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Specifically, we do not allow the use of such tools to communicate on your behalf. You must speak for yourself. It is not permissible to let such tools open pull requests or issues, leave or respond to comments, or post to the systemd-devel mailing list.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "posts",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Posts to the mailing list must be written by you; AI must not post for you.",
+      "quotes": [
+        {
+          "quote": "Write issues, review comments, and posts to the [systemd-devel mailing list](https://lists.freedesktop.org/mailman/listinfo/systemd-devel) yourself.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Specifically, we do not allow the use of such tools to communicate on your behalf. You must speak for yourself. It is not permissible to let such tools open pull requests or issues, leave or respond to comments, or post to the systemd-devel mailing list.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI agents may not post comments, reviews or replies for you.",
+      "quotes": [
+        {
+          "quote": "Do not let an AI agent open pull requests or post for you.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Specifically, we do not allow the use of such tools to communicate on your behalf. You must speak for yourself. It is not permissible to let such tools open pull requests or issues, leave or respond to comments, or post to the systemd-devel mailing list.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "AI may help write code comments if you review and edit them to match the style of existing code.",
+      "quotes": [
+        {
+          "quote": "You may use AI to help write commit messages, code comments, and pull request descriptions, but you must review and edit the result so it matches the style of existing commits and pull requests.",
+          "sourceUrl": "https://github.com/systemd/systemd/blob/main/docs/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-02",
+  "lastChanged": "2026-11-02"
 }

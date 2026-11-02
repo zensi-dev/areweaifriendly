@@ -32,9 +32,9 @@
 
 - Policies
 
-- Code of Conduct
-
 - AI Policy
+
+- Code of Conduct
 
 - Reference
 
@@ -84,7 +84,7 @@ We understand that AI is a controversial topic, with important societal implicat
 
 - insistently advocating for the use of AI, in general or with respect to specific practices / tools, in either Bevy's development or others' personal workflows
 
-- note that discussion of personal AI-related tools and practices should be contained to the #machine-learning channel on Discord to ensure others can easily avoid these discussions.
+- note that discussion of personal AI-related tools and practices should be contained to the #ai-tools channel on Discord to ensure others can easily avoid these discussions.
 
 - engine-related conversation on adoption or abandonment of AI workflows should similarly be threaded.
 

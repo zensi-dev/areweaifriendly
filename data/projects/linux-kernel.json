@@ -4,34 +4,122 @@
   "category": "operating-system",
   "homepage": "https://kernel.org/",
   "repo": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git",
-  "summary": "AI-assisted patches are accepted when the AI use is tagged with Assisted-by and a human reviews the work, signs off and takes full responsibility. AI agents may not sign off or send anything on their own.",
+  "summary": "The Linux kernel accepts AI-assisted contributions, but contributors must disclose which tools were used and which parts of the work they produced, and must fully understand and be able to defend everything they submit. AI tools and agents may not add Signed-off-by tags or send anything themselves, and maintainers may reject or scrutinise generated work.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
         "disclosure",
         "human-accountable",
-        "human-reviewed",
-        "license-compliance",
-        "no-autonomous-agents"
+        "human-reviewed"
       ]
     },
     "issues": {
       "verdict": "conditional",
       "conditions": [
         "disclosure",
-        "human-reviewed",
-        "no-autonomous-agents"
+        "human-reviewed"
       ]
     },
     "summaries": {
       "verdict": "conditional",
       "conditions": [
-        "disclosure"
+        "disclosure",
+        "human-accountable"
       ]
     }
   },
   "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "Typing aids like identifier completion, common boilerplate or trivial pattern completion",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "These guidelines do not apply to tools that make trivial tweaks to preexisting content. Nor do they pertain to tooling that helps with menial tasks.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Even whenever your tool use is out of scope, you should still always consider if it would help reviewing your contribution if the reviewer knows about the tool that you used.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Purely mechanical transformations like variable renaming",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Any tool-suggested fix such as checkpatch.pl --fix",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Spelling and grammar fix ups, like rephrasing to imperative voice",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "These guidelines do not apply to tools that make trivial tweaks to preexisting content. Nor do they pertain to tooling that helps with menial tasks.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Even whenever your tool use is out of scope, you should still always consider if it would help reviewing your contribution if the reviewer knows about the tool that you used.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "These guidelines apply when a meaningful amount of content in a kernel contribution was not written by a person in the Signed-off-by chain, but was instead created by a tool.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Second, when making a contribution, be transparent about the origin of content in cover letters and changelogs.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You are expected to understand and to be able to defend everything you submit. If you are unable to do so, then do not submit the resulting changes.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Ensure that you understand your entire submission and are prepared to respond to review comments.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Reviewing all AI-generated code",
+      "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If in doubt, choose transparency and assume these guidelines apply to your contribution.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "A chatbot generated a new function in your patch to sort list entries.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If tools permit you to generate a contribution automatically, expect additional scrutiny in proportion to how much of it was generated.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If code was largely generated from a single or short set of prompts, include those prompts.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Which portions of the content were affected by that tool?",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
     {
       "dimension": "contributions",
       "quote": "AI agents MUST NOT add Signed-off-by tags. Only humans can legally certify the Developer Certificate of Origin (DCO).",
@@ -39,27 +127,102 @@
     },
     {
       "dimension": "contributions",
-      "quote": "Contributions should include an Assisted-by tag in the following format:",
+      "quote": "Commit the working fix with a detailed message describing the problem, the solution and a Fixes tag. Do not add a Signed-off-by tag.",
       "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
     },
     {
       "dimension": "issues",
-      "quote": "if a tool was used to find a problem addressed by a change, that should be noted in the changelog.",
+      "quote": "Read The Linux Kernel threat model to determine whether the bug is a vulnerability or a regular bug, and leave the result to the reporter for review (the assistant must never send anything itself).",
+      "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "When an AI assistant is used to find and fix bugs, it MUST follow at least these steps:",
+      "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Before starting, read the whole process documentation listed above, as well as any other document mentioned in the request. Do not rely on isolated parts found by keyword search.",
+      "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "For any bug found that is not trivial, verify that it looks real by attempting to create a reproducer to demonstrate it.",
+      "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Write a fix for the bug. This part is not optional: except in a few very rare cases, an AI assistant able to find a bug is able to fix it.",
+      "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Build and verify that the fix works either using the reproducer or by re-running a complete analysis",
+      "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "If the fix could not be built or tested, or if no reproducer could be produced, say so explicitly",
+      "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Detection of a problem and testing the fix for it is also part of the development process; if a tool was used to find a problem addressed by a change, that should be noted in the changelog.",
       "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
     },
     {
       "dimension": "issues",
-      "quote": "leave the result to the reporter for review (the assistant must never send anything itself)",
-      "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+      "quote": "If in doubt, choose transparency and assume these guidelines apply to your contribution.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
     },
     {
       "dimension": "summaries",
-      "quote": "be transparent about the origin of content in cover letters and changelogs.",
+      "quote": "Second, when making a contribution, be transparent about the origin of content in cover letters and changelogs.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Which portions of the content were affected by that tool?",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If code was largely generated from a single or short set of prompts, include those prompts.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "You are expected to understand and to be able to defend everything you submit. If you are unable to do so, then do not submit the resulting changes.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If in doubt, choose transparency and assume these guidelines apply to your contribution.",
       "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
     },
     {
       "dimension": "summaries",
       "quote": "The changelog was generated by handing the patch to a generative AI tool and asking it to write the changelog.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "The changelog was translated from another language.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Treat the contribution specially, for example, asking for extra testing, reviewing with extra scrutiny, or reviewing at a lower priority than human-generated content.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Ask for some other special steps, like asking the contributor to elaborate on how the tool or model was trained.",
+      "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Ask the submitter to explain in more detail about the contribution so that the maintainer can be assured that the submitter fully understands how the code works.",
       "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
     }
   ],
@@ -67,8 +230,8 @@
     {
       "url": "https://docs.kernel.org/process/coding-assistants.html",
       "title": "AI Coding Assistants — The Linux Kernel documentation",
-      "hash": "2a9e45d8cde9f0948eeb3e25dfc5bec6c9536baf08925f3214978cef64cb898f",
-      "fetchedAt": "2026-10-09"
+      "hash": "1d1d3ab843e26bafaf154d01cedb27186137f8263556ca83d16da08fd10b8ab3",
+      "fetchedAt": "2026-11-02"
     },
     {
       "url": "https://docs.kernel.org/process/generated-content.html",
@@ -77,8 +240,435 @@
       "fetchedAt": "2026-10-09"
     }
   ],
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "allowed",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Consider telling the reviewer which tool was used"
+        }
+      ],
+      "note": "Typing aids such as identifier completion, boilerplate or trivial pattern completion are out of scope, so no disclosure is required, though mentioning the tool may help review.",
+      "quotes": [
+        {
+          "quote": "Typing aids like identifier completion, common boilerplate or trivial pattern completion",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "These guidelines do not apply to tools that make trivial tweaks to preexisting content. Nor do they pertain to tooling that helps with menial tasks.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Even whenever your tool use is out of scope, you should still always consider if it would help reviewing your contribution if the reviewer knows about the tool that you used.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "allowed",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Consider telling the reviewer which tool was used"
+        }
+      ],
+      "note": "Purely mechanical transformations like variable renaming and reformatting are out of scope and need no disclosure, although tool-suggested fixes such as checkpatch.pl --fix are listed as in-scope content.",
+      "quotes": [
+        {
+          "quote": "Purely mechanical transformations like variable renaming",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Any tool-suggested fix such as checkpatch.pl --fix",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "These guidelines do not apply to tools that make trivial tweaks to preexisting content. Nor do they pertain to tooling that helps with menial tasks.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Even whenever your tool use is out of scope, you should still always consider if it would help reviewing your contribution if the reviewer knows about the tool that you used.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        }
+      ]
+    },
+    {
+      "use": "proofreading",
+      "status": "allowed",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Consider telling the reviewer which tool was used"
+        }
+      ],
+      "note": "Spelling and grammar fix-ups, including rephrasing to imperative voice, are explicitly out of scope and need no disclosure.",
+      "quotes": [
+        {
+          "quote": "Spelling and grammar fix ups, like rephrasing to imperative voice",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "These guidelines do not apply to tools that make trivial tweaks to preexisting content. Nor do they pertain to tooling that helps with menial tasks.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Even whenever your tool use is out of scope, you should still always consider if it would help reviewing your contribution if the reviewer knows about the tool that you used.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Be transparent in the cover letter and changelog about the tools used and which parts they affected"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand the whole submission and be able to defend it"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "The human submitter reviews the AI-generated code and verifies the fix works"
+        }
+      ],
+      "note": "Small AI-written changes are accepted, but the human submitter must review them, disclose the tools used and be able to explain the result.",
+      "quotes": [
+        {
+          "quote": "These guidelines apply when a meaningful amount of content in a kernel contribution was not written by a person in the Signed-off-by chain, but was instead created by a tool.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Second, when making a contribution, be transparent about the origin of content in cover letters and changelogs.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "You are expected to understand and to be able to defend everything you submit. If you are unable to do so, then do not submit the resulting changes.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Ensure that you understand your entire submission and are prepared to respond to review comments.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Reviewing all AI-generated code",
+          "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+        },
+        {
+          "quote": "If in doubt, choose transparency and assume these guidelines apply to your contribution.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "State in the cover letter and changelog which tools were used and include the prompts if the code was largely generated"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand and be able to defend everything submitted, or do not submit it"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "The human submitter reviews all AI-generated code"
+        }
+      ],
+      "note": "Larger generated changes are allowed but get extra scrutiny in proportion to how much was generated, and maintainers may reject them.",
+      "quotes": [
+        {
+          "quote": "These guidelines apply when a meaningful amount of content in a kernel contribution was not written by a person in the Signed-off-by chain, but was instead created by a tool.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "A chatbot generated a new function in your patch to sort list entries.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "If tools permit you to generate a contribution automatically, expect additional scrutiny in proportion to how much of it was generated.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "If code was largely generated from a single or short set of prompts, include those prompts.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Second, when making a contribution, be transparent about the origin of content in cover letters and changelogs.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Which portions of the content were affected by that tool?",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "You are expected to understand and to be able to defend everything you submit. If you are unable to do so, then do not submit the resulting changes.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Reviewing all AI-generated code",
+          "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+        },
+        {
+          "quote": "If in doubt, choose transparency and assume these guidelines apply to your contribution.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        }
+      ]
+    },
+    {
+      "use": "ai-authorship",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI tools and agents must never add a Signed-off-by tag; only a human can certify the Developer Certificate of Origin.",
+      "quotes": [
+        {
+          "quote": "AI agents MUST NOT add Signed-off-by tags. Only humans can legally certify the Developer Certificate of Origin (DCO).",
+          "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+        },
+        {
+          "quote": "Commit the working fix with a detailed message describing the problem, the solution and a Fixes tag. Do not add a Signed-off-by tag.",
+          "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+        }
+      ]
+    },
+    {
+      "use": "agent-issues",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI assistants must never send anything themselves, including bug or vulnerability reports; a human reporter reviews and submits.",
+      "quotes": [
+        {
+          "quote": "Read The Linux Kernel threat model to determine whether the bug is a vulnerability or a regular bug, and leave the result to the reporter for review (the assistant must never send anything itself).",
+          "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+        }
+      ]
+    },
+    {
+      "use": "issue-finding",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Verify the bug with a reproducer, build and test the fix before reporting"
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Note in the changelog that a tool found the problem and state explicitly what could not be built or tested"
+        }
+      ],
+      "note": "AI may find and fix bugs, but the assistant must read the full process docs, reproduce the bug, write and verify a fix, and the human must report what was not done.",
+      "quotes": [
+        {
+          "quote": "When an AI assistant is used to find and fix bugs, it MUST follow at least these steps:",
+          "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+        },
+        {
+          "quote": "Before starting, read the whole process documentation listed above, as well as any other document mentioned in the request. Do not rely on isolated parts found by keyword search.",
+          "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+        },
+        {
+          "quote": "For any bug found that is not trivial, verify that it looks real by attempting to create a reproducer to demonstrate it.",
+          "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+        },
+        {
+          "quote": "Write a fix for the bug. This part is not optional: except in a few very rare cases, an AI assistant able to find a bug is able to fix it.",
+          "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+        },
+        {
+          "quote": "Build and verify that the fix works either using the reproducer or by re-running a complete analysis",
+          "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+        },
+        {
+          "quote": "If the fix could not be built or tested, or if no reproducer could be produced, say so explicitly",
+          "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+        },
+        {
+          "quote": "Detection of a problem and testing the fix for it is also part of the development process; if a tool was used to find a problem addressed by a change, that should be noted in the changelog.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "If in doubt, choose transparency and assume these guidelines apply to your contribution.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        }
+      ]
+    },
+    {
+      "use": "security-report",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "The assistant must never send the report itself; the human reporter reviews and submits it"
+        }
+      ],
+      "note": "AI-found bugs must be classified as vulnerability or regular bug with the threat model, and the assistant may never send the report itself.",
+      "quotes": [
+        {
+          "quote": "Read The Linux Kernel threat model to determine whether the bug is a vulnerability or a regular bug, and leave the result to the reporter for review (the assistant must never send anything itself).",
+          "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Say in the cover letter which tools were used, their input, and which portions they affected"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Be prepared to respond to review comments on the submission"
+        }
+      ],
+      "note": "AI-written cover letters are allowed if the origin of the content is disclosed and the submitter can defend the work.",
+      "quotes": [
+        {
+          "quote": "Second, when making a contribution, be transparent about the origin of content in cover letters and changelogs.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Which portions of the content were affected by that tool?",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "If code was largely generated from a single or short set of prompts, include those prompts.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "You are expected to understand and to be able to defend everything you submit. If you are unable to do so, then do not submit the resulting changes.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "If in doubt, choose transparency and assume these guidelines apply to your contribution.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        }
+      ]
+    },
+    {
+      "use": "commit-message",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "State in the changelog that it was generated or translated, and include the prompts if largely generated"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand the changelog and be able to respond to review comments"
+        }
+      ],
+      "note": "AI-written or AI-translated changelogs are in scope and must be disclosed as tool-generated content.",
+      "quotes": [
+        {
+          "quote": "The changelog was generated by handing the patch to a generative AI tool and asking it to write the changelog.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "The changelog was translated from another language.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Second, when making a contribution, be transparent about the origin of content in cover letters and changelogs.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "If code was largely generated from a single or short set of prompts, include those prompts.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "You are expected to understand and to be able to defend everything you submit. If you are unable to do so, then do not submit the resulting changes.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "If in doubt, choose transparency and assume these guidelines apply to your contribution.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        }
+      ]
+    },
+    {
+      "use": "translation",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "State that the text was translated from another language"
+        }
+      ],
+      "note": "Translated changelogs count as in-scope tool-generated content and must be disclosed.",
+      "quotes": [
+        {
+          "quote": "The changelog was translated from another language.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "If in doubt, choose transparency and assume these guidelines apply to your contribution.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "allowed",
+      "description": "Maintainers have discretion over tool-generated contributions: they may treat them like any other, reject them outright, review them with extra scrutiny or at lower priority, or ask for extra tests or details about how the tool or model was trained.",
+      "quotes": [
+        {
+          "quote": "Treat the contribution specially, for example, asking for extra testing, reviewing with extra scrutiny, or reviewing at a lower priority than human-generated content.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Ask for some other special steps, like asking the contributor to elaborate on how the tool or model was trained.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        },
+        {
+          "quote": "Ask the submitter to explain in more detail about the contribution so that the maintainer can be assured that the submitter fully understands how the code works.",
+          "sourceUrl": "https://docs.kernel.org/process/generated-content.html"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "allowed",
+      "description": "AI tools used for kernel development are expected to follow the standard kernel development process, coding style and patch submission documentation.",
+      "quotes": [
+        {
+          "quote": "AI tools helping with Linux kernel development should follow the standard kernel development process",
+          "sourceUrl": "https://docs.kernel.org/process/coding-assistants.html"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-02",
+  "lastChanged": "2026-11-02"
 }
