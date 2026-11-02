@@ -4,7 +4,7 @@
   "category": "tool",
   "homepage": "https://biomejs.dev/",
   "repo": "https://github.com/biomejs/biome",
-  "summary": "Any AI assistance must be disclosed in the PR along with its extent. Don't use AI to write PR descriptions or other communication with the project.",
+  "summary": "Biome allows AI assistance for code contributions, tests and documentation, but any AI use must be disclosed in the pull request together with the extent of use. AI must not be used to write pull request descriptions or contributor communication, and suspected AI-generated communication may lead to the pull request being closed.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -24,17 +24,32 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "If you are using any kind of AI assistance to contribute to Biome, it must be disclosed in the pull request.",
+      "quote": "> If you are using **any kind of AI assistance** to contribute to Biome,\n> it must be disclosed in the pull request.",
       "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
-      "quote": "If you relied on AI assistance to make a pull request, you must disclose it in the pull request, together with the extent of the usage.",
+      "quote": "If you relied on AI assistance to make a pull request, you must disclose it in the\npull request, together with the extent of the usage. For example, if you used\nAI to generate docs or tests, you must say it.",
+      "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Please be respectful to maintainers and disclose AI assistance.",
       "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "summaries",
       "quote": "Please do not use AI to write pull request descriptions or contributor communication for this project.",
+      "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If we believe AI-generated communication was used, we may close the pull request at our discretion.",
+      "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Repeated attempts to contest that decision in comments or re-open the PR may affect whether we accept future contributions from the same contributor.",
       "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
     }
   ],
@@ -42,12 +57,341 @@
     {
       "url": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md",
       "title": "🚀 Contributing",
-      "hash": "9d69c608026f619f4263caa98c276630f005f6eea6f596c599902ce324f9c417",
-      "fetchedAt": "2026-10-10"
+      "hash": "7d6ea9030a7af3ad6c3c630b423daaa0cb75836dfe6962795b5c4e782b163498",
+      "fetchedAt": "2026-11-02"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose any AI assistance in the pull request, including the extent of usage."
+        }
+      ],
+      "note": "AI assistance for code contributions is permitted if disclosed in the pull request with the extent of use.",
+      "quotes": [
+        {
+          "quote": "> If you are using **any kind of AI assistance** to contribute to Biome,\n> it must be disclosed in the pull request.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you relied on AI assistance to make a pull request, you must disclose it in the\npull request, together with the extent of the usage. For example, if you used\nAI to generate docs or tests, you must say it.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Please be respectful to maintainers and disclose AI assistance.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose any AI assistance in the pull request, including the extent of usage."
+        }
+      ],
+      "note": "AI assistance for code contributions is permitted if disclosed in the pull request with the extent of use.",
+      "quotes": [
+        {
+          "quote": "> If you are using **any kind of AI assistance** to contribute to Biome,\n> it must be disclosed in the pull request.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you relied on AI assistance to make a pull request, you must disclose it in the\npull request, together with the extent of the usage. For example, if you used\nAI to generate docs or tests, you must say it.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Please be respectful to maintainers and disclose AI assistance.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose any AI assistance in the pull request, including the extent of usage."
+        }
+      ],
+      "note": "AI assistance for code contributions is permitted if disclosed in the pull request with the extent of use.",
+      "quotes": [
+        {
+          "quote": "> If you are using **any kind of AI assistance** to contribute to Biome,\n> it must be disclosed in the pull request.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you relied on AI assistance to make a pull request, you must disclose it in the\npull request, together with the extent of the usage. For example, if you used\nAI to generate docs or tests, you must say it.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Please be respectful to maintainers and disclose AI assistance.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose any AI assistance in the pull request, including the extent of usage."
+        }
+      ],
+      "note": "AI assistance for code contributions is permitted if disclosed in the pull request with the extent of use.",
+      "quotes": [
+        {
+          "quote": "> If you are using **any kind of AI assistance** to contribute to Biome,\n> it must be disclosed in the pull request.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you relied on AI assistance to make a pull request, you must disclose it in the\npull request, together with the extent of the usage. For example, if you used\nAI to generate docs or tests, you must say it.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Please be respectful to maintainers and disclose AI assistance.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Say in the pull request if AI generated tests."
+        }
+      ],
+      "note": "AI-generated tests are allowed if disclosed in the pull request.",
+      "quotes": [
+        {
+          "quote": "> If you are using **any kind of AI assistance** to contribute to Biome,\n> it must be disclosed in the pull request.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you relied on AI assistance to make a pull request, you must disclose it in the\npull request, together with the extent of the usage. For example, if you used\nAI to generate docs or tests, you must say it.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Please be respectful to maintainers and disclose AI assistance.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose any AI assistance in the pull request, including the extent of usage."
+        }
+      ],
+      "note": "AI assistance for code contributions is permitted if disclosed in the pull request with the extent of use.",
+      "quotes": [
+        {
+          "quote": "> If you are using **any kind of AI assistance** to contribute to Biome,\n> it must be disclosed in the pull request.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you relied on AI assistance to make a pull request, you must disclose it in the\npull request, together with the extent of the usage. For example, if you used\nAI to generate docs or tests, you must say it.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Please be respectful to maintainers and disclose AI assistance.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Say in the pull request if AI generated docs."
+        }
+      ],
+      "note": "AI-generated documentation is allowed if disclosed in the pull request.",
+      "quotes": [
+        {
+          "quote": "> If you are using **any kind of AI assistance** to contribute to Biome,\n> it must be disclosed in the pull request.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you relied on AI assistance to make a pull request, you must disclose it in the\npull request, together with the extent of the usage. For example, if you used\nAI to generate docs or tests, you must say it.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Please be respectful to maintainers and disclose AI assistance.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI consultation in the pull request, including extent."
+        }
+      ],
+      "note": "Consulting AI to understand the codebase is covered by the broad AI disclosure requirement.",
+      "quotes": [
+        {
+          "quote": "> If you are using **any kind of AI assistance** to contribute to Biome,\n> it must be disclosed in the pull request.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Please be respectful to maintainers and disclose AI assistance.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI must not be used to write pull request descriptions; suspected AI-generated communication may lead to the pull request being closed.",
+      "quotes": [
+        {
+          "quote": "Please do not use AI to write pull request descriptions or contributor communication for this project.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we believe AI-generated communication was used, we may close the pull request at our discretion.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI must not be used to write contributor communication such as issue or pull request comments; suspected AI-generated communication may lead to closure.",
+      "quotes": [
+        {
+          "quote": "Please do not use AI to write pull request descriptions or contributor communication for this project.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we believe AI-generated communication was used, we may close the pull request at our discretion.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Repeated attempts to contest that decision in comments or re-open the PR may affect whether we accept future contributions from the same contributor.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI must not be used to write contributor communication, including answers to maintainers or reviewers.",
+      "quotes": [
+        {
+          "quote": "Please do not use AI to write pull request descriptions or contributor communication for this project.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we believe AI-generated communication was used, we may close the pull request at our discretion.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-review-others",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI must not be used to write contributor communication, including reviews of other people's pull requests.",
+      "quotes": [
+        {
+          "quote": "Please do not use AI to write pull request descriptions or contributor communication for this project.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we believe AI-generated communication was used, we may close the pull request at our discretion.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "posts",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI must not be used to write contributor communication on project forums, mailing lists, chat or blogs.",
+      "quotes": [
+        {
+          "quote": "Please do not use AI to write pull request descriptions or contributor communication for this project.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we believe AI-generated communication was used, we may close the pull request at our discretion.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated communication by agents or bots is covered by the ban on AI-written contributor communication.",
+      "quotes": [
+        {
+          "quote": "Please do not use AI to write pull request descriptions or contributor communication for this project.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we believe AI-generated communication was used, we may close the pull request at our discretion.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "Suspected AI-generated communication may cause maintainers to close the pull request at their discretion, and repeatedly contesting that decision may affect future contributions.",
+      "quotes": [
+        {
+          "quote": "Please do not use AI to write pull request descriptions or contributor communication for this project.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If we believe AI-generated communication was used, we may close the pull request at our discretion.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Repeated attempts to contest that decision in comments or re-open the PR may affect whether we accept future contributions from the same contributor.",
+          "sourceUrl": "https://github.com/biomejs/biome/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-02",
+  "lastChanged": "2026-11-02"
 }

@@ -4,7 +4,7 @@
   "category": "application",
   "homepage": "https://about.gitea.com/",
   "repo": "https://github.com/go-gitea/gitea",
-  "summary": "AI-assisted contributions are welcome if AI use is clearly disclosed and contributors review and test the code and can explain and defend it themselves. AI may help draft issues and PRs, but questions from maintainers must be answered without AI.",
+  "summary": "Gitea welcomes AI-assisted contributions, including code, issues and pull request text, but requires clear disclosure, close review and testing of AI-generated code, and that contributors understand and can defend what they submit. Maintainers may close undisclosed or low-quality AI-generated submissions.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -25,7 +25,7 @@
       "verdict": "conditional",
       "conditions": [
         "disclosure",
-        "minor-assist-only"
+        "human-accountable"
       ]
     }
   },
@@ -42,7 +42,27 @@
     },
     {
       "dimension": "contributions",
+      "quote": "Manually test the changes and add appropriate automated tests where feasible.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
       "quote": "Only use AI to assist in contributions that you understand well enough to explain, defend, and revise yourself during review.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Disclose AI-assisted content clearly.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Disclose AI-assisted content clearly.",
       "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
     },
     {
@@ -51,21 +71,600 @@
       "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
     },
     {
+      "dimension": "issues",
+      "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
       "dimension": "summaries",
-      "quote": "Do not use AI to reply to questions about your issue or pull request. The questions are for you, not an AI model.",
+      "quote": "Disclose AI-assisted content clearly.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI may be used to help draft issues and pull requests, but contributors remain responsible for the accuracy, completeness, and intent of what they submit.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do not rely solely on AI to generate replies or engage in discussions.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Ensure your responses are concise, accurate, and thoughtful, avoiding generic or low-quality AI-generated content.",
+      "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Only use AI to assist in contributions that you understand well enough to explain, defend, and revise yourself during review.",
       "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
     }
   ],
   "sources": [
     {
       "url": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md",
-      "title": "Gitea Contribution Guidelines",
-      "hash": "03c272a04e8c8e3a576b67438d5f47b689a28b4f6e97d2f793439aa3c345f3b2",
-      "fetchedAt": "2026-10-09"
+      "title": "Contribution Guidelines",
+      "hash": "6efc9938ce3aafd66e6099ee44a72d04ff15ac31ce12b3906cd33979821d45ba",
+      "fetchedAt": "2026-11-02"
     }
   ],
-  "confidence": "medium",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI-assisted content clearly"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-generated code closely and manually test before marking PR ready"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand, explain, defend, and revise the AI-assisted contribution yourself"
+        }
+      ],
+      "note": "AI-assisted code, including autocomplete, is welcome if disclosed, reviewed and tested, and understood by the contributor.",
+      "quotes": [
+        {
+          "quote": "Contributions made with the assistance of AI tools are welcome, but contributors must use them responsibly and disclose that use clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Review AI-generated code closely before marking a pull request ready for review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Manually test the changes and add appropriate automated tests where feasible.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Only use AI to assist in contributions that you understand well enough to explain, defend, and revise yourself during review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Disclose AI-assisted content clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI-assisted content clearly"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-generated code closely and manually test before marking PR ready"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand, explain, defend, and revise the AI-assisted contribution yourself"
+        }
+      ],
+      "note": "Small AI-assisted code changes are welcome if disclosed, reviewed and tested, and understood by the contributor.",
+      "quotes": [
+        {
+          "quote": "Contributions made with the assistance of AI tools are welcome, but contributors must use them responsibly and disclose that use clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Review AI-generated code closely before marking a pull request ready for review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Manually test the changes and add appropriate automated tests where feasible.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Only use AI to assist in contributions that you understand well enough to explain, defend, and revise yourself during review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Disclose AI-assisted content clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI-assisted content clearly"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-generated code closely and manually test before marking PR ready"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand, explain, defend, and revise the AI-assisted contribution yourself"
+        }
+      ],
+      "note": "No size limit is stated; large AI-assisted PRs are welcome if disclosed, reviewed and tested, and understood by the contributor.",
+      "quotes": [
+        {
+          "quote": "Contributions made with the assistance of AI tools are welcome, but contributors must use them responsibly and disclose that use clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Review AI-generated code closely before marking a pull request ready for review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Manually test the changes and add appropriate automated tests where feasible.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Only use AI to assist in contributions that you understand well enough to explain, defend, and revise yourself during review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Disclose AI-assisted content clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI-assisted content clearly"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-generated code closely and manually test before marking PR ready"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand, explain, defend, and revise the AI-assisted contribution yourself"
+        }
+      ],
+      "note": "AI-assisted mechanical edits are welcome if disclosed, reviewed and tested, and understood by the contributor.",
+      "quotes": [
+        {
+          "quote": "Contributions made with the assistance of AI tools are welcome, but contributors must use them responsibly and disclose that use clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Review AI-generated code closely before marking a pull request ready for review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Manually test the changes and add appropriate automated tests where feasible.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Only use AI to assist in contributions that you understand well enough to explain, defend, and revise yourself during review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Disclose AI-assisted content clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI-assisted content clearly"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-generated code closely and manually test before marking PR ready"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand, explain, defend, and revise the AI-assisted contribution yourself"
+        }
+      ],
+      "note": "AI-assisted tests are welcome if disclosed, reviewed and tested, and understood by the contributor.",
+      "quotes": [
+        {
+          "quote": "Contributions made with the assistance of AI tools are welcome, but contributors must use them responsibly and disclose that use clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Review AI-generated code closely before marking a pull request ready for review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Manually test the changes and add appropriate automated tests where feasible.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Only use AI to assist in contributions that you understand well enough to explain, defend, and revise yourself during review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Disclose AI-assisted content clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI-assisted content clearly"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-generated code closely and manually test before marking PR ready"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand, explain, defend, and revise the AI-assisted contribution yourself"
+        }
+      ],
+      "note": "AI-assisted infrastructure code is welcome if disclosed, reviewed and tested, and understood by the contributor.",
+      "quotes": [
+        {
+          "quote": "Contributions made with the assistance of AI tools are welcome, but contributors must use them responsibly and disclose that use clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Review AI-generated code closely before marking a pull request ready for review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Manually test the changes and add appropriate automated tests where feasible.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Only use AI to assist in contributions that you understand well enough to explain, defend, and revise yourself during review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Disclose AI-assisted content clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI-assisted content clearly"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand, explain, defend, and revise the AI-assisted contribution yourself"
+        }
+      ],
+      "note": "AI-assisted documentation is welcome if disclosed and the contributor can explain and defend it.",
+      "quotes": [
+        {
+          "quote": "Contributions made with the assistance of AI tools are welcome, but contributors must use them responsibly and disclose that use clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Only use AI to assist in contributions that you understand well enough to explain, defend, and revise yourself during review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Disclose AI-assisted content clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "localization",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI-assisted content clearly"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand, explain, defend, and revise the AI-assisted contribution yourself"
+        }
+      ],
+      "note": "AI-assisted localization is welcome if disclosed and the contributor can explain and defend it.",
+      "quotes": [
+        {
+          "quote": "Contributions made with the assistance of AI tools are welcome, but contributors must use them responsibly and disclose that use clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Only use AI to assist in contributions that you understand well enough to explain, defend, and revise yourself during review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Disclose AI-assisted content clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "assets",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI-assisted content clearly"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand, explain, defend, and revise the AI-assisted contribution yourself"
+        }
+      ],
+      "note": "AI-generated or AI-modified assets are welcome if disclosed and the contributor can explain and defend them.",
+      "quotes": [
+        {
+          "quote": "Contributions made with the assistance of AI tools are welcome, but contributors must use them responsibly and disclose that use clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Only use AI to assist in contributions that you understand well enough to explain, defend, and revise yourself during review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Disclose AI-assisted content clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "issue-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI assistance; undisclosed issues may be closed"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain responsible for accuracy, completeness, and intent"
+        }
+      ],
+      "note": "AI may help draft issues, but AI assistance must be disclosed and the contributor remains responsible for accuracy, completeness, and intent.",
+      "quotes": [
+        {
+          "quote": "Disclose AI-assisted content clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "AI may be used to help draft issues and pull requests, but contributors remain responsible for the accuracy, completeness, and intent of what they submit.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI assistance; undisclosed PRs may be closed"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Remain responsible for accuracy, completeness, and intent"
+        }
+      ],
+      "note": "AI may help draft pull request text, but AI assistance must be disclosed and the contributor remains responsible for accuracy, completeness, and intent.",
+      "quotes": [
+        {
+          "quote": "Disclose AI-assisted content clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "AI may be used to help draft issues and pull requests, but contributors remain responsible for the accuracy, completeness, and intent of what they submit.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI-assisted content clearly"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Do not rely solely on AI; ensure responses are concise, accurate, and thoughtful"
+        }
+      ],
+      "note": "AI may help write replies, but not be the sole source; responses must be accurate and thoughtful and AI assistance disclosed.",
+      "quotes": [
+        {
+          "quote": "Disclose AI-assisted content clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Do not rely solely on AI to generate replies or engage in discussions.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Ensure your responses are concise, accurate, and thoughtful, avoiding generic or low-quality AI-generated content.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI-assisted content clearly"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Do not rely solely on AI; understand and defend your answers"
+        }
+      ],
+      "note": "AI may assist answers to reviewer questions, but the contributor must understand and defend them and disclose AI assistance.",
+      "quotes": [
+        {
+          "quote": "Only use AI to assist in contributions that you understand well enough to explain, defend, and revise yourself during review.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Disclose AI-assisted content clearly.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Do not rely solely on AI to generate replies or engage in discussions.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Ensure your responses are concise, accurate, and thoughtful, avoiding generic or low-quality AI-generated content.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "Maintainers may close pull requests and issues that do not disclose AI assistance, appear to be low-quality AI-generated content, or cannot be explained or defended by the contributor.",
+      "quotes": [
+        {
+          "quote": "Maintainers reserve the right to close pull requests and issues that do not disclose AI assistance, that appear to be low-quality AI-generated content, or where the contributor cannot explain or defend the proposed changes themselves.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "discouraged",
+      "description": "Contributors should engage substantively with the review process rather than primarily deferring to AI.",
+      "quotes": [
+        {
+          "quote": "We welcome new contributors, but cannot sustain the effort of supporting contributors who primarily defer to AI rather than engaging substantively with the review process.",
+          "sourceUrl": "https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "high",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-02",
+  "lastChanged": "2026-11-02"
 }

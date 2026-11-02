@@ -4,7 +4,7 @@
   "category": "framework",
   "homepage": "https://bevy.org/",
   "repo": "https://github.com/bevyengine/bevy",
-  "summary": "Careful, human-driven AI use is tolerated for code if it is disclosed and the contributor understands every line. AI may not write documentation, issues, PR descriptions or release notes, AI-generated media is banned, and AI output may not be pasted into conversations except to help with translation or accessibility.",
+  "summary": "Bevy bans AI-generated media, AI-written documentation, issues, PR descriptions and release notes, AI-pasted conversation replies, and AI commit authorship. AI assistance is tolerated in some code-related areas only when it is disclosed and the contributor personally understands and can justify every submitted line, and reviewers may decline or close AI-assisted work.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -32,17 +32,47 @@
     },
     {
       "dimension": "contributions",
+      "quote": "As a contributor, you are responsible for everything you submit. You must personally understand every line of code or documentation that you put forward for review, and be able to articulate the design rationale and implementation tradeoffs when asked.",
+      "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+    },
+    {
+      "dimension": "contributions",
       "quote": "Any use of AI to contribute to Bevy must be disclosed, with context about how it was used.",
       "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
     },
     {
       "dimension": "contributions",
-      "quote": "You must personally understand every line of code or documentation that you put forward for review",
+      "quote": "AI-assisted PRs will be held to the same rigorous standard of review: correctness, tests, rationale, incremental reviewable units, appropriate design and consensus building and so on.",
+      "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "AI must not be used to write public-facing prose, including documentation, issues, PR descriptions, or release notes.",
+      "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Images, 3d models, audio assets (and so on) submitted to Bevy may not be authored or modified with the use of generative AI tools. Use a permissively licensed asset, make one by hand, or commission an artist.",
+      "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Only humans can be commit authors or listed as Co-authored-by.",
       "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
     },
     {
       "dimension": "issues",
       "quote": "AI must not be used to write public-facing prose, including documentation, issues, PR descriptions, or release notes.",
+      "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI must not be used to write public-facing prose, including documentation, issues, PR descriptions, or release notes.",
+      "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Only humans can be commit authors or listed as Co-authored-by.",
       "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
     },
     {
@@ -54,18 +84,425 @@
       "dimension": "summaries",
       "quote": "AI may be used to assist for translation and accessibility purposes, but please include the original untranslated text as well.",
       "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Individual reviewers are empowered to request changes to contributions that fail to live up to these norms, or in cases where the work is not salvageable (commonly due to a lack of understanding by the original author), close them completely.",
+      "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
     }
   ],
   "sources": [
     {
       "url": "https://bevy.org/learn/contribute/policies/ai/",
-      "title": "Bevy AI Policy",
-      "hash": "b56d845ae05eb7d512fa98041c5dddf958f8fe49c307004542b56fb713a9e7d1",
-      "fetchedAt": "2026-10-09"
+      "title": "AI Policy",
+      "hash": "fe94ac4a161b631a74642d233086454ad033c9f9b21c5c17041b7f9f93f55a2f",
+      "fetchedAt": "2026-11-02"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose any use of AI with context about how it was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Personally understand every submitted line and explain its rationale"
+        }
+      ],
+      "note": "Careful, human-driven AI use is tolerated in code-related areas, but any use must be disclosed and the contributor must understand and be able to justify the code.",
+      "quotes": [
+        {
+          "quote": "We are wary of the use of AI in the development of Bevy, and are particularly troubled by its impact on artists, but tolerate careful human-driven AI use in some code-related areas consistent with the above values.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "As a contributor, you are responsible for everything you submit. You must personally understand every line of code or documentation that you put forward for review, and be able to articulate the design rationale and implementation tradeoffs when asked.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "Any use of AI to contribute to Bevy must be disclosed, with context about how it was used.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose any use of AI with context about how it was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Personally understand every submitted line and explain its rationale"
+        }
+      ],
+      "note": "Small AI-assisted code changes are tolerated if the AI use is disclosed and the contributor understands and can defend every line.",
+      "quotes": [
+        {
+          "quote": "We are wary of the use of AI in the development of Bevy, and are particularly troubled by its impact on artists, but tolerate careful human-driven AI use in some code-related areas consistent with the above values.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "As a contributor, you are responsible for everything you submit. You must personally understand every line of code or documentation that you put forward for review, and be able to articulate the design rationale and implementation tradeoffs when asked.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "Any use of AI to contribute to Bevy must be disclosed, with context about how it was used.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose any use of AI with context about how it was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Personally understand every submitted line and explain its rationale"
+        }
+      ],
+      "note": "No size limit is stated for AI-assisted code, but the change must be disclosed, understood and justifiable, and meets the same review bar as any PR.",
+      "quotes": [
+        {
+          "quote": "We are wary of the use of AI in the development of Bevy, and are particularly troubled by its impact on artists, but tolerate careful human-driven AI use in some code-related areas consistent with the above values.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "As a contributor, you are responsible for everything you submit. You must personally understand every line of code or documentation that you put forward for review, and be able to articulate the design rationale and implementation tradeoffs when asked.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "Any use of AI to contribute to Bevy must be disclosed, with context about how it was used.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "AI-assisted PRs will be held to the same rigorous standard of review: correctness, tests, rationale, incremental reviewable units, appropriate design and consensus building and so on.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose any use of AI with context about how it was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Personally understand every submitted line and explain its rationale"
+        }
+      ],
+      "note": "Repetitive AI-assisted code edits are subject to the same disclosure and understanding requirements as other code.",
+      "quotes": [
+        {
+          "quote": "We are wary of the use of AI in the development of Bevy, and are particularly troubled by its impact on artists, but tolerate careful human-driven AI use in some code-related areas consistent with the above values.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "As a contributor, you are responsible for everything you submit. You must personally understand every line of code or documentation that you put forward for review, and be able to articulate the design rationale and implementation tradeoffs when asked.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "Any use of AI to contribute to Bevy must be disclosed, with context about how it was used.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose any use of AI with context about how it was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Personally understand every submitted line and explain its rationale"
+        }
+      ],
+      "note": "AI-assisted tests are tolerated in the same way as other AI-assisted code, with disclosure and personal understanding required.",
+      "quotes": [
+        {
+          "quote": "We are wary of the use of AI in the development of Bevy, and are particularly troubled by its impact on artists, but tolerate careful human-driven AI use in some code-related areas consistent with the above values.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "As a contributor, you are responsible for everything you submit. You must personally understand every line of code or documentation that you put forward for review, and be able to articulate the design rationale and implementation tradeoffs when asked.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "Any use of AI to contribute to Bevy must be disclosed, with context about how it was used.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose any use of AI with context about how it was used"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Personally understand every submitted line and explain its rationale"
+        }
+      ],
+      "note": "AI-assisted build, CI and packaging code falls under the tolerated code-related areas, with disclosure and personal understanding required.",
+      "quotes": [
+        {
+          "quote": "We are wary of the use of AI in the development of Bevy, and are particularly troubled by its impact on artists, but tolerate careful human-driven AI use in some code-related areas consistent with the above values.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "As a contributor, you are responsible for everything you submit. You must personally understand every line of code or documentation that you put forward for review, and be able to articulate the design rationale and implementation tradeoffs when asked.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "Any use of AI to contribute to Bevy must be disclosed, with context about how it was used.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI must not be used to write public-facing prose, which explicitly includes documentation and release notes.",
+      "quotes": [
+        {
+          "quote": "AI must not be used to write public-facing prose, including documentation, issues, PR descriptions, or release notes.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "assets",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Images, 3D models, audio and similar assets may not be authored or modified with generative AI; use permissively licensed, hand-made or commissioned assets.",
+      "quotes": [
+        {
+          "quote": "Images, 3d models, audio assets (and so on) submitted to Bevy may not be authored or modified with the use of generative AI tools. Use a permissively licensed asset, make one by hand, or commission an artist.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "ai-authorship",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI tools can never be commit authors or listed in Co-authored-by trailers; only humans may hold those roles.",
+      "quotes": [
+        {
+          "quote": "Only humans can be commit authors or listed as Co-authored-by.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "issue-writing",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI must not write issues; public-facing prose such as issue text is explicitly covered by the ban.",
+      "quotes": [
+        {
+          "quote": "AI must not be used to write public-facing prose, including documentation, issues, PR descriptions, or release notes.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI must not write pull request descriptions, which are explicitly listed as banned public-facing prose.",
+      "quotes": [
+        {
+          "quote": "AI must not be used to write public-facing prose, including documentation, issues, PR descriptions, or release notes.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "commit-message",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written commit messages fall under the ban on AI-generated public-facing prose and the rule that only humans author commits.",
+      "quotes": [
+        {
+          "quote": "AI must not be used to write public-facing prose, including documentation, issues, PR descriptions, or release notes.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "Only humans can be commit authors or listed as Co-authored-by.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated output may not be pasted directly into conversations with humans anywhere, including issue and PR comments.",
+      "quotes": [
+        {
+          "quote": "Do not paste AI-generated output directly into conversations with humans, no matter where they take place.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Answers to maintainers or reviewers may not be AI-generated output pasted into the conversation.",
+      "quotes": [
+        {
+          "quote": "Do not paste AI-generated output directly into conversations with humans, no matter where they take place.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "code-review-others",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated reviews posted to other people's pull requests count as pasting AI output into conversations with humans.",
+      "quotes": [
+        {
+          "quote": "Do not paste AI-generated output directly into conversations with humans, no matter where they take place.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "thread-summaries",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Posting AI-generated summaries of threads into discussions is banned as pasting AI output into conversations with humans.",
+      "quotes": [
+        {
+          "quote": "Do not paste AI-generated output directly into conversations with humans, no matter where they take place.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "use": "translation",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "include-original",
+          "strength": "required",
+          "detail": "Include the original untranslated text as well"
+        }
+      ],
+      "note": "AI may assist with translation and accessibility, provided the original untranslated text is included.",
+      "quotes": [
+        {
+          "quote": "AI may be used to assist for translation and accessibility purposes, but please include the original untranslated text as well.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "AI-assisted pull requests must meet the same quality and review standards as any other PR: correctness, tests, rationale, incremental reviewable units, design and consensus building.",
+      "quotes": [
+        {
+          "quote": "AI-assisted PRs will be held to the same rigorous standard of review: correctness, tests, rationale, incremental reviewable units, appropriate design and consensus building and so on.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Reviewers may request changes to AI-assisted contributions that do not meet the norms, or close them entirely when the work is unsalvageable, often because the author lacks understanding.",
+      "quotes": [
+        {
+          "quote": "Individual reviewers are empowered to request changes to contributions that fail to live up to these norms, or in cases where the work is not salvageable (commonly due to a lack of understanding by the original author), close them completely.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "allowed",
+      "description": "No contributor or community member is required to review AI-assisted work, use AI tools or take part in discussions about AI.",
+      "quotes": [
+        {
+          "quote": "Bevy contributors and community members are not required to review AI-assisted work, use AI tools, or engage in discussions about AI.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "Harassment, pressure or belittling of others over their use of, abstinence from or views on AI is not tolerated, and repeated or severe violations may lead to warnings, suspensions or bans.",
+      "quotes": [
+        {
+          "quote": "Do not harass, demean, pressure, or bully others. This continues to apply, even when the basis of your disagreement centers around use of, abstinence from or views on AI.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "conditional",
+      "description": "Discussion of personal AI tools and practices should be kept to the #ai-tools Discord channel, and engine-related discussion of adopting or abandoning AI workflows should be threaded.",
+      "quotes": [
+        {
+          "quote": "note that discussion of personal AI-related tools and practices should be contained to the #ai-tools channel on Discord to ensure others can easily avoid these discussions.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        },
+        {
+          "quote": "engine-related conversation on adoption or abandonment of AI workflows should similarly be threaded.",
+          "sourceUrl": "https://bevy.org/learn/contribute/policies/ai/"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [
+    {
+      "url": "Code of Conduct",
+      "note": "The policy states that Bevy's Code of Conduct continues to apply when AI-related topics are discussed, including rules against harassment and disruptive debate."
+    }
+  ],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-02",
+  "lastChanged": "2026-11-02"
 }
