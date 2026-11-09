@@ -4,7 +4,7 @@
   "category": "library",
   "homepage": "https://openssl-library.org/",
   "repo": "https://github.com/openssl/openssl",
-  "summary": "AI tools are allowed. Non-trivial AI-generated parts need an Assisted-by trailer naming the tool and model, plus a CLA version with the AI clauses. You must review, understand and test everything and avoid reproducing copyrighted code.",
+  "summary": "OpenSSL allows AI-assisted contributions, including substantial AI-written code and documentation, provided the contributor declares the tool and model with an Assisted-by trailer, has signed the newer CLA containing the AI clauses, and has personally read, tested and can defend the change. Trivial help such as single-line autocompletion, reformatting or spell-checking needs no declaration, and no submission without human review is accepted. AI-written issues and comments are not addressed.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -12,7 +12,8 @@
         "disclosure",
         "human-accountable",
         "human-reviewed",
-        "license-compliance"
+        "license-compliance",
+        "no-autonomous-agents"
       ]
     },
     "issues": {
@@ -27,12 +28,67 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "declare it in your commit message using an Assisted-by trailer, and",
+      "quote": "A non-trivial portion of a submission has been created with an AI tool when it has generated meaningful code, logic, or documentation — not merely assisted with trivial tasks like autocompletion of a single line, reformatting, or spell-checking.",
       "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
     },
     {
       "dimension": "contributions",
-      "quote": "have signed a Contributor License Agreement (CLA) that includes the AI clauses.",
+      "quote": "This policy does not prohibit the use of AI tools. You are free to use whatever tools help you contribute effectively.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You are the author of everything you submit, whatever produced the first draft.",
+      "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Similarly, if a non-trivial portion of a contribution was created using an AI tool, you must declare which agent and model were used, by adding `Assisted-by: {agent}:{model}` below the commit message:",
+      "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Including AI-generated content in your contribution requires a signed CLA with the AI clauses (CLA v1.1 or later).",
+      "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "OpenSSL welcomes contributions from all developers, including those who use AI-assisted coding tools.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Add an Assisted-by trailer to your commit message in the format Assisted-by: {agent}:{model}, where {agent} is the tool or interface you used and {model} is the specific underlying model.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Always include the model name and version where known, so that the declaration is meaningful:",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "A commit may have more than one Assisted-by trailer if multiple tools were used.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Before submitting any contribution that includes non-trivial AI-generated content, you must have signed this new CLA.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Signing the old CLA is not sufficient for AI-assisted contributions, even if you have previously signed it.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The new CLA requires that you confirm you have the right to submit the AI-generated content and that you accept full responsibility for it.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You are responsible for everything you submit, whether or not AI helped write it.",
       "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
     },
     {
@@ -42,21 +98,61 @@
     },
     {
       "dimension": "contributions",
+      "quote": "AI tools can produce plausible-looking but incorrect, insecure, or inefficient code.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
       "quote": "Do not submit AI-generated code if you have reason to believe it reproduces third-party copyrighted material.",
       "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
     },
     {
       "dimension": "contributions",
-      "quote": "if a non-trivial portion of a contribution was created using an AI tool, you must declare which agent and model were used.",
+      "quote": "This policy does not permit submissions where no human has reviewed the content. AI tools may assist, but a human must direct the work, review the output, and be accountable for what is submitted.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Check for test coverage. AI-generated code must be accompanied by appropriate tests, just like any other contribution.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "This policy applies to all public OpenSSL repositories, including all repositories under https://github.com/openssl.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "A non-trivial portion of a submission has been created with an AI tool when it has generated meaningful code, logic, or documentation — not merely assisted with trivial tasks like autocompletion of a single line, reformatting, or spell-checking.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The `Assisted-by:` trailer (see below) discloses that a tool was used; it does not transfer responsibility for the result.",
       "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Security is critical to OpenSSL — AI-generated code must meet the same standards as any other contribution.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The OpenSSL project maintainers may reject or request revision of any submission, including AI-assisted ones, that does not meet project standards.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "This policy does not create a lower bar for AI-assisted contributions.",
+      "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
     }
   ],
   "sources": [
     {
       "url": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md",
       "title": "CONTRIBUTING.md",
-      "hash": "9d88b60f5fcc392b9b589918aaf5fe8539dd9ef74aa9cece3721bf7f569b7ce6",
-      "fetchedAt": "2026-10-10"
+      "hash": "2884e6d545134d52399d4b595f555708d3449052f2864295ec4cb8fccbd4b18c",
+      "fetchedAt": "2026-11-09"
     },
     {
       "url": "https://openssl-library.org/policies/general/ai-policy/",
@@ -65,8 +161,468 @@
       "fetchedAt": "2026-10-10"
     }
   ],
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Single-line autocompletion is treated as a trivial task that needs no Assisted-by trailer and no AI CLA.",
+      "quotes": [
+        {
+          "quote": "A non-trivial portion of a submission has been created with an AI tool when it has generated meaningful code, logic, or documentation — not merely assisted with trivial tasks like autocompletion of a single line, reformatting, or spell-checking.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "This policy does not prohibit the use of AI tools. You are free to use whatever tools help you contribute effectively.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Assisted-by: {agent}:{model} trailer in the commit message"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Signed CLA v1.1 or later that includes the AI clauses"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Read, understood and tested before submitting"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Contributor is the author and must answer reviewers' questions line by line"
+        }
+      ],
+      "note": "Small AI-written changes that go beyond trivial assistance must be declared with an Assisted-by trailer, are covered by the new AI CLA, and must be read, tested and defendable by the contributor.",
+      "quotes": [
+        {
+          "quote": "You are the author of everything you submit, whatever produced the first draft.",
+          "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Similarly, if a non-trivial portion of a contribution was created using an AI tool, you must declare which agent and model were used, by adding `Assisted-by: {agent}:{model}` below the commit message:",
+          "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Including AI-generated content in your contribution requires a signed CLA with the AI clauses (CLA v1.1 or later).",
+          "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "OpenSSL welcomes contributions from all developers, including those who use AI-assisted coding tools.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "A non-trivial portion of a submission has been created with an AI tool when it has generated meaningful code, logic, or documentation — not merely assisted with trivial tasks like autocompletion of a single line, reformatting, or spell-checking.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Add an Assisted-by trailer to your commit message in the format Assisted-by: {agent}:{model}, where {agent} is the tool or interface you used and {model} is the specific underlying model.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Always include the model name and version where known, so that the declaration is meaningful:",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "A commit may have more than one Assisted-by trailer if multiple tools were used.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Before submitting any contribution that includes non-trivial AI-generated content, you must have signed this new CLA.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Signing the old CLA is not sufficient for AI-assisted contributions, even if you have previously signed it.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "The new CLA requires that you confirm you have the right to submit the AI-generated content and that you accept full responsibility for it.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "You are responsible for everything you submit, whether or not AI helped write it.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Review all AI-generated code before submitting it. Do not submit output you have not read, understood and tested.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "AI tools can produce plausible-looking but incorrect, insecure, or inefficient code.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Do not submit AI-generated code if you have reason to believe it reproduces third-party copyrighted material.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "This policy does not permit submissions where no human has reviewed the content. AI tools may assist, but a human must direct the work, review the output, and be accountable for what is submitted.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Assisted-by: {agent}:{model} trailer in the commit message"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Signed CLA v1.1 or later that includes the AI clauses"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Read, understood and tested before submitting"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Contributor stays responsible and must answer questions on any line"
+        }
+      ],
+      "note": "Substantial AI-generated code is permitted but must be declared, covered by the AI CLA, and fully read, understood and tested by the contributor, who remains its author.",
+      "quotes": [
+        {
+          "quote": "You are the author of everything you submit, whatever produced the first draft.",
+          "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Similarly, if a non-trivial portion of a contribution was created using an AI tool, you must declare which agent and model were used, by adding `Assisted-by: {agent}:{model}` below the commit message:",
+          "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Including AI-generated content in your contribution requires a signed CLA with the AI clauses (CLA v1.1 or later).",
+          "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "OpenSSL welcomes contributions from all developers, including those who use AI-assisted coding tools.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "A non-trivial portion of a submission has been created with an AI tool when it has generated meaningful code, logic, or documentation — not merely assisted with trivial tasks like autocompletion of a single line, reformatting, or spell-checking.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Add an Assisted-by trailer to your commit message in the format Assisted-by: {agent}:{model}, where {agent} is the tool or interface you used and {model} is the specific underlying model.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Always include the model name and version where known, so that the declaration is meaningful:",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "A commit may have more than one Assisted-by trailer if multiple tools were used.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Before submitting any contribution that includes non-trivial AI-generated content, you must have signed this new CLA.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Signing the old CLA is not sufficient for AI-assisted contributions, even if you have previously signed it.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Review all AI-generated code before submitting it. Do not submit output you have not read, understood and tested.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "AI tools can produce plausible-looking but incorrect, insecure, or inefficient code.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Do not submit AI-generated code if you have reason to believe it reproduces third-party copyrighted material.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "This policy does not permit submissions where no human has reviewed the content. AI tools may assist, but a human must direct the work, review the output, and be accountable for what is submitted.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "allowed",
+      "conditions": [],
+      "note": "AI-assisted reformatting is listed as a trivial task, so it needs no declaration or special CLA.",
+      "quotes": [
+        {
+          "quote": "A non-trivial portion of a submission has been created with an AI tool when it has generated meaningful code, logic, or documentation — not merely assisted with trivial tasks like autocompletion of a single line, reformatting, or spell-checking.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "This policy does not prohibit the use of AI tools. You are free to use whatever tools help you contribute effectively.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Assisted-by trailer in the commit message"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Signed CLA v1.1 or later that includes the AI clauses"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Read, understood and tested before submitting"
+        }
+      ],
+      "note": "AI-written tests follow the same rules as AI-written code, and the contributor must make sure appropriate test coverage exists.",
+      "quotes": [
+        {
+          "quote": "A non-trivial portion of a submission has been created with an AI tool when it has generated meaningful code, logic, or documentation — not merely assisted with trivial tasks like autocompletion of a single line, reformatting, or spell-checking.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Add an Assisted-by trailer to your commit message in the format Assisted-by: {agent}:{model}, where {agent} is the tool or interface you used and {model} is the specific underlying model.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Before submitting any contribution that includes non-trivial AI-generated content, you must have signed this new CLA.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Review all AI-generated code before submitting it. Do not submit output you have not read, understood and tested.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Check for test coverage. AI-generated code must be accompanied by appropriate tests, just like any other contribution.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Assisted-by trailer in the commit message"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Signed CLA v1.1 or later that includes the AI clauses"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Read, understood and tested before submitting"
+        }
+      ],
+      "note": "The policy applies to all public OpenSSL repositories, so AI-written build, CI or packaging code must be declared, CLA-covered and reviewed by the contributor.",
+      "quotes": [
+        {
+          "quote": "Similarly, if a non-trivial portion of a contribution was created using an AI tool, you must declare which agent and model were used, by adding `Assisted-by: {agent}:{model}` below the commit message:",
+          "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "This policy applies to all public OpenSSL repositories, including all repositories under https://github.com/openssl.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "A non-trivial portion of a submission has been created with an AI tool when it has generated meaningful code, logic, or documentation — not merely assisted with trivial tasks like autocompletion of a single line, reformatting, or spell-checking.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Add an Assisted-by trailer to your commit message in the format Assisted-by: {agent}:{model}, where {agent} is the tool or interface you used and {model} is the specific underlying model.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Before submitting any contribution that includes non-trivial AI-generated content, you must have signed this new CLA.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Review all AI-generated code before submitting it. Do not submit output you have not read, understood and tested.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Assisted-by trailer in the commit message"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Signed CLA v1.1 or later that includes the AI clauses"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Read, understood and tested before submitting"
+        }
+      ],
+      "note": "The policy explicitly covers AI-generated documentation, which must be declared and covered by the AI CLA and reviewed by the contributor.",
+      "quotes": [
+        {
+          "quote": "A non-trivial portion of a submission has been created with an AI tool when it has generated meaningful code, logic, or documentation — not merely assisted with trivial tasks like autocompletion of a single line, reformatting, or spell-checking.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Add an Assisted-by trailer to your commit message in the format Assisted-by: {agent}:{model}, where {agent} is the tool or interface you used and {model} is the specific underlying model.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Before submitting any contribution that includes non-trivial AI-generated content, you must have signed this new CLA.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "Review all AI-generated code before submitting it. Do not submit output you have not read, understood and tested.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "allowed",
+      "conditions": [],
+      "note": "The policy does not restrict which AI tools contributors use, so using AI to learn about or explore the code is fine.",
+      "quotes": [
+        {
+          "quote": "This policy does not prohibit the use of AI tools. You are free to use whatever tools help you contribute effectively.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    },
+    {
+      "use": "proofreading",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Spell-checking with AI is explicitly listed as a trivial task that needs no declaration.",
+      "quotes": [
+        {
+          "quote": "A non-trivial portion of a submission has been created with an AI tool when it has generated meaningful code, logic, or documentation — not merely assisted with trivial tasks like autocompletion of a single line, reformatting, or spell-checking.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    },
+    {
+      "use": "agent-contributions",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Submissions where no human has reviewed the content are not permitted; a person must direct the work and be accountable for what is submitted.",
+      "quotes": [
+        {
+          "quote": "This policy does not permit submissions where no human has reviewed the content. AI tools may assist, but a human must direct the work, review the output, and be accountable for what is submitted.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "The Assisted-by trailer only discloses tool use; the person remains the author of everything submitted and must be able to answer reviewers' questions about any line of it.",
+      "quotes": [
+        {
+          "quote": "You are the author of everything you submit, whatever produced the first draft.",
+          "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "The `Assisted-by:` trailer (see below) discloses that a tool was used; it does not transfer responsibility for the result.",
+          "sourceUrl": "https://github.com/openssl/openssl/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "AI-assisted submissions are held to the same quality, legal and security standards as any other contribution, and maintainers may reject or request revision of those that fall short.",
+      "quotes": [
+        {
+          "quote": "Security is critical to OpenSSL — AI-generated code must meet the same standards as any other contribution.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "The OpenSSL project maintainers may reject or request revision of any submission, including AI-assisted ones, that does not meet project standards.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "This policy does not create a lower bar for AI-assisted contributions.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "allowed",
+      "description": "The policy covers commits submitted to all public OpenSSL repositories, by committers and non-committers alike.",
+      "quotes": [
+        {
+          "quote": "This policy sets out the rules for using such tools when creating commits for submission to OpenSSL. It applies to anyone that creates such commits (including both project committers and non-committers).",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        },
+        {
+          "quote": "This policy applies to all public OpenSSL repositories, including all repositories under https://github.com/openssl.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "allowed",
+      "description": "When unsure whether AI use counts as non-trivial, contributors should declare it anyway.",
+      "quotes": [
+        {
+          "quote": "If in doubt, declare it as a non-trival contribution.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "allowed",
+      "description": "Contributors unsure whether their AI use must be declared, or with CLA questions, should ask in the OpenSSL GitHub Discussions Q&A forum before submitting.",
+      "quotes": [
+        {
+          "quote": "If you are unsure whether your use of AI tools requires declaration, or if you have questions about the CLA, please ask in the OpenSSL GitHub Discussions Q&A forum before submitting.",
+          "sourceUrl": "https://openssl-library.org/policies/general/ai-policy/"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [
+    {
+      "url": "https://www.openssl.org/policies/cla.html",
+      "note": "The Contributor License Agreement that AI-assisted contributions must be signed under (CLA v1.1 or later with its AI clauses); its text is not among the sources."
+    }
+  ],
+  "rubricVersion": 1,
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-09",
+  "lastChanged": "2026-11-09"
 }

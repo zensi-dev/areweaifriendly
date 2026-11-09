@@ -4,12 +4,13 @@
   "category": "tool",
   "homepage": "https://brew.sh/",
   "repo": "https://github.com/Homebrew/brew",
-  "summary": "Issues and pull requests made with AI are allowed if the tool or model is disclosed up front and all generated content is reviewed first. AI may not be credited in commits, contributors must answer maintainers themselves without AI, and non-maintainers may have only one AI-assisted PR open at a time.",
+  "summary": "Homebrew allows AI/LLM-assisted issues and pull requests, including AI-generated code and prose, provided contributors disclose the tool, review all generated content before requesting review, keep at least one human author on every commit, and answer maintainer questions and review comments themselves without AI. Non-maintainers may have only one AI-assisted pull request open at a time.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
         "disclosure",
+        "human-accountable",
         "human-reviewed"
       ]
     },
@@ -17,36 +18,84 @@
       "verdict": "conditional",
       "conditions": [
         "disclosure",
+        "human-accountable",
         "human-reviewed"
       ]
     },
     "summaries": {
-      "verdict": "conditional",
-      "conditions": [
-        "disclosure",
-        "minor-assist-only"
-      ]
+      "verdict": "unspecified",
+      "conditions": []
     }
   },
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+      "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
       "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
-      "quote": "You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+      "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "* You must attribute every commit to at least one human author or `Co-authored-by` co-author; attribution to AI/LLM is only allowed alongside them.",
       "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "issues",
-      "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements",
+      "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
       "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "summaries",
-      "quote": "You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+      "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+      "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "* Unless you are a maintainer, you may only have one AI-assisted/generated pull request open at a time.",
       "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
     }
   ],
@@ -54,12 +103,644 @@
     {
       "url": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md",
       "title": "Contributing to Homebrew",
-      "hash": "bcc8b373852c28555e7c8b97582c9cf1b87e730621ffb0139f8b203a746ffa4b",
-      "fetchedAt": "2026-10-09"
+      "hash": "9dead605d0e1a9bc83dd71af70b16fd7a3e260b6f11ca7e27137e4ade54c6cd2",
+      "fetchedAt": "2026-11-09"
     }
   ],
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial issue or pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated code/prose before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions and review comments without AI"
+        }
+      ],
+      "note": "Inline AI code completion is allowed in contributions if the AI use is disclosed, the generated code is reviewed before review is requested, and the contributor answers all reviewer questions without AI.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial issue or pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated code/prose before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions and review comments without AI"
+        }
+      ],
+      "note": "Small AI-written code changes are allowed if the AI use is disclosed, the generated code is reviewed before review is requested, and the contributor answers all reviewer questions without AI.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial issue or pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated code/prose before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions and review comments without AI"
+        }
+      ],
+      "note": "Large AI-written pull requests are allowed under the same disclosure, review, and accountability requirements; the policy sets no size limit.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial issue or pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated code/prose before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions and review comments without AI"
+        }
+      ],
+      "note": "AI may make repetitive edits if the AI use is disclosed, the edits are reviewed before review is requested, and the contributor answers all reviewer questions without AI.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial issue or pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated code/prose before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions and review comments without AI"
+        }
+      ],
+      "note": "AI-written tests and benchmarks are allowed with disclosure, human review before requesting review, and human accountability for all reviewer questions.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial issue or pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated code/prose before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions and review comments without AI"
+        }
+      ],
+      "note": "AI-written build, CI, packaging, or other infrastructure code is allowed with disclosure, human review before requesting review, and human accountability for reviewer questions.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial issue or pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated prose before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions and review comments without AI"
+        }
+      ],
+      "note": "AI-written documentation, guides, examples, or release notes are allowed with disclosure, human review before requesting review, and human accountability for reviewer questions.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "localization",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial issue or pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated prose before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions and review comments without AI"
+        }
+      ],
+      "note": "AI or machine translation of project strings or documentation is allowed as AI-assisted pull request content with disclosure, human review before requesting review, and human accountability for reviewer questions.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "assets",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial issue or pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated content before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions and review comments without AI"
+        }
+      ],
+      "note": "AI-generated or AI-modified assets are allowed in issues or pull requests with disclosure, human review before requesting review, and human accountability for reviewer questions.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "ai-authorship",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial issue or pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "At least one human author or Co-authored-by co-author per commit"
+        }
+      ],
+      "note": "AI/LLM may be named as an author or co-author only if at least one human author or Co-authored-by co-author is also named.",
+      "quotes": [
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must attribute every commit to at least one human author or `Co-authored-by` co-author; attribution to AI/LLM is only allowed alongside them.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "issue-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial issue must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated prose before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions without AI"
+        }
+      ],
+      "note": "AI may write the initial text of an issue if the AI use is disclosed, the text is reviewed before asking for review, and the contributor answers maintainer questions without AI.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated prose before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions and review comments without AI"
+        }
+      ],
+      "note": "AI may write a pull request description if the AI use is disclosed, the text is reviewed before review is requested, and the contributor answers reviewer questions without AI.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "commit-message",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated prose before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions and review comments without AI"
+        }
+      ],
+      "note": "AI-written commit messages are allowed as part of an AI-assisted pull request with disclosure, human review before requesting review, and human accountability for reviewer questions.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "proofreading",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial issue or pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated prose before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions and review comments without AI"
+        }
+      ],
+      "note": "AI proofreading of initial issue or pull request text is allowed with disclosure, human review before requesting review, and human accountability for reviewer questions.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "translation",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Initial issue or pull request must state AI/LLM use and tool/model"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI-generated prose before asking for review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Answer maintainer questions and review comments without AI"
+        }
+      ],
+      "note": "AI translation of initial issue or pull request text is allowed with disclosure, human review before requesting review, and human accountability for reviewer questions.",
+      "quotes": [
+        {
+          "quote": "We allow you to create issues and pull requests with AI/LLM with the following requirements (see [Responsible AI Usage](https://docs.brew.sh/Responsible-AI-Usage) for the principles behind them):",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must disclose in the initial issue or pull request that you used AI/LLM and what tool/model/etc. you used.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must review all AI/LLM generated code, prose, etc. content before you ask anyone in Homebrew to review it for you.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Contributors must answer all maintainer questions and pull request review comments themselves, without AI/LLM.",
+      "quotes": [
+        {
+          "quote": "* You must answer all maintainer questions and pull request review comments yourself, without using AI/LLM.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Non-maintainers may have only one AI-assisted or AI-generated pull request open at a time.",
+      "quotes": [
+        {
+          "quote": "* Unless you are a maintainer, you may only have one AI-assisted/generated pull request open at a time.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "conditional",
+      "description": "Contributors who cannot or will not follow the AI requirements must close their AI-assisted issue or pull request.",
+      "quotes": [
+        {
+          "quote": "* If you reach the point where you feel unwilling or unable to do the above, please close your issue or pull request.",
+          "sourceUrl": "https://github.com/Homebrew/brew/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [
+    {
+      "url": "https://docs.brew.sh/Responsible-AI-Usage",
+      "note": "Homebrew points to this document for the principles behind its AI/LLM contribution requirements."
+    }
+  ],
+  "rubricVersion": 1,
   "confidence": "medium",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-09",
+  "lastChanged": "2026-11-09"
 }

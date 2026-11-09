@@ -4,25 +4,22 @@
   "category": "tool",
   "homepage": "https://docs.astral.sh/uv/",
   "repo": "https://github.com/astral-sh/uv",
-  "summary": "AI is supported as a coding tool, with contributors responsible for what they submit and a human who understands the work in the loop. Autonomous agents are not allowed. Issues, PR bodies and replies must be in the contributor's own words; quoted AI context must be marked and explained, and AI editing for non-native speakers is accepted.",
+  "summary": "Astral supports using AI as a coding tool, but a human must be in the loop, understand the AI-produced work and remain responsible for the code submitted. AI-written comments, issue reports, pull request descriptions and answers to maintainers are not accepted, apart from AI proofreading or translation for non-native English speakers, and autonomous agents may not contribute.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
         "human-accountable",
-        "no-autonomous-agents"
+        "human-reviewed"
       ]
     },
     "issues": {
-      "verdict": "conditional",
-      "conditions": [
-        "minor-assist-only"
-      ]
+      "verdict": "banned",
+      "conditions": []
     },
     "summaries": {
       "verdict": "conditional",
       "conditions": [
-        "disclosure",
         "minor-assist-only"
       ]
     }
@@ -30,45 +27,459 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "We support using AI (i.e., LLMs) as tools for coding. However, you remain responsible for any code you publish and we are responsible for any code we merge and release.",
+      "quote": "We support using AI (i.e., LLMs) as tools for coding.",
       "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
     },
     {
       "dimension": "contributions",
-      "quote": "We do not allow autonomous agents to be used for contributing to our projects",
+      "quote": "However, you remain\nresponsible for any code you publish and we are responsible for any code we\nmerge and release.",
+      "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Due to the foundational nature of our projects, we require a human in the loop\nwho understands the work produced by AI.",
+      "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If you are opening a pull request, we expect you to be able to explain the\nproposed changes in your own words. This includes the pull request body and\nresponses to questions.",
       "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
     },
     {
       "dimension": "issues",
-      "quote": "If you are opening an issue, we expect you to describe the problem in your own words.",
+      "quote": "If you are opening an issue, we expect you to describe the problem in your own\nwords.",
       "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
     },
     {
       "dimension": "summaries",
-      "quote": "AI should not be used to generate comments when communicating with maintainers",
+      "quote": "If you are opening a pull request, we expect you to be able to explain the\nproposed changes in your own words. This includes the pull request body and\nresponses to questions.",
       "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
     },
     {
       "dimension": "summaries",
-      "quote": "If you wish to include context from an interaction with AI in your comments, it must be in a quote block (e.g., using `>`) and disclosed as such.",
+      "quote": "**Do not copy responses from the AI when replying to\nquestions from maintainers.**",
       "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
     },
     {
       "dimension": "summaries",
-      "quote": "If you are using AI to edit your comments for this purpose, please take the time to ensure it reflects your own voice and ideas.",
+      "quote": "**AI should not be used to generate comments when communicating with\nmaintainers**.",
+      "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "We expect comments on our projects to be written by humans. We\nmay hide any comments that we believe are AI generated.",
+      "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "We understand that AI is useful when communicating as a non-native English\nspeaker. If you are using AI to edit your comments for this purpose, you must:",
+      "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "- Take the time to ensure it reflects your own voice and ideas.",
+      "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "- Write in your native language, and include the AI translation in a quote block beneath it.",
+      "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If you wish to include context from an interaction with AI in your comments, it\nmust be in a quote block (e.g., using `>`) and disclosed as such.",
+      "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "It must be\naccompanied by human commentary explaining the relevance and implications of the\ncontext. Do not share long snippets.",
+      "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**We do not allow autonomous agents to\nbe used for contributing to our projects**. We will close any pull requests that\nwe believe were created autonomously.",
       "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
     }
   ],
   "sources": [
     {
       "url": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md",
-      "title": "Astral AI Policy",
-      "hash": "7f28cf2997e4403657135b1bfc010b6c5798e8302c6cd8a70173a078e3056245",
-      "fetchedAt": "2026-10-09"
+      "title": "AI_POLICY.md",
+      "hash": "ff8f09bc9fa48c76d7317d5fe4a80e2b3e3afd0ebf260f628bf1e82618b111f4",
+      "fetchedAt": "2026-11-09"
     }
   ],
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You remain responsible for any code you publish"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human in the loop who understands the work produced by AI"
+        }
+      ],
+      "note": "AI coding tools are supported, but you stay responsible for the code you publish and a human must understand the AI-produced work.",
+      "quotes": [
+        {
+          "quote": "We support using AI (i.e., LLMs) as tools for coding.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "However, you remain\nresponsible for any code you publish and we are responsible for any code we\nmerge and release.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "Due to the foundational nature of our projects, we require a human in the loop\nwho understands the work produced by AI.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You remain responsible for any code you publish"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human in the loop who understands the work produced by AI"
+        }
+      ],
+      "note": "AI-assisted small code changes are fine, provided you remain responsible for the published code and a human understands the AI-produced work.",
+      "quotes": [
+        {
+          "quote": "We support using AI (i.e., LLMs) as tools for coding.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "However, you remain\nresponsible for any code you publish and we are responsible for any code we\nmerge and release.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "Due to the foundational nature of our projects, we require a human in the loop\nwho understands the work produced by AI.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You remain responsible for any code you publish"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human in the loop who understands the work produced by AI"
+        }
+      ],
+      "note": "AI may write substantial changes, but you must stay responsible for them and be able to explain the proposed changes in your own words.",
+      "quotes": [
+        {
+          "quote": "We support using AI (i.e., LLMs) as tools for coding.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "However, you remain\nresponsible for any code you publish and we are responsible for any code we\nmerge and release.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "If you are opening a pull request, we expect you to be able to explain the\nproposed changes in your own words. This includes the pull request body and\nresponses to questions.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "Due to the foundational nature of our projects, we require a human in the loop\nwho understands the work produced by AI.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You remain responsible for any code you publish"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human in the loop who understands the work produced by AI"
+        }
+      ],
+      "note": "AI-driven repetitive edits are supported as coding tool use, with the same responsibility and human-in-the-loop requirements.",
+      "quotes": [
+        {
+          "quote": "We support using AI (i.e., LLMs) as tools for coding.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "However, you remain\nresponsible for any code you publish and we are responsible for any code we\nmerge and release.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "Due to the foundational nature of our projects, we require a human in the loop\nwho understands the work produced by AI.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You remain responsible for any code you publish"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human in the loop who understands the work produced by AI"
+        }
+      ],
+      "note": "AI-written tests are treated as coding, so you remain responsible for them and a human must understand the AI-produced work.",
+      "quotes": [
+        {
+          "quote": "We support using AI (i.e., LLMs) as tools for coding.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "However, you remain\nresponsible for any code you publish and we are responsible for any code we\nmerge and release.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "Due to the foundational nature of our projects, we require a human in the loop\nwho understands the work produced by AI.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "You remain responsible for any code you publish"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A human in the loop who understands the work produced by AI"
+        }
+      ],
+      "note": "AI-written build or CI code is treated as coding, with the same responsibility and human-in-the-loop requirements.",
+      "quotes": [
+        {
+          "quote": "We support using AI (i.e., LLMs) as tools for coding.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "However, you remain\nresponsible for any code you publish and we are responsible for any code we\nmerge and release.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "Due to the foundational nature of our projects, we require a human in the loop\nwho understands the work produced by AI.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "issue-writing",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Issue text must be described in your own words, so AI-written bug reports or feature requests are not accepted.",
+      "quotes": [
+        {
+          "quote": "If you are opening an issue, we expect you to describe the problem in your own\nwords.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "The pull request body must be in your own words, so AI-written pull request descriptions are not accepted.",
+      "quotes": [
+        {
+          "quote": "If you are opening a pull request, we expect you to be able to explain the\nproposed changes in your own words. This includes the pull request body and\nresponses to questions.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Answers to maintainer questions must be your own words; responses copied from an AI are not allowed.",
+      "quotes": [
+        {
+          "quote": "If you are opening a pull request, we expect you to be able to explain the\nproposed changes in your own words. This includes the pull request body and\nresponses to questions.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "**Do not copy responses from the AI when replying to\nquestions from maintainers.**",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Comments to maintainers must be written by humans; AI-generated comments may be hidden.",
+      "quotes": [
+        {
+          "quote": "**AI should not be used to generate comments when communicating with\nmaintainers**.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "We expect comments on our projects to be written by humans. We\nmay hide any comments that we believe are AI generated.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "proofreading",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Ensure the edited text reflects your own voice and ideas"
+        },
+        {
+          "condition": "include-original",
+          "strength": "required",
+          "detail": "Write in your native language and include the AI version in a quote block beneath it"
+        }
+      ],
+      "note": "AI editing of comments is allowed to help non-native English speakers, but the text must reflect your own voice and ideas and you must post your native-language text with the AI version quoted beneath.",
+      "quotes": [
+        {
+          "quote": "We understand that AI is useful when communicating as a non-native English\nspeaker. If you are using AI to edit your comments for this purpose, you must:",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "- Take the time to ensure it reflects your own voice and ideas.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "- Write in your native language, and include the AI translation in a quote block beneath it.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "translation",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "include-original",
+          "strength": "required",
+          "detail": "Write in your native language and include the AI translation in a quote block beneath it"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Ensure the text reflects your own voice and ideas"
+        }
+      ],
+      "note": "Machine translation of your own comments is allowed for non-native English speakers only if you also write your native-language text and put the AI translation in a quote block beneath it.",
+      "quotes": [
+        {
+          "quote": "We understand that AI is useful when communicating as a non-native English\nspeaker. If you are using AI to edit your comments for this purpose, you must:",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "- Take the time to ensure it reflects your own voice and ideas.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "- Write in your native language, and include the AI translation in a quote block beneath it.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "quoting-ai",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "mark-quotes",
+          "strength": "required",
+          "detail": "In a quote block (e.g., using `>`)"
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclosed as AI interaction context"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Accompanied by human commentary explaining relevance and implications"
+        }
+      ],
+      "note": "Context from an AI interaction may be included in comments only as a disclosed quote block with your own commentary, and long snippets must not be shared.",
+      "quotes": [
+        {
+          "quote": "If you wish to include context from an interaction with AI in your comments, it\nmust be in a quote block (e.g., using `>`) and disclosed as such.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        },
+        {
+          "quote": "It must be\naccompanied by human commentary explaining the relevance and implications of the\ncontext. Do not share long snippets.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-contributions",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Autonomous agents may not contribute; pull requests believed to be created autonomously are closed.",
+      "quotes": [
+        {
+          "quote": "**We do not allow autonomous agents to\nbe used for contributing to our projects**. We will close any pull requests that\nwe believe were created autonomously.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "The AI policy applies to external contributors only; members of the Astral team are outside its scope.",
+      "quotes": [
+        {
+          "quote": "This policy is for external contributors, not members of the Astral team.",
+          "sourceUrl": "https://github.com/astral-sh/.github/blob/main/AI_POLICY.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-09",
+  "lastChanged": "2026-11-09"
 }

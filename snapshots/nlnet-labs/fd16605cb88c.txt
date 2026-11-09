@@ -4,7 +4,7 @@ Revised 26 June 2026
 
 We restrict how Large Language Models (LLMs) can be used in the context of our organisation and our projects. If a submission (e.g. PR, issue, comment, forum post, etc.) does not comply with this policy, we may close or delete it without prior notice.
 
-Note
+Important
 
 In addition to this policy, you must also comply with our code of conduct and the relevant CONTRIBUTING.md file of the project.
 

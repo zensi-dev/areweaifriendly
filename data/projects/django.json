@@ -4,12 +4,13 @@
   "category": "framework",
   "homepage": "https://www.djangoproject.com/",
   "repo": "https://github.com/django/django",
-  "summary": "AI tools may be used if contributors disclose which tools they used and for what, and review and verify all output. Unverified AI-generated contributions may be closed without review, and automated AI reviews must not be requested on Django pull requests.",
+  "summary": "Django allows AI-assisted contributions, including code, tests, and documentation, if contributors disclose the tools and their use, review and verify the AI output, and remain responsible for understanding it. Automated AI reviews are banned on Django pull requests, though they may be used in a fork before submission; unverified or fabricated AI content may be closed or rejected.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
         "disclosure",
+        "human-accountable",
         "human-reviewed"
       ]
     },
@@ -18,14 +19,16 @@
       "conditions": []
     },
     "summaries": {
-      "verdict": "conditional",
-      "conditions": [
-        "disclosure",
-        "human-reviewed"
-      ]
+      "verdict": "unspecified",
+      "conditions": []
     }
   },
   "evidence": [
+    {
+      "dimension": "contributions",
+      "quote": "If you use AI tools while preparing a contribution, you must:",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
     {
       "dimension": "contributions",
       "quote": "Disclose which AI tools were used and what they were used for (e.g., generating code, drafting commit messages, writing documentation).",
@@ -33,30 +36,833 @@
     },
     {
       "dimension": "contributions",
-      "quote": "Review and verify all AI-generated output.",
+      "quote": "Review and verify all AI-generated output. Ensure the code aligns with Django’s architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks.",
       "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
     },
     {
       "dimension": "contributions",
-      "quote": "Submissions that show no evidence of manual verification may be closed without review, and repeated low-quality contributions may lead to restricted participation in Django’s development process.",
+      "quote": "Double-check the proposal against the Contribution checklist.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "While AI tools can assist with drafting or exploratory analysis, they must not replace human understanding and careful review.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not request automated AI reviews (for example GitHub Copilot or similar tools) on pull requests submitted to the Django repository.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "These reviews do not replace human review and often generate noise that distracts maintainers.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You are free to use such tools in your own fork before submitting a pull request to the Django repository.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Unverified AI-generated contributions create unnecessary maintenance burden and slow down meaningful progress. Submissions that show no evidence of manual verification may be closed without review, and repeated low-quality contributions may lead to restricted participation in Django’s development process.",
       "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
     },
     {
       "dimension": "summaries",
-      "quote": "While AI tools can assist with drafting or exploratory analysis, they must not replace human understanding and careful review.",
+      "quote": "If you use AI tools while preparing a contribution, you must:",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Disclose which AI tools were used and what they were used for (e.g., generating code, drafting commit messages, writing documentation).",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Review and verify all AI-generated output. Ensure the code aligns with Django’s architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Double-check the proposal against the Contribution checklist.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Ensure technical accuracy and avoid fabrication. Do not invent APIs, features, functions, or citations that do not exist. Placeholder or fictitious content will result in rejection.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Follow the GitHub pull request template. Ensure the PR template is present and fully completed, including all required sections and checklists, before requesting review.",
+      "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Assist reviewers. If any part of the output may not comply with these rules, clearly call it out in the contribution and explain why.",
       "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
     }
   ],
   "sources": [
     {
       "url": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/",
-      "title": "Django: Submitting contributions",
-      "hash": "38873a3fd788410bd3e59d58ce1ab678ca13930874c410a7d6804362a6e86673",
-      "fetchedAt": "2026-10-09"
+      "title": "Submitting contributions | Django documentation | Django",
+      "hash": "20ab6b4772634b322dd3d81be948addff26272e8a2530521e6b919d041a1b7ec",
+      "fetchedAt": "2026-11-09"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose which AI tools were used and what they were used for"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and verify all AI-generated output"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "AI must not replace human understanding and careful review"
+        }
+      ],
+      "note": "AI-assisted code completion is allowed if the tool and purpose are disclosed and the output is reviewed and understood.",
+      "quotes": [
+        {
+          "quote": "If you use AI tools while preparing a contribution, you must:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose which AI tools were used and what they were used for (e.g., generating code, drafting commit messages, writing documentation).",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Review and verify all AI-generated output. Ensure the code aligns with Django’s architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Double-check the proposal against the Contribution checklist.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose which AI tools were used and what they were used for"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and verify all AI-generated output"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "AI must not replace human understanding and careful review"
+        }
+      ],
+      "note": "Small AI-written code changes are allowed under the same disclosure and verification requirements.",
+      "quotes": [
+        {
+          "quote": "If you use AI tools while preparing a contribution, you must:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose which AI tools were used and what they were used for (e.g., generating code, drafting commit messages, writing documentation).",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Review and verify all AI-generated output. Ensure the code aligns with Django’s architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Double-check the proposal against the Contribution checklist.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose which AI tools were used and what they were used for"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and verify all AI-generated output"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "AI must not replace human understanding and careful review"
+        }
+      ],
+      "note": "Large AI-generated code changes are allowed if disclosed and fully verified; no size limit is stated.",
+      "quotes": [
+        {
+          "quote": "If you use AI tools while preparing a contribution, you must:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose which AI tools were used and what they were used for (e.g., generating code, drafting commit messages, writing documentation).",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Review and verify all AI-generated output. Ensure the code aligns with Django’s architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Double-check the proposal against the Contribution checklist.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose which AI tools were used and what they were used for"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and verify all AI-generated output"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "AI must not replace human understanding and careful review"
+        }
+      ],
+      "note": "Repetitive AI-made edits are allowed with disclosure and verification.",
+      "quotes": [
+        {
+          "quote": "If you use AI tools while preparing a contribution, you must:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose which AI tools were used and what they were used for (e.g., generating code, drafting commit messages, writing documentation).",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Review and verify all AI-generated output. Ensure the code aligns with Django’s architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Double-check the proposal against the Contribution checklist.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose which AI tools were used and what they were used for"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and verify all AI-generated output"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "AI must not replace human understanding and careful review"
+        }
+      ],
+      "note": "AI may generate tests if the use is disclosed and the tests are reviewed and verified.",
+      "quotes": [
+        {
+          "quote": "If you use AI tools while preparing a contribution, you must:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose which AI tools were used and what they were used for (e.g., generating code, drafting commit messages, writing documentation).",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Review and verify all AI-generated output. Ensure the code aligns with Django’s architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Double-check the proposal against the Contribution checklist.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose which AI tools were used and what they were used for"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and verify all AI-generated output"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "AI must not replace human understanding and careful review"
+        }
+      ],
+      "note": "AI-written infrastructure code is allowed with disclosure and verification.",
+      "quotes": [
+        {
+          "quote": "If you use AI tools while preparing a contribution, you must:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose which AI tools were used and what they were used for (e.g., generating code, drafting commit messages, writing documentation).",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Review and verify all AI-generated output. Ensure the code aligns with Django’s architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Double-check the proposal against the Contribution checklist.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose which AI tools were used and what they were used for"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and verify all AI-generated output"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "AI must not replace human understanding and careful review"
+        }
+      ],
+      "note": "AI-written documentation is allowed if the tool and purpose are disclosed and the text is reviewed.",
+      "quotes": [
+        {
+          "quote": "If you use AI tools while preparing a contribution, you must:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose which AI tools were used and what they were used for (e.g., generating code, drafting commit messages, writing documentation).",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Review and verify all AI-generated output. Ensure the code aligns with Django’s architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Double-check the proposal against the Contribution checklist.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose which AI tools were used and what they were used for"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and verify AI-generated analysis before relying on it"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "AI must not replace human understanding and careful review"
+        }
+      ],
+      "note": "AI may assist with exploratory analysis or analyzing a ticket if the use is disclosed and the output is checked and understood.",
+      "quotes": [
+        {
+          "quote": "While AI tools can assist with drafting or exploratory analysis, they must not replace human understanding and careful review.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "If you use AI tools while preparing a contribution, you must:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose which AI tools were used and what they were used for (e.g., generating code, drafting commit messages, writing documentation).",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Review and verify all AI-generated output. Ensure the code aligns with Django’s architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "use": "self-review",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose which AI tools were used and what they were used for"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Automated AI reviews do not replace human review"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "AI must not replace human understanding and careful review"
+        }
+      ],
+      "note": "Using AI to review your own changes is allowed in your own fork before submitting, but not as an automated AI review on a Django pull request.",
+      "quotes": [
+        {
+          "quote": "If you use AI tools while preparing a contribution, you must:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose which AI tools were used and what they were used for (e.g., generating code, drafting commit messages, writing documentation).",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Review and verify all AI-generated output. Ensure the code aligns with Django’s architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Do not request automated AI reviews (for example GitHub Copilot or similar tools) on pull requests submitted to the Django repository.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "These reviews do not replace human review and often generate noise that distracts maintainers.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "You are free to use such tools in your own fork before submitting a pull request to the Django repository.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "use": "agent-contributions",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "AI tool must disclose its involvement and specify the tool and usage"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "A person must verify all AI-generated output"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "AI must not replace human understanding and careful review"
+        }
+      ],
+      "note": "AI agents may prepare contributions only if their involvement is disclosed and a person verifies the output; unverified submissions may be closed.",
+      "quotes": [
+        {
+          "quote": "Unverified AI-generated contributions create unnecessary maintenance burden and slow down meaningful progress. Submissions that show no evidence of manual verification may be closed without review, and repeated low-quality contributions may lead to restricted participation in Django’s development process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "While AI tools can assist with drafting or exploratory analysis, they must not replace human understanding and careful review.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "If you use AI tools while preparing a contribution, you must:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose which AI tools were used and what they were used for (e.g., generating code, drafting commit messages, writing documentation).",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Review and verify all AI-generated output. Ensure the code aligns with Django’s architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "use": "commit-message",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose which AI tools were used and what they were used for"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review and verify the AI-generated message"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "AI must not replace human understanding and careful review"
+        }
+      ],
+      "note": "AI may draft commit messages if the tool and purpose are disclosed and the message is reviewed.",
+      "quotes": [
+        {
+          "quote": "If you use AI tools while preparing a contribution, you must:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose which AI tools were used and what they were used for (e.g., generating code, drafting commit messages, writing documentation).",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Review and verify all AI-generated output. Ensure the code aligns with Django’s architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Double-check the proposal against the Contribution checklist.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Submissions without evidence of manual verification may be closed without review, and repeated low-quality AI contributions may lead to restricted participation.",
+      "quotes": [
+        {
+          "quote": "Unverified AI-generated contributions create unnecessary maintenance burden and slow down meaningful progress. Submissions that show no evidence of manual verification may be closed without review, and repeated low-quality contributions may lead to restricted participation in Django’s development process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Do not request automated AI reviews on pull requests submitted to Django; they are allowed only in your own fork before submitting.",
+      "quotes": [
+        {
+          "quote": "Do not request automated AI reviews (for example GitHub Copilot or similar tools) on pull requests submitted to the Django repository.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "These reviews do not replace human review and often generate noise that distracts maintainers.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        },
+        {
+          "quote": "You are free to use such tools in your own fork before submitting a pull request to the Django repository.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "AI-generated content must be technically accurate; invented APIs, features, functions, or citations and placeholder or fictitious content will be rejected.",
+      "quotes": [
+        {
+          "quote": "Ensure technical accuracy and avoid fabrication. Do not invent APIs, features, functions, or citations that do not exist. Placeholder or fictitious content will result in rejection.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "AI-assisted contributions must still meet all normal contribution requirements, including tests, documentation, code formatting, and the review process.",
+      "quotes": [
+        {
+          "quote": "Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "AI tools must ensure the GitHub pull request template is present and fully completed before review is requested.",
+      "quotes": [
+        {
+          "quote": "Follow the GitHub pull request template. Ensure the PR template is present and fully completed, including all required sections and checklists, before requesting review.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "If any AI-generated output may not comply with the rules, the contribution must clearly call this out and explain why.",
+      "quotes": [
+        {
+          "quote": "Assist reviewers. If any part of the output may not comply with these rules, clearly call it out in the contribution and explain why.",
+          "sourceUrl": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-09",
+  "lastChanged": "2026-11-09"
 }

@@ -4,7 +4,7 @@
   "category": "application",
   "homepage": "https://traefik.io/traefik/",
   "repo": "https://github.com/traefik/traefik",
-  "summary": "AI-assisted contributions are welcome; substantial AI help needs an Assisted-by trailer. Agents must not post comments or replies, and drafted messages must be rewritten in your own voice. AI-found security reports need disclosure and a working proof of concept.",
+  "summary": "Traefik welcomes AI-assisted code and documentation contributions, but substantial AI use must be declared with an Assisted-by trailer in the PR description, and anything larger than a bug fix needs maintainer alignment first. AI agents may not author commits, post issue or PR comments or review replies, or submit unvalidated security reports, and AI-drafted messages must be rewritten in the contributor's own voice.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -16,12 +16,14 @@
       "verdict": "conditional",
       "conditions": [
         "disclosure",
-        "human-reviewed"
+        "human-reviewed",
+        "limited-scope"
       ]
     },
     "summaries": {
       "verdict": "conditional",
       "conditions": [
+        "human-accountable",
         "minor-assist-only"
       ]
     }
@@ -34,17 +36,32 @@
     },
     {
       "dimension": "contributions",
-      "quote": "Declare substantial AI assistance with an `Assisted-by:` trailer at the bottom of the commit message whenever an agent produced a meaningful portion of the diff",
+      "quote": "**Declare substantial AI assistance in the pull request description**, with `Assisted-by: <agent name>` (for example `Assisted-by: Claude Opus 4.6`), whenever an agent produced a meaningful portion of the diff. Trivial edits such as a typo fix or a one-line rename do not need it.",
+      "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Align with a maintainer before generating code for anything larger than a bug fix.**",
+      "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Open an issue, state the intended approach, and wait for confirmation before asking an agent to implement it.",
+      "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Never add `Co-authored-by:`, `Assisted-by:` or any other AI attribution trailer to commit messages, and never make an agent the author of a commit.",
       "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
     },
     {
       "dimension": "issues",
-      "quote": "disclose your use of AI tooling. Unvalidated AI-generated reports are closed immediately.",
+      "quote": "Three requirements that are easy to miss, all on the policy page: a **working proof of concept with reproduction steps**, **one finding per report**, and **disclose your use of AI tooling**. Unvalidated AI-generated reports are closed immediately.",
       "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
     },
     {
       "dimension": "summaries",
-      "quote": "Do not let an agent post comments, review replies, or triage messages on your behalf. If an agent drafted a message for you, rewrite it in your own voice before sending",
+      "quote": "**Keep issue and PR conversations human.** Do not let an agent post comments, review replies, or triage messages on your behalf. If an agent drafted a message for you, rewrite it in your own voice before sending — maintainers need to know they are talking to a person, not a bot.",
       "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
     }
   ],
@@ -52,12 +69,316 @@
     {
       "url": "https://github.com/traefik/traefik/blob/master/AGENTS.md",
       "title": "Traefik — Contributor Guide for AI Agents",
-      "hash": "fbb88ea949e5cfe568f643b0acbccd5d479cf2dc671a1d3ac57d3efb6dd0c14b",
-      "fetchedAt": "2026-10-10"
+      "hash": "3d6c3000dd842c8d521872414f32bbd44f6da5a861357a42e3d701bba96ebb7e",
+      "fetchedAt": "2026-11-09"
     }
   ],
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Allowed as part of AI-assisted contributions; short completions are treated as trivial and need no disclosure.",
+      "quotes": [
+        {
+          "quote": "Traefik welcomes AI-assisted contributions, provided a few simple rules are followed:",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Declare substantial AI assistance in the pull request description**, with `Assisted-by: <agent name>` (for example `Assisted-by: Claude Opus 4.6`), whenever an agent produced a meaningful portion of the diff. Trivial edits such as a typo fix or a one-line rename do not need it.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Assisted-by trailer when an agent produced a meaningful portion of the diff; trivial edits exempt."
+        }
+      ],
+      "note": "Small fixes are allowed; substantive AI assistance must be declared, while typo-level or one-line edits need no disclosure.",
+      "quotes": [
+        {
+          "quote": "Traefik welcomes AI-assisted contributions, provided a few simple rules are followed:",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Declare substantial AI assistance in the pull request description**, with `Assisted-by: <agent name>` (for example `Assisted-by: Claude Opus 4.6`), whenever an agent produced a meaningful portion of the diff. Trivial edits such as a typo fix or a one-line rename do not need it.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "prior-approval",
+          "strength": "required",
+          "detail": "Open an issue and wait for maintainer confirmation before asking an agent to implement anything larger than a bug fix."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Assisted-by: <agent name> in the PR description for a meaningful AI-produced diff."
+        }
+      ],
+      "note": "Requires maintainer alignment before an agent implements anything larger than a bug fix, and substantial AI assistance must be declared in the PR description.",
+      "quotes": [
+        {
+          "quote": "Traefik welcomes AI-assisted contributions, provided a few simple rules are followed:",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Declare substantial AI assistance in the pull request description**, with `Assisted-by: <agent name>` (for example `Assisted-by: Claude Opus 4.6`), whenever an agent produced a meaningful portion of the diff. Trivial edits such as a typo fix or a one-line rename do not need it.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Align with a maintainer before generating code for anything larger than a bug fix.**",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Open an issue, state the intended approach, and wait for confirmation before asking an agent to implement it.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "prior-approval",
+          "strength": "required",
+          "detail": "Before asking an agent to generate mechanical code changes larger than a bug fix, open an issue and wait for maintainer confirmation."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Assisted-by: <agent name> in the PR description for a meaningful AI-produced diff."
+        }
+      ],
+      "note": "Small mechanical edits are allowed; larger-than-bug-fix mechanical changes need maintainer alignment and substantial AI assistance must be declared.",
+      "quotes": [
+        {
+          "quote": "Traefik welcomes AI-assisted contributions, provided a few simple rules are followed:",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Declare substantial AI assistance in the pull request description**, with `Assisted-by: <agent name>` (for example `Assisted-by: Claude Opus 4.6`), whenever an agent produced a meaningful portion of the diff. Trivial edits such as a typo fix or a one-line rename do not need it.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Align with a maintainer before generating code for anything larger than a bug fix.**",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Open an issue, state the intended approach, and wait for confirmation before asking an agent to implement it.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "prior-approval",
+          "strength": "required",
+          "detail": "Before asking an agent to generate tests or benchmarks larger than a bug fix, open an issue and wait for maintainer confirmation."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Assisted-by: <agent name> in the PR description for a meaningful AI-produced diff."
+        }
+      ],
+      "note": "Small test additions are allowed; larger-than-bug-fix test generation needs maintainer alignment and substantial AI assistance must be declared.",
+      "quotes": [
+        {
+          "quote": "Traefik welcomes AI-assisted contributions, provided a few simple rules are followed:",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Declare substantial AI assistance in the pull request description**, with `Assisted-by: <agent name>` (for example `Assisted-by: Claude Opus 4.6`), whenever an agent produced a meaningful portion of the diff. Trivial edits such as a typo fix or a one-line rename do not need it.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Align with a maintainer before generating code for anything larger than a bug fix.**",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Open an issue, state the intended approach, and wait for confirmation before asking an agent to implement it.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "prior-approval",
+          "strength": "required",
+          "detail": "Before asking an agent to generate infrastructure code larger than a bug fix, open an issue and wait for maintainer confirmation."
+        },
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Assisted-by: <agent name> in the PR description for a meaningful AI-produced diff."
+        }
+      ],
+      "note": "Small infrastructure edits are allowed; larger-than-bug-fix infrastructure changes need maintainer alignment and substantial AI assistance must be declared.",
+      "quotes": [
+        {
+          "quote": "Traefik welcomes AI-assisted contributions, provided a few simple rules are followed:",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Declare substantial AI assistance in the pull request description**, with `Assisted-by: <agent name>` (for example `Assisted-by: Claude Opus 4.6`), whenever an agent produced a meaningful portion of the diff. Trivial edits such as a typo fix or a one-line rename do not need it.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Align with a maintainer before generating code for anything larger than a bug fix.**",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Open an issue, state the intended approach, and wait for confirmation before asking an agent to implement it.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Assisted-by trailer when an agent produced a meaningful portion of the diff."
+        }
+      ],
+      "note": "AI-written documentation is welcome, but substantial AI assistance in the diff must be declared; trivial edits need no disclosure.",
+      "quotes": [
+        {
+          "quote": "Traefik welcomes AI-assisted contributions, provided a few simple rules are followed:",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Declare substantial AI assistance in the pull request description**, with `Assisted-by: <agent name>` (for example `Assisted-by: Claude Opus 4.6`), whenever an agent produced a meaningful portion of the diff. Trivial edits such as a typo fix or a one-line rename do not need it.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "ai-authorship",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI may not be made the commit author, and commit messages must not contain Co-authored-by or Assisted-by AI attribution trailers.",
+      "quotes": [
+        {
+          "quote": "Never add `Co-authored-by:`, `Assisted-by:` or any other AI attribution trailer to commit messages, and never make an agent the author of a commit.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "security-report",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose use of AI tooling in the report."
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Validate with a working proof of concept and reproduction steps; unvalidated AI-generated reports are closed."
+        }
+      ],
+      "note": "AI-assisted security reports are accepted only if AI use is disclosed and the finding is validated with a working proof of concept; unvalidated AI-generated reports are closed.",
+      "quotes": [
+        {
+          "quote": "Three requirements that are easy to miss, all on the policy page: a **working proof of concept with reproduction steps**, **one finding per report**, and **disclose your use of AI tooling**. Unvalidated AI-generated reports are closed immediately.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI may help draft, but the message must be rewritten in your own voice; agents may not post comments on your behalf.",
+      "quotes": [
+        {
+          "quote": "**Keep issue and PR conversations human.** Do not let an agent post comments, review replies, or triage messages on your behalf. If an agent drafted a message for you, rewrite it in your own voice before sending — maintainers need to know they are talking to a person, not a bot.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI may help draft, but answers must be rewritten in your own voice; agents may not post review replies on your behalf.",
+      "quotes": [
+        {
+          "quote": "**Keep issue and PR conversations human.** Do not let an agent post comments, review replies, or triage messages on your behalf. If an agent drafted a message for you, rewrite it in your own voice before sending — maintainers need to know they are talking to a person, not a bot.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Agents may not post comments, review replies or triage messages on someone's behalf.",
+      "quotes": [
+        {
+          "quote": "**Keep issue and PR conversations human.** Do not let an agent post comments, review replies, or triage messages on your behalf. If an agent drafted a message for you, rewrite it in your own voice before sending — maintainers need to know they are talking to a person, not a bot.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "allowed",
+      "description": "AI coding agents are explicitly supported; this AGENTS.md file is their canonical guide, with CLAUDE.md as a thin pointer.",
+      "quotes": [
+        {
+          "quote": "This file is the canonical guide for AI coding agents (Claude Code, Codex, Gemini, Cursor, ...) working in this repository; `CLAUDE.md` is a thin pointer to this file.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "conditional",
+      "description": "AI coding agents must prefer this file and the current code over their training data when the two conflict.",
+      "quotes": [
+        {
+          "quote": "If anything you think you know about Traefik contradicts this file or the current code, trust this file and the code — not your training data.",
+          "sourceUrl": "https://github.com/traefik/traefik/blob/master/AGENTS.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [
+    {
+      "url": "https://github.com/traefik/traefik/blob/master/docs/content/contributing/submitting-security-issues.md",
+      "note": "Security issue submission policy; AGENTS.md says the AI-tooling disclosure requirement for security reports is on this policy page."
+    }
+  ],
+  "rubricVersion": 1,
   "confidence": "medium",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-09",
+  "lastChanged": "2026-11-09"
 }
