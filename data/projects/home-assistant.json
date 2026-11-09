@@ -93,6 +93,16 @@
       "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
     },
     {
+      "dimension": "contributions",
+      "quote": "Several repositories ask about AI in their pull request template. Leave those parts in place, and answer them honestly.",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Home Assistant Core and the frontend have two checkboxes in the checklist: \"I understand the code I am submitting and can explain how it works\", and \"Any generated code has been carefully reviewed for correctness and compliance with project standards\".",
+      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
+    },
+    {
       "dimension": "issues",
       "quote": "This is the AI policy of the Open Home Foundation. It applies to every contribution to Home Assistant and the other projects of the foundation: code, documentation, issues, pull requests, comments, and reviews.",
       "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
@@ -215,16 +225,6 @@
     {
       "dimension": "summaries",
       "quote": "Autonomous agents are not allowed. Pull requests and issues created by them are closed.",
-      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Several repositories ask about AI in their pull request template. Leave those parts in place, and answer them honestly.",
-      "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Home Assistant Core and the frontend have two checkboxes in the checklist: \"I understand the code I am submitting and can explain how it works\", and \"Any generated code has been carefully reviewed for correctness and compliance with project standards\".",
       "sourceUrl": "https://developers.home-assistant.io/docs/ai_policy"
     }
   ],

@@ -89,6 +89,61 @@
       "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
     },
     {
+      "dimension": "contributions",
+      "quote": "Most importantly, no matter whether you are using AI or not, you must be a good listener and collaborator with the project maintainer, original issue reporter, and other contributors on the issue.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Understanding an issue and collaboratively finding the right solution is a critical part of contributing.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Repeatedly posting low-effort contributions and immediately abandoning them will get your account banned. This is also known as a \"drive-by contribution\" where you don't follow up on feedback, or ignore previous discussion on the issue.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Dumping code into an issue without reading the thread or acknowledging previous attempts to solve the problem.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Posting a merge request (MR) where automated checks fail, and leaving it for others to fix.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Submitting code that ignores the conclusions of prior architectural discussions.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Adding AI-generated code to someone else's existing MR without their knowledge and without disclosure.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Using an AI to dump a large patch and then abandoning the issue when human feedback is requested.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Proposing a full rewrite of a module based on an AI review, without first engaging the existing maintainers.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "GSOC is meant to be a learning experience. We would strongly recommend not using AI so that you learn the foundations you need.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If GSoC contributors choose to use AI for learning or drafting assistance, they must still follow this policy on disclosure, verification, and personal responsibility for all submitted work.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
       "dimension": "issues",
       "quote": "It is about making sure every contribution is something a real person stands behind.",
       "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
@@ -131,6 +186,11 @@
     {
       "dimension": "issues",
       "quote": "If no template is available, simply append a clear, human-written statement to the end of your issue summary, comment, or MR description.",
+      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
+    },
+    {
+      "dimension": "issues",
+      "quote": "When the full output is helpful, you can provide it as an attachment.",
       "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
     },
     {
@@ -181,66 +241,6 @@
     {
       "dimension": "summaries",
       "quote": "Using AI to generate issue summaries, comments, or reviews that lack independently verified technical insights (for example, using an AI tool to summarize a thread simply to gain contribution credits).",
-      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Most importantly, no matter whether you are using AI or not, you must be a good listener and collaborator with the project maintainer, original issue reporter, and other contributors on the issue.",
-      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Understanding an issue and collaboratively finding the right solution is a critical part of contributing.",
-      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Repeatedly posting low-effort contributions and immediately abandoning them will get your account banned. This is also known as a \"drive-by contribution\" where you don't follow up on feedback, or ignore previous discussion on the issue.",
-      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Dumping code into an issue without reading the thread or acknowledging previous attempts to solve the problem.",
-      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Posting a merge request (MR) where automated checks fail, and leaving it for others to fix.",
-      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Submitting code that ignores the conclusions of prior architectural discussions.",
-      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Adding AI-generated code to someone else's existing MR without their knowledge and without disclosure.",
-      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Using an AI to dump a large patch and then abandoning the issue when human feedback is requested.",
-      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Proposing a full rewrite of a module based on an AI review, without first engaging the existing maintainers.",
-      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
-    },
-    {
-      "dimension": "issues",
-      "quote": "When the full output is helpful, you can provide it as an attachment.",
-      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "GSOC is meant to be a learning experience. We would strongly recommend not using AI so that you learn the foundations you need.",
-      "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "If GSoC contributors choose to use AI for learning or drafting assistance, they must still follow this policy on disclosure, verification, and personal responsibility for all submitted work.",
       "sourceUrl": "https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal"
     }
   ],

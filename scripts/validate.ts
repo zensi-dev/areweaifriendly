@@ -5,7 +5,8 @@
 import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { DIMENSIONS, Project, SLUG_RE } from '../src/lib/schema';
-import { deriveStance } from '../src/lib/stance';
+import { DIMENSION_INFO } from '../src/lib/labels';
+import { derivePolicy, deriveStance } from '../src/lib/stance';
 import { sha256 } from './lib/fetch';
 import { quoteAppearsIn } from './lib/quotes';
 import { listSlugs, projectPath, readSnapshot, SNAPSHOT_DIR, snapshotPath } from './lib/store';
@@ -52,6 +53,18 @@ for (const slug of await listSlugs()) {
     if (!project.sources.some((s) => s.url === e.sourceUrl)) err(`quote cites unknown source ${e.sourceUrl}`);
     else if (text !== undefined && !quoteAppearsIn(e.quote, text)) {
       err(`quote not found in snapshot of ${e.sourceUrl}: "${e.quote.slice(0, 80)}"`);
+    }
+  }
+
+  // Entries with rules get their ratings from them; a hand edit must change the rules, not the rating.
+  if (project.rules) {
+    const derived = derivePolicy(project.rules);
+    for (const dim of DIMENSIONS) {
+      const stored = project.policy[dim];
+      const want = derived[dim];
+      if (stored.verdict !== want.verdict || stored.conditions.join() !== want.conditions.join()) {
+        err(`${DIMENSION_INFO[dim].label}: stored rating ${JSON.stringify(stored)} differs from the rating its rules give, ${JSON.stringify(want)}`);
+      }
     }
   }
 

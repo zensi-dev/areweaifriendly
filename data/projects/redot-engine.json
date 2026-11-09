@@ -155,11 +155,6 @@
       "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
     },
     {
-      "dimension": "issues",
-      "quote": "- AI-generated spam in issues or discussions.",
-      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
-    },
-    {
       "dimension": "contributions",
       "quote": "- Using AI tools to generate security-sensitive code without rigorous review.",
       "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
@@ -178,6 +173,11 @@
       "dimension": "contributions",
       "quote": "Please also ensure that you have reviewed our [AI Policy](AI_POLICY.md) if you are planning on\nusing AI tools when creating your PRs.",
       "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "- AI-generated spam in issues or discussions.",
+      "sourceUrl": "https://github.com/Redot-Engine/redot-engine/blob/master/AI_POLICY.md"
     }
   ],
   "sources": [

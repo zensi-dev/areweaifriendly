@@ -17,18 +17,12 @@
       ]
     },
     "issues": {
-      "verdict": "conditional",
-      "conditions": [
-        "no-autonomous-agents",
-        "minor-assist-only"
-      ]
+      "verdict": "banned",
+      "conditions": []
     },
     "summaries": {
-      "verdict": "conditional",
-      "conditions": [
-        "no-autonomous-agents",
-        "minor-assist-only"
-      ]
+      "verdict": "banned",
+      "conditions": []
     }
   },
   "evidence": [
@@ -103,6 +97,16 @@
       "sourceUrl": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst"
     },
     {
+      "dimension": "contributions",
+      "quote": "\"AI\" shouldn't be used to generate code comments, commit messages, and\nGitlab comments.",
+      "sourceUrl": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not under any circumstances wire up any\nreview bot or similar tools.",
+      "sourceUrl": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst"
+    },
+    {
       "dimension": "issues",
       "quote": "Every contributor should communicate with the community\ndirectly without other people or tools in the middle.",
       "sourceUrl": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst"
@@ -145,16 +149,6 @@
     {
       "dimension": "summaries",
       "quote": "This includes interactions with GitLab issues\nor MRs in any autonomous way through such tools.",
-      "sourceUrl": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "\"AI\" shouldn't be used to generate code comments, commit messages, and\nGitlab comments.",
-      "sourceUrl": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Do not under any circumstances wire up any\nreview bot or similar tools.",
       "sourceUrl": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/docs/submittingpatches.rst"
     }
   ],

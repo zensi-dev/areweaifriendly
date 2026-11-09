@@ -1,7 +1,8 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { z } from 'zod';
-import { RULE_CONDITION_INFO, USE_INFO } from '../../src/lib/labels';
+import { CONDITION_INFO, RULE_CONDITION_INFO, USE_INFO } from '../../src/lib/labels';
 import {
-  CONDITIONS,
   CONFIDENCE,
   DIMENSIONS,
   Policy,
@@ -10,7 +11,6 @@ import {
   RULE_STATUSES,
   STRENGTHS,
   USES,
-  VERDICTS,
   type Dimension,
   type Evidence,
   type OtherRule,
@@ -19,6 +19,7 @@ import {
   type Rule,
   type RuleCondition,
 } from '../../src/lib/schema';
+import { deriveArea } from '../../src/lib/stance';
 import type { FetchedSource } from './fetch';
 import { quoteAppearsIn } from './quotes';
 
@@ -51,8 +52,11 @@ export function configFromEnv(env: Record<string, string | undefined> = process.
 
 export const PUBLISHERS = ['project', 'third-party', 'unclear'] as const;
 
-/** Bump when the rubric changes in a way that would change answers; stored with each entry. */
-export const RUBRIC_VERSION = 1;
+/**
+ * Bump when the rubric changes in a way that would change answers; stored with each entry.
+ * 2: area ratings computed from the rules, scope-limit condition, previous review as reference.
+ */
+export const RUBRIC_VERSION = 2;
 
 const SourceCheck = z.object({
   url: z.string(),
@@ -78,7 +82,7 @@ const ModelOutput = z.object({
     z.object({ area: z.enum(RULE_AREAS), status: z.enum(RULE_STATUSES), description: z.string(), statementIds: z.array(z.number().int()) }),
   ),
   referencedPolicies: z.array(z.object({ url: z.string(), note: z.string() })),
-  policy: Policy,
+  changeNotes: z.array(z.string()),
   summary: z.string().min(1),
   confidence: z.enum(CONFIDENCE),
 });
@@ -87,6 +91,7 @@ export type ModelOutput = z.infer<typeof ModelOutput>;
 export type Classification = {
   summary: string;
   confidence: (typeof CONFIDENCE)[number];
+  /** Computed from the rules (see deriveArea), never chosen by the model. */
   policy: z.infer<typeof Policy>;
   /** Quotes behind each area, taken from the statements the kept rules cite. */
   evidence: Evidence[];
@@ -95,17 +100,42 @@ export type Classification = {
   referencedPolicies: ReferencedPolicy[];
   /** One check per source, in the order the sources were given. */
   sources: SourceCheck[];
+  /** The model's explanation of each use whose rule differs from the previous review. */
+  changeNotes: string[];
   /** Problems a human reviewer should look at; empty when the model output checked out. */
   warnings: string[];
 };
 
 export type ProjectInfo = { name: string; homepage: string; description?: string; repo?: string };
 
+/** What the last approved review recorded, and how each source changed since; the classifier starts from it. */
+export type PreviousReview = {
+  reviewedBy: 'ai' | 'manual';
+  date: string;
+  summary: string;
+  /** Present from rubric version 1 on; older entries only have area ratings. */
+  rules?: Rule[];
+  otherRules?: OtherRule[];
+  referencedPolicies?: ReferencedPolicy[];
+  policy: z.infer<typeof Policy>;
+  /** Line diff per source URL since the previous review; missing for new sources. */
+  changes: Record<string, string>;
+};
+
+/**
+ * Rulings from past reviews, in plain words; kept in data/precedents.md so maintainers can
+ * add one whenever they correct the classifier.
+ */
+export const PRECEDENTS = readFileSync(join(import.meta.dir, '..', '..', 'data', 'precedents.md'), 'utf8')
+  .split('\n')
+  .filter((line) => line.startsWith('- '))
+  .join('\n');
+
 const list = (entries: [string, string][]) => entries.map(([id, meaning]) => `- ${id}: ${meaning}`).join('\n');
 const usesFor = (area: Dimension) =>
   list(USES.filter((u) => USE_INFO[u].area === area).map((u) => [u, USE_INFO[u].meaning]));
 
-export const SYSTEM_PROMPT = `You review open source projects' published policies on generative AI (LLMs, coding assistants, AI agents) for the website "Are We AI Friendly?". You record, in detail, everything the policy allows and forbids, and rate it. A human maintainer checks your answer before it is published, so accuracy and completeness matter more than speed. Never guess: when the documents do not say something, record nothing for it.
+export const SYSTEM_PROMPT = `You review open source projects' published policies on generative AI (LLMs, coding assistants, AI agents) for the website "Are We AI Friendly?". You record, in detail, everything the policy allows and forbids. A script computes the ratings from your rules, so the rules must be complete and exact. A human maintainer checks your answer before it is published, so accuracy and completeness matter more than speed. Never guess: when the documents do not say something, record nothing for it.
 
 # Input
 
@@ -158,7 +188,9 @@ How to map statements to uses:
 - "All contributions" or "contributions" covers the code uses. It covers issues or text only if the wording clearly includes them.
 - When a general statement and a more specific statement disagree about a use, the specific one decides that use. Example: "AI-generated content is not accepted, except for translating your comments" means comments are not allowed and translation is allowed.
 - Never carry a rule from one use or area to another because it seems likely. "No AI-written code" says nothing about bug reports.
-- Give each use exactly one rule. If the policy treats a use differently in different parts of the project (for example some repositories or product versions but not others), the rule takes the status for the parts where AI is permitted most, its note says where it does not apply, and the stricter part is recorded as an other rule.
+- Give each use exactly one rule. If the policy treats a use differently in different parts of the project (for example some repositories or product versions but not others), the rule takes the status for the parts where AI is permitted most, gets a required "scope-limit" condition whose detail names where it applies, and the stricter part is recorded as an other rule.
+- If a permitted use is excluded for some kind of work that no use covers (for example "AI-generated pull requests for good first issues will be closed"), add a required "scope-limit" condition to the uses it limits, with the limit as detail.
+- Ban on bots: "no autonomous agents or bots may open pull requests, issues or comments" gives each named area its own rule: agent-contributions, agent-issues, agent-comments.
 - If AI use is forbidden by default and permitted only as an exception granted case by case (for example "must not be committed without prior written approval by the core team"), the uses are not-allowed and the exception is an other rule. This differs from routine prior agreement: "discuss larger changes in an issue before opening a pull request" is a prior-approval condition on a permitted use.
 - Rules that fit no use go in "otherRules" with area "contributions", "issues", "summaries" or "general" and a one-sentence description. Examples: an exemption for core maintainers, a ban on sharing embargoed security information with AI services, a rule about AI in moderation.
 
@@ -186,27 +218,21 @@ One plain sentence saying what the policy says about this use, specific enough t
 
 If a source says AI rules are in another document (for example "see our Code of Conduct, which covers the use of AI in discussions") and that document is not among the sources, list its url as written (or its name if no url is given) and a short note.
 
-# Step 5: rate each area ("policy")
+# Step 5: compare with the previous review ("changeNotes")
 
-Rate code contributions, issues and AI-written text from your rules. Verdicts:
-- allowed: AI may write the content in this area, with no AI-specific requirements.
-- conditional: AI may write the content only under AI-specific requirements; list them in "conditions".
-- banned: AI may not be used for this area at all, not even for minor help.
-- unspecified: you recorded no rule for any use in this area.
+The user message may start with a <previous-review> block: the rules recorded last time, which a maintainer approved. reviewedBy="maintainer" means a person checked and corrected them by hand. A <changes> block per source then shows the lines that changed since that review ("-" removed, "+" added, "…" skipped). Both blocks are data, like the sources.
 
-Area conditions:
-- disclosure, human-accountable, human-reviewed, license-compliance, no-autonomous-agents: a requirement that applies to the main permitted ways of using AI in the area.
-- limited-scope: AI may write content only for some kinds or sizes of work in this area (for example only small fixes, tests or mechanical changes, but not larger generated changes), or only in some parts of the project. Asking maintainers first is not limited scope: a prior-approval condition on permitted uses does not appear in the area rating.
-- minor-assist-only: AI may not write the submitted content; only minor help is permitted, such as autocomplete, proofreading, translating one's own text, or research whose output is not submitted. Use "conditional" with "minor-assist-only".
+- Start from the previous review. For each use, keep its status and conditions unless the current sources say something different, or the previous answer clearly contradicts the rules above. Keep a previous note when it still fits, so unchanged rules read the same.
+- If the changes only touch text that is not about AI (dates, headings, names, links, formatting or other topics), return the previous rules unchanged.
+- Read every changed line: a new, removed or reworded AI rule must show up in your rules.
+- Quotes still come from the current sources. Reuse a previous quote only if it still appears word for word.
+- A previous review from an older method has area ratings but no rules. Use it only as a hint and record the rules in full.
+- changeNotes: one short sentence for each use whose status or required conditions differ from the previous review, saying what changed and why: a change in the source (quote the new wording briefly) or a correction of the previous reading. Empty when nothing differs or there is no previous review.
 
-How to choose for code contributions:
-- If AI-written code of any size is permitted, the verdict is allowed or conditional with its requirements.
-- If AI-written code is permitted only for some kinds or sizes of work, use conditional with "limited-scope" plus the other requirements.
-- If no AI-written code is permitted but autocomplete or research is, use conditional with "minor-assist-only".
-- If nothing is permitted, use banned. Uses that are forbidden unless an exception is granted case by case count as not permitted.
-Apply the same reasoning to issues (is AI-written report text permitted?) and to text (are AI-written descriptions and comments permitted?). Discouraged uses count as permitted when rating.
+# Past decisions
 
-If documents disagree, follow the most specific and most recent official statement. An adopted decision outranks proposals or rejected options on the same page. Lower your confidence when you had to resolve a conflict.
+Maintainers settled these cases while reviewing earlier answers. Apply them to similar wording:
+${PRECEDENTS}
 
 # Summary and confidence
 
@@ -222,25 +248,13 @@ confidence:
 These show how to apply the rules; they are not about the project you are rating.
 
 1. "Use of AI is allowed within the limits mentioned below. Disclosure of AI use is required, using an Assisted-by: trailer. What is acceptable: Small, targeted fixes. Help with writing tests and benchmarks. What is not acceptable: Large pull requests that were mostly generated. Generated commit messages or PR descriptions. Fixing spelling, grammar and translations is fine."
-   Rules: code-small conditional (disclosure required, "Assisted-by trailer"); code-tests conditional (same); code-large not-allowed; commit-message not-allowed; pr-description not-allowed; proofreading allowed; translation allowed. Code area: conditional with disclosure and limited-scope. Text area: conditional with minor-assist-only.
+   Rules: code-small conditional (disclosure required, "Assisted-by trailer"); code-tests conditional (same); code-large not-allowed; commit-message not-allowed; pr-description not-allowed; proofreading allowed; translation allowed.
 
 2. "While it is not prohibited to use AI as a learning aid or a development tool (i.e. code completions), extension developers should be able to justify and explain the code they submit. Extensions must not be AI-generated."
-   Rules: research allowed; code-completion allowed; code-small and code-large not-allowed (one statement covers both). Code area: conditional with minor-assist-only. "Should be able to justify" is a recommended human-accountable condition on the permitted uses.
+   Rules: research allowed; code-completion allowed; code-small and code-large not-allowed (one statement covers both). "Should be able to justify" is a recommended human-accountable condition on the permitted uses.
 
 3. "We encourage our contributors to disclose whether a contribution was made with AI assistance, but do not require them to do so. Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output."
-   Rules: code uses covered by "contribution" get conditions disclosure (recommended), human-accountable and human-reviewed (required). Because both required conditions are baseline expectations, the code area is conditional with human-accountable and human-reviewed, and disclosure is not an area condition. Issues and text: unspecified unless other statements name them.`;
-
-function dimensionSchema() {
-  return {
-    type: 'object',
-    additionalProperties: false,
-    required: ['verdict', 'conditions'],
-    properties: {
-      verdict: { type: 'string', enum: [...VERDICTS] },
-      conditions: { type: 'array', items: { type: 'string', enum: [...CONDITIONS] } },
-    },
-  };
-}
+   Rules: code uses covered by "contribution" get conditions disclosure (recommended), human-accountable and human-reviewed (required). Issues and text get no rules unless other statements name them.`;
 
 export function outputJsonSchema(sourceUrls: string[]) {
   const url = { type: 'string', enum: sourceUrls };
@@ -249,8 +263,8 @@ export function outputJsonSchema(sourceUrls: string[]) {
   return {
     type: 'object',
     additionalProperties: false,
-    // Statements and rules come first so the ratings are written after the evidence.
-    required: ['sources', 'statements', 'rules', 'otherRules', 'referencedPolicies', 'policy', 'summary', 'confidence'],
+    // Statements come first so the rules are written after the evidence.
+    required: ['sources', 'statements', 'rules', 'otherRules', 'referencedPolicies', 'changeNotes', 'summary', 'confidence'],
     properties: {
       sources: {
         type: 'array',
@@ -325,12 +339,7 @@ export function outputJsonSchema(sourceUrls: string[]) {
           properties: { url: { type: 'string' }, note: { type: 'string' } },
         },
       },
-      policy: {
-        type: 'object',
-        additionalProperties: false,
-        required: [...DIMENSIONS],
-        properties: Object.fromEntries(DIMENSIONS.map((d) => [d, dimensionSchema()])),
-      },
+      changeNotes: { type: 'array', items: { type: 'string' } },
       summary: { type: 'string' },
       confidence: { type: 'string', enum: [...CONFIDENCE] },
     },
@@ -342,10 +351,45 @@ function field(value: string): string {
   return value.replace(/[<>]/g, '').replace(/\s+/g, ' ').trim();
 }
 
+function ruleConditionsText(r: { conditions: RuleCondition[] }): string {
+  return r.conditions.map((c) => `${c.condition} (${c.strength}${c.detail ? `: ${c.detail}` : ''})`).join(', ');
+}
+
+/** The previous review as compact lines, one per rule. */
+export function previousReviewBlock(previous: PreviousReview): string {
+  const by = previous.reviewedBy === 'manual' ? 'maintainer' : 'ai';
+  const lines = [`summary: ${field(previous.summary)}`];
+  if (previous.rules) {
+    lines.push('rules:');
+    for (const r of previous.rules) {
+      const conditions = ruleConditionsText(r);
+      const quotes = r.quotes.map((q) => `"${field(q.quote)}"`).join(' ');
+      lines.push(`- ${r.use}: ${r.status}${conditions ? `; conditions: ${conditions}` : ''}; note: ${field(r.note)}; quotes: ${quotes}`);
+    }
+    if (previous.otherRules?.length) {
+      lines.push('otherRules:');
+      for (const o of previous.otherRules) lines.push(`- ${o.area}, ${o.status}: ${field(o.description)}`);
+    }
+    if (previous.referencedPolicies?.length) {
+      lines.push('referencedPolicies:');
+      for (const p of previous.referencedPolicies) lines.push(`- ${p.url}: ${field(p.note)}`);
+    }
+  } else {
+    lines.push('Older method, area ratings only:');
+    for (const d of DIMENSIONS) {
+      const { verdict, conditions } = previous.policy[d];
+      lines.push(`- ${d}: ${verdict}${conditions.length ? ` (${conditions.map((c) => CONDITION_INFO[c].short).join(', ')})` : ''}`);
+    }
+  }
+  const safe = lines.join('\n').replaceAll('</previous-review>', '</ previous-review>');
+  return `<previous-review reviewedBy="${by}" date="${previous.date}">\n${safe}\n</previous-review>`;
+}
+
 export function buildUserMessage(
   project: ProjectInfo,
   sources: FetchedSource[],
   maxInputChars: number,
+  previous?: PreviousReview,
 ): { content: string; truncated: string[] } {
   const budget = Math.floor(maxInputChars / sources.length);
   const truncated: string[] = [];
@@ -366,8 +410,18 @@ export function buildUserMessage(
     `homepage: ${project.homepage}`,
     ...(project.repo ? [`repository: ${project.repo}`] : []),
   ];
+  const reference = previous
+    ? [
+        previousReviewBlock(previous),
+        ...sources.map((s) => {
+          const diff = previous.changes[s.url];
+          const body = diff === undefined ? 'New source: not part of the previous review.' : diff || 'No change.';
+          return `<changes url="${s.url}">\n${body.replaceAll('</changes>', '</ changes>')}\n</changes>`;
+        }),
+      ]
+    : [];
   return {
-    content: `<project>\n${info.join('\n')}\n</project>\n\n${blocks.join('\n\n')}`,
+    content: [`<project>\n${info.join('\n')}\n</project>`, ...reference, ...blocks].join('\n\n'),
     truncated,
   };
 }
@@ -377,9 +431,10 @@ export async function classify(
   project: ProjectInfo,
   sources: FetchedSource[],
   fetchImpl: typeof fetch = fetch,
+  previous?: PreviousReview,
 ): Promise<Classification> {
   const sourceUrls = sources.map((s) => s.url);
-  const { content, truncated } = buildUserMessage(project, sources, config.maxInputChars);
+  const { content, truncated } = buildUserMessage(project, sources, config.maxInputChars, previous);
   const responseFormat =
     config.responseFormat === 'json_schema'
       ? { type: 'json_schema', json_schema: { name: 'policy_classification', strict: true, schema: outputJsonSchema(sourceUrls) } }
@@ -389,25 +444,27 @@ export async function classify(
       ? `${SYSTEM_PROMPT}\n\nReply with only a JSON object matching this JSON Schema:\n${JSON.stringify(outputJsonSchema(sourceUrls))}`
       : SYSTEM_PROMPT;
 
-  const message = await chatCompletion(config, {
+  const request = {
     model: config.model,
     messages: [
       { role: 'system', content: system },
       { role: 'user', content },
     ],
     response_format: responseFormat,
-  }, fetchImpl);
-  if (!message.content) throw new Error('Classifier returned no content');
-  const raw = message.content;
-
-  const warnings = truncated.map((url) => `Source was truncated to fit AI_MAX_INPUT_CHARS: ${url}`);
-  let output: ModelOutput;
-  try {
-    output = ModelOutput.parse(parseJson(raw));
-  } catch {
-    // The parse error would quote the reply, which can name the model.
-    throw new Error('Classifier reply did not match the expected JSON schema');
+  };
+  // Smaller models now and then send an empty or malformed reply; one fresh attempt usually fixes it.
+  let output: ModelOutput | undefined;
+  for (let attempt = 1; !output; attempt++) {
+    const message = await chatCompletion(config, request, fetchImpl);
+    try {
+      if (!message.content) throw new Error('empty');
+      output = ModelOutput.parse(parseJson(message.content));
+    } catch {
+      // The parse error would quote the reply, which can name the model.
+      if (attempt >= 2) throw new Error(message.content ? 'Classifier reply did not match the expected JSON schema' : 'Classifier returned no content');
+    }
   }
+  const warnings = truncated.map((url) => `Source was truncated to fit AI_MAX_INPUT_CHARS: ${url}`);
   return checkOutput(output, sources, warnings);
 }
 
@@ -419,24 +476,6 @@ export function checkOutput(output: ModelOutput, sources: FetchedSource[], warni
     warnings.push(`The model did not check ${s.url}; treated as unclear.`);
     return { url: s.url, publisher: 'unclear', isPolicy: true, note: '' };
   });
-
-  const policy = structuredClone(output.policy);
-  for (const dim of DIMENSIONS) {
-    const d = policy[dim];
-    // Fixed order, so a re-check that only reorders conditions is not reported as a change.
-    d.conditions = CONDITIONS.filter((c) => d.conditions.includes(c));
-    if (d.verdict === 'allowed' && d.conditions.length) {
-      d.verdict = 'conditional';
-      warnings.push(`${dim}: "allowed" came with conditions; treated as "conditional".`);
-    }
-    if ((d.verdict === 'banned' || d.verdict === 'unspecified') && d.conditions.length) {
-      d.conditions = [];
-      warnings.push(`${dim}: conditions dropped because the verdict is "${d.verdict}".`);
-    }
-    if (d.verdict === 'conditional' && !d.conditions.length) {
-      warnings.push(`${dim}: "conditional" without any condition.`);
-    }
-  }
 
   // Statements: keep only quotes that really are in their source.
   const statements = new Map<number, Quote>();
@@ -519,22 +558,10 @@ export function checkOutput(output: ModelOutput, sources: FetchedSource[], warni
     .filter((p) => p.url && p.note);
   for (const p of referencedPolicies) warnings.push(`The sources point to more AI rules in ${p.url}, which is not a source yet: ${p.note}`);
 
-  const evidence: Evidence[] = [];
-  const addEvidence = (dimension: Dimension, quotes: Quote[]) => {
-    for (const q of quotes) {
-      if (!evidence.some((e) => e.dimension === dimension && e.quote === q.quote && e.sourceUrl === q.sourceUrl)) {
-        evidence.push({ dimension, ...q });
-      }
-    }
-  };
-  for (const r of rules) addEvidence(USE_INFO[r.use].area, r.quotes);
-  for (const o of otherRules) if (o.area !== 'general') addEvidence(o.area, o.quotes);
-
+  const { policy, evidence } = rate(rules, otherRules);
   for (const dim of DIMENSIONS) {
-    const hasRules = rules.some((r) => USE_INFO[r.use].area === dim) || otherRules.some((o) => o.area === dim);
-    if (policy[dim].verdict === 'unspecified' && hasRules) warnings.push(`${dim}: rated "unspecified" but has rules.`);
-    if (policy[dim].verdict !== 'unspecified' && !evidence.some((e) => e.dimension === dim)) {
-      warnings.push(`${dim}: verdict "${policy[dim].verdict}" has no verified quote.`);
+    if (policy[dim].verdict === 'unspecified' && otherRules.some((o) => o.area === dim)) {
+      warnings.push(`${dim}: only other rules, so the area is rated "No policy"; check whether one of them fits a listed use.`);
     }
   }
   return {
@@ -546,8 +573,29 @@ export function checkOutput(output: ModelOutput, sources: FetchedSource[], warni
     otherRules,
     referencedPolicies,
     sources: checks,
+    changeNotes: output.changeNotes.map((n) => n.trim()).filter(Boolean),
     warnings,
   };
+}
+
+/** Area ratings from the rules, and the quotes behind each area: its own rules, other rules and any rule its rating borrowed. */
+export function rate(rules: Rule[], otherRules: OtherRule[] = []): { policy: z.infer<typeof Policy>; evidence: Evidence[] } {
+  const evidence: Evidence[] = [];
+  const addEvidence = (dimension: Dimension, quotes: Quote[]) => {
+    for (const q of quotes) {
+      if (!evidence.some((e) => e.dimension === dimension && e.quote === q.quote && e.sourceUrl === q.sourceUrl)) {
+        evidence.push({ dimension, ...q });
+      }
+    }
+  };
+  const policy = {} as z.infer<typeof Policy>;
+  for (const dim of DIMENSIONS) {
+    const { rating, uses } = deriveArea(rules, dim);
+    policy[dim] = rating;
+    for (const r of rules) if (USE_INFO[r.use].area === dim || uses.includes(r.use)) addEvidence(dim, r.quotes);
+    for (const o of otherRules) if (o.area === dim) addEvidence(dim, o.quotes);
+  }
+  return { policy, evidence };
 }
 
 function parseJson(raw: string): unknown {
@@ -595,6 +643,11 @@ export async function chatCompletion(config: ClassifierConfig, body: object, fet
     } catch (err) {
       // Some providers send headers and keep-alive padding at once, so the timeout can hit while the body is still coming.
       if (isTimeout(err)) throw new Error('Classifier request failed: timed out while waiting for the reply');
+      // Usually a cut-off or error page from a busy provider; worth another try.
+      if (attempt < 3) {
+        await Bun.sleep(attempt * 15_000);
+        continue;
+      }
       throw new Error('Classifier returned a response that is not JSON');
     }
     const message = json.choices?.[0]?.message;

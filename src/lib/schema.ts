@@ -51,6 +51,7 @@ export const RULE_CONDITIONS = [
   'no-autonomous-agents',
   'prior-approval',
   'size-limit',
+  'scope-limit',
   'include-original',
   'mark-quotes',
 ] as const;

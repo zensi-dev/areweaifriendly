@@ -57,6 +57,11 @@
       "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
     },
     {
+      "dimension": "issues",
+      "quote": "You may use LLMs for *translating* your human-written text; in this case you must also provide the original text to reduce the chance of miscommunication.",
+      "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"
+    },
+    {
       "dimension": "summaries",
       "quote": "You're not allowed to use LLMs to *create*.",
       "sourceUrl": "https://github.com/niri-wm/niri/blob/main/CONTRIBUTING.md"

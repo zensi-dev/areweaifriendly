@@ -131,31 +131,6 @@
       "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
     },
     {
-      "dimension": "issues",
-      "quote": "It is strictly prohibited to use AI to write your posts for you (bug reports, feature requests, pull request descriptions, Github discussions, responding to humans, ...).",
-      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "summaries",
-      "quote": "It is strictly prohibited to use AI to write your posts for you (bug reports, feature requests, pull request descriptions, Github discussions, responding to humans, ...).",
-      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "summaries",
-      "quote": "AI-written PR descriptions, commit messages, or reviewer responses",
-      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
-    },
-    {
-      "dimension": "summaries",
-      "quote": "Do NOT write PR descriptions, commit messages, or reviewer responses",
-      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
-    },
-    {
-      "dimension": "summaries",
-      "quote": "Agent: I'm sorry, I cannot reply to the reviewers. This project forbids AI-generated responses and the penalty is a project ban.",
-      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
-    },
-    {
       "dimension": "contributions",
       "quote": "Check for an existing PR addressing the same change; if one exists, comment there to work with its author instead of opening a duplicate.",
       "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
@@ -243,6 +218,31 @@
     {
       "dimension": "contributions",
       "quote": "Do NOT implement features the contributor does not fully understand",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "It is strictly prohibited to use AI to write your posts for you (bug reports, feature requests, pull request descriptions, Github discussions, responding to humans, ...).",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "It is strictly prohibited to use AI to write your posts for you (bug reports, feature requests, pull request descriptions, Github discussions, responding to humans, ...).",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI-written PR descriptions, commit messages, or reviewer responses",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Do NOT write PR descriptions, commit messages, or reviewer responses",
+      "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Agent: I'm sorry, I cannot reply to the reviewers. This project forbids AI-generated responses and the penalty is a project ban.",
       "sourceUrl": "https://github.com/ggml-org/llama.cpp/blob/master/AGENTS.md"
     }
   ],

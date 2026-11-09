@@ -239,6 +239,12 @@ export const RULE_CONDITION_INFO: Record<RuleConditionId, { label: string; icon:
     meaning: 'Discuss with or get agreement from maintainers before doing the AI-assisted work.',
   },
   'size-limit': { label: 'Keep it small', icon: 'ruler', meaning: 'Only small or easily reviewable amounts.' },
+  'scope-limit': {
+    label: 'Only some work',
+    icon: 'ruler',
+    meaning:
+      'Only for some kinds of work or some parts of the project, such as certain repositories or versions, or not for beginner issues.',
+  },
   'include-original': {
     label: 'Include the original',
     icon: 'languages',

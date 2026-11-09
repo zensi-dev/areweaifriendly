@@ -71,6 +71,21 @@
       "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
     },
     {
+      "dimension": "contributions",
+      "quote": "Contribution & Community Evaluation: AI tools may be used to assist human reviewers by providing analysis and suggestions.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You MUST NOT use AI as the sole or final arbiter in making a substantive or subjective judgment on a contribution, nor may it be used to evaluate a person’s standing within the community (e.g., for funding, leadership roles, or Code of Conduct matters).",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The final accountability for accepting a contribution, even if implemented by an automated system, always rests with the human contributor who authorizes the action.",
+      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
+    },
+    {
       "dimension": "summaries",
       "quote": "You MAY use AI assistance for contributing to Fedora, as long as you follow the principles described below.",
       "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
@@ -92,21 +107,6 @@
     },
     {
       "dimension": "summaries",
-      "quote": "The final accountability for accepting a contribution, even if implemented by an automated system, always rests with the human contributor who authorizes the action.",
-      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Contribution & Community Evaluation: AI tools may be used to assist human reviewers by providing analysis and suggestions.",
-      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "You MUST NOT use AI as the sole or final arbiter in making a substantive or subjective judgment on a contribution, nor may it be used to evaluate a person’s standing within the community (e.g., for funding, leadership roles, or Code of Conduct matters).",
-      "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
-    },
-    {
-      "dimension": "contributions",
       "quote": "The final accountability for accepting a contribution, even if implemented by an automated system, always rests with the human contributor who authorizes the action.",
       "sourceUrl": "https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/"
     }

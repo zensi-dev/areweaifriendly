@@ -52,28 +52,28 @@
       "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
     },
     {
-      "dimension": "issues",
-      "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
-      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "issues",
-      "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
-      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "summaries",
-      "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
-      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "summaries",
-      "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
-      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
-    },
-    {
       "dimension": "contributions",
       "quote": "Contributions that don't meet these standards may be rejected or closed without detailed review or a reply.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "issues",
+      "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "However, all contributions to Penpot - including issues, pull requests, and any other submissions - must meet a reasonable standard of quality, accuracy, and human oversight.",
+      "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If AI-assisted content is used, it must be carefully reviewed and verified by a human before submission.",
       "sourceUrl": "https://github.com/penpot/penpot/blob/develop/CONTRIBUTING.md"
     }
   ],

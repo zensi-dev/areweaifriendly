@@ -1,21 +1,27 @@
 /**
- * Re-fetches every policy source. Unchanged text is skipped without calling
- * the model; changed text is re-classified and written back for review.
+ * Re-fetches every policy source. Unchanged text is skipped without calling the model; changed
+ * text is re-classified with the previous review and a diff of the change as reference.
  *
  *   bun scripts/check.ts                 check all projects
  *   bun scripts/check.ts curl qemu       check some projects
  *   bun scripts/check.ts --force curl    re-classify even if nothing changed
  *   bun scripts/check.ts --concurrency 4 check at most 4 projects at a time (default $CHECK_CONCURRENCY or 16)
  *
- * Projects are checked in parallel; the report lists them in slug order once all are done.
- * Writes a Markdown report to $CHECK_REPORT (default: check-report.md).
+ * Only projects whose rules, ratings or referenced documents changed need review. Projects whose text
+ * changed without that are written too, but only matter when a pull request goes out anyway.
+ *
+ * Writes a Markdown report to $CHECK_REPORT (default: check-report.md) and, for problems a person
+ * must fix (a source that is gone), a list to $CHECK_ISSUE (default: check-issue.md). Outputs for
+ * the workflow: `changed` (something needs review), `problems` (anything failed) and `attention`
+ * (something failed that retrying will not fix).
  */
 import { writeFile } from 'node:fs/promises';
 import { parseArgs } from 'node:util';
-import { classify, configFromEnv, RUBRIC_VERSION, type ClassifierConfig } from './lib/classify';
-import { fetchSource, type FetchedSource } from './lib/fetch';
-import { areaChanges, mapLimit, reviewNotes, ruleChanges, setOutputs, stanceLabel, toSources } from './lib/pipeline';
-import { listSlugs, readProject, today, writeProject, writeSnapshot } from './lib/store';
+import { classify, configFromEnv, type ClassifierConfig, type PreviousReview } from './lib/classify';
+import { lineDiff } from './lib/diff';
+import { fetchSource, HttpError, type FetchedSource } from './lib/fetch';
+import { mapLimit, mergeClassification, reviewNotes, setOutputs, stanceLabel } from './lib/pipeline';
+import { listSlugs, readProject, readSnapshot, today, writeProject, writeSnapshot } from './lib/store';
 
 const { values, positionals } = parseArgs({
   options: { force: { type: 'boolean', default: false }, concurrency: { type: 'string', default: process.env.CHECK_CONCURRENCY || '16' } },
@@ -30,19 +36,58 @@ const getConfig = () => (config ??= configFromEnv());
 
 const date = today();
 
-/** Checks one project; returns its report section (if re-classified) and any problems. */
-async function check(slug: string): Promise<{ changed?: string; problems: string[] }> {
+type Problem = { text: string; actionable: boolean };
+type Outcome = { review?: string; refreshed?: string; problems: Problem[] };
+
+/** Gone, moved to nowhere or not a page any more: a person has to update the source. Anything else may pass. */
+function needsPerson(err: unknown): boolean {
+  if (err instanceof HttpError) return [401, 403, 404, 410, 451].includes(err.status);
+  return /^(No readable text|Too many redirects|Not a public address|Not an http)/.test((err as Error).message);
+}
+
+/** Servers fail now and then; three tries a few seconds apart ride out most of it. */
+async function fetchWithRetry(url: string): Promise<FetchedSource> {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await fetchSource(url);
+    } catch (err) {
+      if (attempt >= 3) throw err;
+      await Bun.sleep(attempt * 5_000);
+    }
+  }
+}
+
+async function previousReview(slug: string, project: Awaited<ReturnType<typeof readProject>>, fetched: FetchedSource[]): Promise<PreviousReview> {
+  const changes: Record<string, string> = {};
+  for (const f of fetched) {
+    const old = await readSnapshot(slug, f.url);
+    if (old !== null && project.sources.some((s) => s.url === f.url)) changes[f.url] = old === f.text ? '' : lineDiff(old, f.text);
+  }
+  return {
+    reviewedBy: project.classifiedBy,
+    date: project.classifiedAt,
+    summary: project.summary,
+    rules: project.rules,
+    otherRules: project.otherRules,
+    referencedPolicies: project.referencedPolicies,
+    policy: project.policy,
+    changes,
+  };
+}
+
+/** Checks one project; returns its report section (if it needs review) and any problems. */
+async function check(slug: string): Promise<Outcome> {
   const project = await readProject(slug);
-  const problems: string[] = [];
-  const results = await Promise.allSettled(project.sources.map((source) => fetchSource(source.url)));
+  const results = await Promise.allSettled(project.sources.map((source) => fetchWithRetry(source.url)));
+  const problems: Problem[] = [];
   const fetched: FetchedSource[] = [];
   for (const r of results) {
     if (r.status === 'fulfilled') fetched.push(r.value);
-    else problems.push(`- **${project.name}**: ${(r.reason as Error).message}`);
+    else problems.push({ text: `**${project.name}**: ${(r.reason as Error).message}`, actionable: needsPerson(r.reason) });
   }
   if (problems.length) return { problems };
 
-  const textChanged = fetched.some((f, i) => f.hash !== project.sources[i].hash);
+  const textChanged = fetched.some((f, i) => f.hash !== project.sources[i]!.hash);
   if (!textChanged && !values.force) {
     console.log(`${slug}: unchanged`);
     return { problems };
@@ -50,65 +95,63 @@ async function check(slug: string): Promise<{ changed?: string; problems: string
 
   let result;
   try {
-    result = await classify(getConfig(), project, fetched);
+    result = await classify(getConfig(), project, fetched, fetch, await previousReview(slug, project, fetched));
   } catch (err) {
-    return { problems: [`- **${project.name}**: classification failed: ${(err as Error).message}`] };
+    return { problems: [{ text: `**${project.name}**: classification failed: ${(err as Error).message}`, actionable: false }] };
   }
 
-  const changes = ruleChanges(project.rules, result.rules);
-  const areas = areaChanges(project.policy, result.policy);
-  const ratingChanged = areas.length > 0;
-  const verdictChanged = ratingChanged || changes.length > 0;
+  const merged = mergeClassification(project, result, fetched, date);
   for (const f of fetched) await writeSnapshot(slug, f.url, f.text);
-  await writeProject(slug, {
-    ...project,
-    summary: result.summary,
-    policy: result.policy,
-    evidence: result.evidence,
-    rules: result.rules,
-    otherRules: result.otherRules,
-    referencedPolicies: result.referencedPolicies,
-    rubricVersion: RUBRIC_VERSION,
-    sources: toSources(fetched, date).map((s, i) =>
-      fetched[i].hash === project.sources[i].hash ? project.sources[i] : s,
-    ),
-    confidence: result.confidence,
-    classifiedBy: 'ai',
-    classifiedAt: date,
-    lastChanged: verdictChanged ? date : project.lastChanged,
-  });
+  await writeProject(slug, merged.project);
+  if (!merged.needsReview) {
+    console.log(`${slug}: text changed, rules unchanged`);
+    return { refreshed: project.name, problems };
+  }
 
   const before = stanceLabel(project.policy);
-  const after = stanceLabel(result.policy);
-  const headline = ratingChanged
+  const after = stanceLabel(merged.project.policy);
+  const headline = merged.areaChanges.length
     ? before === after
       ? `Area ratings changed, overall rating unchanged (${after})`
       : `Rating changed (${before} → ${after})`
-    : verdictChanged
+    : merged.ruleChanges.length
       ? `Rules changed, ratings unchanged (${after})`
-      : textChanged
-        ? `Policy text changed, rules unchanged (${after})`
-        : `Re-classified, rules unchanged (${after})`;
-  const details = [
-    ...changes.map((c) => `- ${c}`),
-    ...areas.map((c) => `- ${c}`),
-  ];
+      : `Other rules or referenced documents changed (${after})`;
+  const details = [...merged.ruleChanges, ...merged.areaChanges].map((c) => `- ${c}`);
+  const notes = result.changeNotes.length ? `**Why, according to the classifier:**\n${result.changeNotes.map((n) => `- ${n}`).join('\n')}\n\n` : '';
+  // Older entries without rules are all marked manual; "First detailed rule list" already says what happens to them.
+  const manual = project.classifiedBy === 'manual' && project.rules ? '**This changes rules a maintainer reviewed by hand.**\n\n' : '';
   console.log(`${slug}: ${headline}`);
   return {
-    changed: `### ${project.name}\n\n${headline}\n\n${details.length ? `${details.join('\n')}\n\n` : ''}${reviewNotes(result)}`,
+    review: `### ${project.name}\n\n${headline}\n\n${manual}${details.length ? `${details.join('\n')}\n\n` : ''}${notes}${reviewNotes(result)}`,
     problems,
   };
 }
 
 const outcomes = await mapLimit(slugs, concurrency, check);
-const changed = outcomes.flatMap((o) => (o.changed ? [o.changed] : []));
+const reviews = outcomes.flatMap((o) => (o.review ? [o.review] : []));
+const refreshed = outcomes.flatMap((o) => (o.refreshed ? [o.refreshed] : []));
 const problems = outcomes.flatMap((o) => o.problems);
+const actionable = problems.filter((p) => p.actionable);
+const transient = problems.filter((p) => !p.actionable);
 
 const report = [
-  changed.length ? `## Updated projects\n\n${changed.join('\n\n')}` : 'No policy changes.',
-  ...(problems.length ? [`## Problems\n\n${problems.join('\n')}`] : []),
-  ...(changed.length ? ['Review each change against its snapshot diff before merging.'] : []),
+  reviews.length ? `## Needs review\n\n${reviews.join('\n\n')}` : 'Nothing needs review.',
+  ...(refreshed.length
+    ? [`## Text changed, rules unchanged\n\nThe classifier found the same rules, so only the snapshots are updated: ${refreshed.join(', ')}.`]
+    : []),
+  ...(actionable.length ? [`## Sources that need a person\n\n${actionable.map((p) => `- ${p.text}`).join('\n')}`] : []),
+  ...(transient.length ? [`## Failed this time\n\nRetried next week:\n\n${transient.map((p) => `- ${p.text}`).join('\n')}`] : []),
+  ...(reviews.length ? ['Review each change against its snapshot diff before merging.'] : []),
 ].join('\n\n');
 await writeFile(process.env.CHECK_REPORT ?? 'check-report.md', `${report}\n`);
-await setOutputs({ changed: String(changed.length > 0), problems: String(problems.length > 0) });
-if (problems.length) console.error(problems.join('\n'));
+await writeFile(
+  process.env.CHECK_ISSUE ?? 'check-issue.md',
+  `The weekly policy check (${date}) could not read these sources, even after retrying. Update the source URLs in \`data/projects/\`; this issue closes on its own once every source reads fine.\n\n${actionable.map((p) => `- ${p.text}`).join('\n')}\n`,
+);
+await setOutputs({
+  changed: String(reviews.length > 0),
+  problems: String(problems.length > 0),
+  attention: String(actionable.length > 0),
+});
+if (problems.length) console.error(problems.map((p) => p.text).join('\n'));

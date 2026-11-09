@@ -20,6 +20,7 @@
     "summaries": {
       "verdict": "conditional",
       "conditions": [
+        "human-accountable",
         "human-reviewed"
       ]
     }
@@ -63,6 +64,46 @@
     {
       "dimension": "contributions",
       "quote": "Submitting a change containing hundreds of lines of code that the contributor doesn't understand is\n always a problem.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Because the Dart team’s time is limited, and the capacity for people outside the team to generate\nplausible-looking code is unlimited, be mindful as a reviewer about what code you choose to review.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Consider immediately closing changes that have any of the following red flags:",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The change description has entirely replaced our template with AI-generated output.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The change description does not match the changes.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The change contains irrelevant AI-generated files, such as agent planning .md files.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If the contributor did not review both the changes and the description enough to notice this,\n they have not followed the AI contribution policy.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If the contributor did not review the changes enough to notice and remove these files, they\n have not followed the AI contribution policy.",
+      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "As always when closing a change, explain why and provide next steps.",
       "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
     },
     {
@@ -118,46 +159,6 @@
     {
       "dimension": "summaries",
       "quote": "In particular, do not tell a reviewer that you have addressed their feedback just because\n AI output says so. It is your responsibility to make sure that review feedback has actually\n been addressed.",
-      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Because the Dart team’s time is limited, and the capacity for people outside the team to generate\nplausible-looking code is unlimited, be mindful as a reviewer about what code you choose to review.",
-      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Consider immediately closing changes that have any of the following red flags:",
-      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "The change description has entirely replaced our template with AI-generated output.",
-      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "The change description does not match the changes.",
-      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "The change contains irrelevant AI-generated files, such as agent planning .md files.",
-      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "If the contributor did not review both the changes and the description enough to notice this,\n they have not followed the AI contribution policy.",
-      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "If the contributor did not review the changes enough to notice and remove these files, they\n have not followed the AI contribution policy.",
-      "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "As always when closing a change, explain why and provide next steps.",
       "sourceUrl": "https://github.com/dart-lang/sdk/blob/main/CONTRIBUTING.md"
     }
   ],

@@ -75,8 +75,8 @@ const p = 'mt-4';
       }
     </ul>
     <p class={p}>
-      Conditions that every good contribution meets anyway, like taking responsibility for your work, keep an area
-      <em>Friendly</em>. Extra hoops, like mandatory disclosure, or allowing AI only for some kinds of work, make it
+      Conditions that every good contribution meets anyway, like taking responsibility for your work or keeping a
+      person in charge of the AI tool, keep an area <em>Friendly</em>. Extra hoops, like mandatory disclosure, or allowing AI only for some kinds of work, make it
       <em>Mostly friendly</em>. Allowing only minor help makes it <em>Unfriendly</em>.
     </p>
     <h2 class={h2}>What we record</h2>
@@ -124,11 +124,15 @@ const p = 'mt-4';
       </li>
       <li>We save a plain-text snapshot of each source in the repository, so every change is visible in git.</li>
       <li>
-        An AI model reads the full text and fills in the ratings. Each rating must come with a quote, and a script
-        checks that every quote appears word for word in the snapshot.
+        An AI model reads the full text and records what the policy says about each use of AI, with quotes. A
+        script checks that every quote appears word for word in the snapshot, and works out the ratings from those
+        rules, so the same rules always get the same rating.
       </li>
       <li>A human reviews every change before it goes live.</li>
-      <li>Every week the sources are fetched again. If the text changed, the project is re-checked and reviewed.</li>
+      <li>
+        Every week the sources are fetched again. If the text changed, the project is re-checked against its last
+        review, and any change to its rules or ratings is reviewed.
+      </li>
     </ol>
     <p class={p}>
       Yes, we use AI to track AI policies. We think that’s fine, as long as a human signs off on every change.

@@ -31,6 +31,26 @@
       "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
     },
     {
+      "dimension": "contributions",
+      "quote": "When contributing content to the curl project, you give us permission to use\nit as-is and you must make sure you are allowed to distribute it to us.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "By submitting a change to us, you agree that the changes can and should be\nadopted by curl and get redistributed under the curl license. Authors should\nbe explicitly aware that the burden is on them to ensure no unlicensed code is\nsubmitted to the project.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "This is independent if AI is used or not.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "A basic rule of thumb is that if someone can spot that the contribution was made\nwith the help of AI, you have more work to do.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+    },
+    {
       "dimension": "issues",
       "quote": "If you asked an AI tool to find problems in curl, you **must** make sure to\nreveal this fact in your report.",
       "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
@@ -61,6 +81,11 @@
       "sourceUrl": "https://github.com/curl/curl/blob/master/docs/VULN-DISCLOSURE-POLICY.md"
     },
     {
+      "dimension": "issues",
+      "quote": "We ban users immediately who submit made up fake reports to the project.",
+      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
+    },
+    {
       "dimension": "summaries",
       "quote": "Translation services help users write reports, texts and documentation in\nnon-native languages and we encourage and welcome such contributors and\ncontributions.",
       "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
@@ -73,31 +98,6 @@
     {
       "dimension": "summaries",
       "quote": "Failing to do so risks that maintainers\nwrongly dismiss translated texts as AI slop.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "When contributing content to the curl project, you give us permission to use\nit as-is and you must make sure you are allowed to distribute it to us.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "By submitting a change to us, you agree that the changes can and should be\nadopted by curl and get redistributed under the curl license. Authors should\nbe explicitly aware that the burden is on them to ensure no unlicensed code is\nsubmitted to the project.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "This is independent if AI is used or not.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "A basic rule of thumb is that if someone can spot that the contribution was made\nwith the help of AI, you have more work to do.",
-      "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
-    },
-    {
-      "dimension": "issues",
-      "quote": "We ban users immediately who submit made up fake reports to the project.",
       "sourceUrl": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md"
     },
     {

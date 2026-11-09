@@ -33,6 +33,7 @@ const classification: Classification = {
   otherRules: [],
   referencedPolicies: [],
   sources: [{ url: submission.sources[0], publisher: 'project', isPolicy: true, note: 'The AI policy.' }],
+  changeNotes: [],
   warnings: [],
 };
 

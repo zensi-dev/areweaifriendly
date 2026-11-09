@@ -6,6 +6,16 @@ const TIMEOUT_MS = 30_000;
 
 export type FetchedSource = { url: string; title: string; text: string; hash: string };
 
+/** A fetch that got an answer, but not the page: the status says whether trying again could help. */
+export class HttpError extends Error {
+  constructor(
+    readonly status: number,
+    message: string,
+  ) {
+    super(message);
+  }
+}
+
 export function sha256(text: string): string {
   return createHash('sha256').update(text).digest('hex');
 }
@@ -75,7 +85,7 @@ export async function fetchPage(url: string, fetchImpl: typeof fetch = fetch): P
     if (hop >= MAX_REDIRECTS) throw new Error(`Too many redirects fetching ${url}`);
     target = new URL(location, target).toString();
   }
-  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
+  if (!res.ok) throw new HttpError(res.status, `HTTP ${res.status} fetching ${url}`);
   const body = await res.text();
   const contentType = res.headers.get('content-type') ?? '';
   const isHtml = contentType.includes('html') || /^\s*<(!doctype html|html)/i.test(body);

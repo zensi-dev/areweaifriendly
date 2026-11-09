@@ -74,7 +74,17 @@
     },
     {
       "dimension": "contributions",
+      "quote": "Good first issues are intended to onboard newcomers with a genuine interest in improving Matplotlib, in the hopes that they will continue to participate in our development community; therefore, pull requests that are AI generated will be closed.",
+      "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
+    },
+    {
+      "dimension": "contributions",
       "quote": "To ensure project health and preserve limited core developer capacity, we will flag and reject low-value contributions that we believe are AI generated.",
+      "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Increasing breadth of contributions, i.e. simultaneously contributing to several projects. Instead of spreading your resources, you can provide greater value by engaging more deeply with one or two projects.",
       "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
     },
     {
@@ -95,16 +105,6 @@
     {
       "dimension": "summaries",
       "quote": "Translating or proof-reading your comments or PR descriptions. Please keep the wording as close as possible to your original wording.",
-      "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Increasing breadth of contributions, i.e. simultaneously contributing to several projects. Instead of spreading your resources, you can provide greater value by engaging more deeply with one or two projects.",
-      "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
-    },
-    {
-      "dimension": "contributions",
-      "quote": "Good first issues are intended to onboard newcomers with a genuine interest in improving Matplotlib, in the hopes that they will continue to participate in our development community; therefore, pull requests that are AI generated will be closed.",
       "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
     }
   ],
@@ -156,6 +156,11 @@
           "condition": "no-autonomous-agents",
           "strength": "required",
           "detail": "External AI bots or agents must not interact directly with the project, including by creating PRs."
+        },
+        {
+          "condition": "scope-limit",
+          "strength": "required",
+          "detail": "Not for good first issues"
         }
       ],
       "note": "AI-assisted small code changes require an independently capable and responsible human contributor, understanding and verification of the output, PR disclosure, and no direct project interaction by external AI tooling.",
@@ -183,6 +188,10 @@
         {
           "quote": "<!-- ✍️ Describe if and how AI is used. See https://matplotlib.org/devdocs/devel/contribute.html#use-of-generative-ai -->",
           "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
+        },
+        {
+          "quote": "Good first issues are intended to onboard newcomers with a genuine interest in improving Matplotlib, in the hopes that they will continue to participate in our development community; therefore, pull requests that are AI generated will be closed.",
+          "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
         }
       ]
     },
@@ -209,6 +218,11 @@
           "condition": "no-autonomous-agents",
           "strength": "required",
           "detail": "External AI bots or agents must not interact directly with the project, including by creating PRs."
+        },
+        {
+          "condition": "scope-limit",
+          "strength": "required",
+          "detail": "Not for good first issues"
         }
       ],
       "note": "Substantial AI-assisted code is subject to the same responsibility, capability, understanding, verification, disclosure and no-direct-agent requirements, and low-value contributions believed to be AI-generated will be rejected.",
@@ -239,6 +253,10 @@
         },
         {
           "quote": "<!-- ✍️ Describe if and how AI is used. See https://matplotlib.org/devdocs/devel/contribute.html#use-of-generative-ai -->",
+          "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
+        },
+        {
+          "quote": "Good first issues are intended to onboard newcomers with a genuine interest in improving Matplotlib, in the hopes that they will continue to participate in our development community; therefore, pull requests that are AI generated will be closed.",
           "sourceUrl": "https://matplotlib.org/devdocs/devel/contribute.html"
         }
       ]
