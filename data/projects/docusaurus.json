@@ -4,7 +4,7 @@
   "category": "tool",
   "homepage": "https://docusaurus.io/",
   "repo": "https://github.com/facebook/docusaurus",
-  "summary": "Docusaurus welcomes AI-assisted pull requests, but contributors must disclose when a significant portion of the code is AI-generated and remain accountable for explaining every line, ensuring tests pass, and addressing reviews. Significant changes require prior team communication and approval in an issue, and low-effort or unproductive PRs may be closed.",
+  "summary": "Docusaurus welcomes AI tools for authoring pull requests, but contributors must disclose significant AI-generated code, take responsibility for every line, and seek prior approval for significant changes. Low-effort, entirely AI-generated PRs are discouraged and may be closed.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -58,8 +58,8 @@
     {
       "url": "https://github.com/facebook/docusaurus/blob/main/CONTRIBUTING.md",
       "title": "Contributing to Docusaurus",
-      "hash": "0e1a42cad8bb5c94d18e6021fbd4ee73c7afd1f38b7af6e14e0a1d3ccd5e5510",
-      "fetchedAt": "2026-10-25"
+      "hash": "e31f6d8a9931d6805fd77084aff33049653ba3b19d2b624ae2e000145f93c65d",
+      "fetchedAt": "2026-11-09"
     }
   ],
   "rules": [
@@ -70,15 +70,15 @@
         {
           "condition": "disclosure",
           "strength": "required",
-          "detail": "If a significant portion of the code is AI-generated, indicate it in the PR description"
+          "detail": "Indicate in the PR description when a significant portion of the code is AI-generated"
         },
         {
           "condition": "human-accountable",
           "strength": "required",
-          "detail": "Explain every line, ensure tests pass, and address reviews"
+          "detail": "You are responsible for the code, can explain every line, ensure tests pass, and address reviews"
         }
       ],
-      "note": "AI tools may assist with PR authoring, with disclosure if they generate a significant portion of the code and full accountability for the submitted code.",
+      "note": "AI tools for authoring PRs are welcome, including inline completion, but contributors must disclose significant AI-generated portions and remain accountable for every line.",
       "quotes": [
         {
           "quote": "We welcome the use of AI tools for authoring PRs, and we love to see people pushing the boundaries of AI capabilities.",
@@ -101,15 +101,15 @@
         {
           "condition": "disclosure",
           "strength": "required",
-          "detail": "If a significant portion of the code is AI-generated, indicate it in the PR description"
+          "detail": "Indicate in the PR description when a significant portion of the code is AI-generated"
         },
         {
           "condition": "human-accountable",
           "strength": "required",
-          "detail": "Explain every line, ensure tests pass, and address reviews"
+          "detail": "You are responsible for the code, can explain every line, ensure tests pass, and address reviews"
         }
       ],
-      "note": "AI-generated code is welcome in PRs, but significant AI-generated code must be disclosed and the contributor remains accountable for every line, tests, and reviews.",
+      "note": "Small AI-written changes are welcome under the same transparency and accountability etiquette.",
       "quotes": [
         {
           "quote": "We welcome the use of AI tools for authoring PRs, and we love to see people pushing the boundaries of AI capabilities.",
@@ -132,20 +132,20 @@
         {
           "condition": "disclosure",
           "strength": "required",
-          "detail": "If a significant portion of the code is AI-generated, indicate it in the PR description"
+          "detail": "Indicate in the PR description when a significant portion of the code is AI-generated"
         },
         {
           "condition": "human-accountable",
           "strength": "required",
-          "detail": "Explain every line, ensure tests pass, and address reviews"
+          "detail": "You are responsible for the code, can explain every line, ensure tests pass, and address reviews"
         },
         {
           "condition": "prior-approval",
           "strength": "required",
-          "detail": "Significant changes need prior communication and team approval in an issue"
+          "detail": "Significant changes require prior communication and approval from the team in an issue"
         }
       ],
-      "note": "Substantial AI-generated code is not banned, but significant changes require prior communication and team approval in an issue, alongside the disclosure and accountability rules.",
+      "note": "Substantial AI-generated PRs are allowed only with prior communication and approval in an issue; unsolicited 1k LOC AI-generated PRs are criticized.",
       "quotes": [
         {
           "quote": "We welcome the use of AI tools for authoring PRs, and we love to see people pushing the boundaries of AI capabilities.",
@@ -172,15 +172,15 @@
         {
           "condition": "disclosure",
           "strength": "required",
-          "detail": "If a significant portion of the code is AI-generated, indicate it in the PR description"
+          "detail": "Indicate in the PR description when a significant portion of the code is AI-generated"
         },
         {
           "condition": "human-accountable",
           "strength": "required",
-          "detail": "Explain every line, ensure tests pass, and address reviews"
+          "detail": "You are responsible for the code, can explain every line, ensure tests pass, and address reviews"
         }
       ],
-      "note": "AI-assisted code in PRs is permitted subject to disclosure when a significant portion is generated and the contributor's responsibility to explain and defend it.",
+      "note": "AI-assisted repetitive edits are welcome, provided contributors disclose significant AI-generated portions and can explain every line.",
       "quotes": [
         {
           "quote": "We welcome the use of AI tools for authoring PRs, and we love to see people pushing the boundaries of AI capabilities.",
@@ -203,15 +203,15 @@
         {
           "condition": "disclosure",
           "strength": "required",
-          "detail": "If a significant portion of the code is AI-generated, indicate it in the PR description"
+          "detail": "Indicate in the PR description when a significant portion of the code is AI-generated"
         },
         {
           "condition": "human-accountable",
           "strength": "required",
-          "detail": "Explain every line, ensure tests pass, and address reviews"
+          "detail": "You are responsible for the code, can explain every line, ensure tests pass, and address reviews"
         }
       ],
-      "note": "AI may help write test code in PRs, subject to disclosure when it forms a significant portion of the code and full contributor accountability.",
+      "note": "AI-written tests and benchmarks are welcome under the disclosure and accountability etiquette.",
       "quotes": [
         {
           "quote": "We welcome the use of AI tools for authoring PRs, and we love to see people pushing the boundaries of AI capabilities.",
@@ -234,15 +234,15 @@
         {
           "condition": "disclosure",
           "strength": "required",
-          "detail": "If a significant portion of the code is AI-generated, indicate it in the PR description"
+          "detail": "Indicate in the PR description when a significant portion of the code is AI-generated"
         },
         {
           "condition": "human-accountable",
           "strength": "required",
-          "detail": "Explain every line, ensure tests pass, and address reviews"
+          "detail": "You are responsible for the code, can explain every line, ensure tests pass, and address reviews"
         }
       ],
-      "note": "AI may help write infrastructure code in PRs, subject to disclosure when it forms a significant portion of the code and full contributor accountability.",
+      "note": "AI-written build, CI or packaging code is welcome under the disclosure and accountability etiquette.",
       "quotes": [
         {
           "quote": "We welcome the use of AI tools for authoring PRs, and we love to see people pushing the boundaries of AI capabilities.",
@@ -262,8 +262,8 @@
   "otherRules": [
     {
       "area": "contributions",
-      "status": "not-allowed",
-      "description": "The policy highlights entirely AI-generated PRs used for low-effort contribution farming and reserves the right to close any PR deemed unproductive or low-effort.",
+      "status": "discouraged",
+      "description": "Entirely AI-generated PRs submitted as low-effort contribution farming are discouraged, and maintainers may close PRs they deem unproductive or low-effort.",
       "quotes": [
         {
           "quote": "However, we are aware that **many people are sending entirely AI-generated PRs as a low-effort way to farm OSS contributions**, so please be mindful of the following etiquette to show your respect for our time and our codebase:",
@@ -279,7 +279,7 @@
   "referencedPolicies": [],
   "rubricVersion": 1,
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-25",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-09",
   "lastChanged": "2026-10-25"
 }

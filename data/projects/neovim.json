@@ -4,11 +4,12 @@
   "category": "application",
   "homepage": "https://neovim.io/",
   "repo": "https://github.com/neovim/neovim",
-  "summary": "Using AI for contributions is acceptable as long as the contributor reviews the output before requesting review and trims verbosity from code, docs, comments, PR descriptions and commit messages.",
+  "summary": "Neovim accepts AI-assisted contributions, but the human must review, understand and steer the AI's output rather than sending one-shot AI pull requests. AI-written text such as PR descriptions, commit messages and documentation must be concise and free of AI padding; ignoring the AI guidance gets the PR closed and can get the author blocked from the organization.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
+        "human-accountable",
         "human-reviewed"
       ]
     },
@@ -26,30 +27,371 @@
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "Using AI for contributions is acceptable, given the following:",
+      "quote": "You are expected to review the generated code yourself, understand it, ask your AI questions and guide it through improvements and refinements that consider the \"whole picture\".",
       "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
-      "quote": "YOU review the output before sending a non-Draft PR.",
+      "quote": "Review the output yourself before sending a non-Draft PR. Do NOT request review until YOU have checked the AI generated code.",
+      "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "AI work is only valuable if you, the human, review it and ask questions to drive further improvements. Do not send AI \"one-shot\" PRs.",
+      "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "AI is more valuable when it's guided by you, the human, with the goal of producing elegant code that fits the project vision, conventions, and architecture.",
+      "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "REMOVE verbosity and blathering from documentation, comments, PR description, commit message, etc. All resources, including names, should be CONCISE and CLEAR.",
+      "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "REMOVE and DEDUPLICATE redundant code, tests, explanations, etc. Explicitness and clarity are GOOD but verbosity, over-explanation, and redundancy is BAD.",
       "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
     },
     {
       "dimension": "summaries",
-      "quote": "REMOVE verbosity and blathering from documentation, comments, PR description, commit message, etc.",
+      "quote": "REMOVE verbosity and blathering from documentation, comments, PR description, commit message, etc. All resources, including names, should be CONCISE and CLEAR.",
+      "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "If your PR description includes noise such as a \"Testing\" section with excruciating detail about how the AI tested the code (completely useless for reviewers: we have CI), that indicates you didn't understand the above guidance; your PR will be closed and you will be blocked from the org.",
+      "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Before sending a PR, read [AI-assisted work](#ai-assisted-work), otherwise your PR will be closed and you may be blocked from the org.",
       "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
     }
   ],
   "sources": [
     {
       "url": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md",
-      "title": "Contributing to Neovim",
-      "hash": "1574bea1fc4c0ad3a2b5fb463ee5d8c6a3eacafc8f797aa3599156752b09df8d",
-      "fetchedAt": "2026-10-09"
+      "title": "CONTRIBUTING.md",
+      "hash": "9c9e1413b167adc03d119b132fa4cda77187a35edb58e536abe889aaf4b8f745",
+      "fetchedAt": "2026-11-09"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review the AI-generated code yourself before sending a non-Draft PR"
+        }
+      ],
+      "note": "Code the AI helped produce must be checked by the contributor before it goes into a non-Draft pull request.",
+      "quotes": [
+        {
+          "quote": "You are expected to review the generated code yourself, understand it, ask your AI questions and guide it through improvements and refinements that consider the \"whole picture\".",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Review the output yourself before sending a non-Draft PR. Do NOT request review until YOU have checked the AI generated code.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review the output yourself; do not request review until you have checked the AI-generated code"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Guide and iterate with the AI; no unexamined \"one-shot\" output"
+        }
+      ],
+      "note": "Small AI-assisted fixes are fine when the human reviews them, understands them and drives the AI's refinements.",
+      "quotes": [
+        {
+          "quote": "AI work is only valuable if you, the human, review it and ask questions to drive further improvements. Do not send AI \"one-shot\" PRs.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You are expected to review the generated code yourself, understand it, ask your AI questions and guide it through improvements and refinements that consider the \"whole picture\".",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "AI is more valuable when it's guided by you, the human, with the goal of producing elegant code that fits the project vision, conventions, and architecture.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Review the output yourself before sending a non-Draft PR. Do NOT request review until YOU have checked the AI generated code.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "REMOVE verbosity and blathering from documentation, comments, PR description, commit message, etc. All resources, including names, should be CONCISE and CLEAR.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "REMOVE and DEDUPLICATE redundant code, tests, explanations, etc. Explicitness and clarity are GOOD but verbosity, over-explanation, and redundancy is BAD.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review the output yourself; do not request review until you have checked the AI-generated code"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Guide and iterate with the AI; no unexamined \"one-shot\" output"
+        }
+      ],
+      "note": "There is no size limit, but large AI-assisted changes must be human-guided and reviewed, with redundant and verbose output stripped out.",
+      "quotes": [
+        {
+          "quote": "AI work is only valuable if you, the human, review it and ask questions to drive further improvements. Do not send AI \"one-shot\" PRs.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You are expected to review the generated code yourself, understand it, ask your AI questions and guide it through improvements and refinements that consider the \"whole picture\".",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "AI is more valuable when it's guided by you, the human, with the goal of producing elegant code that fits the project vision, conventions, and architecture.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Review the output yourself before sending a non-Draft PR. Do NOT request review until YOU have checked the AI generated code.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "REMOVE and DEDUPLICATE redundant code, tests, explanations, etc. Explicitness and clarity are GOOD but verbosity, over-explanation, and redundancy is BAD.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review the output yourself; do not request review until you have checked the AI-generated code"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Guide and iterate with the AI; no unexamined \"one-shot\" output"
+        }
+      ],
+      "note": "Mechanical AI edits fall under the general rule: the human must check and understand the result before submitting it.",
+      "quotes": [
+        {
+          "quote": "AI work is only valuable if you, the human, review it and ask questions to drive further improvements. Do not send AI \"one-shot\" PRs.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You are expected to review the generated code yourself, understand it, ask your AI questions and guide it through improvements and refinements that consider the \"whole picture\".",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "AI is more valuable when it's guided by you, the human, with the goal of producing elegant code that fits the project vision, conventions, and architecture.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Review the output yourself before sending a non-Draft PR. Do NOT request review until YOU have checked the AI generated code.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "REMOVE and DEDUPLICATE redundant code, tests, explanations, etc. Explicitness and clarity are GOOD but verbosity, over-explanation, and redundancy is BAD.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review the output yourself and deduplicate redundant tests"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Guide and iterate with the AI; no unexamined \"one-shot\" output"
+        }
+      ],
+      "note": "AI-written tests are accepted if the human reviews them and removes redundant or bloated ones.",
+      "quotes": [
+        {
+          "quote": "AI work is only valuable if you, the human, review it and ask questions to drive further improvements. Do not send AI \"one-shot\" PRs.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You are expected to review the generated code yourself, understand it, ask your AI questions and guide it through improvements and refinements that consider the \"whole picture\".",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Review the output yourself before sending a non-Draft PR. Do NOT request review until YOU have checked the AI generated code.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "REMOVE and DEDUPLICATE redundant code, tests, explanations, etc. Explicitness and clarity are GOOD but verbosity, over-explanation, and redundancy is BAD.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review the output yourself; do not request review until you have checked the AI-generated code"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Guide and iterate with the AI; no unexamined \"one-shot\" output"
+        }
+      ],
+      "note": "Build and CI code written with AI is covered by the same review-and-guide requirements.",
+      "quotes": [
+        {
+          "quote": "AI work is only valuable if you, the human, review it and ask questions to drive further improvements. Do not send AI \"one-shot\" PRs.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "You are expected to review the generated code yourself, understand it, ask your AI questions and guide it through improvements and refinements that consider the \"whole picture\".",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Review the output yourself before sending a non-Draft PR. Do NOT request review until YOU have checked the AI generated code.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "REMOVE and DEDUPLICATE redundant code, tests, explanations, etc. Explicitness and clarity are GOOD but verbosity, over-explanation, and redundancy is BAD.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Remove verbosity, blathering, redundant explanations and AI padding from documentation"
+        }
+      ],
+      "note": "AI-assisted documentation is allowed but must be concise, clear and contain only useful information.",
+      "quotes": [
+        {
+          "quote": "You are expected to review the generated code yourself, understand it, ask your AI questions and guide it through improvements and refinements that consider the \"whole picture\".",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Review the output yourself before sending a non-Draft PR. Do NOT request review until YOU have checked the AI generated code.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "REMOVE verbosity and blathering from documentation, comments, PR description, commit message, etc. All resources, including names, should be CONCISE and CLEAR.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "REMOVE and DEDUPLICATE redundant code, tests, explanations, etc. Explicitness and clarity are GOOD but verbosity, over-explanation, and redundancy is BAD.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Remove verbosity and AI boilerplate; a noisy \"how the AI tested it\" section gets the PR closed"
+        }
+      ],
+      "note": "AI-written PR descriptions are accepted only if concise; padding about how the AI tested the code will get the PR closed.",
+      "quotes": [
+        {
+          "quote": "REMOVE verbosity and blathering from documentation, comments, PR description, commit message, etc. All resources, including names, should be CONCISE and CLEAR.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If your PR description includes noise such as a \"Testing\" section with excruciating detail about how the AI tested the code (completely useless for reviewers: we have CI), that indicates you didn't understand the above guidance; your PR will be closed and you will be blocked from the org.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "commit-message",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Remove verbosity and blathering from the commit message"
+        }
+      ],
+      "note": "AI-written commit messages are allowed but must be concise and free of AI padding.",
+      "quotes": [
+        {
+          "quote": "REMOVE verbosity and blathering from documentation, comments, PR description, commit message, etc. All resources, including names, should be CONCISE and CLEAR.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "Contributors must read and follow the \"AI-assisted work\" section before sending a pull request; PRs that ignore it are closed and the author may be blocked from the organization.",
+      "quotes": [
+        {
+          "quote": "Before sending a PR, read [AI-assisted work](#ai-assisted-work), otherwise your PR will be closed and you may be blocked from the org.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "AI \"one-shot\" pull requests, produced in a single AI pass without the human questioning and refining the output, are explicitly rejected.",
+      "quotes": [
+        {
+          "quote": "AI work is only valuable if you, the human, review it and ask questions to drive further improvements. Do not send AI \"one-shot\" PRs.",
+          "sourceUrl": "https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-09",
+  "lastChanged": "2026-11-09"
 }

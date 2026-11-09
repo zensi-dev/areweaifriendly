@@ -4,12 +4,13 @@
   "category": "application",
   "homepage": "https://www.darktable.org/",
   "repo": "https://github.com/darktable-org/darktable",
-  "summary": "The repository's agent guide asks for AI assistance to be disclosed in the pull request description. No other AI rules are published.",
+  "summary": "AI coding agents may make task-scoped code and documentation changes, but must ask first before substantial changes, dependencies, public API or schema changes, or touching unnamed subsystems. AI assistance must be disclosed in the pull request description rather than through an invented commit trailer, and committing, pushing and opening the PR remain human steps.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
-        "disclosure"
+        "disclosure",
+        "no-autonomous-agents"
       ]
     },
     "issues": {
@@ -17,19 +18,131 @@
       "conditions": []
     },
     "summaries": {
-      "verdict": "unspecified",
-      "conditions": []
+      "verdict": "conditional",
+      "conditions": [
+        "limited-scope"
+      ]
     }
   },
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "Disclose AI assistance in the pull request description instead of inventing a trailer convention.",
+      "quote": "Instructions for AI coding agents working on darktable.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Go ahead without asking: read anything, build, run the test suites, run\n`darktable-cli`, and edit the files the task is about.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Ask first: adding a dependency, changing a public API or the database schema,\ntouching a subsystem the task did not name, and anything CONTRIBUTING.md calls\nsubstantial -- discuss those before writing them, not after.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Finish at a staged change, and a drafted commit message if one was asked for.\nCommitting, pushing and opening the PR are the human's steps, and they will\nusually not be asked for at all.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Commit trailers are rare here. Disclose AI assistance in the pull request\ndescription instead of inventing a trailer convention.",
       "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
     },
     {
       "dimension": "contributions",
       "quote": "Disclose that the change was written with AI assistance",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Never reformat, rename or tidy code the task did not touch, and never fix an\nunrelated bug you notice in passing: mention it instead.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Finish at a staged change, and a drafted commit message if one was asked for.\nCommitting, pushing and opening the PR are the human's steps, and they will\nusually not be asked for at all.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Stage only the files the task touched -- never `git add -A` over a tree you have not looked at -- and keep build output,\neditor files and scratch notes out of it.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not add a comment, file or abstraction that nobody requested.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Read [`dev-doc/`](dev-doc/README.md) before changing a subsystem.**",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Most bad agent patches come from inferring an API instead of opening the page\nthat documents it.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Verify with a real build before proposing changes. A change that has only been\nreasoned about is not finished.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If you touch code behind an `#ifdef`, build\nwith that feature both on and off.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Run them if you touch the pixelpipe or any `src/iop/` module.**",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "The most common failure is confident output that was never executed.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Read the code you are changing before changing it. Do not infer an API from\nits name",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "When you state a fact about the codebase, cite the file and line you read it\nfrom",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Run the app, or at least the code path, when the change is user-visible.\n`darktable-cli` runs headless",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Say plainly what you did not verify. \"This builds but I have not run it\" is\nuseful; silence is not",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not invent file paths, function names, config keys or CMake options. If\nyou are unsure whether something exists, check",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not claim something works because it should",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Long em-dashed asides read as machine-written and make an agent's comments stand out\nfrom the code around them.",
+      "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Do not narrate your process, leave TODO notes about your own work, or\ndescribe what the code \"will\" do",
       "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
     }
   ],
@@ -37,12 +150,508 @@
     {
       "url": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md",
       "title": "AGENTS.md – darktable",
-      "hash": "c1ca56834afa383d8431d26d341e1121439fad54edfd1c5c2e15754c0142281a",
-      "fetchedAt": "2026-10-10"
+      "hash": "b2ddf660c9b6f960d65390b71ddf12a52ef485be0895a19bcc9289f91e340966",
+      "fetchedAt": "2026-11-09"
     }
   ],
+  "rules": [
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "In the pull request description, not via an invented commit trailer"
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Human commits, pushes and opens the PR; agents stop at a staged change"
+        },
+        {
+          "condition": "prior-approval",
+          "strength": "required",
+          "detail": "Ask first for dependencies, public API/schema changes, unnamed subsystems, or substantial changes"
+        }
+      ],
+      "note": "AI agents may make task-scoped small code changes if AI assistance is disclosed and a human performs commit, push and PR.",
+      "quotes": [
+        {
+          "quote": "Instructions for AI coding agents working on darktable.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Go ahead without asking: read anything, build, run the test suites, run\n`darktable-cli`, and edit the files the task is about.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Ask first: adding a dependency, changing a public API or the database schema,\ntouching a subsystem the task did not name, and anything CONTRIBUTING.md calls\nsubstantial -- discuss those before writing them, not after.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Finish at a staged change, and a drafted commit message if one was asked for.\nCommitting, pushing and opening the PR are the human's steps, and they will\nusually not be asked for at all.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Commit trailers are rare here. Disclose AI assistance in the pull request\ndescription instead of inventing a trailer convention.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Disclose that the change was written with AI assistance",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "In the pull request description, not via an invented commit trailer"
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Human commits, pushes and opens the PR; agents stop at a staged change"
+        },
+        {
+          "condition": "prior-approval",
+          "strength": "required",
+          "detail": "Anything substantial, plus dependencies, public API or schema changes, must be discussed before writing"
+        }
+      ],
+      "note": "AI agents may make larger task-scoped code changes, but substantial changes must be discussed first; AI assistance must be disclosed and a human commits, pushes and opens the PR.",
+      "quotes": [
+        {
+          "quote": "Instructions for AI coding agents working on darktable.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Go ahead without asking: read anything, build, run the test suites, run\n`darktable-cli`, and edit the files the task is about.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Ask first: adding a dependency, changing a public API or the database schema,\ntouching a subsystem the task did not name, and anything CONTRIBUTING.md calls\nsubstantial -- discuss those before writing them, not after.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Finish at a staged change, and a drafted commit message if one was asked for.\nCommitting, pushing and opening the PR are the human's steps, and they will\nusually not be asked for at all.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Commit trailers are rare here. Disclose AI assistance in the pull request\ndescription instead of inventing a trailer convention.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Disclose that the change was written with AI assistance",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "In the pull request description, not via an invented commit trailer"
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Human commits, pushes and opens the PR; agents stop at a staged change"
+        },
+        {
+          "condition": "size-limit",
+          "strength": "required",
+          "detail": "Only code the task touched; never reformat, rename or tidy unrelated code"
+        },
+        {
+          "condition": "prior-approval",
+          "strength": "required",
+          "detail": "Ask first if the mechanical edit is substantial"
+        }
+      ],
+      "note": "Task-scoped mechanical edits are permitted, but AI agents must not reformat, rename or tidy code the task did not touch.",
+      "quotes": [
+        {
+          "quote": "Go ahead without asking: read anything, build, run the test suites, run\n`darktable-cli`, and edit the files the task is about.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Finish at a staged change, and a drafted commit message if one was asked for.\nCommitting, pushing and opening the PR are the human's steps, and they will\nusually not be asked for at all.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Never reformat, rename or tidy code the task did not touch, and never fix an\nunrelated bug you notice in passing: mention it instead.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Commit trailers are rare here. Disclose AI assistance in the pull request\ndescription instead of inventing a trailer convention.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Disclose that the change was written with AI assistance",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "In the pull request description, not via an invented commit trailer"
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Human commits, pushes and opens the PR; agents stop at a staged change"
+        },
+        {
+          "condition": "prior-approval",
+          "strength": "required",
+          "detail": "Ask first if the test change is substantial or touches dependencies, public API/schema, or an unnamed subsystem"
+        }
+      ],
+      "note": "Covered by the general permission for AI agents to edit task files; disclose AI assistance and leave commit, push and PR to a human.",
+      "quotes": [
+        {
+          "quote": "Instructions for AI coding agents working on darktable.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Go ahead without asking: read anything, build, run the test suites, run\n`darktable-cli`, and edit the files the task is about.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Ask first: adding a dependency, changing a public API or the database schema,\ntouching a subsystem the task did not name, and anything CONTRIBUTING.md calls\nsubstantial -- discuss those before writing them, not after.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Finish at a staged change, and a drafted commit message if one was asked for.\nCommitting, pushing and opening the PR are the human's steps, and they will\nusually not be asked for at all.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Commit trailers are rare here. Disclose AI assistance in the pull request\ndescription instead of inventing a trailer convention.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Disclose that the change was written with AI assistance",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "In the pull request description, not via an invented commit trailer"
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Human commits, pushes and opens the PR; agents stop at a staged change"
+        },
+        {
+          "condition": "prior-approval",
+          "strength": "required",
+          "detail": "Ask first before adding a dependency or changing substantial build/CI infrastructure"
+        }
+      ],
+      "note": "Covered by the general permission for AI agents to edit task files; adding a dependency needs prior approval, AI assistance must be disclosed, and a human commits, pushes and opens the PR.",
+      "quotes": [
+        {
+          "quote": "Instructions for AI coding agents working on darktable.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Go ahead without asking: read anything, build, run the test suites, run\n`darktable-cli`, and edit the files the task is about.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Ask first: adding a dependency, changing a public API or the database schema,\ntouching a subsystem the task did not name, and anything CONTRIBUTING.md calls\nsubstantial -- discuss those before writing them, not after.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Finish at a staged change, and a drafted commit message if one was asked for.\nCommitting, pushing and opening the PR are the human's steps, and they will\nusually not be asked for at all.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Commit trailers are rare here. Disclose AI assistance in the pull request\ndescription instead of inventing a trailer convention.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Disclose that the change was written with AI assistance",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "In the pull request description, not via an invented commit trailer"
+        },
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "Human commits, pushes and opens the PR; agents stop at a staged change"
+        }
+      ],
+      "note": "Covered by the general permission for AI agents to edit task files, including release notes; disclose AI assistance and leave commit, push and PR to a human.",
+      "quotes": [
+        {
+          "quote": "Instructions for AI coding agents working on darktable.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Go ahead without asking: read anything, build, run the test suites, run\n`darktable-cli`, and edit the files the task is about.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Finish at a staged change, and a drafted commit message if one was asked for.\nCommitting, pushing and opening the PR are the human's steps, and they will\nusually not be asked for at all.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Commit trailers are rare here. Disclose AI assistance in the pull request\ndescription instead of inventing a trailer convention.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Disclose that the change was written with AI assistance",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "allowed",
+      "conditions": [],
+      "note": "AI agents may read anything, build, run tests and use `darktable-cli` without asking.",
+      "quotes": [
+        {
+          "quote": "Go ahead without asking: read anything, build, run the test suites, run\n`darktable-cli`, and edit the files the task is about.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "ai-authorship",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Disclose AI assistance in the pull request description; do not invent an AI commit trailer.",
+      "quotes": [
+        {
+          "quote": "Commit trailers are rare here. Disclose AI assistance in the pull request\ndescription instead of inventing a trailer convention.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Disclose that the change was written with AI assistance",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-contributions",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI agents may edit and stage task-scoped changes, but committing, pushing and opening the PR are human steps.",
+      "quotes": [
+        {
+          "quote": "Instructions for AI coding agents working on darktable.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Finish at a staged change, and a drafted commit message if one was asked for.\nCommitting, pushing and opening the PR are the human's steps, and they will\nusually not be asked for at all.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "use": "commit-message",
+      "status": "allowed",
+      "conditions": [],
+      "note": "A commit message may be drafted only if one was asked for; the human commits.",
+      "quotes": [
+        {
+          "quote": "Finish at a staged change, and a drafted commit message if one was asked for.\nCommitting, pushing and opening the PR are the human's steps, and they will\nusually not be asked for at all.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "AI agents may work without asking on reading, building, running tests and editing task files, but must ask first before adding dependencies, changing public APIs or the database schema, touching unnamed subsystems, or making substantial changes.",
+      "quotes": [
+        {
+          "quote": "Go ahead without asking: read anything, build, run the test suites, run\n`darktable-cli`, and edit the files the task is about.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Ask first: adding a dependency, changing a public API or the database schema,\ntouching a subsystem the task did not name, and anything CONTRIBUTING.md calls\nsubstantial -- discuss those before writing them, not after.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "AI agents must stage only files the task touched, never use `git add -A` over an unexamined tree, and keep build output, editor files and scratch notes out of the staging area.",
+      "quotes": [
+        {
+          "quote": "Stage only the files the task touched -- never `git add -A` over a tree you have not looked at -- and keep build output,\neditor files and scratch notes out of it.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "AI agents must not reformat, rename or tidy code the task did not touch, and must mention unrelated bugs instead of fixing them.",
+      "quotes": [
+        {
+          "quote": "Never reformat, rename or tidy code the task did not touch, and never fix an\nunrelated bug you notice in passing: mention it instead.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "AI agents must not add comments, files or abstractions nobody requested.",
+      "quotes": [
+        {
+          "quote": "Do not add a comment, file or abstraction that nobody requested.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "AI agents must read the in-tree developer documentation before changing a subsystem and must not infer APIs from names.",
+      "quotes": [
+        {
+          "quote": "**Read [`dev-doc/`](dev-doc/README.md) before changing a subsystem.**",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Most bad agent patches come from inferring an API instead of opening the page\nthat documents it.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "AI agents must verify with a real build before proposing changes, build both sides of relevant `#ifdef`s, and run relevant tests.",
+      "quotes": [
+        {
+          "quote": "Verify with a real build before proposing changes. A change that has only been\nreasoned about is not finished.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "If you touch code behind an `#ifdef`, build\nwith that feature both on and off.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "**Run them if you touch the pixelpipe or any `src/iop/` module.**",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "AI agents must not present unexecuted or unverified output as fact: read the code, cite file and line for claims, run the app for user-visible changes, say what was not verified, and do not invent paths or claim something works because it should.",
+      "quotes": [
+        {
+          "quote": "The most common failure is confident output that was never executed.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Read the code you are changing before changing it. Do not infer an API from\nits name",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "When you state a fact about the codebase, cite the file and line you read it\nfrom",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Run the app, or at least the code path, when the change is user-visible.\n`darktable-cli` runs headless",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Say plainly what you did not verify. \"This builds but I have not run it\" is\nuseful; silence is not",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Do not invent file paths, function names, config keys or CMake options. If\nyou are unsure whether something exists, check",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "Do not claim something works because it should",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "discouraged",
+      "description": "AI agents should avoid long em-dashed asides in code comments because they read as machine-written.",
+      "quotes": [
+        {
+          "quote": "Long em-dashed asides read as machine-written and make an agent's comments stand out\nfrom the code around them.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "AI agents must not narrate their process or leave TODO notes about their own work in code comments.",
+      "quotes": [
+        {
+          "quote": "Do not narrate your process, leave TODO notes about your own work, or\ndescribe what the code \"will\" do",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "conditional",
+      "description": "AI agents must read and follow `AGENTS.local.md` if present, but local instructions do not change what a pull request may contain.",
+      "quotes": [
+        {
+          "quote": "If `AGENTS.local.md` exists in the repo root, read it too and follow it\nalongside this file.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        },
+        {
+          "quote": "It can change how you work -- the build and run commands above, for instance.\nIt does not change what a PR may contain: the conventions in this file still\ngovern that.",
+          "sourceUrl": "https://github.com/darktable-org/darktable/blob/master/AGENTS.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
   "confidence": "medium",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-09",
+  "lastChanged": "2026-11-09"
 }

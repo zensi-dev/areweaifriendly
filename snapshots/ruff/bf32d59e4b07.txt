@@ -1,3 +1,5 @@
+This policy is for external contributors, not members of the Astral team.
+
 We support using AI (i.e., LLMs) as tools for coding. However, you remain
 responsible for any code you publish and we are responsible for any code we
 merge and release. We hold a high bar for all contributions to our projects.
@@ -25,7 +27,7 @@ accompanied by human commentary explaining the relevance and implications of the
 context. Do not share long snippets.
 
 We understand that AI is useful when communicating as a non-native English
-speaker. If you are using AI to edit your comments for this purpose, please take
-the time to ensure it reflects your own voice and ideas. If using AI for
-translation, we recommend writing in your native language and including the AI
-translation in a quote block.
+speaker. If you are using AI to edit your comments for this purpose, you must:
+
+- Take the time to ensure it reflects your own voice and ideas.
+- Write in your native language, and include the AI translation in a quote block beneath it.

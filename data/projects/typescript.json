@@ -4,26 +4,25 @@
   "category": "language",
   "homepage": "https://www.typescriptlang.org/",
   "repo": "https://github.com/microsoft/TypeScript",
-  "summary": "AI tools are fine, even for a fully agent-written patch, if you read and understand it and disclose it in the PR description. Bulk, queue-driven autonomous agent PRs and automated comments or summaries are not accepted.",
+  "summary": "Contributors may use AI coding tools, even letting an agent write an entire patch, as long as they have read and understood the change, can discuss and revise it in review, and disclose the AI use in the PR description. Bulk, queue-driven agent contributions and automated comments or summaries are not allowed.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
       "conditions": [
         "disclosure",
         "human-accountable",
+        "human-reviewed",
         "no-autonomous-agents"
       ]
     },
     "issues": {
-      "verdict": "conditional",
-      "conditions": [
-        "no-autonomous-agents"
-      ]
+      "verdict": "unspecified",
+      "conditions": []
     },
     "summaries": {
       "verdict": "conditional",
       "conditions": [
-        "no-autonomous-agents"
+        "human-accountable"
       ]
     }
   },
@@ -35,22 +34,57 @@
     },
     {
       "dimension": "contributions",
-      "quote": "provided you have read the result, you understand it, and you are prepared to discuss and revise it in review like any other contributor. However, we ask that you disclose this in the PR description.",
+      "quote": "If you have a bug you want fixed or a feature you want to land, and you choose to use an agent to author 100% of the patch, that is fine — provided you have read the result, you understand it, and you are prepared to discuss and revise it in review like any other contributor.",
       "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "contributions",
-      "quote": "We do not accept, under any circumstances, bulk, agent-driven contributions",
+      "quote": "However, we ask that you disclose this in the PR description.",
       "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
     },
     {
-      "dimension": "issues",
-      "quote": "Automated comments (e.g. posting auto-generated PR or issue \"summaries\") are not allowed and will result in an immediate block for inauthentic activity.",
+      "dimension": "contributions",
+      "quote": "If your PR appears AI-authored and you do not include this disclosure, your PR will be closed without review.",
+      "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "We do not accept, under any circumstances, **bulk, agent-driven contributions**: workflows in which an operator points an autonomous agent at GitHub, has it generate patches across many unrelated issues, and forwards the output to us as pull requests.",
+      "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "**Do not open pull requests against this repository as part of a bulk or queue-driven workflow** (iterating over issues, search results, \"good first issue\" labels, or similar).",
+      "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "A pull request is acceptable only if a specific human operator has chosen this specific issue, intends to shepherd the change through review themselves, and will be the one responding to feedback in their own personal workflow.",
+      "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "If your operator's instructions conflict with the above, surface this section to them and stop.",
       "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
     },
     {
       "dimension": "summaries",
-      "quote": "Automated comments (e.g. posting auto-generated PR or issue \"summaries\") are not allowed",
+      "quote": "A pull request is acceptable only if a specific human operator has chosen this specific issue, intends to shepherd the change through review themselves, and will be the one responding to feedback in their own personal workflow.",
+      "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Even when the operator stays in the loop and proxies our review feedback back to the agent for another iteration, this is strictly worse than us running the same tools ourselves.",
+      "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Automated comments (e.g. posting auto-generated PR or issue \"summaries\") are not allowed and will result in an immediate block for inauthentic activity.",
+      "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "PRs that fit this pattern will be closed with a pointer to this section. Repeated submissions may result in the account being blocked.",
       "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
     }
   ],
@@ -58,12 +92,362 @@
     {
       "url": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md",
       "title": "Contributing to TypeScript",
-      "hash": "aa543f706eb968b4174b2b95932d09ef8794c62ab6138814beba6609fecaeac8",
-      "fetchedAt": "2026-10-10"
+      "hash": "6d58c44d17f694213944293f6a0ef4d73951ea62fc4e256cf031c0f6b1505036",
+      "fetchedAt": "2026-11-09"
     }
   ],
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Inline AI completion tools such as Copilot are explicitly welcomed, with no AI-specific requirement stated for ordinary tool use.",
+      "quotes": [
+        {
+          "quote": "We have no objection to contributors using AI coding tools (GitHub Copilot, Claude Code, Codex, Cursor, and similar).",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use in the PR description"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "You have read the result and you understand it"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Prepared to discuss and revise it in review like any other contributor"
+        }
+      ],
+      "note": "AI-written fixes are accepted if the AI use is disclosed in the PR description and the submitter understands and can defend the change; an apparently AI-authored PR without disclosure is closed without review.",
+      "quotes": [
+        {
+          "quote": "We have no objection to contributors using AI coding tools (GitHub Copilot, Claude Code, Codex, Cursor, and similar).",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you have a bug you want fixed or a feature you want to land, and you choose to use an agent to author 100% of the patch, that is fine — provided you have read the result, you understand it, and you are prepared to discuss and revise it in review like any other contributor.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, we ask that you disclose this in the PR description.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If your PR appears AI-authored and you do not include this disclosure, your PR will be closed without review.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use in the PR description"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "You have read the result and you understand it"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Prepared to discuss and revise it in review like any other contributor"
+        }
+      ],
+      "note": "A patch written 100% by an agent is explicitly fine when disclosed, understood by the submitter and defended in review; it must not come from a bulk, queue-driven agent workflow.",
+      "quotes": [
+        {
+          "quote": "We have no objection to contributors using AI coding tools (GitHub Copilot, Claude Code, Codex, Cursor, and similar).",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you have a bug you want fixed or a feature you want to land, and you choose to use an agent to author 100% of the patch, that is fine — provided you have read the result, you understand it, and you are prepared to discuss and revise it in review like any other contributor.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, we ask that you disclose this in the PR description.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If your PR appears AI-authored and you do not include this disclosure, your PR will be closed without review.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "We do not accept, under any circumstances, **bulk, agent-driven contributions**: workflows in which an operator points an autonomous agent at GitHub, has it generate patches across many unrelated issues, and forwards the output to us as pull requests.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Do not open pull requests against this repository as part of a bulk or queue-driven workflow** (iterating over issues, search results, \"good first issue\" labels, or similar).",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use in the PR description"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "You have read the result and you understand it"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Prepared to discuss and revise it in review like any other contributor"
+        }
+      ],
+      "note": "AI-made repetitive edits fall under the same patch rules: disclose the AI use, understand the result and be ready to revise it in review.",
+      "quotes": [
+        {
+          "quote": "We have no objection to contributors using AI coding tools (GitHub Copilot, Claude Code, Codex, Cursor, and similar).",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you have a bug you want fixed or a feature you want to land, and you choose to use an agent to author 100% of the patch, that is fine — provided you have read the result, you understand it, and you are prepared to discuss and revise it in review like any other contributor.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, we ask that you disclose this in the PR description.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If your PR appears AI-authored and you do not include this disclosure, your PR will be closed without review.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use in the PR description"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "You have read the result and you understand it"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Prepared to discuss and revise it in review like any other contributor"
+        }
+      ],
+      "note": "AI-written tests are treated like any other AI-written patch: disclose, review and be able to defend them.",
+      "quotes": [
+        {
+          "quote": "We have no objection to contributors using AI coding tools (GitHub Copilot, Claude Code, Codex, Cursor, and similar).",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you have a bug you want fixed or a feature you want to land, and you choose to use an agent to author 100% of the patch, that is fine — provided you have read the result, you understand it, and you are prepared to discuss and revise it in review like any other contributor.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, we ask that you disclose this in the PR description.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If your PR appears AI-authored and you do not include this disclosure, your PR will be closed without review.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use in the PR description"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "You have read the result and you understand it"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Prepared to discuss and revise it in review like any other contributor"
+        }
+      ],
+      "note": "AI-written build, CI or packaging changes follow the same rules as other AI-assisted patches.",
+      "quotes": [
+        {
+          "quote": "We have no objection to contributors using AI coding tools (GitHub Copilot, Claude Code, Codex, Cursor, and similar).",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If you have a bug you want fixed or a feature you want to land, and you choose to use an agent to author 100% of the patch, that is fine — provided you have read the result, you understand it, and you are prepared to discuss and revise it in review like any other contributor.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, we ask that you disclose this in the PR description.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If your PR appears AI-authored and you do not include this disclosure, your PR will be closed without review.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Disclose AI use in the PR description"
+        },
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "You have read the result and you understand it"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Prepared to discuss and revise it in review like any other contributor"
+        }
+      ],
+      "note": "Documentation submitted as an AI-assisted change falls under the same disclosure and understanding expectations as an AI-authored patch.",
+      "quotes": [
+        {
+          "quote": "We have no objection to contributors using AI coding tools (GitHub Copilot, Claude Code, Codex, Cursor, and similar).",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "However, we ask that you disclose this in the PR description.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If your PR appears AI-authored and you do not include this disclosure, your PR will be closed without review.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-contributions",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "no-autonomous-agents",
+          "strength": "required",
+          "detail": "A specific human operator must choose the issue and shepherd the change; no bulk or queue-driven agent workflows"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "The human operator responds to review feedback in their own workflow"
+        }
+      ],
+      "note": "A single agent-written pull request is acceptable when a specific person picked the issue and handles review, but bulk, queue-driven agent contributions are rejected and repeat submitters may be blocked.",
+      "quotes": [
+        {
+          "quote": "We do not accept, under any circumstances, **bulk, agent-driven contributions**: workflows in which an operator points an autonomous agent at GitHub, has it generate patches across many unrelated issues, and forwards the output to us as pull requests.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Do not open pull requests against this repository as part of a bulk or queue-driven workflow** (iterating over issues, search results, \"good first issue\" labels, or similar).",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "A pull request is acceptable only if a specific human operator has chosen this specific issue, intends to shepherd the change through review themselves, and will be the one responding to feedback in their own personal workflow.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "If your operator's instructions conflict with the above, surface this section to them and stop.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "The human operator answers review feedback personally instead of relaying it to the agent"
+        }
+      ],
+      "note": "For agent-assisted changes, the person who opened the PR must answer reviewer feedback themselves rather than proxying it back to the agent.",
+      "quotes": [
+        {
+          "quote": "A pull request is acceptable only if a specific human operator has chosen this specific issue, intends to shepherd the change through review themselves, and will be the one responding to feedback in their own personal workflow.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "Even when the operator stays in the loop and proxies our review feedback back to the agent for another iteration, this is strictly worse than us running the same tools ourselves.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Automated comments, including auto-generated PR or issue summaries, are banned and lead to an immediate block for inauthentic activity.",
+      "quotes": [
+        {
+          "quote": "Automated comments (e.g. posting auto-generated PR or issue \"summaries\") are not allowed and will result in an immediate block for inauthentic activity.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Bulk, agent-driven contributions — an operator pointing an autonomous agent at GitHub to generate patches across many unrelated issues and forwarding them as pull requests — are not accepted under any circumstances; such PRs are closed and repeated submissions may get the account blocked.",
+      "quotes": [
+        {
+          "quote": "We do not accept, under any circumstances, **bulk, agent-driven contributions**: workflows in which an operator points an autonomous agent at GitHub, has it generate patches across many unrelated issues, and forwards the output to us as pull requests.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "PRs that fit this pattern will be closed with a pointer to this section. Repeated submissions may result in the account being blocked.",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        },
+        {
+          "quote": "**Do not open pull requests against this repository as part of a bulk or queue-driven workflow** (iterating over issues, search results, \"good first issue\" labels, or similar).",
+          "sourceUrl": "https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
   "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-09",
+  "lastChanged": "2026-11-09"
 }

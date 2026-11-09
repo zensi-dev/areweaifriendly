@@ -4,7 +4,7 @@
   "category": "application",
   "homepage": "https://apps.gnome.org/Showtime/",
   "repo": "https://gitlab.gnome.org/GNOME/showtime",
-  "summary": "AI-generated contributions are not accepted.",
+  "summary": "Showtime does not accept AI-generated contributions, so AI-written code, tests, documentation, translations and assets are not permitted. It does not state rules for AI-written issues or discussion text.",
   "policy": {
     "contributions": {
       "verdict": "banned",
@@ -30,12 +30,137 @@
     {
       "url": "https://gitlab.gnome.org/GNOME/showtime/-/blob/main/README.md",
       "title": "README.md",
-      "hash": "e4e92e810ae1b409c623322b369e64589241424b08934518e5b644e1ba957f5b",
-      "fetchedAt": "2026-10-10"
+      "hash": "5c813f572588ddc925b56f15e9a6362d760fa9f1ef255df4b7bab2fdc61e4610",
+      "fetchedAt": "2026-11-09"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated code completions that become part of a submitted contribution are not accepted.",
+      "quotes": [
+        {
+          "quote": "We do not accept AI-generated contributions.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/showtime/-/blob/main/README.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written small or targeted code changes are not accepted as contributions.",
+      "quotes": [
+        {
+          "quote": "We do not accept AI-generated contributions.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/showtime/-/blob/main/README.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written substantial code changes are not accepted as contributions.",
+      "quotes": [
+        {
+          "quote": "We do not accept AI-generated contributions.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/showtime/-/blob/main/README.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated repetitive or mechanical code edits are not accepted as contributions.",
+      "quotes": [
+        {
+          "quote": "We do not accept AI-generated contributions.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/showtime/-/blob/main/README.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written tests or benchmarks are not accepted as contributions.",
+      "quotes": [
+        {
+          "quote": "We do not accept AI-generated contributions.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/showtime/-/blob/main/README.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written build, CI, packaging or other infrastructure code is not accepted as a contribution.",
+      "quotes": [
+        {
+          "quote": "We do not accept AI-generated contributions.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/showtime/-/blob/main/README.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-written documentation, guide text or release notes submitted as changes are not accepted.",
+      "quotes": [
+        {
+          "quote": "We do not accept AI-generated contributions.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/showtime/-/blob/main/README.md"
+        }
+      ]
+    },
+    {
+      "use": "localization",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI or machine translation submitted for the project's interface strings or documentation is not accepted.",
+      "quotes": [
+        {
+          "quote": "We do not accept AI-generated contributions.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/showtime/-/blob/main/README.md"
+        }
+      ]
+    },
+    {
+      "use": "assets",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI-generated or AI-modified images, icons, artwork, audio, video or 3D models are not accepted.",
+      "quotes": [
+        {
+          "quote": "We do not accept AI-generated contributions.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/showtime/-/blob/main/README.md"
+        }
+      ]
+    },
+    {
+      "use": "agent-contributions",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI agents may not make or submit contributions.",
+      "quotes": [
+        {
+          "quote": "We do not accept AI-generated contributions.",
+          "sourceUrl": "https://gitlab.gnome.org/GNOME/showtime/-/blob/main/README.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-09",
+  "lastChanged": "2026-11-09"
 }

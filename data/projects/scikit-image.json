@@ -4,7 +4,7 @@
   "category": "library",
   "homepage": "https://scikit-image.org/",
   "repo": "https://github.com/scikit-image/scikit-image",
-  "summary": "AI may not be used to create novel code such as algorithms or tests, or to write PR descriptions and comments. It is allowed for exploring the codebase, iterating on hand-written code, trivial fixes and mechanical changes, with AI use declared and AI commits tagged Assisted-by.",
+  "summary": "scikit-image allows AI for exploring the codebase, fixing trivial bugs, mechanical edits, and easy-to-review infrastructure code, provided use is disclosed, AI-generated code is trivial to review, copyright is the contributor's responsibility, and maintainers' questions are answered without AI. AI may not create novel code, write tests, write PR descriptions or comments, or answer review questions.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -12,26 +12,22 @@
         "disclosure",
         "human-accountable",
         "license-compliance",
-        "minor-assist-only"
+        "limited-scope"
       ]
     },
     "issues": {
-      "verdict": "conditional",
-      "conditions": [
-        "minor-assist-only"
-      ]
+      "verdict": "unspecified",
+      "conditions": []
     },
     "summaries": {
-      "verdict": "conditional",
-      "conditions": [
-        "minor-assist-only"
-      ]
+      "verdict": "unspecified",
+      "conditions": []
     }
   },
   "evidence": [
     {
       "dimension": "contributions",
-      "quote": "Creating novel code (algorithmic additions, writing tests, etc.).",
+      "quote": "Disclose all generative tools (AI, LLMs, agents) that you used, see our AI Policy for details.",
       "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
     },
     {
@@ -46,30 +42,377 @@
     },
     {
       "dimension": "contributions",
-      "quote": "You must take responsibility for copyright of the AI-generated code;",
+      "quote": "As far as possible, separate AI-generated code from human-generated code with individual commits. Tag AI commits with an Assisted-by: tag as recommended by the Linux kernel. (Commits where AI was predominantly used to tidy up hand-written code or language don’t need to carry the tag.)",
       "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
     },
     {
-      "dimension": "issues",
+      "dimension": "contributions",
+      "quote": "AI-generated code must be trivial to review: the reviewer must be able to review the AI-generated code with little background in image-processing or experience working on the code-base, and see that the changes are correct. Note that tests, specifically, are rarely trivial [1].",
+      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "You must take responsibility for copyright of the AI-generated code; the simplest and best way to do this, is to make sure the code changes are trivial, in the sense that they cannot reasonably be done differently to solve the given problem.",
+      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Expect the team to ask questions about your work - and you must answer these questions yourself, without deferring to AI.",
+      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "To automate mechanical tasks. E.g., if you discover that you need to add a decorator across the code-base.",
+      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "For infrastructure code, such as CI, as long as the changes are easy to review.",
+      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Creating novel code (algorithmic additions, writing tests, etc.).[1]",
+      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+    },
+    {
+      "dimension": "summaries",
       "quote": "Writing pull request descriptions, or commenting on issues or PRs.",
       "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
     },
     {
       "dimension": "summaries",
-      "quote": "Write PR descriptions and comments by hand.",
+      "quote": "Expect the team to ask questions about your work - and you must answer these questions yourself, without deferring to AI.",
+      "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Core maintainers may use their own judgment on when and how to use AI, including for tasks outside the “how you may use AI” list above. They must still follow the requirements section: declaring tool usage, tagging commits, etc.",
       "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
     }
   ],
   "sources": [
     {
       "url": "https://scikit-image.org/docs/dev/development/contribute.html",
-      "title": "How to contribute to scikit-image",
-      "hash": "3ac93ce3e6dc1883d368968a05578732d23d87a858fcc2ba990ba9976a5d7de0",
-      "fetchedAt": "2026-10-09"
+      "title": "How to contribute to scikit-image — skimage 0.27.0rc2.dev0 documentation",
+      "hash": "b85a935a172e26393545cc5ed2e839b3ea2248011cac3de74f89d7b2c15e9908",
+      "fetchedAt": "2026-11-09"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "rules": [
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Declare AI use in the PR description and tag AI commits with Assisted-by"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand the code and answer maintainers' questions without AI"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Take responsibility for copyright of AI-generated code"
+        },
+        {
+          "condition": "size-limit",
+          "strength": "required",
+          "detail": "AI-generated code must be trivial to review"
+        }
+      ],
+      "note": "Allowed for fixing trivial bugs and iterating on hand-written code, with declaration, trivial-review, copyright and human-accountability requirements.",
+      "quotes": [
+        {
+          "quote": "Disclose all generative tools (AI, LLMs, agents) that you used, see our AI Policy for details.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "For exploring the codebase, for iterating on hand-written code, and for fixing trivial bugs.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "Always declare tool usage: say specifically what part of the task you used AI for in the PR description.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "As far as possible, separate AI-generated code from human-generated code with individual commits. Tag AI commits with an Assisted-by: tag as recommended by the Linux kernel. (Commits where AI was predominantly used to tidy up hand-written code or language don’t need to carry the tag.)",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "AI-generated code must be trivial to review: the reviewer must be able to review the AI-generated code with little background in image-processing or experience working on the code-base, and see that the changes are correct. Note that tests, specifically, are rarely trivial [1].",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "You must take responsibility for copyright of the AI-generated code; the simplest and best way to do this, is to make sure the code changes are trivial, in the sense that they cannot reasonably be done differently to solve the given problem.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "Expect the team to ask questions about your work - and you must answer these questions yourself, without deferring to AI.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Declare AI use in the PR description and tag AI commits with Assisted-by"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand the code and answer maintainers' questions without AI"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Take responsibility for copyright of AI-generated code"
+        },
+        {
+          "condition": "size-limit",
+          "strength": "required",
+          "detail": "AI-generated code must be trivial to review"
+        }
+      ],
+      "note": "Allowed for automating mechanical tasks such as adding a decorator across the codebase, subject to declaration, trivial-review, copyright and human-accountability requirements.",
+      "quotes": [
+        {
+          "quote": "Disclose all generative tools (AI, LLMs, agents) that you used, see our AI Policy for details.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "To automate mechanical tasks. E.g., if you discover that you need to add a decorator across the code-base.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "Always declare tool usage: say specifically what part of the task you used AI for in the PR description.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "As far as possible, separate AI-generated code from human-generated code with individual commits. Tag AI commits with an Assisted-by: tag as recommended by the Linux kernel. (Commits where AI was predominantly used to tidy up hand-written code or language don’t need to carry the tag.)",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "AI-generated code must be trivial to review: the reviewer must be able to review the AI-generated code with little background in image-processing or experience working on the code-base, and see that the changes are correct. Note that tests, specifically, are rarely trivial [1].",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "You must take responsibility for copyright of the AI-generated code; the simplest and best way to do this, is to make sure the code changes are trivial, in the sense that they cannot reasonably be done differently to solve the given problem.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "Expect the team to ask questions about your work - and you must answer these questions yourself, without deferring to AI.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Declare AI use in the PR description and tag AI commits with Assisted-by"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Understand the code and answer maintainers' questions without AI"
+        },
+        {
+          "condition": "license-compliance",
+          "strength": "required",
+          "detail": "Take responsibility for copyright of AI-generated code"
+        },
+        {
+          "condition": "size-limit",
+          "strength": "required",
+          "detail": "Changes must be easy to review and AI-generated code must be trivial to review"
+        }
+      ],
+      "note": "Allowed for infrastructure code such as CI when the changes are easy to review, subject to the same declaration, copyright and accountability requirements.",
+      "quotes": [
+        {
+          "quote": "Disclose all generative tools (AI, LLMs, agents) that you used, see our AI Policy for details.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "For infrastructure code, such as CI, as long as the changes are easy to review.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "Always declare tool usage: say specifically what part of the task you used AI for in the PR description.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "As far as possible, separate AI-generated code from human-generated code with individual commits. Tag AI commits with an Assisted-by: tag as recommended by the Linux kernel. (Commits where AI was predominantly used to tidy up hand-written code or language don’t need to carry the tag.)",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "AI-generated code must be trivial to review: the reviewer must be able to review the AI-generated code with little background in image-processing or experience working on the code-base, and see that the changes are correct. Note that tests, specifically, are rarely trivial [1].",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "You must take responsibility for copyright of the AI-generated code; the simplest and best way to do this, is to make sure the code changes are trivial, in the sense that they cannot reasonably be done differently to solve the given problem.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "Expect the team to ask questions about your work - and you must answer these questions yourself, without deferring to AI.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI may not be used to create novel code or algorithmic additions.",
+      "quotes": [
+        {
+          "quote": "Creating novel code (algorithmic additions, writing tests, etc.).[1]",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI may not be used to write tests, which are explicitly listed as novel code and are rarely trivial to review.",
+      "quotes": [
+        {
+          "quote": "Creating novel code (algorithmic additions, writing tests, etc.).[1]",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "AI-generated code must be trivial to review: the reviewer must be able to review the AI-generated code with little background in image-processing or experience working on the code-base, and see that the changes are correct. Note that tests, specifically, are rarely trivial [1].",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "disclosure",
+          "strength": "required",
+          "detail": "Declare AI use in the PR description"
+        }
+      ],
+      "note": "Explicitly allowed for exploring the codebase, with AI tool use to be declared in the PR description.",
+      "quotes": [
+        {
+          "quote": "Disclose all generative tools (AI, LLMs, agents) that you used, see our AI Policy for details.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "For exploring the codebase, for iterating on hand-written code, and for fixing trivial bugs.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        },
+        {
+          "quote": "Always declare tool usage: say specifically what part of the task you used AI for in the PR description.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Pull request descriptions must be written by hand; AI may not write them.",
+      "quotes": [
+        {
+          "quote": "Writing pull request descriptions, or commenting on issues or PRs.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Comments on issues and pull requests must be written by hand; AI may not write them.",
+      "quotes": [
+        {
+          "quote": "Writing pull request descriptions, or commenting on issues or PRs.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "Contributors must answer maintainers' questions themselves, without deferring to AI.",
+      "quotes": [
+        {
+          "quote": "Expect the team to ask questions about your work - and you must answer these questions yourself, without deferring to AI.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        }
+      ]
+    },
+    {
+      "use": "code-review-others",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "AI may not be used to comment on or review other people's pull requests.",
+      "quotes": [
+        {
+          "quote": "Writing pull request descriptions, or commenting on issues or PRs.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "Contributors planning significant LLM use are advised to check with maintainers first to discuss their strategy.",
+      "quotes": [
+        {
+          "quote": "If you want to make use of LLMs in a significant way and have your contributions reviewed, safest is to check in with us first to discuss your strategy.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "allowed",
+      "description": "Core maintainers may use their own judgment on when and how to use AI, including tasks outside the permitted-use list, but must still declare usage and tag commits.",
+      "quotes": [
+        {
+          "quote": "Core maintainers may use their own judgment on when and how to use AI, including for tasks outside the “how you may use AI” list above. They must still follow the requirements section: declaring tool usage, tagging commits, etc.",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "allowed",
+      "description": "Commits where AI was predominantly used to tidy up hand-written code or language do not need an Assisted-by tag.",
+      "quotes": [
+        {
+          "quote": "As far as possible, separate AI-generated code from human-generated code with individual commits. Tag AI commits with an Assisted-by: tag as recommended by the Linux kernel. (Commits where AI was predominantly used to tidy up hand-written code or language don’t need to carry the tag.)",
+          "sourceUrl": "https://scikit-image.org/docs/dev/development/contribute.html"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-09",
+  "lastChanged": "2026-11-09"
 }

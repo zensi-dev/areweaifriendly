@@ -4,7 +4,7 @@
   "category": "library",
   "homepage": "https://pydantic.dev/",
   "repo": "https://github.com/pydantic/pydantic",
-  "summary": "AI use is welcome as long as you fully understand the code you submit. PRs may be closed for low quality, spam, or an AI-generated description that is incoherent.",
+  "summary": "Pydantic welcomes the use of AI when contributing, including for code, but contributors must fully understand the code they submit. Maintainers may close any pull request at their discretion, including spam-like submissions or incoherent AI-generated PR descriptions, and can ban repeat offenders.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -28,21 +28,212 @@
       "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
     },
     {
+      "dimension": "contributions",
+      "quote": "We reserve the right to close any pull request at our discretion, without further justification. This includes, but is not limited to, cases where:",
+      "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+    },
+    {
       "dimension": "summaries",
-      "quote": "the pull request description is AI generated and incoherent or nonsensical.",
+      "quote": "the pull request description is AI generated *and* incoherent or nonsensical.",
+      "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "the author appears to be mass-submitting pull requests across multiple repositories (spam),",
       "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
     }
   ],
   "sources": [
     {
       "url": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md",
-      "title": "Contributing to Pydantic",
-      "hash": "164829faeaf819b719524373137346d7e979bc64fea410fba5677ac25cef09c4",
-      "fetchedAt": "2026-10-10"
+      "title": "Clone your fork and cd into the repo directory",
+      "hash": "b859bdc6621618454a82a9f30efbc38b0e68bf94ef8d4e6cdbac524bd736202e",
+      "fetchedAt": "2026-11-09"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-10",
-  "lastChanged": "2026-10-10"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Certify that you fully understand the code being submitted"
+        }
+      ],
+      "note": "AI use is welcome for code contributions, but the contributor should fully understand the submitted code.",
+      "quotes": [
+        {
+          "quote": "We welcome the use of AI when contributing to Pydantic. However, users should certify that they fully understand the code being submitted.",
+          "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Certify that you fully understand the code being submitted"
+        }
+      ],
+      "note": "Small AI-assisted fixes are welcome as long as the contributor fully understands the submitted code.",
+      "quotes": [
+        {
+          "quote": "We welcome the use of AI when contributing to Pydantic. However, users should certify that they fully understand the code being submitted.",
+          "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Certify that you fully understand the code being submitted"
+        }
+      ],
+      "note": "Large AI-assisted changes are not banned, but the author must fully understand the submitted code; PRs failing quality standards can be closed.",
+      "quotes": [
+        {
+          "quote": "We welcome the use of AI when contributing to Pydantic. However, users should certify that they fully understand the code being submitted.",
+          "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+        },
+        {
+          "quote": "We reserve the right to close any pull request at our discretion, without further justification. This includes, but is not limited to, cases where:",
+          "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Certify that you fully understand the code being submitted"
+        }
+      ],
+      "note": "AI-driven repetitive edits are welcome, provided the contributor fully understands the resulting code.",
+      "quotes": [
+        {
+          "quote": "We welcome the use of AI when contributing to Pydantic. However, users should certify that they fully understand the code being submitted.",
+          "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Certify that you fully understand the code being submitted"
+        }
+      ],
+      "note": "AI-written tests are welcome; the contributor is expected to fully understand and run them.",
+      "quotes": [
+        {
+          "quote": "We welcome the use of AI when contributing to Pydantic. However, users should certify that they fully understand the code being submitted.",
+          "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Certify that you fully understand the code being submitted"
+        }
+      ],
+      "note": "AI-written build, CI or packaging changes are welcome if the contributor fully understands them.",
+      "quotes": [
+        {
+          "quote": "We welcome the use of AI when contributing to Pydantic. However, users should certify that they fully understand the code being submitted.",
+          "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Certify that you fully understand the code being submitted"
+        }
+      ],
+      "note": "AI-written documentation changes are welcome as part of a contribution the author understands and can stand behind.",
+      "quotes": [
+        {
+          "quote": "We welcome the use of AI when contributing to Pydantic. However, users should certify that they fully understand the code being submitted.",
+          "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "allowed",
+      "conditions": [],
+      "note": "AI-generated pull request descriptions are acceptable, but a PR may be closed if its description is AI generated and incoherent or nonsensical.",
+      "quotes": [
+        {
+          "quote": "the pull request description is AI generated *and* incoherent or nonsensical.",
+          "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Maintainers reserve the right to close any pull request at their own discretion, without further justification.",
+      "quotes": [
+        {
+          "quote": "We reserve the right to close any pull request at our discretion, without further justification. This includes, but is not limited to, cases where:",
+          "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Pull requests from authors who appear to be mass-submitting across multiple repositories (spam) may be closed.",
+      "quotes": [
+        {
+          "quote": "the author appears to be mass-submitting pull requests across multiple repositories (spam),",
+          "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "Mass submission or other behaviour described in the AI policy can result in a permanent ban from the Pydantic organization.",
+      "quotes": [
+        {
+          "quote": "Such behavior can also result in a permanent ban from the organization.",
+          "sourceUrl": "https://github.com/pydantic/pydantic/blob/main/docs/contributing.md"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-09",
+  "lastChanged": "2026-11-09"
 }

@@ -4,7 +4,7 @@
   "category": "language",
   "homepage": "https://www.python.org/",
   "repo": "https://github.com/python/cpython",
-  "summary": "AI tools are fine for code, issues and comments as long as the author reviews the output and takes responsibility. Disclosing AI use is appreciated but not required.",
+  "summary": "CPython allows AI-assisted issues and pull requests, but the person submitting must review the output, remain responsible for it, and be able to explain it in their own words. Disclosure in PR descriptions is appreciated but not required, and AI use alone is not grounds for closing a contribution.",
   "policy": {
     "contributions": {
       "verdict": "conditional",
@@ -23,6 +23,7 @@
     "summaries": {
       "verdict": "conditional",
       "conditions": [
+        "human-accountable",
         "human-reviewed"
       ]
     }
@@ -35,7 +36,102 @@
     },
     {
       "dimension": "contributions",
+      "quote": "Generative AI tools can produce output quickly, but discretion, good judgment, and critical thinking are the foundation of all good contributions.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR or filing it as an issue.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "contributions",
       "quote": "Disclosure of the use of AI tools in the PR description is appreciated, while not required.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Be prepared to explain how the tool was used and what changes it made.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Pay close attention to AI generated recommendations for testing changes.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Provide input about Python’s testing principles when guiding an AI model.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Gaining understanding of existing code",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "Supplementing contributor knowledge for code, tests, and documentation",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Assistance with writing comments, especially in a non-native language",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "The person submitting an issue or PR is responsible for its content, regardless of whether AI tools were used in its creation.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Generative AI tools can produce output quickly, but discretion, good judgment, and critical thinking are the foundation of all good contributions.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR or filing it as an issue.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Disclosure of the use of AI tools in the PR description is appreciated, while not required.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Be prepared to explain how the tool was used and what changes it made.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "The person submitting an issue or PR is responsible for its content, regardless of whether AI tools were used in its creation.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Generative AI tools can produce output quickly, but discretion, good judgment, and critical thinking are the foundation of all good contributions.",
       "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
     },
     {
@@ -44,8 +140,28 @@
       "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
     },
     {
-      "dimension": "summaries",
+      "dimension": "issues",
+      "quote": "We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "issues",
+      "quote": "Be prepared to explain how the tool was used and what changes it made.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "issues",
       "quote": "Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "summaries",
+      "quote": "AI-needs-explanation: the issue or PR stays open. Reply in your own words: explain what the change does or what the issue is about, and describe how you checked that it is correct.",
+      "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+    },
+    {
+      "dimension": "contributions",
+      "quote": "It is not acceptable to alter or bypass existing tests, or remove desired functionality, in order to make a failing test pass. Such changes are not a real fix.",
       "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
     }
   ],
@@ -53,12 +169,614 @@
     {
       "url": "https://devguide.python.org/getting-started/ai-tools/",
       "title": "Guidelines for using AI tools",
-      "hash": "1b7822acd54e115824188d8bb8d540ba84f9fa0620d4e6fe1491a53c00b43143",
-      "fetchedAt": "2026-10-09"
+      "hash": "4e0b460d7a5e628cac8d6423ee536a07ffb2e3ab1e13630dc970a7964379d83c",
+      "fetchedAt": "2026-11-09"
     }
   ],
-  "confidence": "high",
-  "classifiedBy": "manual",
-  "classifiedAt": "2026-10-09",
-  "lastChanged": "2026-10-09"
+  "rules": [
+    {
+      "use": "code-completion",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI output in detail before opening a PR"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Be able to explain the change in your own words"
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI use in the PR description is appreciated, not required"
+        }
+      ],
+      "note": "AI-assisted code completions are allowed if the author reviews them and can explain them; disclosure is optional.",
+      "quotes": [
+        {
+          "quote": "The person submitting an issue or PR is responsible for its content, regardless of whether AI tools were used in its creation.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Generative AI tools can produce output quickly, but discretion, good judgment, and critical thinking are the foundation of all good contributions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR or filing it as an issue.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Disclosure of the use of AI tools in the PR description is appreciated, while not required.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Be prepared to explain how the tool was used and what changes it made.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "use": "code-small",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI output in detail before opening a PR"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Be able to explain the change in your own words"
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI use in the PR description is appreciated, not required"
+        }
+      ],
+      "note": "AI-assisted small code changes are allowed if the author reviews them and can explain them; disclosure is optional.",
+      "quotes": [
+        {
+          "quote": "The person submitting an issue or PR is responsible for its content, regardless of whether AI tools were used in its creation.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Generative AI tools can produce output quickly, but discretion, good judgment, and critical thinking are the foundation of all good contributions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR or filing it as an issue.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Disclosure of the use of AI tools in the PR description is appreciated, while not required.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Be prepared to explain how the tool was used and what changes it made.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "use": "code-large",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI output in detail before opening a PR"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Be able to explain the change in your own words"
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI use in the PR description is appreciated, not required"
+        }
+      ],
+      "note": "AI-assisted changes of any size are permitted if the author reviews them and can explain them; no AI-specific size limit is stated.",
+      "quotes": [
+        {
+          "quote": "The person submitting an issue or PR is responsible for its content, regardless of whether AI tools were used in its creation.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Generative AI tools can produce output quickly, but discretion, good judgment, and critical thinking are the foundation of all good contributions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR or filing it as an issue.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Disclosure of the use of AI tools in the PR description is appreciated, while not required.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Be prepared to explain how the tool was used and what changes it made.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "use": "code-mechanical",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI output in detail before opening a PR"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Be able to explain the change in your own words"
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI use in the PR description is appreciated, not required"
+        }
+      ],
+      "note": "AI-assisted mechanical edits are allowed if the author reviews them and can explain them; disclosure is optional.",
+      "quotes": [
+        {
+          "quote": "The person submitting an issue or PR is responsible for its content, regardless of whether AI tools were used in its creation.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Generative AI tools can produce output quickly, but discretion, good judgment, and critical thinking are the foundation of all good contributions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR or filing it as an issue.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Disclosure of the use of AI tools in the PR description is appreciated, while not required.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Be prepared to explain how the tool was used and what changes it made.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "use": "code-tests",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review all AI output; pay close attention to AI-generated testing recommendations and guide the model with Python’s testing principles"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Be able to explain the tests in your own words"
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI use in the PR description is appreciated, not required"
+        }
+      ],
+      "note": "AI help with tests is allowed if the author reviews the output, guides the model with Python’s testing principles, and can explain the tests.",
+      "quotes": [
+        {
+          "quote": "The person submitting an issue or PR is responsible for its content, regardless of whether AI tools were used in its creation.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Generative AI tools can produce output quickly, but discretion, good judgment, and critical thinking are the foundation of all good contributions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR or filing it as an issue.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Disclosure of the use of AI tools in the PR description is appreciated, while not required.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Be prepared to explain how the tool was used and what changes it made.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Pay close attention to AI generated recommendations for testing changes.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Provide input about Python’s testing principles when guiding an AI model.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "use": "code-infra",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI output in detail before opening a PR"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Be able to explain the change in your own words"
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI use in the PR description is appreciated, not required"
+        }
+      ],
+      "note": "AI-assisted infrastructure code is allowed if the author reviews it and can explain it; disclosure is optional.",
+      "quotes": [
+        {
+          "quote": "The person submitting an issue or PR is responsible for its content, regardless of whether AI tools were used in its creation.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Generative AI tools can produce output quickly, but discretion, good judgment, and critical thinking are the foundation of all good contributions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR or filing it as an issue.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Disclosure of the use of AI tools in the PR description is appreciated, while not required.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Be prepared to explain how the tool was used and what changes it made.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "use": "docs-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI output in detail before opening a PR"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "Be able to explain the change in your own words"
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI use in the PR description is appreciated, not required"
+        }
+      ],
+      "note": "AI-assisted documentation changes are allowed if the author reviews them and can explain them; disclosure is optional.",
+      "quotes": [
+        {
+          "quote": "The person submitting an issue or PR is responsible for its content, regardless of whether AI tools were used in its creation.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Generative AI tools can produce output quickly, but discretion, good judgment, and critical thinking are the foundation of all good contributions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR or filing it as an issue.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Disclosure of the use of AI tools in the PR description is appreciated, while not required.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Be prepared to explain how the tool was used and what changes it made.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "use": "research",
+      "status": "allowed",
+      "conditions": [],
+      "note": "Using AI to understand code or supplement your knowledge of code, tests and documentation is explicitly listed as acceptable.",
+      "quotes": [
+        {
+          "quote": "Gaining understanding of existing code",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Supplementing contributor knowledge for code, tests, and documentation",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "use": "comments",
+      "status": "allowed",
+      "conditions": [],
+      "note": "AI assistance with writing comments, especially in a non-native language, is explicitly listed as acceptable.",
+      "quotes": [
+        {
+          "quote": "Assistance with writing comments, especially in a non-native language",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "use": "pr-description",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI-generated PR titles and descriptions before opening the pull request"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "The submitter remains responsible for the PR content and must be able to explain it"
+        },
+        {
+          "condition": "disclosure",
+          "strength": "recommended",
+          "detail": "Disclosure of AI use in the PR description is appreciated, not required"
+        }
+      ],
+      "note": "AI may help write PR titles and descriptions, but a person must review them and be able to explain the change; disclosure is optional.",
+      "quotes": [
+        {
+          "quote": "The person submitting an issue or PR is responsible for its content, regardless of whether AI tools were used in its creation.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Generative AI tools can produce output quickly, but discretion, good judgment, and critical thinking are the foundation of all good contributions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR or filing it as an issue.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Disclosure of the use of AI tools in the PR description is appreciated, while not required.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Be prepared to explain how the tool was used and what changes it made.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "use": "issue-writing",
+      "status": "conditional",
+      "conditions": [
+        {
+          "condition": "human-reviewed",
+          "strength": "required",
+          "detail": "Review AI output before filing the issue, including proposed title and description"
+        },
+        {
+          "condition": "human-accountable",
+          "strength": "required",
+          "detail": "The person filing the issue must be able to explain it in their own words"
+        }
+      ],
+      "note": "AI may help draft issues, but the filer must review the text and be able to explain it in their own words.",
+      "quotes": [
+        {
+          "quote": "The person submitting an issue or PR is responsible for its content, regardless of whether AI tools were used in its creation.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Generative AI tools can produce output quickly, but discretion, good judgment, and critical thinking are the foundation of all good contributions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Authors must review the work done by AI tooling in detail to ensure it actually makes sense before proposing it as a PR or filing it as an issue.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Be prepared to explain how the tool was used and what changes it made.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Always review the output before opening a pull request or issue, including proposed PR or issue titles and descriptions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "use": "review-answers",
+      "status": "not-allowed",
+      "conditions": [],
+      "note": "When an issue or PR is labeled AI-needs-explanation, the contributor must reply in their own words; AI-written answers do not meet that requirement.",
+      "quotes": [
+        {
+          "quote": "AI-needs-explanation: the issue or PR stays open. Reply in your own words: explain what the change does or what the issue is about, and describe how you checked that it is correct.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    }
+  ],
+  "otherRules": [
+    {
+      "area": "contributions",
+      "status": "conditional",
+      "description": "A person submitting an issue or PR remains responsible for its content even when AI tools were used, and must be able to explain the work in their own words.",
+      "quotes": [
+        {
+          "quote": "The person submitting an issue or PR is responsible for its content, regardless of whether AI tools were used in its creation.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "We expect PR authors and those filing issues to be able to explain their proposed changes in their own words.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "Be prepared to explain how the tool was used and what changes it made.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "area": "contributions",
+      "status": "not-allowed",
+      "description": "Contributors must not alter or bypass existing tests or remove desired functionality just to make a failing test pass.",
+      "quotes": [
+        {
+          "quote": "It is not acceptable to alter or bypass existing tests, or remove desired functionality, in order to make a failing test pass. Such changes are not a real fix.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "allowed",
+      "description": "Using AI tools is not on its own a reason for an issue or PR to be labeled or closed.",
+      "quotes": [
+        {
+          "quote": "Using AI tools is not a reason on its own for an issue or PR to be labeled or closed.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "conditional",
+      "description": "Contributors are expected to apply discretion, good judgment and critical thinking when using generative AI tools.",
+      "quotes": [
+        {
+          "quote": "Generative AI tools can produce output quickly, but discretion, good judgment, and critical thinking are the foundation of all good contributions.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "Unproductive issues or PRs may be closed without explanation, and contributors who repeatedly open them may be blocked, whether or not AI was used.",
+      "quotes": [
+        {
+          "quote": "Maintainers may close issues and PRs that are not useful or productive, without explanation, regardless of whether AI tools were used or not.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        },
+        {
+          "quote": "If a contributor repeatedly opens unproductive issues or PRs, they may be blocked from contributing to the project because it is disruptive and disrespectful of the maintainers time.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "conditional",
+      "description": "If an issue or PR is labeled AI-needs-explanation, it stays open while the contributor replies in their own words to explain the change and how they checked it.",
+      "quotes": [
+        {
+          "quote": "AI-needs-explanation: the issue or PR stays open. Reply in your own words: explain what the change does or what the issue is about, and describe how you checked that it is correct.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    },
+    {
+      "area": "general",
+      "status": "not-allowed",
+      "description": "If an issue or PR is labeled AI-guidelines-not-met, it is closed; the contributor may reply to explain or ask questions.",
+      "quotes": [
+        {
+          "quote": "AI-guidelines-not-met: the issue or PR is closed. If you think we misunderstood your contribution, reply on the issue or PR. You are welcome to explain your approach or ask questions about these guidelines.",
+          "sourceUrl": "https://devguide.python.org/getting-started/ai-tools/"
+        }
+      ]
+    }
+  ],
+  "referencedPolicies": [],
+  "rubricVersion": 1,
+  "confidence": "medium",
+  "classifiedBy": "ai",
+  "classifiedAt": "2026-11-09",
+  "lastChanged": "2026-11-09"
 }
